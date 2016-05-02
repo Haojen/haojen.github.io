@@ -962,6 +962,7 @@ body {
 /*
   @Haojen
 */
+
 .intro-header .site-heading .subheading{
   margin-top: 15px;
 }
@@ -970,11 +971,17 @@ body {
 }
 .intro-header .post-heading{
   display: inline-block;
-  text-align: center;
 }
 .intro-header .post-heading .tags{
   text-align: left;
 }
+@media screen and (max-width:768px){
+  .intro-header .post-heading .subheading,
+  .intro-header .post-heading .meta {
+    text-align: center;
+  }
+}
+
 
 
 
