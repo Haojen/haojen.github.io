@@ -36,7 +36,8 @@
   border-color: #0085a1;
 }
 .sidebar-container .short-about img {
-  width: 80%;
+  /*@haojen adjust width 80% > 100%*/
+  width: 100%;
   display: block;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -424,6 +425,7 @@ pre code {
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
+
   font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
   font-size: 18px;
@@ -435,15 +437,19 @@ pre code {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    /*@haojen adjust font size*/
+    font-size: 70px;
   }
 }
 .intro-header .post-heading h1 {
   font-size: 30px;
   margin-bottom: 24px;
+  text-align: center;
+  text-shadow: 2px 2px 10px black;
 }
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
+  text-align: right;
   line-height: 1.1;
   display: block;
 }
@@ -454,17 +460,18 @@ pre code {
      */
   font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.4;
   font-weight: normal;
-  margin: 10px 0 30px;
+  /*@haojen adjust margin bottom and font size*/
   margin-top: -5px;
+  margin-bottom: 5px;
 }
 .intro-header .post-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
-  font-style: italic;
+  /*@haojen adjust font size and font style*/
+  font-family: serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 14px;
 }
 .intro-header .post-heading .meta a {
   color: white;
@@ -951,3 +958,39 @@ body {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+
+/*
+  @Haojen
+*/
+.intro-header .site-heading .subheading{
+  margin-top: 15px;
+}
+.sidebar-container .short-about{
+  text-align: center;
+}
+.intro-header .post-heading{
+  display: inline-block;
+  text-align: center;
+}
+.intro-header .site-heading .tags{
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
