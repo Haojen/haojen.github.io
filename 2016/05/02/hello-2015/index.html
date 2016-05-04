@@ -67,7 +67,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Haojen&#39;s Blog</a>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -142,7 +147,7 @@
     <!-- Main Content -->
     
 <!-- Image to hack wechat -->
-<!-- <img src="http://ehazon.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="<\%= config['url'] %><\%= config['root'] %>img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
@@ -179,12 +184,8 @@
 <article>
     <div class="container">
         <div class="row">
-
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
                 <blockquote>
 <p>“Yeah It’s on. ”</p>
@@ -225,7 +226,6 @@
 
                 
                 <!-- 多说 Share start -->
-                </style>
                 <div class="ds-share"
                     style="text-align: right"
                     data-thread-key="2016/05/02/hello-2015/"
@@ -255,6 +255,10 @@
                 <ul class="pager">
                     
                     
+                        <li class="next">
+                            <a href="/2015/04/14/testpost/" data-toggle="tooltip" data-placement="top" title="Example Post With Default Header Image">Next Post &rarr;</a>
+                        </li>
+                    
                 </ul>
 
                 
@@ -273,7 +277,15 @@
 
             </div>
 
-    <!-- Sidebar Container -->
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
 
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -284,7 +296,9 @@
                 
                 <section>
                     <!-- no hr -->
-                <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                <h5> 
+                    <a href="/tags/">FEATURED TAGS </a>
+                </h5>
                     <div class="tags">
                         
                           <a class="tag" href="/tags/#life" title="life">life</a>
@@ -296,14 +310,10 @@
                 <!-- Friends Blog -->
                 
             </div>
-
         </div>
+
     </div>
 </article>
-
-<div class="mulu">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">3.</span> <span class="toc-text">正文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li></ol>
-</div>
 
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -422,7 +432,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Haojen&#39;s Blog 2016 
+                    Copyright &copy; Haojen 2016 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">

@@ -63,3 +63,21 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
+// Toc fixed position
+(function($){
+    $(function(){
+        console.log('test thx')
+        var toc = document.querySelector('.toc-col .toc-wrap');
+        document.body.onscroll = function(e){
+            if(window.pageYOffset > 70){
+                toc.classList.add('toc-fixed');
+            }else{
+                toc.classList.remove('toc-fixed');
+            }
+        }
+    })
+    console.log('text2')
+})(jQuery); 
+console.log('text1')
+

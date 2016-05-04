@@ -1,12 +1,12 @@
 @media (min-width: 1200px) {
-  .post-container,
+  .post-cont-iner,
   .sidebar-container {
     padding-right: 5%;
   }
 }
 @media (min-width: 768px) {
   .post-container {
-    padding-right: 5%;
+    padding-right: 2%;
   }
 }
 .sidebar-container {
@@ -270,6 +270,7 @@ pre code {
   left: 0;
   width: 100%;
   z-index: 3;
+  transition: background-color .3s;
   /* Hux learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
@@ -307,7 +308,7 @@ pre code {
   .navbar-custom .navbar-brand {
     color: white;
     padding: 20px;
-    line-height: 20px;
+    line-height: 17px;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
@@ -327,9 +328,9 @@ pre code {
 }
 @media only screen and (min-width: 1170px) {
   .navbar-custom {
-    -webkit-transition: background-color 0.3s;
+   /* -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;*/
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
@@ -339,16 +340,7 @@ pre code {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  .navbar-custom.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -61px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid #f2f2f2;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-  }
+  
   .navbar-custom.is-fixed .navbar-brand {
     color: #404040;
   }
@@ -365,11 +357,11 @@ pre code {
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
+    /*-webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
     -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);*/
   }
 }
 .intro-header {
@@ -418,6 +410,7 @@ pre code {
 .intro-header .page-heading h1 {
   margin-top: 0;
   font-size: 50px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
@@ -433,6 +426,7 @@ pre code {
   display: block;
   font-weight: 300;
   margin: 10px 0 0;
+
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
@@ -445,7 +439,7 @@ pre code {
   font-size: 30px;
   margin-bottom: 24px;
   text-align: center;
-  text-shadow: 2px 2px 10px black;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
@@ -458,6 +452,7 @@ pre code {
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
+  text-align: center;
   font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
   font-size: 18px;
@@ -981,7 +976,69 @@ body {
     text-align: center;
   }
 }
+@media screen and (min-width: 768px){
+  .navbar .container-fluid{
+    padding: 0 5%;
+  }
 
+}
+
+.container .toc-col{
+  padding:0;  
+}
+.container .toc-wrap{
+  margin-top: 30px;
+  list-style: none;
+  color: darkgrey;
+  border-left: #eee 4px solid;
+  padding-left: 12px;
+}
+.container .toc-wrap>ol{
+  list-style: none;
+  padding-left: 0;
+}
+.container .toc-wrap li>ol{
+  padding-left: 15px;
+  list-style: none;
+}
+.container .toc-wrap .toc-level-2>a{
+  color: #0085a1;
+  font-size: .9em;
+}
+.container .toc-wrap li ol a{
+  color: darkgrey;
+  font-size: .85em;
+}
+
+.container .toc-wrap.toc-fixed{
+  position:fixed;
+  top: 90px;
+}
+.navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 0 10px rgba(14,14,14,.26);
+    height: 55px;
+}
+.navbar-custom.is-fixed::before{
+  content: ' ';
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  background: red;
+}
+.navbar-custom.is-fixed a{
+}
+.navbar-custom.is-fixed .navbar-brand,
+.navbar-custom.is-fixed .navbar-right a
+{
+  color: black;
+}
+.navbar-custom.is-fixed .navbar-toggle span{
+  background: black;
+}
 
 
 
