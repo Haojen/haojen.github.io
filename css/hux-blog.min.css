@@ -92,9 +92,9 @@ a img:hover,
 a img:focus {
   cursor: zoom-in;
 }
-article {
+/*article {
   overflow-x: hidden;
-}
+}*/
 blockquote {
   color: #808080;
   font-style: italic;
@@ -373,6 +373,7 @@ pre code {
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 0px;
+  /*max-height: 367px;*/
   /* 0 on mobile, modify by Hux */
 }
 @media only screen and (min-width: 768px) {
@@ -391,7 +392,7 @@ pre code {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 70px 0 95px;
   }
 }
 .intro-header .site-heading {
@@ -399,7 +400,7 @@ pre code {
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading {
-    padding: 150px 0;
+    padding: 150px;
   }
 }
 .intro-header .site-heading,
@@ -432,20 +433,18 @@ pre code {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
     /*@haojen adjust font size*/
-    font-size: 70px;
+    /*font-size: 70px;*/
   }
 }
 .intro-header .post-heading h1 {
-  font-size: 30px;
+  font-size: 24px;
   margin-bottom: 24px;
   text-align: center;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
-  text-align: right;
   line-height: 1.1;
-  display: block;
 }
 .intro-header .post-heading .subheading {
   /* Hux learn from
@@ -455,31 +454,31 @@ pre code {
   text-align: center;
   font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 1.4;
   font-weight: normal;
   /*@haojen adjust margin bottom and font size*/
-  margin-top: -5px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 .intro-header .post-heading .meta {
   /*@haojen adjust font size and font style*/
-  font-family: serif;
   font-weight: 300;
   font-size: 14px;
+  color: #eee;
 }
-.intro-header .post-heading .meta a {
-  color: white;
+.intro-header .post-heading .meta span{
+  padding-left: 1em;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
-    font-size: 55px;
+    margin-top: 15px;
+    font-size: 40px;
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
+    /*font-size: 25px;*/
   }
   .intro-header .post-heading .meta {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .post-preview > a {
@@ -964,16 +963,16 @@ body {
 .sidebar-container .short-about{
   text-align: center;
 }
-.intro-header .post-heading{
-  display: inline-block;
-}
+
 .intro-header .post-heading .tags{
   text-align: left;
 }
 @media screen and (max-width:768px){
-  .intro-header .post-heading .subheading,
+  .intro-header .post-heading .subheading{
+    font-size: 19px;
+  }
   .intro-header .post-heading .meta {
-    text-align: center;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 768px){
@@ -1012,7 +1011,10 @@ body {
 
 .container .toc-wrap.toc-fixed{
   position:fixed;
-  top: 90px;
+  top: 85px;
+  margin-top: 0;
+  overflow: scroll;
+  max-height: 81%;
 }
 .navbar-custom.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
@@ -1029,7 +1031,14 @@ body {
   width: 100%;
   background: red;
 }
-.navbar-custom.is-fixed a{
+.navbar-custom.is-fixed .brand-logo{
+    border-radius: 3px;
+    background: black;
+    color: white;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    margin-right: 5px;
+    padding-top: 1px;
 }
 .navbar-custom.is-fixed .navbar-brand,
 .navbar-custom.is-fixed .navbar-right a
