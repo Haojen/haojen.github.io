@@ -57,7 +57,7 @@
 <body ontouchstart="">
 
     <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top" data-isPost = "false">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -95,7 +95,7 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/ about/">About me</a>
                         </li>
                         
                     
@@ -168,13 +168,19 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                    <a href="#life" title="life" rel="1">life</a>
+                    <a href="#生活" title="生活" rel="1">生活</a>
                 
-                    <a href="#OS" title="OS" rel="1">OS</a>
+                    <a href="#前端开发" title="前端开发" rel="3">前端开发</a>
                 
-                    <a href="#Unix" title="Unix" rel="1">Unix</a>
+                    <a href="#JavaScript" title="JavaScript" rel="3">JavaScript</a>
                 
-                    <a href="#Linux" title="Linux" rel="1">Linux</a>
+                    <a href="#翻译" title="翻译" rel="1">翻译</a>
+                
+                    <a href="#OS" title="OS" rel="2">OS</a>
+                
+                    <a href="#Unix" title="Unix" rel="2">Unix</a>
+                
+                    <a href="#Linux" title="Linux" rel="2">Linux</a>
                 
             </div>
 
@@ -182,8 +188,8 @@
 
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="life">
-                    <span class="tag-text">life</span>
+                <span class="fa fa-tag listing-seperator" id="生活">
+                    <span class="tag-text">生活</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -191,13 +197,167 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2016/05/02/hello-2015/">
+                     <a href="/2015/01/29/hello-2015/">
                         <h2 class="post-title">
-                            Welcome to Haojen's Blog
+                            Welcome to Hux Blog
                         </h2>
                         
                             <h3 class="post-subtitle">
                                  "Hello World, Hello Blog"
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="前端开发">
+                    <span class="tag-text">前端开发</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/07/09/js-module-7day/">
+                        <h2 class="post-title">
+                            Example Post using Keynote Layout
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Keynote: JavaScript Modularization Journey
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/05/25/js-module-loader/">
+                        <h2 class="post-title">
+                            Example Post with Code Highlight
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                CommonJS，RequireJS，SeaJS 归纳笔记
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/09/22/js-version/">
+                        <h2 class="post-title">
+                            Example Post
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="JavaScript">
+                    <span class="tag-text">JavaScript</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/07/09/js-module-7day/">
+                        <h2 class="post-title">
+                            Example Post using Keynote Layout
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                Keynote: JavaScript Modularization Journey
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/05/25/js-module-loader/">
+                        <h2 class="post-title">
+                            Example Post with Code Highlight
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                CommonJS，RequireJS，SeaJS 归纳笔记
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/09/22/js-version/">
+                        <h2 class="post-title">
+                            Example Post
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="翻译">
+                    <span class="tag-text">翻译</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/09/22/js-version/">
+                        <h2 class="post-title">
+                            Example Post
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?
                             </h3>
                         
                     </a>
@@ -218,6 +378,25 @@
                   </li> -->
                  <div class="post-preview">
                      <a href="/2015/04/14/testpost/">
+                        <h2 class="post-title">
+                            Example Post With Default Header Image
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                不适合人类阅读，非常水的自我笔记
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/04/14/unix-linux-note/">
                         <h2 class="post-title">
                             Example Post With Default Header Image
                         </h2>
@@ -257,6 +436,25 @@
                 </div>
                 <hr>
                 
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/04/14/unix-linux-note/">
+                        <h2 class="post-title">
+                            Example Post With Default Header Image
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                不适合人类阅读，非常水的自我笔记
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
             </div>
             
             <div class="one-tag-list">
@@ -270,6 +468,25 @@
                   </li> -->
                  <div class="post-preview">
                      <a href="/2015/04/14/testpost/">
+                        <h2 class="post-title">
+                            Example Post With Default Header Image
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                不适合人类阅读，非常水的自我笔记
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/04/14/unix-linux-note/">
                         <h2 class="post-title">
                             Example Post With Default Header Image
                         </h2>
