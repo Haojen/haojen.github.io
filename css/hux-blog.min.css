@@ -1191,7 +1191,7 @@ body {
     position: fixed;
     top: 85px;
     margin-top: 0;
-    overflow: scroll;
+    overflow: auto;
     max-height: 81%;
 }
 
@@ -1230,7 +1230,7 @@ body {
 .navbar-custom.is-fixed .navbar-toggle span {
     background: black;
 }
-
+.custom-haojen-container{margin-top: 60px;}
 .post-title-haojen{
     display: none;
     /*max-width: 200px;*/
@@ -1238,7 +1238,7 @@ body {
 .post-title-fixed{
     display: block;
     position: fixed;
-    top:16px;
+    top:-40px;
     width: 100%;
     z-index: 3;
     text-align: center;
@@ -1250,6 +1250,8 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    position: relative;
+    top:57px;
 }
 
 
