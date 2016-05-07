@@ -319,7 +319,7 @@ pre code {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 6;
     transition: background-color .3s;
     /* Hux learn from
        *     TypeIsBeautiful,
@@ -1240,7 +1240,7 @@ body {
     position: fixed;
     top:-40px;
     width: 100%;
-    z-index: 3;
+    z-index: 6;
     text-align: center;
     white-space: nowrap;
 }
@@ -1272,6 +1272,7 @@ body {
 @media screen and (max-width: 500px) {
     .post-title-fixed span{
        display: none;
+        top:57px;
     }
 }
 
