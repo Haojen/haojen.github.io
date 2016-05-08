@@ -266,13 +266,13 @@ pre code {
     }
 
     #huxblog_navbar {
-        opacity: 0;
-        transform: scaleX(0);
-        transform-origin: top right;
-        transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
-        -webkit-transform: scaleX(0);
-        -webkit-transform-origin: top right;
-        -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+        /*opacity: 0;*/
+        /*transform: scaleX(0);*/
+        /*transform-origin: top right;*/
+        /*transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);*/
+        /*-webkit-transform: scaleX(0);*/
+        /*-webkit-transform-origin: top right;*/
+        /*-webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);*/
     }
 
     #huxblog_navbar a {
@@ -716,8 +716,6 @@ footer .copyright a:focus {
     vertical-align: middle;
     vertical-align: baseline;
     opacity: 0;
-    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-    -moz-transition: top 0.3s ease, opacity 0.3s ease;
     -ms-transition: top 0.3s ease, opacity 0.3s ease;
     transition: top 0.3s ease, opacity 0.3s ease;
 }
