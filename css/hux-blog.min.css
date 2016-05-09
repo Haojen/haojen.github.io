@@ -1218,7 +1218,9 @@ body {
 .navbar-custom.is-fixed .navbar-toggle span {
     background: black;
 }
-.custom-haojen-container{margin-top: 60px;}
+.custom-haojen-container{
+    padding-top: 60px;
+}
 .post-title-haojen{
     display: none;
     /*max-width: 200px;*/
@@ -1270,12 +1272,10 @@ body {
         top:57px;
     }
 }
-
-
-
 .post-preview > a > .post-title{
     margin-bottom: 0;
 }
+
 
 
 
