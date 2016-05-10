@@ -17,7 +17,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/page/2/">
+    <link rel="canonical" href="http://ehazon.github.io/2016/04/28/重新认识自己/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -57,8 +57,8 @@
 <body ontouchstart="">
 
     <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-istags="false
-" data-ishome = "true" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+" data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -149,231 +149,165 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container custom-haojen-container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2015/12/17/锋利的 jQuery 学习笔记/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            2015-12-17
-        </p>
-        
-        <div class="post-content-preview">
-            鋒利的 jQurey1 DOM对象和 JQ 对象的区别JQ 对象就是通过 JQ 包装 DOM 对象后产生的对象, JQ 对象是 JQ 独有的, 这意味着如果一个对象是 JQ 对象,那么就可以使用 JQ 里面的方法;需要注意的是 JQ 对象无法使用 DOM 对象的任何方法,同样的 DOM 对象也无法使用 JQ 里的任何方法
-JQ 对象与 DOM 对象的互转
-将 JQ 对象转换成 DOM 对象的...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/17/Ajax/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            2015-12-17
-        </p>
-        
-        <div class="post-content-preview">
-            JqueryAJAX
-load() : 该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送的数据, 第三个参数为 callback
-jQuery.getJSON(url,[data],callback) : 第一个参数接收一个 URL , 第二个为可选的 data , 第三个参数为callback
-jQuery.getScript(url,[callback]...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/11/复习整理/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            2015-12-11
-        </p>
-        
-        <div class="post-content-preview">
-            复习整理第一阶段复习： HTML重新认识到的
-
-新元素&lt;address&gt;这里可以添加地址,地址将呈现斜体字&lt;/address&gt;
-&lt;a href=&quot;mailto:someName@xxmail.com?subject=回复主题&amp; body=回复内容&quot;&gt;可以添加邮件回复,系统会自动调用后台你的 Email 客户端&lt;/a&gt;...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/10/我所不知道的_json/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            2015-12-10
-        </p>
-        
-        <div class="post-content-preview">
-            我所不知道的 JSON
-JSON 里面的字符串必须使用双引号，而如果使用单引号的话会导致语法错误
-不支持 undefined
-JSON 没有变量概念
-没有末尾的分号，因为这不是 JS 语句，所以不需要分号
-对象的属性必须加双引号
-JSON 对象有两个方法：stringify() 和parse() , 这两个方法分别用于把 JS 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 ...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/10/BOM 学习/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            2015-12-10
-        </p>
-        
-        <div class="post-content-preview">
-            BOMwindow 对象Javascript 的全局作用域 global
-location 对象浏览器的 URL ， 前进后退
-navigator 对象浏览器的版本信息，获取用户的平台， 配置等信息
-history 对象浏览器的历史记录
-screen 对象用户的显示器信息
-DOM需要了解的概念是 DOM 范围
-事件JS 与 HTML 之间的交互是通过事件实现的。事件，就是文档或者浏览器窗口中...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
     
-        <li class="previous">
-            <a href="/">&larr; Newer Posts</a>
-        </li>
-    
-    
-        <li class="next">
-            <a href="/page/3/">Older Posts &rarr;</a>
-        </li>
-    
-</ul>
+<!-- Image to hack wechat -->
+<!-- <img src="<\%= config['url'] %\><\%= config['root'] %\>img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma 
+                         <span>
+                          日期 2016-04-28
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <h1 id="重新认识自己"><a href="#重新认识自己" class="headerlink" title="重新认识自己"></a>重新认识自己</h1><ol>
+<li><p>自己是个什么样的人?</p>
+<p> 复杂多变的人</p>
+</li>
+<li><p>你有理想吗?</p>
+<p> 有, 去非洲,徒步旅行,骑行旅行,见识不同的世界</p>
+</li>
+<li><p>你理想的伴侣关系是什么样的? 你自己在伴侣关系中扮演什么样的角色? 要承担什么样的责任?</p>
+<p> 关系: 平等的,经济互相独立<br> 扮演关系: 爱人, 朋友<br> 承担的责任 ???</p>
+</li>
+<li><p>你理想的事业是什么，你正在做的工作符合你的事业理想吗？这份工作对你的意义是什么？</p>
+<p> 我理想的事业: 做喜欢的事, 在阳光沙滩下自由的创作,在地中海之风,异国风情中编程,骑行<br> 意义: 自我实现, 解决生存问题</p>
+</li>
+<li><p>你对亲子关系怎么看？对你来说，什么是一个理想的父亲（母亲），你期望自己成为这样一个理想父亲（母亲）吗？</p>
+<p> 开明, 喜欢旅行, 非教条, 能看透表象背后隐藏的事物</p>
+</li>
+<li><p>你对钱怎么看，你认为赚到多少钱是足够的？如果你明天一早醒来，已经有足够的钱，你将会如何继续安排自己的生活？</p>
+<p> 一种动机, 满足生存和欲望, 解决基本的生存问题,够买日常用品和偶尔一些非奢侈品的喜爱用品就行<br> 想办法让更多的人介绍到更好的教育, 了解世界表象之下的东西<br> 做乐队</p>
+</li>
+<li><p>对你来说，什么是理想的性生活？什么是理想的性道德，在你的性道德观中，什么样的性生活是禁忌的，需要避免的，什么样的性生活是美好的，需要得到鼓励和发展的？</p>
+<p> 对性爱的问题上双方能坦诚的沟通,而不压抑和回避;<br> 健康的,基本遵循正常的本属物种交尾;<br> 沉迷于性, 而把性这种生殖本能当成一种纯粹且单一的娱乐<br> 不回避,坦诚,双方能理想的沟通而非压抑</p>
+</li>
+<li><p>你的择友标准是什么？什么样的人你会愿意交往，什么样的人你会拒绝和他交往？</p>
+<p> 礼貌,懂得自尊和尊重他人;<br> 有强烈的非理性的宗教迷信,<br> 酒桌友谊</p>
+</li>
+<li><p>你对死亡怎么看？你希望自己活到多少岁，你准备怎么度过从现在到死亡的这段时间？如果你要立遗嘱，这份遗嘱会怎么写？</p>
+<p> 不惧怕,对死亡感到神秘,有些期待;身体状态好的话,希望能活到80, 我希望存在的这段时间里, 对我所在的但不仅限于这个环境继续探索发觉,<br> 没怎么想过这个问题, 如果有子嗣的话, 不想把财产留给他们, 骨灰撒在世界不同的地方, 但留一部分埋在死去的亲人旁</p>
+</li>
+</ol>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/04/28/重新认识自己/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2016/04/28/重新认识自己/"
+                    data-images=""
+                    data-content="重新认识自己
+自己是个什么样的人?
+ 复杂多变的人
+
+你有理想吗?
+ 有, 去非洲,徒步旅行,... | Haojen&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/05/02/如何写影评-笔记/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/01/24/电子技术自学宝典/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/04/28/重新认识自己/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2016/04/28/重新认识自己/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
 
             </div>
 
-        <!-- Sidebar Container -->
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#重新认识自己"><span class="toc-text">重新认识自己</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-                <!-- Short About Me -->
-                <section class="visible-md visible-lg">
-                    <div class="short-about">
-
-                        
-                            <img src="/img/man.png" />
-                        
-                        <h5><a href="/about/">Haojen Ma</a></h5>
-                        
-                            <p>Stay Hungry , Stay Foolish</p>
-                        
-                        <hr>
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-
-                            
-                        </ul>
-                    </div>
-                </section>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
                 <!-- Featured Tags -->
                 
                 <section>
-                    <!--<h5><a href="<\%= config.root %>tags/">FEATURED TAGS!!!</a></h5>-->
+                    <!-- no hr -->
+                <h5 class="text-center">
+                    <a href="/tags/">FEATURED TAGS</a>
+                </h5>
                     <div class="tags">
-                        
-                        
-                        
-                        
                         
                     </div>
                 </section>
@@ -382,9 +316,35 @@ DOM需要了解的概念是 DOM 范围
                 <!-- Friends Blog -->
                 
             </div>
-        
+        </div>
+
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
 
 
     <!-- Footer -->

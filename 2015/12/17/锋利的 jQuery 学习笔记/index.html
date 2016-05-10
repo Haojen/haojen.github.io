@@ -13,11 +13,11 @@
 
     <title>
         
-          恐龙与史前生命--读书笔记 - Haojen&#39;s Blog
+          Haojen&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/2016/05/08/恐龙与史前生命/">
+    <link rel="canonical" href="http://ehazon.github.io/2015/12/17/锋利的 jQuery 学习笔记/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,21 +165,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>恐龙与史前生命--读书笔记</h1>
-                    
-                        <h2 class="subheading">200多种恐龙和始祖生物的详细资料</h2>
+                    <h1></h1>
                     
                     <span class="meta">
                          作者 Haojen Ma 
                          <span>
-                          日期 2016-05-08
+                          日期 2015-12-17
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                        <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </div>
@@ -188,7 +182,7 @@
     </div>
     <div class=" post-title-haojen">
         <span>
-            恐龙与史前生命--读书笔记
+            
         </span>
     </div>
 </header>
@@ -200,7 +194,108 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h1 id="恐龙与史前生命"><a href="#恐龙与史前生命" class="headerlink" title="恐龙与史前生命"></a>恐龙与史前生命</h1><h2 id="恐龙的进化"><a href="#恐龙的进化" class="headerlink" title="恐龙的进化"></a>恐龙的进化</h2><p>恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的</p>
+                <h1 id="鋒利的-jQurey"><a href="#鋒利的-jQurey" class="headerlink" title="鋒利的 jQurey"></a>鋒利的 jQurey</h1><h2 id="1-DOM对象和-JQ-对象的区别"><a href="#1-DOM对象和-JQ-对象的区别" class="headerlink" title="1 DOM对象和 JQ 对象的区别"></a>1 DOM对象和 JQ 对象的区别</h2><p>JQ 对象就是通过 JQ 包装 DOM 对象后产生的对象, JQ 对象是 JQ 独有的, 这意味着如果一个对象是 JQ 对象,那么就可以使用 JQ 里面的方法;<br>需要注意的是 JQ 对象<strong>无法使用 DOM 对象的任何方法</strong>,同样的 DOM 对象也<strong>无法使用 JQ 里的任何方法</strong></p>
+<h3 id="JQ-对象与-DOM-对象的互转"><a href="#JQ-对象与-DOM-对象的互转" class="headerlink" title="JQ 对象与 DOM 对象的互转"></a>JQ 对象与 DOM 对象的互转</h3><ol>
+<li>将 JQ 对象转换成 DOM 对象的两种方法, JQ 对象是一个类似数组的对象<ol>
+<li>可以通过用 [index]的方法得到相应的 DOM 对象: $(“someID”)[index]</li>
+<li>通过 get(index)方法得到相应的 DOM 对象: $someJQobj.get(0)</li>
+</ol>
+</li>
+<li>DOM对象转成 JQ 对象, 只需要用$()把 DOM 对象包装起来, 就可以获得一个 JQ 对象了:$(DOM)</li>
+</ol>
+<h2 id="2-JQ-选择器"><a href="#2-JQ-选择器" class="headerlink" title="2 JQ 选择器"></a>2 JQ 选择器</h2><p>JQ 的选择器获取的永远是对象, 即使网页上没有此元素,. 所以当判断 JQ 选择器选择的某个元素是否存在于网页中时,不能使用 if 语句,而是在 if 判断语句里判断元素的长度,或者将 JQ 对象转换成 DOM 对象:</p>
+<pre><code>if($(&quot;obj&quot;).length&gt;)
+if($(&quot;obj&quot;)[0])
+</code></pre><p>JQ 选择器分为 基本选择器, 层次选择器, 过滤选择器和表单选择器.</p>
+<ol>
+<li>基本选择器<br><img src="基本选择器.png" alt="alt text" title="Title"></li>
+<li>层次选择器(一共7个)</li>
+<li>过滤选择器<ol>
+<li>基本过滤</li>
+<li>内容过滤</li>
+<li>可见性过滤</li>
+<li>属性过滤</li>
+<li>子元素过滤</li>
+<li>表单对象属性过滤    </li>
+</ol>
+</li>
+<li>表单选择器</li>
+</ol>
+<h2 id="3-JQ中的-DOM-操作"><a href="#3-JQ中的-DOM-操作" class="headerlink" title="3 JQ中的 DOM 操作"></a>3 JQ中的 DOM 操作</h2><p>利用 JQ 创建一个元素节点,然后插入到文档中</p>
+<pre><code>var $span = $(&quot;&lt;p&gt;&lt;/p&gt;&quot;).html(&quot;someinfo&quot;);
+或者简写成 $(&quot;&lt;p/&gt;&quot;)
+     $(&quot;document&quot;).append($span)
+</code></pre><h3 id="添加节点的方法们"><a href="#添加节点的方法们" class="headerlink" title="添加节点的方法们"></a>添加节点的方法们</h3><h3 id="删除节点的方法们-3种"><a href="#删除节点的方法们-3种" class="headerlink" title="删除节点的方法们(3种)"></a>删除节点的方法们(3种)</h3><ol>
+<li>remove()</li>
+<li>detach()</li>
+<li>empty()<h3 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a>复制节点</h3></li>
+<li>clone() //需要注意的被复制的新元素并不具有任何行为<h3 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h3>如果在替换之前, 已经为元素绑定了时间,替换后原先绑定的事件将会与被替换的元素一起消失</li>
+<li>replaceWith() </li>
+<li>replaceAll()<h3 id="包裹节点"><a href="#包裹节点" class="headerlink" title="包裹节点"></a>包裹节点</h3></li>
+<li>wrap()</li>
+<li>wrapAll()</li>
+<li>wrapInner()<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3></li>
+<li>设置属性</li>
+<li>获取属性</li>
+<li>删除属性<h3 id="Class-操作"><a href="#Class-操作" class="headerlink" title="Class 操作"></a>Class 操作</h3></li>
+<li>addClass()</li>
+<li>removeClass()</li>
+<li>hasClass //判断 效果等价与 .is()<h3 id="焦点事件"><a href="#焦点事件" class="headerlink" title="焦点事件"></a>焦点事件</h3></li>
+<li>focus()</li>
+<li>blur()<br>defaultValue //用来获取表单默认的 value<h3 id="遍历节点"><a href="#遍历节点" class="headerlink" title="遍历节点"></a>遍历节点</h3></li>
+<li>children()用来遍历匹配的元素的<em>子元素</em>,而不考虑其他后代元素</li>
+<li>next()</li>
+<li>prev()</li>
+<li>siblings()</li>
+<li>closest()<h2 id="JQ中的事件和动画"><a href="#JQ中的事件和动画" class="headerlink" title="JQ中的事件和动画"></a>JQ中的事件和动画</h2></li>
+<li>event.stopPropagation() // 用来阻止事件冒泡</li>
+<li>event.preventDefault 阻止元素自身的默认行为<br><strong>如果想同时应用两者, 可以在事件对象上  return false</strong></li>
+<li>event.pageX &amp; event.pageY 获取光标相对于页面的 X 和 Y 坐标.</li>
+</ol>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>JQ 中的动画效果都可以指定4中动画参数, slow , normal , fast ,和自定义数值</p>
+<ol>
+<li>hide() 会将该元素的 display 设置为none<em>动画状态时,会改变元素的高度,宽度,不透明度,show 方法也是如此</em>   </li>
+<li>show() hide方法会在将元素隐藏之前保存它之前的 display 状态,从而 show()便可以恢复它之前的 display 状态<strong>这两者在不带参数的情况下是立刻隐藏/显示所匹配的元素,不会有任何动画</strong></li>
+<li>fadeIn() 只改变元素的透明度, 显示出来</li>
+<li>fadeOut() 同上, 只是隐藏元素</li>
+<li>slideUp()  只改变元素的高度</li>
+<li>slideDown() 同上</li>
+<li>animate(params, speed ,callback) <ol>
+<li>params: 一个包含样式属性及值的映射,如{property1:”val”,property2:”val”}</li>
+<li>spedd : 速度</li>
+<li>callback : 回调函数<br>其他变种动画</li>
+</ol>
+</li>
+<li>toggle 切换隐藏和显示</li>
+<li>slideToggle  只切换高度</li>
+<li>fadeTo 只调整元素的不透明度</li>
+<li>fadeToggle 切换元素的不透明度</li>
+</ol>
+<h3 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h3><ol>
+<li>一组元素上的动画效果<ol>
+<li>当在一个 animate 方法中应用多个属性时,  动画是同时发生</li>
+<li>当以链式的写法应用动画方法时, 动画是按照顺序发生的</li>
+</ol>
+</li>
+<li>多组元素上的动画效果<ol>
+<li>默认情况下,动画都是同时发生的</li>
+<li>当以回调的形式应用动画方式时,动画是按照回调的顺序发生的<br><strong>需要注意的是:在动画方法中,其他非动画的方法会插队</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="3-表单"><a href="#3-表单" class="headerlink" title="3 表单"></a>3 表单</h3><p>prop() 和 attr()的应用原则</p>
+<ol>
+<li>添加属性名称或只存在 boolean 值的属性应该使用 prop()</li>
+<li>trigger() 和 triggerHandle() 的区别之一: 前者会冒泡,触发默认的浏览器事件,后者不会冒泡</li>
+<li>append() 和 appendTo () 的区别之一: appendTo 可以将元素移动到另一个地方</li>
+<li>end() 终止在当前链的最新过滤操作，并返回匹配的元素的以前状态。</li>
+<li>find() 通过一个选择器，jQuery对象，或元素过滤，得到当前匹配的元素集合中每个元素的后代。方法与 children() 相似, 而不同的是 children 方法<em>只会</em>查找子元素,不会涉及到孙元素</li>
+</ol>
+<h2 id="JQ-中的-AJAX"><a href="#JQ-中的-AJAX" class="headerlink" title="JQ 中的 AJAX"></a>JQ 中的 AJAX</h2><ol>
+<li>$.Ajax()</li>
+<li>load( url , [data],callback) / $.get() / $.post()  最简单的方法, 功能是 能载入远程 HTML代码,并插入到 DOM 中</li>
+<li>$.getScript and $.getJSON()</li>
+</ol>
 
 
                 <hr>
@@ -209,11 +304,11 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/05/08/恐龙与史前生命/"
-                    data-title="恐龙与史前生命--读书笔记"
-                    data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/"
+                    data-thread-key="2015/12/17/锋利的 jQuery 学习笔记/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2015/12/17/锋利的 jQuery 学习笔记/"
                     data-images=""
-                    data-content="恐龙与史前生命恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”... | Haojen&#39;s Blog " >
+                    data-content="鋒利的 jQurey1 DOM对象和 JQ 对象的区别JQ 对象就是通过 JQ 包装 DOM ... | Haojen&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -231,9 +326,13 @@
 
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2016/01/04/CSS 设计指南/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2016/05/02/如何写影评-笔记/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                            <a href="/2015/12/17/Ajax/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -242,9 +341,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/05/08/恐龙与史前生命/"
-                        data-title="恐龙与史前生命--读书笔记"
-                        data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/" >
+                        data-thread-key="2015/12/17/锋利的 jQuery 学习笔记/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2015/12/17/锋利的 jQuery 学习笔记/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -256,7 +355,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#恐龙与史前生命"><span class="toc-text">恐龙与史前生命</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#恐龙的进化"><span class="toc-text">恐龙的进化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#鋒利的-jQurey"><span class="toc-text">鋒利的 jQurey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DOM对象和-JQ-对象的区别"><span class="toc-text">1 DOM对象和 JQ 对象的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JQ-对象与-DOM-对象的互转"><span class="toc-text">JQ 对象与 DOM 对象的互转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JQ-选择器"><span class="toc-text">2 JQ 选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-JQ中的-DOM-操作"><span class="toc-text">3 JQ中的 DOM 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加节点的方法们"><span class="toc-text">添加节点的方法们</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除节点的方法们-3种"><span class="toc-text">删除节点的方法们(3种)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制节点"><span class="toc-text">复制节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换节点"><span class="toc-text">替换节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包裹节点"><span class="toc-text">包裹节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性操作"><span class="toc-text">属性操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-操作"><span class="toc-text">Class 操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#焦点事件"><span class="toc-text">焦点事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历节点"><span class="toc-text">遍历节点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JQ中的事件和动画"><span class="toc-text">JQ中的事件和动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动画"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画队列"><span class="toc-text">动画队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-表单"><span class="toc-text">3 表单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JQ-中的-AJAX"><span class="toc-text">JQ 中的 AJAX</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -277,10 +376,6 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                          <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </section>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="马浩珍的个人博客">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,mahaozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          Haojen&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ehazon.github.io/2015/12/11/复习整理/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">my works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="<\%= config['url'] %\><\%= config['root'] %\>img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma 
+                         <span>
+                          日期 2015-12-11
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <h1 id="复习整理"><a href="#复习整理" class="headerlink" title="复习整理"></a>复习整理</h1><h2 id="第一阶段复习：-HTML"><a href="#第一阶段复习：-HTML" class="headerlink" title="第一阶段复习： HTML"></a>第一阶段复习： HTML</h2><p>重新认识到的</p>
+<p><hr></p>
+<h3 id="新元素"><a href="#新元素" class="headerlink" title="新元素"></a>新元素</h3><pre><code>&lt;address&gt;这里可以添加地址,地址将呈现斜体字&lt;/address&gt;
+&lt;a href=&quot;mailto:someName@xxmail.com?subject=回复主题&amp; body=回复内容&quot;&gt;可以添加邮件回复,系统会自动调用后台你的 Email 客户端&lt;/a&gt;
+//需要注意的: 关键字 &quot; mailto : &quot; 第一个选项后面要跟一个问号,之后可以换成 &amp; 
+</code></pre><h3 id="没有封闭标签的元素："><a href="#没有封闭标签的元素：" class="headerlink" title="没有封闭标签的元素："></a>没有封闭标签的元素：</h3><pre><code>1.  &lt;br/&gt; 换行标签
+2. &lt;hr/&gt; 下划线标签
+3. &lt;input /&gt; 表单元素 
+</code></pre><h3 id="详解-table-元素"><a href="#详解-table-元素" class="headerlink" title="详解 table 元素"></a>详解 table 元素</h3><pre><code>&lt;table summary=&quot;这个属性是表格的概要，类似于 title 属性&quot;&gt;
+    &lt;caption&gt;表格的标题&lt;/caption&gt;
+    &lt;tr&gt;一个 tr 元素代表一行
+        &lt;td&gt;td元素代表一行元素里面的一列&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt; 
+</code></pre><h3 id="form-表单详解"><a href="#form-表单详解" class="headerlink" title="form 表单详解"></a>form 表单详解</h3><pre><code>首先是 form的主体
+&lt;form method=&quot;这个属性是向浏览器提交的方式, GET 或者 POST&quot; action=&quot;服务器的地址&quot;&gt;
+    //文本输入框
+    &lt;input type=&quot;text&quot; name=&quot;和服务器有关的&quot; id =&quot;多数用来绑定 label&quot;/&gt;
+    //密码输入框
+    &lt;input type=&quot;password&quot; name =&quot;同上&quot; id=&quot;同上&quot;/&gt;
+    //单选框
+    &lt;input type=&quot;radio&quot;  value=&quot;和服务器有关&quot;&gt;
+    //多选
+    &lt;input type=&quot;checkbox&quot;   checked name=&quot;如果出现多个多选框,他们的名字就得必须一样&quot; value=&quot;和选择的值有关&quot;&gt;
+    //下拉列表,checked 属性是一个布尔值, 如果存在就在初始状态时默认被选中
+    &lt;select name=&quot;多选菜单的名字&quot;&gt;
+        &lt;option&gt;1&lt;/option&gt;
+        &lt;option selected=&quot;selected&quot;&gt;2&lt;/option&gt;
+        //selected 属性:让该元素处于默认选中状态
+    &lt;/select&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;这是一个提交按钮&quot;/&gt;
+    &lt;input type=&quot;reset&quot; value=&quot;这是一个重置按钮&quot;/&gt;
+    &lt;input type=&quot;button&quot; value =&quot;这是一个按钮&quot;/&gt;
+&lt;/form &gt;
+</code></pre><h4 id="input-下的-value-属性"><a href="#input-下的-value-属性" class="headerlink" title="input 下的 value 属性"></a>input 下的 value 属性</h4><p>介绍了 value 在不同的 input type 下所代表的作用</p>
+<ol>
+<li>对于 “button”、”reset”、”submit” 类型 - 定义按钮上的文本</li>
+<li>对于 “text”、”password”、”hidden” 类型 - 定义输入字段的初始（默认）值</li>
+<li>对于 “checkbox”、”radio”、”image” 类型 - 定义与 input 元素相关的值，当提交表单时该值会发送到表单的 action URL。</li>
+</ol>
+<h2 id="第一阶段复习-CSS"><a href="#第一阶段复习-CSS" class="headerlink" title="第一阶段复习: CSS"></a>第一阶段复习: CSS</h2><h3 id="新认识"><a href="#新认识" class="headerlink" title="新认识"></a>新认识</h3><pre><code>//用于给文字添加中划线
+text-decoration:line-through
+//用于段落前的缩进
+text-indent:2em;
+//给文字设置间隔
+letter-spacing
+//给英文单词设置间隔
+word-spacing
+//给块状元素中的文字和图片对齐
+text-align
+//font属性合集
+1. font-family 字体类型
+2. font-size 字体大小
+3. line-height 行高
+4. font-style 字体样式
+5. font-variant 字体间距
+6. font-width 字体粗细
+</code></pre><h3 id="样式表的三种形式"><a href="#样式表的三种形式" class="headerlink" title="样式表的三种形式"></a>样式表的三种形式</h3><ol>
+<li>内联 </li>
+<li>嵌入式</li>
+<li>外部引入<br><strong>需要注意的是样式的优先级按照就近原则,离元素最近的样式最优先应用</strong><h3 id="选择器分类大全"><a href="#选择器分类大全" class="headerlink" title="选择器分类大全"></a>选择器分类大全</h3><h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4>又称元素选择器<h4 id="类选择器-“-“"><a href="#类选择器-“-“" class="headerlink" title="类选择器(“ . “)"></a>类选择器(“ . “)</h4>用”. “标示的<h4 id="ID选择器-“-”"><a href="#ID选择器-“-”" class="headerlink" title="ID选择器(“#”)"></a>ID选择器(“#”)</h4>用”#”标示的<h4 id="子选择器-“-gt-”"><a href="#子选择器-“-gt-”" class="headerlink" title="子选择器(“&gt;”)"></a>子选择器(“&gt;”)</h4>用于选择某元素后面的<em>第一代子元素</em><h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4>用空格标示, 用于选择某元素下的<em>所有后代元素</em><h4 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器(*)"></a>通用选择器(*)</h4>选择所有元素<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4>选择 HTML 元素中<em>不存在</em>的标签<h4 id="分组选择符"><a href="#分组选择符" class="headerlink" title="分组选择符"></a>分组选择符</h4>给多个元素设置同样的样式<h3 id="权值-和-特殊性"><a href="#权值-和-特殊性" class="headerlink" title="权值 和 特殊性"></a>权值 和 特殊性</h3>标签的权值为1;<br>类选择器的权值为10;<br>ID 选择器的权值为100;<br><em>需要注意的一点是: 继承也有权值, 史料记载其权值为0.1</em><br><strong>当权重相同时, 按照层叠顺序应用样式, 而层叠顺序按照就近原则,权重解决的问题只是嵌套样式表和引入的样式表之间的冲突,如果内联样式中已有的声明,权重再高也是无法覆盖的</strong><h4 id="优先级的几种形式"><a href="#优先级的几种形式" class="headerlink" title="优先级的几种形式"></a>优先级的几种形式</h4></li>
+<li>按照权重的</li>
+<li>按照内联&gt;嵌入&gt;引入</li>
+<li>用户自行设置的样式&gt;网页制作者的样式&gt;浏览器的样式<br><strong>可以用 !important 用来覆盖用户自行设置的样式,而且还能覆盖掉高权重和内联样式</strong></li>
+</ol>
+<h3 id="块级元素和行内元素"><a href="#块级元素和行内元素" class="headerlink" title="块级元素和行内元素"></a>块级元素和行内元素</h3><h4 id="块级元素有"><a href="#块级元素有" class="headerlink" title="块级元素有:"></a>块级元素有:</h4><ol>
+<li>div</li>
+<li>h1-6</li>
+<li>p</li>
+<li>header</li>
+<li>section</li>
+<li>footer</li>
+<li>nav</li>
+<li>aritcle</li>
+<li>slide</li>
+<li>form</li>
+<li>table</li>
+<li>ol</li>
+<li>ul</li>
+<li>dl</li>
+<li>address</li>
+<li>blockquote</li>
+</ol>
+<h4 id="行内元素有"><a href="#行内元素有" class="headerlink" title="行内元素有:"></a>行内元素有:</h4><ol>
+<li>span</li>
+<li>strong</li>
+<li>q</li>
+<li>br</li>
+<li>a</li>
+<li>code</li>
+<li>button</li>
+<li>li</li>
+<li>i</li>
+<li>em</li>
+<li>label</li>
+<li>cite</li>
+</ol>
+<p>####内联块状元素有:</p>
+<ol>
+<li>img</li>
+<li>input</li>
+</ol>
+<h3 id="颜色类型"><a href="#颜色类型" class="headerlink" title="颜色类型:"></a>颜色类型:</h3><ol>
+<li>英文字母, 如 blue black red orange pink green white yellow</li>
+<li>十六进制, 如 #ffffff</li>
+<li>RGB, 如 rgb(xxx,xxx,xxx) 或者带有透明层的 argb(xxx,xxx,xxx,x)<h3 id="度量单位"><a href="#度量单位" class="headerlink" title="度量单位:"></a>度量单位:</h3></li>
+<li>px  像素</li>
+<li>em 倍数</li>
+<li>%</li>
+<li>rem</li>
+</ol>
+<h3 id="不同的元素特性-块-内联-行内块"><a href="#不同的元素特性-块-内联-行内块" class="headerlink" title="不同的元素特性(块,内联,行内块)"></a>不同的元素特性(块,内联,行内块)</h3><ol>
+<li>块级元素: 可以设置元素的长宽属性,外部所有边距可以调整,具有前后换行的特征,且会继承父元素宽度<strong>块级元素要想实现水平居中,必须满足定宽条件</strong></li>
+<li>内联元素:不可以设置改动长宽属性, 可调行高和左右边距,不具有前后换行的特征</li>
+<li>行内块:可以改动长宽,行高,和所有边距, 但不具有前后换行的特征</li>
+</ol>
+<h3 id="布局模型"><a href="#布局模型" class="headerlink" title="布局模型"></a>布局模型</h3><ol>
+<li>流布局(flow):系统默认的布局</li>
+<li>层布局(layer):定位布局<ol>
+<li>绝对定位</li>
+<li>相对定位</li>
+<li>固定定位 </li>
+</ol>
+</li>
+<li>浮动布局(float)</li>
+</ol>
+<h3 id="简写形式"><a href="#简写形式" class="headerlink" title="简写形式"></a>简写形式</h3><p>如 padding:10px 20px 15px 20px;<br>可简写为  padding 10px 20px 15px : 其中第一个上内部填充,第二个是左右填充,第三个是下内部填充</p>
+<h3 id="非定宽元素水平居中指南"><a href="#非定宽元素水平居中指南" class="headerlink" title="非定宽元素水平居中指南"></a>非定宽元素水平居中指南</h3><ol>
+<li>设置 table 标签,然后使用 margin</li>
+<li>display:inline or  inline-block</li>
+<li>relative : left 50%<br><strong>真正的垂直居中属性只有 vertical-align ,但是该属性只在父元素为 td 和 th 时有效,因此我们需要 table 标签, 还有一种方式是设置 display 属性为 table-cell,用来激活 vertical-align 属性</strong></li>
+</ol>
+<h2 id="第一阶段复习-JavaSscript"><a href="#第一阶段复习-JavaSscript" class="headerlink" title="第一阶段复习 : JavaSscript"></a>第一阶段复习 : JavaSscript</h2><h3 id="新元素-1"><a href="#新元素-1" class="headerlink" title="新元素"></a>新元素</h3><p>select: 当选中文字的事后被触发<br>onbeforeunload = “return something”<br>关闭页面时提醒用户</p>
+<h3 id="操作符之间的优先级"><a href="#操作符之间的优先级" class="headerlink" title="操作符之间的优先级"></a>操作符之间的优先级</h3><p>由高到低分别是: 算术操作符(+ - * / 和() )&gt;比较操作符(&gt; &lt; == === )&gt;逻辑操作符(! || &amp;&amp;)&gt;赋值符</p>
+<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><h4 id="字符串对象方法"><a href="#字符串对象方法" class="headerlink" title="字符串对象方法"></a>字符串对象方法</h4><ol>
+<li>length //返回字符串的长度</li>
+<li>charAt()//接收一个参数(索引值),返回该索引值的 value</li>
+<li>indexOf() // 接受两个参数(字符串,起始位置)</li>
+<li>substring() //接受两个参数(起始索引值,结束索引值,不允许负值,可选)</li>
+<li>substr() //接受两个参数(起始位置的索引值,和结束位置的索引值,允许负值,可选)</li>
+<li>split() // 接受两个参数,(‘切割标示’,”允许最多不超过的切割量”) <strong>它会将字符串分割为字符串数组, 并返回此数组</strong><h4 id="Math-内置实体对象方法"><a href="#Math-内置实体对象方法" class="headerlink" title="Math 内置实体对象方法"></a>Math 内置实体对象方法</h4></li>
+<li>Math.ceil() //将数值进行向上取整</li>
+<li>Math.floor() // 将数值进行向下取整</li>
+<li>Math.round() // 将数值进行四舍五入</li>
+<li>Math.random()// 生成一个0~1 之间的随机数<h4 id="Array-数组对象方法"><a href="#Array-数组对象方法" class="headerlink" title="Array 数组对象方法"></a>Array 数组对象方法</h4></li>
+<li>concat //合并多个数组,并返回一个新的数组</li>
+<li>join() // 将数组变成字符串, 可以在括号面输入一个自定义的分隔符,可选</li>
+<li>reverse() //  将数组里的元素倒转, 并不会返回一个新的数组,而是修改原有的数组</li>
+<li>slice() // 将数组里的元素进行切割,并生成一个新的数组, 接受两个参数, 第一个为起始,第二个为结尾(不包括该元素),允许负值, 如果第一个是负值,第二个也必须是负值-我说.</li>
+<li>sort() // 排序, 默认按照 Unicode 进行排序, 接收一个方法, 用来进行用户排序, 返回值 -1 or &gt;-1&amp;&amp;<1 or="">=1 , 根据这三个值进行对数组的升序或者降序处理</1></li>
+</ol>
+<h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><ol>
+<li>setTimeout() </li>
+<li>clearTimeout()</li>
+<li>setInterval()</li>
+<li>clearInterval()<h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4></li>
+<li>window.back()</li>
+<li>window.forward() //向前</li>
+<li>window.go() //接受一个参数<ol>
+<li>-1 // 后退一页 ,相当于 back()</li>
+<li>1 //前进一页, 相当于 forward()</li>
+<li>0 // 当前页</li>
+<li>其他数字, 要访问的 URL 在 history 的 URL 列表的相对位置<h4 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h4></li>
+</ol>
+</li>
+<li>userAgent // 返回浏览器的具体信息,可以用来做判断浏览器品牌<h3 id="2-DOM"><a href="#2-DOM" class="headerlink" title="2. DOM"></a>2. DOM</h3></li>
+<li>createTextNode() 创建一个包含给定文本的新文本节点;</li>
+<li>inserBefore() 在元素子节点的前面插入</li>
+<li>getElementsByName() 返回一个带有指定名字的元素数组<br><strong>区别getElementByID,getElementsByName,getElementsByTagName<br>以人来举例说明，人有能标识身份的身份证，有姓名，有类别(大人、小孩、老人)等。</strong><h4 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h4></li>
+<li>节点名称: nodeName<ol>
+<li>元素的 nodeName 是元素的名字</li>
+<li>属性节点的 nodeName 是属性的名称</li>
+<li>文本节点的 nodeName 永远是 #text</li>
+<li>文档节点的 nodeName 永远是 # document</li>
+</ol>
+</li>
+<li>节点值: nodeValue<ol>
+<li>元素的 nodeValue 是 undefined 或 null</li>
+<li>文本节点的 nodeValue 是文本自身</li>
+<li>属性节点的 nodeValue 是属性值</li>
+</ol>
+</li>
+<li>节点类型:  nodeType<br>返回一个节点的类型,用数字表示<ol>
+<li>元素 1</li>
+<li>属性 2 </li>
+<li>文本 3 </li>
+<li>注释 8</li>
+<li>文档 9 </li>
+</ol>
+</li>
+<li>节点选择器<ol>
+<li>parentNode  选择父节点</li>
+<li>childNode 返回一个子节点数组</li>
+<li>firstChild 返回第一个元素的子节点</li>
+<li>lastChild 返回最后一个元素的子节点</li>
+<li>nextsublimbing 在同级元素中的后面插入一个新的<strong>单词有错误</strong></li>
+<li>previous 在同级元素中的前面插入<strong>单词有错误</strong></li>
+</ol>
+</li>
+<li>创建与删除和替换各种子节点<ol>
+<li>createTextNode() 创建文本节点</li>
+<li>removeChild()  移除节点</li>
+<li>replaceChild() 替换节点</li>
+</ol>
+</li>
+</ol>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2015/12/11/复习整理/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2015/12/11/复习整理/"
+                    data-images=""
+                    data-content="复习整理第一阶段复习： HTML重新认识到的
+
+新元素&lt;address&gt;这里可以添... | Haojen&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/12/17/Ajax/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/12/10/我所不知道的_json/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2015/12/11/复习整理/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2015/12/11/复习整理/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#复习整理"><span class="toc-text">复习整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一阶段复习：-HTML"><span class="toc-text">第一阶段复习： HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新元素"><span class="toc-text">新元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#没有封闭标签的元素："><span class="toc-text">没有封闭标签的元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详解-table-元素"><span class="toc-text">详解 table 元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form-表单详解"><span class="toc-text">form 表单详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#input-下的-value-属性"><span class="toc-text">input 下的 value 属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一阶段复习-CSS"><span class="toc-text">第一阶段复习: CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新认识"><span class="toc-text">新认识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样式表的三种形式"><span class="toc-text">样式表的三种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择器分类大全"><span class="toc-text">选择器分类大全</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标签选择器"><span class="toc-text">标签选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类选择器-“-“"><span class="toc-text">类选择器(“ . “)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ID选择器-“-”"><span class="toc-text">ID选择器(“#”)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子选择器-“-gt-”"><span class="toc-text">子选择器(“>”)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后代选择器"><span class="toc-text">后代选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通用选择器"><span class="toc-text">通用选择器(*)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#伪类选择器"><span class="toc-text">伪类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分组选择符"><span class="toc-text">分组选择符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权值-和-特殊性"><span class="toc-text">权值 和 特殊性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优先级的几种形式"><span class="toc-text">优先级的几种形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级元素和行内元素"><span class="toc-text">块级元素和行内元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#块级元素有"><span class="toc-text">块级元素有:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行内元素有"><span class="toc-text">行内元素有:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色类型"><span class="toc-text">颜色类型:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#度量单位"><span class="toc-text">度量单位:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同的元素特性-块-内联-行内块"><span class="toc-text">不同的元素特性(块,内联,行内块)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局模型"><span class="toc-text">布局模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简写形式"><span class="toc-text">简写形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非定宽元素水平居中指南"><span class="toc-text">非定宽元素水平居中指南</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一阶段复习-JavaSscript"><span class="toc-text">第一阶段复习 : JavaSscript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新元素-1"><span class="toc-text">新元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作符之间的优先级"><span class="toc-text">操作符之间的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置对象"><span class="toc-text">内置对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串对象方法"><span class="toc-text">字符串对象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-内置实体对象方法"><span class="toc-text">Math 内置实体对象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-数组对象方法"><span class="toc-text">Array 数组对象方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BOM"><span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定时器"><span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#History"><span class="toc-text">History</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator"><span class="toc-text">navigator</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-DOM"><span class="toc-text">2. DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#节点"><span class="toc-text">节点</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                <h5 class="text-center">
+                    <a href="/tags/">FEATURED TAGS</a>
+                </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ehazon.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

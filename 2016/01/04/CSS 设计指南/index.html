@@ -13,11 +13,11 @@
 
     <title>
         
-          恐龙与史前生命--读书笔记 - Haojen&#39;s Blog
+          Haojen&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/2016/05/08/恐龙与史前生命/">
+    <link rel="canonical" href="http://ehazon.github.io/2016/01/04/CSS 设计指南/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,21 +165,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>恐龙与史前生命--读书笔记</h1>
-                    
-                        <h2 class="subheading">200多种恐龙和始祖生物的详细资料</h2>
+                    <h1></h1>
                     
                     <span class="meta">
                          作者 Haojen Ma 
                          <span>
-                          日期 2016-05-08
+                          日期 2016-01-04
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                        <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </div>
@@ -188,7 +182,7 @@
     </div>
     <div class=" post-title-haojen">
         <span>
-            恐龙与史前生命--读书笔记
+            
         </span>
     </div>
 </header>
@@ -200,7 +194,151 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h1 id="恐龙与史前生命"><a href="#恐龙与史前生命" class="headerlink" title="恐龙与史前生命"></a>恐龙与史前生命</h1><h2 id="恐龙的进化"><a href="#恐龙的进化" class="headerlink" title="恐龙的进化"></a>恐龙的进化</h2><p>恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的</p>
+                <h1 id="CSS-设计指南"><a href="#CSS-设计指南" class="headerlink" title="CSS 设计指南"></a>CSS 设计指南</h1><p>阅读动机:</p>
+<ol>
+<li>深入系统的了解 CSS3</li>
+<li>CSS3 实战</li>
+</ol>
+<h2 id="第一章-HTML-标记与文档结构"><a href="#第一章-HTML-标记与文档结构" class="headerlink" title="第一章 HTML 标记与文档结构"></a>第一章 HTML 标记与文档结构</h2><p>因为内容基础,基本已经了解到足够深入,所以已在第一遍阅读时略过</p>
+<h2 id="第二章-CSS-工作原理"><a href="#第二章-CSS-工作原理" class="headerlink" title="第二章 CSS 工作原理"></a>第二章 CSS 工作原理</h2><p>知识点:</p>
+<ol>
+<li>CSS 的层叠机制</li>
+<li>CSS 的选择符</li>
+<li>CSS Rule</li>
+</ol>
+<p>所有用于选择特定元素的选择符又分三种。</p>
+<ol>
+<li><strong>上下文选择符</strong>。基于祖先或同胞元素选择一个元素。</li>
+<li><strong>ID 和类选择符</strong>。基于 id 和 class 属性的值(你自己设定)选择元素。</li>
+<li><strong>属性选择符</strong>。基于属性的有无和特征选择元素。</li>
+</ol>
+<h3 id="伪类和伪元素"><a href="#伪类和伪元素" class="headerlink" title="伪类和伪元素"></a>伪类和伪元素</h3><p>大概分为两种: 一种是 UI 伪类,一种是结构化伪类</p>
+<ol>
+<li>UI 伪类<ol>
+<li>link 伪类<ol>
+<li>link</li>
+<li>visited</li>
+<li>hover</li>
+<li>active</li>
+</ol>
+</li>
+<li>focus 伪类</li>
+<li>target 伪类</li>
+</ol>
+</li>
+<li>结构化伪类<ol>
+<li>first-child &amp; last-child</li>
+<li>nth-child(odd or even)</li>
+</ol>
+</li>
+</ol>
+<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><p>一种在文档中若有实无的元素</p>
+<ol>
+<li>::first-letter</li>
+<li>::first-line</li>
+<li>::before and after</li>
+</ol>
+<h3 id="层叠机制"><a href="#层叠机制" class="headerlink" title="层叠机制"></a>层叠机制</h3><p>继承:<br>可以继承的多数跟文本有关: 字体样式, 颜色,字号<br>不能继承的: 盒子的定位和显示方式,边距,外边距(这里有歧义,因为如果父元素设置了不可见,其中子元素也会不可见)<br>层叠之样式来源:</p>
+<ol>
+<li>行内样式</li>
+<li>内嵌样式</li>
+<li>链接样式</li>
+</ol>
+<p>浏览器的层叠顺序:</p>
+<ol>
+<li>浏览器默认样式表</li>
+<li>用户样式表</li>
+<li>作者链接样式表</li>
+<li>作者嵌入样式</li>
+<li>作者行内样式</li>
+</ol>
+<p>层叠规则:</p>
+<ol>
+<li>找到应用给每个元素和属性的所有声明</li>
+<li>按照顺序和权重排序</li>
+<li>特指度</li>
+<li>顺序决定权重</li>
+</ol>
+<p>规则声明:<br>CSS 属性值类型主要分为三类</p>
+<ol>
+<li>文本值</li>
+<li>数字值</li>
+<li>颜色值<ol>
+<li>文字表达 如 red  , blue</li>
+<li>RGB or RGBA rgb() or rgba()</li>
+<li>16进制 #fff</li>
+<li>HSL or HSLA</li>
+</ol>
+</li>
+</ol>
+<p>自我小结<strong>在没有给内容添加宽度的时候, margin  border padding 会向内影响到内容的宽度, 而指定了内容的宽度后,三者会向外扩展,不会影响到内容的宽度</strong></p>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="清除浮动的三种方法"><a href="#清除浮动的三种方法" class="headerlink" title="清除浮动的三种方法"></a>清除浮动的三种方法</h3><ol>
+<li>为父元素应用 overflow:hidden</li>
+<li>浮动父元素</li>
+<li>为父元素的末尾添加一个元素用于 clear : 浮动</li>
+</ol>
+<h2 id="第四章-字体和文字"><a href="#第四章-字体和文字" class="headerlink" title="第四章 字体和文字"></a>第四章 字体和文字</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><ol>
+<li>font-family 字体种类</li>
+<li>font-style 字体样式</li>
+<li>font-width 字体粗细</li>
+<li>font-variant 字体变化 样式的大小写变化</li>
+<li><p>font 以上四种形式的简写</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3></li>
+<li><p>text-indent  用来将文字缩进</p>
+</li>
+<li>letter-spacing 字母之间的间距</li>
+<li>word-spacing 单词之间的间距</li>
+<li>text-decoration 文字装饰 上划线,中划线,下划线</li>
+<li>text-align 文字水平居中</li>
+<li>line-height 行高</li>
+<li>text-transform 文字转换 文字整体的大小写转换 为每个单词的首字母大写</li>
+<li>vertical-align 文字垂直居中 上标,中上标,中,中下标,下标</li>
+</ol>
+<h2 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h2><ol>
+<li>流动布局</li>
+<li>固定布局</li>
+<li>弹性布局</li>
+</ol>
+<p><strong>没有定义宽度的元素在水平方向上会适应其父元素,其内容会随着外边距,边框和内边距的增加而减少</strong></p>
+<p>New Knowledge</p>
+<pre><code>box-sizing 
+</code></pre><p>如果将某一个元素添加该属性后, 该元素的边框与内边距放入内容中,换句话说边框和边距的增加将会影响到内容区</p>
+<pre><code>word-wrap //break-word 换行过长的字符串
+</code></pre><p>用来防止长单词或者长 URL 破坏布局结构</p>
+<h3 id="选择符技巧"><a href="#选择符技巧" class="headerlink" title="选择符技巧"></a>选择符技巧</h3><ol>
+<li>类应该用于标记具有相同特征的元素</li>
+<li>给标记中每个主要区域的顶级元素添加一个 ID , 让该 ID 成为你的路标,帮你更快捷更准确的选择其内元素 , <strong>记住 ID 不是元素的标签, 而是一个路标</strong></li>
+</ol>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>下拉菜单的要点</p>
+<ol>
+<li>功能样式要与装饰样式分离</li>
+<li>要给 a 标签添加样式和行为</li>
+<li>下拉菜单布局是由列表嵌套来的</li>
+<li>可以在 a 元素上应用 border-width 和 border-color 为透明,来制造一个伪边距</li>
+<li>可以用 background-clip 控制背景的覆盖区, 值有 content-box ; padding-box;border-box</li>
+<li>给 li 元素添加 相对定位 , 用于给子 UL 定位参照</li>
+<li>给 li 元素的子集 ul 添加绝对定位</li>
+<li>悬停时显示 .class li:hover&gt;ul{display:block}</li>
+<li>除了 a 元素的 display:block 用来让 a 元素最大化填充 li 内容区,其他 display 为 block 都用来添加到 ul 上,操作元素的显示与隐藏</li>
+<li>突出显示路径的方法: 给每个父级元素添加: hover 并在子级添加样式. 如 li:hover ul{some style css},原理是 hover 事件会向上冒泡</li>
+</ol>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p>所有表单的标记都包含在一个 form 中</p>
+<ol>
+<li>控件组 控件就是让用户输入,点选,勾选的组件<ol>
+<li>fieldset (与 legend 配合使用)</li>
+<li>legend (在 fieldset 中作为说明使用)    </li>
+</ol>
+</li>
+<li>控件类型(input type)<ol>
+<li>text </li>
+<li>password</li>
+<li>radio</li>
+<li>submit</li>
+<li>time, date, search :HTML5文本框的变体</li>
+</ol>
+</li>
+</ol>
+<p><strong>去掉输入框焦点状态时的蓝色边框用 out-line : none</strong></p>
 
 
                 <hr>
@@ -209,11 +347,16 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/05/08/恐龙与史前生命/"
-                    data-title="恐龙与史前生命--读书笔记"
-                    data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/"
+                    data-thread-key="2016/01/04/CSS 设计指南/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2016/01/04/CSS 设计指南/"
                     data-images=""
-                    data-content="恐龙与史前生命恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”... | Haojen&#39;s Blog " >
+                    data-content="CSS 设计指南阅读动机:
+
+深入系统的了解 CSS3
+CSS3 实战
+
+第一章 HTML 标... | Haojen&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -231,9 +374,13 @@
 
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2016/01/24/电子技术自学宝典/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2016/05/02/如何写影评-笔记/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                            <a href="/2015/12/17/锋利的 jQuery 学习笔记/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -242,9 +389,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/05/08/恐龙与史前生命/"
-                        data-title="恐龙与史前生命--读书笔记"
-                        data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/" >
+                        data-thread-key="2016/01/04/CSS 设计指南/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2016/01/04/CSS 设计指南/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -256,7 +403,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#恐龙与史前生命"><span class="toc-text">恐龙与史前生命</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#恐龙的进化"><span class="toc-text">恐龙的进化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-设计指南"><span class="toc-text">CSS 设计指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-HTML-标记与文档结构"><span class="toc-text">第一章 HTML 标记与文档结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-CSS-工作原理"><span class="toc-text">第二章 CSS 工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#伪类和伪元素"><span class="toc-text">伪类和伪元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#伪元素"><span class="toc-text">伪元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层叠机制"><span class="toc-text">层叠机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位"><span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动的三种方法"><span class="toc-text">清除浮动的三种方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四章-字体和文字"><span class="toc-text">第四章 字体和文字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串"><span class="toc-text">字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面布局"><span class="toc-text">页面布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择符技巧"><span class="toc-text">选择符技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章"><span class="toc-text">第六章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表单"><span class="toc-text">表单</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -277,10 +424,6 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                          <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </section>

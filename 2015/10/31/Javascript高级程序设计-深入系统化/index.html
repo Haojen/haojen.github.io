@@ -13,11 +13,11 @@
 
     <title>
         
-          恐龙与史前生命--读书笔记 - Haojen&#39;s Blog
+          Haojen&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/2016/05/08/恐龙与史前生命/">
+    <link rel="canonical" href="http://ehazon.github.io/2015/10/31/Javascript高级程序设计-深入系统化/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,21 +165,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>恐龙与史前生命--读书笔记</h1>
-                    
-                        <h2 class="subheading">200多种恐龙和始祖生物的详细资料</h2>
+                    <h1></h1>
                     
                     <span class="meta">
                          作者 Haojen Ma 
                          <span>
-                          日期 2016-05-08
+                          日期 2015-10-31
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                        <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </div>
@@ -188,7 +182,7 @@
     </div>
     <div class=" post-title-haojen">
         <span>
-            恐龙与史前生命--读书笔记
+            
         </span>
     </div>
 </header>
@@ -200,7 +194,118 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h1 id="恐龙与史前生命"><a href="#恐龙与史前生命" class="headerlink" title="恐龙与史前生命"></a>恐龙与史前生命</h1><h2 id="恐龙的进化"><a href="#恐龙的进化" class="headerlink" title="恐龙的进化"></a>恐龙的进化</h2><p>恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的</p>
+                <h1 id="JavaScript-高级程序设计之深入系统化"><a href="#JavaScript-高级程序设计之深入系统化" class="headerlink" title="JavaScript 高级程序设计之深入系统化"></a>JavaScript 高级程序设计之深入系统化</h1><p>在于系统性的深入并学习</p>
+<h2 id="一章-JS-简介"><a href="#一章-JS-简介" class="headerlink" title="一章 JS 简介"></a>一章 JS 简介</h2><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>JS 是一种专门为网页交互而设计的脚本语言,由下列三个不同部分组成:</p>
+<ol>
+<li>核心 ECMAScript, 提供ECMA 定义, 提供核心语言功能</li>
+<li>文档对象模型 DOM, 提高访问和操作网页内容的方法和接口</li>
+<li>浏览器对象模型 BOM, 提供与浏览器交互的方法和接口</li>
+</ol>
+<h2 id="二章-使用-JS"><a href="#二章-使用-JS" class="headerlink" title="二章 使用 JS"></a>二章 使用 JS</h2><pre><code>```js
+&lt;script&gt;
+    function sayHi(){
+        alert(&quot; Hi ! &quot;)
+    }
+&lt;/script&gt;    
+</code></pre><p>script 标签内部JS 代码会从上到下依次解释,在解释器对该元素内部的所有代码求值完毕以前, 页面中的其余内容<strong>都不会被浏览器加载或显示</strong></p>
+<h3 id="浏览器禁用或不支持-script"><a href="#浏览器禁用或不支持-script" class="headerlink" title="浏览器禁用或不支持 script"></a>浏览器禁用或不支持 script</h3><p>noscript 用来解决该问题, 该元素可以包含能够出现在 body 元素中的任何 HTML 元素, 除了 script 元素.<br>以下是触发条件:</p>
+<ol>
+<li>浏览器不支持脚本</li>
+<li>浏览器支持脚本, 但脚本被禁用</li>
+</ol>
+<h2 id="三章-基本概念"><a href="#三章-基本概念" class="headerlink" title="三章 基本概念"></a>三章 基本概念</h2><h3 id="3-4-5种基本数据类型-一种复杂数据类型"><a href="#3-4-5种基本数据类型-一种复杂数据类型" class="headerlink" title="3.4  5种基本数据类型,一种复杂数据类型:"></a>3.4  5种基本数据类型,一种复杂数据类型:</h3><ol>
+<li>Undefined</li>
+<li>Null</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>String</li>
+<li>Object</li>
+</ol>
+<h3 id="3-4-1-typeof-操作符"><a href="#3-4-1-typeof-操作符" class="headerlink" title="3.4.1 typeof 操作符"></a>3.4.1 typeof 操作符</h3><blockquote>
+<p>typeof 是操作符而不是函数<br>用来检测变量的数据类型, 需要注意的是<br>返回”object” ,代表数据类型可能是对象,或null</p>
+</blockquote>
+<h3 id="3-4-5-Number"><a href="#3-4-5-Number" class="headerlink" title="3.4.5 Number"></a>3.4.5 Number</h3><p>浮点数值不能用来作比较, 0.1+0.2的结果不是0.3,而是0.300000000000000000004. </p>
+<pre><code>var a=0.1,b=0.2;
+if(a+b ==0.3){
+    //do something
+}
+</code></pre><h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><p>数值, 布尔值,对象和字符串值都有 toString() 方法, 但 null和 undefined 值没有这个办法</p>
+<p>在不知道要转换的值是不是 null 和 undefined 的情况下,还可以使用转型函数 String(), 该函数可以将<strong>任何类型</strong>的值转换为字符串. 该函数遵循下列转换规则:</p>
+<ol>
+<li>如果值有 toString() 方法, 则调用该方法并返回相应的结果</li>
+<li>如果值是 null, 则返回 “null”</li>
+<li><p>如果值是 undefined, 则返回” undefined”</p>
+<p> var x,y=null;<br> String(x+y)</p>
+</li>
+</ol>
+<h3 id="Object-类型"><a href="#Object-类型" class="headerlink" title="Object 类型"></a>Object 类型</h3><p>ECMAScript 中的对象其实就是一组数据和功能的集合.对象可以通过执行 new 操作符后跟要创建的对象类型的名称来创建. 而创建 Object 类型的实例并为其添加属性或和方法</p>
+<pre><code>var o = new Object();
+</code></pre><p>在 ECMAScript中, 如果不给构造函数传递参数, 则可以省略后面的那一对圆括号. </p>
+<pre><code>var o = new Object; // 有效但不推荐省略括号
+</code></pre><p>Object类型所具有的任何属性和方法也同样存在于更具体的对象中.<br>Object 的每个实例都具有一下属性和方法:</p>
+<ol>
+<li>constructor(翻译:构造器): 保存着用于创建当前对象的函数</li>
+<li>hasOwnProperty(): 用于检查给定的属性在当前对象实例中,(而不是在实例的原型中) 是否存在.</li>
+<li>isPrototypeOf(): 用于检查传入的对象是否是另一个对象的原型</li>
+<li>propertyIsEnumerable(): 用于检查给定的属性是否能够使用 for- in 语句来枚举</li>
+<li>toLocaleString():不解释</li>
+<li>toString():返回对象的字符串表示</li>
+<li>valueOf(): 返回对象的字符串,数值或布尔值表示,通常与 tostring 方法的返回值相同</li>
+</ol>
+<p>在 ECMAScript 中 object 是所有对象的基础, 因此所有对象都具有这些基本的属性和方法.</p>
+<h3 id="3-5-操作符"><a href="#3-5-操作符" class="headerlink" title="3.5 操作符"></a>3.5 操作符</h3><p>用于操作数据值的操作符</p>
+<h4 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h4><p>只能操作一个值的操作符叫做一元操作符</p>
+<ol>
+<li><p>a++ 和 a– (++a和–a) : 递增和递减操作符, 执行前置递增和递减操作时, 变量的值都是在语句被求值以前改变的</p>
+<pre><code>var age =29;
+var ageResule = --age+2; //30
+</code></pre><p>由于前置递增递减与执行语句的优先级相等, 因此整个语句会从左至右被求值</p>
+<pre><code>var num1 = 2;
+var num2 =20;
+var num3 =--num1+ num2 // 21
+var num4 = num1+num2 // 21
+</code></pre><p>在这里，num3之所以等于21是因为num1先减去了1才与num2相加。而变量num4也等于21时因为相加的假发操作使用了num1减去1之后的值。</p>
+</li>
+</ol>
+<p>后置递减（加）与前置递减（加）有一个非常重要的区别，即这些操作时在包含它们的语句被请求值之后才执行的，这个区别在某些情况下不是什么问题，例如：</p>
+<pre><code>var age =29;
+age++;
+与
+++age
+age的结果都是 29
+</code></pre><p>把递增操作符放在变量后并不会改变语句的结构，因为递增是这条语句的唯一操作， 但是当语句中还包含其他操作时，就会有区别了</p>
+<pre><code>var num1 = 2;
+    var num2 =20;
+    var num3 =--num1-- + num2 // 22 //使用了 num1的原始值完成计算后再自减1。
+    var num4 = num1+num2 // 21，使用了自减之后的相加   
+</code></pre><h2 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h2><p>定义函数的方式有两种：一种是函数声明，另一种就是函数表达式。<br>函数声明：</p>
+<pre><code>function functionName(){
+    //函数体
+}
+</code></pre><p>函数声明的一个重要特种就是函数声明提升 ， 意思就是在执行代码之前会先读取函数声明。 这就意味着可以把函数声明放在调用它的语句后面</p>
+<p>函数表达式：</p>
+<pre><code>var functionName = function(){
+    //函数体
+}
+</code></pre><p>这种形式看起来好像是常规的变量赋值语句，既创建一个函数并将它赋值给变量 functionName，这种情况下创建的函数叫做匿名函数， 因为 function 关键字后面没有标识符，且匿名函数的 name 属性是空字符串。<br>函数表达式与函数声明最大的不同就是： 函数表达式<strong>没有</strong>函数声明提升</p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>递归函数就是一个函数通过名字调用自身的情况下构成的</p>
+<pre><code>function fn(num){
+    if(num&lt;1){
+    return 1;
+    }else {
+        return num * fn(num-1)
+    }
+}
+</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数。</p>
+<h2 id="13章-事件"><a href="#13章-事件" class="headerlink" title="13章 事件"></a>13章 事件</h2><p>使用DOM2级方法添加事件处理程序的主要好处是可以<em>添加</em>多个事件处理程序,且会按照顺序触发,但需要注意的是用此方法添加的事件处理程序,<em>只能</em>使用removerEvenListener()来移除,且如果通过 addEvenListener 添加的匿名函数将无法移除</p>
+<p>注意: onclick 事件也可以通过键盘上的回车键进行访问</p>
+<p>客户端坐标 client 事件和 页面坐标的区别是:通过前者能知道鼠标是在什么视口位置发生的</p>
+<p>事件坐标分类:</p>
+<ol>
+<li>clientX 和 clientY 坐标</li>
+<li>pageX and pageY </li>
+<li>screenX and screenY</li>
+</ol>
 
 
                 <hr>
@@ -209,11 +314,12 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/05/08/恐龙与史前生命/"
-                    data-title="恐龙与史前生命--读书笔记"
-                    data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/"
+                    data-thread-key="2015/10/31/Javascript高级程序设计-深入系统化/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2015/10/31/Javascript高级程序设计-深入系统化/"
                     data-images=""
-                    data-content="恐龙与史前生命恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”... | Haojen&#39;s Blog " >
+                    data-content="JavaScript 高级程序设计之深入系统化在于系统性的深入并学习
+一章 JS 简介小结JS... | Haojen&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -231,9 +337,13 @@
 
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2015/11/02/疑惑扫除/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2016/05/02/如何写影评-笔记/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                            <a href="/2015/10/30/实战项目单/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -242,9 +352,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/05/08/恐龙与史前生命/"
-                        data-title="恐龙与史前生命--读书笔记"
-                        data-url="http://ehazon.github.io/2016/05/08/恐龙与史前生命/" >
+                        data-thread-key="2015/10/31/Javascript高级程序设计-深入系统化/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2015/10/31/Javascript高级程序设计-深入系统化/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -256,7 +366,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#恐龙与史前生命"><span class="toc-text">恐龙与史前生命</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#恐龙的进化"><span class="toc-text">恐龙的进化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-高级程序设计之深入系统化"><span class="toc-text">JavaScript 高级程序设计之深入系统化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一章-JS-简介"><span class="toc-text">一章 JS 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二章-使用-JS"><span class="toc-text">二章 使用 JS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器禁用或不支持-script"><span class="toc-text">浏览器禁用或不支持 script</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三章-基本概念"><span class="toc-text">三章 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5种基本数据类型-一种复杂数据类型"><span class="toc-text">3.4  5种基本数据类型,一种复杂数据类型:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-typeof-操作符"><span class="toc-text">3.4.1 typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5-Number"><span class="toc-text">3.4.5 Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-类型"><span class="toc-text">String 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-类型"><span class="toc-text">Object 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-操作符"><span class="toc-text">3.5 操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一元操作符"><span class="toc-text">一元操作符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七章-函数表达式"><span class="toc-text">第七章 函数表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13章-事件"><span class="toc-text">13章 事件</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -277,10 +387,6 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#科普读物" title="科普读物">科普读物</a>
-                        
-                          <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </section>

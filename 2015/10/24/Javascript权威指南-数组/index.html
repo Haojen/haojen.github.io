@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="马浩珍的个人博客">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,mahaozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          Haojen&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ehazon.github.io/2015/10/24/Javascript权威指南-数组/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">my works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="<\%= config['url'] %\><\%= config['root'] %\>img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma 
+                         <span>
+                          日期 2015-10-24
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <p>#JavaScript 权威指南-数组<br>数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为<em>索引</em><br>数组特性:</p>
+<blockquote>
+<p>1:JS中的数组是无类型的:这代表着数组元素可以是任意类型.<br>2:JS中的数组是动态的:可以根据需要增长或缩减,并且在创建的时候无需声明固定的大小,也无需在数组发生变化的时候重新分配空间<br>JS中数组元素的索引不一定要连续, 它们之间可以有空缺<br>每个数组都有一个 <em>length</em>属性,对于连续索引的数组来说,该属性就是数组元素的个数;而对于非连续索引的数组来说,length比所有元素的索引要大 <strong>hz: 注意,当使用数组length遍历非连续索引的数组的时候需要注意的</strong><br>数组直接量的语法允许有可选的结尾的都好,故[,,]只有两个元素而非三个</p>
+</blockquote>
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><p>使用数组直接量创建: </p>
+<blockquote>
+<p>var new array=[];<br> 调用构造函数Array()创建:<br>    var array = new Array(); //调用时没有参数的,效果等同于var new array=[]<br>    var array = new Array(10)//调用时指定参数,意味着该数组有指定的长度,但是数组中并没有存储任何值,索引属性(尚未定义)<br>    var array = new Array(5,4,3,2,1, “testing , testing”)//显式指定两个或多个数组元素或者数组的一个非数值元素,以这种形式,构造函数的参数将会成为新数组的元素.<br>    但使用数组字面量比使用构造函数的数组要简单方便</p>
+</blockquote>
+<p>数组中的值不一定要是常量;它们可以是任意的表达式;<br>例如:<br>    var base =1024;<br>    var table =[base,base+1,base+2];<br>它还可以包含对象直接量或者其他数组的直接量:<br>例如:<br>    var b =[[1,(x:1,y:2)],[2,(x;3,y:4)]];<br>如果省略数组直接量中的某个值,省略的元素将被赋予undefined值</p>
+<h2 id="数组元素的读和写"><a href="#数组元素的读和写" class="headerlink" title="数组元素的读和写"></a>数组元素的读和写</h2><pre><code>var a=[&apos;world&apos;];//在索引0下建立一个数组元素;
+var val = a[0];//将world装到val里
+    a[1]=3.14 //在索引1上写入3.14这个number类的元素
+var i=2;
+    a[i]=3//在索引2上写入2这个number类的元素
+    a[i+1]=&apos;hello&apos;//在索引3上写入string类的hello元素
+    a[a[i]]=a[0]//读取索引0和索引2的元素,并写入第三个元素 
+</code></pre><p>数组是对象的特殊形式. 使用方括号访问数组元素,就像用方括号访问对象的属性一样..javascript将指定的数字索引值转换成字符串—索引值1变成”1”—然后将其作为属性名来使用.<br>需要注意的是:数组是对象的特殊形式, 以下是一个数组和创建一个对象的对比</p>
+<pre><code>var obj ={};//创建一个普通的对象
+obj[1]=&quot;someValue&quot; //将这个字符串给obj.1属性,
+var array =[];
+array[1]=&quot;someValue&quot; //将这个字符串赋值给索引为数字1的数组
+</code></pre><p>##数组元素的添加和删除</p>
+<p>###删除,添加,替换<br> splice() (翻译:连接,结合,粘接)<br> <strong>删除</strong>  <br><br>在数组中插入或删除元素的通用方法,方法的第一个参数指定了插入和删除的位置,第二个参数指定了应该从数组中删除的元素的<em>个数</em>.如果省略第二个参数,将从起始点开始到数组的结尾,这之间的元素都会被删除,  且会返回一个由被删除元素组成的数组,或者如果没有删除元素,就返回一个空数组</p>
+<pre><code>var a=[1,2,3,4]
+a.splice(2);//2后面的元素都会被删除,且返回被删除的[3,4]
+a.splice(1,2)//从1开始删除二个元素,返回[2,3],a 剩余的值是[1,4]
+a.splice(1,1)//从1后面开始删除一个元素,返回[2];剩余的a是[1,3,4]&lt;br/&gt;
+</code></pre><p><strong>splice() 添加</strong>  <br><br>该方法的前两个参数指定了需要删除的数组元素,紧随其后的任意个数的参数指定了需要插入到数组中的元素</p>
+<pre><code>    var a=[1,2,3,4,5];
+    a.splice(2,0,&apos;a&apos;,&apos;b&apos;)//返回[],原因是删除的内容为0,并插    入&apos;a&apos;,&apos;b&apos;到[1,2,&apos;a&apos;,&apos;b&apos;,3,4,5]
+a.splice(2,2,[1,2],3);//返回[&apos;a&apos;,&apos;b&apos;];a是[1,2,[1,2],3,3,4,5]
+</code></pre><p><br><strong>splice() 替换</strong>  <br></p>
+<pre><code>var a=[1,2,3,4,5];
+    a.splice(2,3,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;)//返回[3,4,5],且替换他们为1,2a,b,c
+</code></pre><p>###添加</p>
+<p>####尾部添加<br>使用 push() 方法在数组的末尾增加一个或多个元素,并有一个返回值:返回数组在添加新的元素后的长度<br>    a =[];<br>    a.push(“zero”)//在末尾添加一个元素<br>    a.push(‘one’,’two’) //再添加两个元素 a此时的值为[“zero”,”one”,”two”]</p>
+<p>####首部添加<br>使用unshift()方法, 在数组的首部插入一个元素, 且同push()具有一个相同的返回值:返回最新的数组长度,并且将其他元素的索引依次移到更高的索引位.<br><strong>NOTE</strong>IE6/7  不支持该方法的返回值</p>
+<p>###删除<br><strong>NOTE</strong><br>注意,push()和pop()都修改并替换原始数组,而非生成一个修改后的新数组.</p>
+<p>####尾部删除 pop()<br>它删除数组中最后一个元素,并减小数组长度且返回<em>它删除的值</em><br>    var a=[1,2,3,4,5];<br>    alert(a.pop())//返回5</p>
+<p>####头部删除 shift()<br>shift()删除数组的第一个元素并将其返回,然后把所有随后的元素下移一个位置,来填补数组头部的空缺.<br>    var a=[1,2,3,4,5];<br>    alert(a.shift())//返回1</p>
+<p>####其他<br>使用delete运算符删除数组元素<br>    a=[1,2,3]<br>    delete a[1];<br>删除a[1]后,数组的长度仍然不变,删除数组元素与其赋undefined值是类似的</p>
+<p>设置数组length属性,来清空数组或者减小数组<br>    a=[1,2,3,4,5]<br>    a.length =0 //清空数组<br>    a.length =3 //长度为三,删除后两位</p>
+<p>为数组重新赋值(效率相对较高)<br>    a=[1,2,3,4,5]<br>    a=[]//重新赋值,达到清空的目的</p>
+<p>##数组遍历</p>
+<p>###for循环<br>排除null和undefined的<em>稠密数组</em>元素,可以利用如下代码:</p>
+<pre><code>for(var i=0;i&lt;array.length;i++){
+    if(!array[i]){
+      //如果数组不为false则执行里面的代码
+    }    
+}
+</code></pre><p>###for in循环<br>for in 循环适合处理稀疏数组, 每次循环将一个可枚举的属性名(包括数组索引)赋值给循环变量,且不存在的索引将不会遍历到<br>for/in 循环可以以不同的顺序遍历对象的属性</p>
+<p>###forEach()<br>从头至尾遍历数组, 为每个元素调用指定的函数</p>
+<p>##多维数组<br>“JavaScript不支持真正的多维数组，但可以用数组的数组来近似”</p>
+<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><p>###join()<br>将数组中所有元素都转化为字符串并连接在一起,且可以指定一个可选的字符串在生成的字符串中来分隔数组的各个元素,如果不指定,默认使用逗号<br>“该方法是String.split()方法的逆向操作，后者是将字符串分割成若干块来创建一个数组。”</p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>将数组中的元素颠倒顺序,返回逆序的数组</p>
+<pre><code>var a =\[1,2,3]
+a.reverse()// a=\[3,2,1]
+</code></pre><h3 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort()  排序"></a>sort()  排序</h3><p>将数组中的元素排序并返回排序后的数组, 当不带参数调用该函数时, 数组元素默认以字母表(字符串uncode编码值)顺序排序,且如果数组中包含 undefined元素,他们会被排到数组的尾部</p>
+<pre><code>var a=new Array(&quot;banana&quot;,&quot;cherry&quot;,&quot;apple&quot;);
+a.sort() //结果是:apple,banana,cherry
+var a =[1,2,3,8,7666,,9]
+a.sort() //结果是[1,2,3,7666,8,9]
+</code></pre><p>sort 也可以接受一个比较函数作为参数, 以便我们自行定制排序的方法</p>
+<pre><code>var a=[1,5445,3434,6565,23]
+    a.sort(function(a,b){
+        return a-b //如果第一个参数应该在第二个之前,则返回一个负数,如果两个数相等,则返回0,如果第一个参数应该位于第二个之后则返回一个正数
+        降序的办法:
+        return b-a //第一个值应该位于第二个之后,则返回一个正数,如果第一个参数应该位于第二个之前则返回一个负数.
+    })
+</code></pre><h3 id="concat-合并数组"><a href="#concat-合并数组" class="headerlink" title="concat() 合并数组"></a>concat() 合并数组</h3><p>先创建当前数组的一个副本,然后将接受到的参数天极道这个副本的末尾,最后返回新构建的数组.在没有给caocat()方法传递参数的情况下, 它只是赋值当前数组并返回副本,如果传递给该方法了一个或多个数组,则它会将这些数组的每一项元素都添加到数组中. 如果传递的值不是数组,那么这些值就会被简单的添加到结果数组的末尾</p>
+<pre><code>a=[1,2,3,4]
+a2=a.concat([&apos;2&apos;,123])//a2的结果是:12342123
+</code></pre><h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>返回指定数组的一个片段或者子数组</p>
+<p>###toString() 和 toLocalString()<br>数组和其他JS对象一样,拥有toString()方法, 该方法针对数组,将其每个元素转化为字符串,并且输出用逗号分隔的字符列表.<br>toLocaleString()是toString()方法的本地化版本. 该方法将每个元素转化为字符串,并使用本地化(和自定义实现的)分隔符将这些字符串链接起来,生成最终的字符串</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>调用数组的每个元素传递给指定的函数,并返回一个数组, 它包含该函数的返回值</p>
+<pre><code>a=[1,2,3,4]
+b=a.map(function(x){
+    return x*x; //b的结果是[1,4,9,16]
+})
+</code></pre><h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p>如果对某一稀疏数组调用该函数    </p>
+<h3 id="every-和-some"><a href="#every-和-some" class="headerlink" title="every 和 some()"></a>every 和 some()</h3><p>这两种方法是数组中的逻辑判定:every()对数组元素应用指定的函数,进行布尔值判断<br>当某一数组中所有元素都返回true时,它才会返回true;<br>some():当数组中至少有一个元素调用判定函数返回true, 则它就会返回true;并且当且仅当数值中的所有元素调用判定函数都返回falsely,它才返回false;<br>注意:该两种函数在确认返回值的时候就会立马停止遍历数组元素,every在空数组上调用时,它返回true,some()返回false</p>
+<h3 id="reduce-和reduceRight"><a href="#reduce-和reduceRight" class="headerlink" title="reduce()和reduceRight()"></a>reduce()和reduceRight()</h3><h3 id="indexOf和lastIndexOf"><a href="#indexOf和lastIndexOf" class="headerlink" title="indexOf和lastIndexOf()"></a>indexOf和lastIndexOf()</h3><p>这两个方法搜索整个数组中具有给定的元素,返回找到的第一个元素的索引或者如果没有找到就返回-1.<br>indexOf会从头至尾的搜索, lastIndex则从反向搜索</p>
+<p>第一个参数是需要搜索的值,第二个参数是可选的:他指定数组中的一个索引,从那里开始搜索,如果省略该参数,indexOf则从头开始搜索, 而lastIndex()则从末尾开始搜索,且可以是负数<br>注意:字符串中也有这两个方法, 功能类似;</p>
+<p>##数组类型<br>数组是具有特殊行为的对象,<br>判断某个对象是不是数组的方法,可以利用a.isArray()函数来做这件事情:<br>Array.isArray([])//true<br>Array.isArray({})//false</p>
+<p>##类数组对象<br>JS数组相对于其他对象所没有的特性:</p>
+<ol>
+<li>当有新的元素添加到列表中是,自动更新length属性</li>
+<li>设置length为一个较小的值将拦截数组</li>
+<li>能从Array.prototype中继承一些有用的方法</li>
+<li>其类属性为Array</li>
+</ol>
+<p>##作为数组的字符串<br>    var s =test;<br>    s.charAt(0)//“t”<br>    s.charAt[2]//“s”</p>
+<p>##数组length的特征<br>数组length的长度既可以读也可写,这与string对象有很大的不同, string的length长度只可读</p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2015/10/24/Javascript权威指南-数组/"
+                    data-title=""
+                    data-url="http://ehazon.github.io/2015/10/24/Javascript权威指南-数组/"
+                    data-images=""
+                    data-content="#JavaScript 权威指南-数组数组是值的有序集合.每个值叫做一个元素, 而每个元素在数... | Haojen&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/10/25/json的学习/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/10/24/日语学习/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2015/10/24/Javascript权威指南-数组/"
+                        data-title=""
+                        data-url="http://ehazon.github.io/2015/10/24/Javascript权威指南-数组/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建数组"><span class="toc-text">创建数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组元素的读和写"><span class="toc-text">数组元素的读和写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组方法"><span class="toc-text">数组方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#reverse"><span class="toc-text">reverse()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort-排序"><span class="toc-text">sort()  排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-合并数组"><span class="toc-text">concat() 合并数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice"><span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-text">map()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#every-和-some"><span class="toc-text">every 和 some()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce-和reduceRight"><span class="toc-text">reduce()和reduceRight()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#indexOf和lastIndexOf"><span class="toc-text">indexOf和lastIndexOf()</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                <h5 class="text-center">
+                    <a href="/tags/">FEATURED TAGS</a>
+                </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ehazon.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
