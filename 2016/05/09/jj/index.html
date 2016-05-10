@@ -101,13 +101,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -151,16 +151,14 @@
     <!-- Main Content -->
     <!--作品样式-->
 <style>
-    .works-container{
-    }
     *{
         /*border: thin red solid;*/
     }
     header .bg-header{
         height: 560px;
-        /*padding-top: 60px;*/
         background-color: #536dfe;
     }
+    /*头像*/
     .bg-header .avatar img{
         border-radius: 50%;
         margin-top: 100px;
@@ -170,10 +168,62 @@
     .bg-header h2{
         color: white;
     }
+    .bg-header h2{
+        font-size: 18px;
+    }
+    /*整个作品展示区*/
     section .works-area{
         margin-top: -130px;
-        height: 500px;
-        border: thin red solid;
+    }
+    .works-area .works-item{
+        border-radius: 2px;
+        border: 1px solid #eee8d5;
+        margin-bottom: 50px;
+        box-shadow: 18px 15px 0.5px rgba(0,0,0,.65);
+    }
+    .works-item-img{
+        height: 380px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: auto -26px;
+    }
+    .works-area .works-item {
+        background: white;
+        padding: 5px 25px;
+    }
+    .works-area .footer{
+        padding-top: 10px;
+        border-top: thin #eee solid;
+    }
+    .works-area .footer .btn{
+        padding: 7px 9px;
+        border-radius: 2px;
+        float: right;
+        margin: 8px 0;
+        text-transform: none;
+        font-size: 12px;
+        font-style: italic;
+        background: #0085a1;
+        border:none;
+        color: #fff;
+    }
+    .works-item .title h3{
+        display: inline-block;
+        margin: 15px;
+        line-height: 20px;
+        height: 25px;
+        font-size: 16px;
+        color: #5e5e5e;
+    }
+    .works-item .title .title-date{
+        float: right;
+        font-size: 18px;
+        line-height: 50px;
+    }
+    .works-item .footer .use{
+        display: inline-block;
+        margin-top: 13px;
+        text-transform: uppercase;
     }
 </style>
 
@@ -198,22 +248,73 @@
         </div>
     </header>
     <!--作品展示-->
-    <section>
-        <div class="works-area">
+    <section class="row">
+        <div class="col-xs-10 col-xs-offset-1
+                    col-sm-8  col-sm-offset-2
+                    col-md-6 col-md-offset-3
+                    col-xl-4 col-xl-offset-4
+                      works-area">
             
-                <h2>
-                    http://www.baidu.com/
-                </h2>
-                <h4>
-                    jQuery
-                </h4>
+                <div class="works-item">
+                    <div class="title">
+                        <h3>
+                            Apple 官网临摹
+                        </h3>
+                        <span class="title-date">
+                            2015
+                        </span>
+                    </div>
+                    <div class="works-item-img" style='background-image: url("http://b.fastcompany.net/multisite_files/fastcompany/imagecache/inline-large/inline/2015/12/3054833-inline-s-2-how-a-view-from-a-blue-moon-became-the-top-selling-surf-movie-of-all-time.jpg")'>
+                    </div>
+                    <div>
+                        <p> 美版 Apple 官网临摹 </p>
+                        <p> 这里是详细的描述内容 </p>
+                    </div>
+                    <div class="footer clearfix">
+                        <span class="use">
+                            
+                                <span>
+                                    jQuery
+                                </span>
+                                <span>·</span>
+                            
+                        </span>
+                        <button class=" btn btn-default"> Open it</button>
+                    </div>
+                </div>
             
-                <h2>
-                    http://www.baidu.com/2
-                </h2>
-                <h4>
-                    jQuery,Bootstrap
-                </h4>
+                <div class="works-item">
+                    <div class="title">
+                        <h3>
+                            萤火虫之诗
+                        </h3>
+                        <span class="title-date">
+                            2016
+                        </span>
+                    </div>
+                    <div class="works-item-img" style='background-image: url("http://b.fastcompany.net/multisite_files/fastcompany/imagecache/inline-large/inline/2015/12/3054833-inline-s-2-how-a-view-from-a-blue-moon-became-the-top-selling-surf-movie-of-all-time.jpg")'>
+                    </div>
+                    <div>
+                        <p> 一个单页 App </p>
+                        <p> 这里是详细的描述内容 </p>
+                    </div>
+                    <div class="footer clearfix">
+                        <span class="use">
+                            
+                                <span>
+                                    jQuery
+                                </span>
+                                <span>·</span>
+                            
+                                <span>
+                                    Bootstrap
+                                </span>
+                                <span>·</span>
+                            
+                        </span>
+                        <button class=" btn btn-default"> Open it</button>
+                    </div>
+                </div>
             
         </div>
     </section>
