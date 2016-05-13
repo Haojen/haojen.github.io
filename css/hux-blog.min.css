@@ -431,8 +431,7 @@ pre code {
     background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0px;
-    /*max-height: 367px;*/
-    /* 0 on mobile, modify by Hux */
+    max-height: 400px;
 }
 
 @media only screen and (min-width: 768px) {

@@ -95,12 +95,6 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
                             <a href="/my-works/">my works</a>
                         </li>
                         
@@ -108,6 +102,12 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
@@ -172,13 +172,15 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                    <a href="#-- css -- layout" title="-- css -- layout" rel="1">-- css -- layout</a>
+                    <a href="#css" title="css" rel="1">css</a>
                 
-                    <a href="#科普读物" title="科普读物" rel="1">科普读物</a>
+                    <a href="#layout" title="layout" rel="1">layout</a>
                 
                     <a href="#jQuery" title="jQuery" rel="1">jQuery</a>
                 
                     <a href="#AJAX" title="AJAX" rel="1">AJAX</a>
+                
+                    <a href="#科普" title="科普" rel="1">科普</a>
                 
             </div>
 
@@ -186,8 +188,8 @@
 
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="-- css -- layout">
-                    <span class="tag-text">-- css -- layout</span>
+                <span class="fa fa-tag listing-seperator" id="css">
+                    <span class="tag-text">css</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -197,7 +199,7 @@
                  <div class="post-preview">
                      <a href="/2015/10/30/Float 布局详解/">
                         <h2 class="post-title">
-                            Float
+                            Float 布局详解
                         </h2>
                         
                             <h3 class="post-subtitle">
@@ -212,8 +214,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="科普读物">
-                    <span class="tag-text">科普读物</span>
+                <span class="fa fa-tag listing-seperator" id="layout">
+                    <span class="tag-text">layout</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -221,13 +223,13 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2016/05/08/恐龙与史前生命/">
+                     <a href="/2015/10/30/Float 布局详解/">
                         <h2 class="post-title">
-                            恐龙与史前生命--读书笔记
+                            Float 布局详解
                         </h2>
                         
                             <h3 class="post-subtitle">
-                                200多种恐龙和始祖生物的详细资料
+                                简单的了解float的历史，其本来的作用，及其特性
                             </h3>
                         
                     </a>
@@ -280,6 +282,32 @@
                         
                             <h3 class="post-subtitle">
                                 简单的了解 jQuery 下常用的 AJAX 方法
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="科普">
+                    <span class="tag-text">科普</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/05/08/恐龙与史前生命/">
+                        <h2 class="post-title">
+                            恐龙与史前生命
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                200多种恐龙和始祖生物的详细资料
                             </h3>
                         
                     </a>
