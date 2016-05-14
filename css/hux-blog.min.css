@@ -558,6 +558,7 @@ pre code {
 
 .post-preview > a {
     color: #404040;
+    display: inline-block;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
