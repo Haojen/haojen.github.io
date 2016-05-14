@@ -371,7 +371,7 @@ pre code {
 
     .navbar-custom .nav li a:hover,
     .navbar-custom .nav li a:focus {
-        color: #0085a1;
+        color: #FC7097;
     }
 
     .navbar-custom .nav li a:active {
@@ -559,11 +559,14 @@ pre code {
 .post-preview > a {
     color: #404040;
 }
-
 .post-preview > a:hover,
 .post-preview > a:focus {
     text-decoration: none;
-    color: #0085a1;
+    color: #FC7097;
+    outline: none;
+}
+.post-preview > a:hover h3{
+    color: black;
 }
 
 .post-preview > a > .post-title {
@@ -621,9 +624,6 @@ pre code {
     color: #a3a3a3;
 }
 
-.post-content-preview:hover {
-    color: #0085a1;
-}
 
 @media only screen and (min-width: 768px) {
     .post-content-preview {
@@ -1217,9 +1217,9 @@ body {
 .navbar-custom.is-fixed .navbar-toggle span {
     background: black;
 }
-.custom-haojen-container{
-    padding-top: 60px;
-}
+/*.custom-haojen-container{*/
+    /*padding-top: 60px;*/
+/*}*/
 .post-title-haojen{
     display: none;
     /*max-width: 200px;*/

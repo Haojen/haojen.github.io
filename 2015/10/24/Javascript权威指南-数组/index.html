@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="马浩珍的个人博客">
+    <meta name="description" content="生活多美好">
     <meta name="keyword"  content="马浩珍,haojen,Haozhen,mahaozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
     <link rel="shortcut icon" href="/img/coffee.png">
 
@@ -70,7 +70,7 @@
             </button>
             <a class="navbar-brand" href="/">
                 <span class="brand-logo">
-                    Haojen
+                    Haojen&#39;s Blog
                 </span>
                 's Blog
             </a>
@@ -198,10 +198,11 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>#JavaScript 权威指南-数组<br>数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为<em>索引</em><br>数组特性:</p>
+                <p>数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为<em>索引</em><br>数组特性:</p>
 <blockquote>
 <p>1:JS中的数组是无类型的:这代表着数组元素可以是任意类型.<br>2:JS中的数组是动态的:可以根据需要增长或缩减,并且在创建的时候无需声明固定的大小,也无需在数组发生变化的时候重新分配空间<br>JS中数组元素的索引不一定要连续, 它们之间可以有空缺<br>每个数组都有一个 <em>length</em>属性,对于连续索引的数组来说,该属性就是数组元素的个数;而对于非连续索引的数组来说,length比所有元素的索引要大 <strong>hz: 注意,当使用数组length遍历非连续索引的数组的时候需要注意的</strong><br>数组直接量的语法允许有可选的结尾的都好,故[,,]只有两个元素而非三个</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><p>使用数组直接量创建: </p>
 <blockquote>
 <p>var new array=[];<br> 调用构造函数Array()创建:<br>    var array = new Array(); //调用时没有参数的,效果等同于var new array=[]<br>    var array = new Array(10)//调用时指定参数,意味着该数组有指定的长度,但是数组中并没有存储任何值,索引属性(尚未定义)<br>    var array = new Array(5,4,3,2,1, “testing , testing”)//显式指定两个或多个数组元素或者数组的一个非数值元素,以这种形式,构造函数的参数将会成为新数组的元素.<br>    但使用数组字面量比使用构造函数的数组要简单方便</p>
@@ -303,7 +304,7 @@ b=a.map(function(x){
                     data-title="JavaScript 数组"
                     data-url="http://ehazon.github.io/2015/10/24/Javascript权威指南-数组/"
                     data-images=""
-                    data-content="#JavaScript 权威指南-数组数组是值的有序集合.每个值叫做一个元素, 而每个元素在数... | Haojen&#39;s Blog " >
+                    data-content="数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为索引数... | Haojen&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -465,7 +466,7 @@ b=a.map(function(x){
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Haojen 2016 
+                    Copyright &copy; Haojen&#39;s Blog 2016 
                     <br>
                     <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
                     <!--<span style="display: inline-block; margin: 0 5px;">-->
@@ -551,7 +552,9 @@ b=a.map(function(x){
 
 
 
-
+    <!-- Image to hack wechat -->
+    <img src="http://7xu09g.com1.z0.glb.clouddn.com/avatar_man.png?imageView2/2/h/250" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 
