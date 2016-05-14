@@ -149,7 +149,8 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
+    
+<!-- Page Header -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
@@ -173,11 +174,27 @@
             <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
                 <div class="test" >testhe</div>
                 <!-- Main Content -->
+<style>
+    .post-preview:nth-child(2){
+        background-image: url('/img/home-bg.jpg');
+    }
+    .custom-haojen-container .post-preview:nth-child(2){
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 320px;
+        border-radius: 8px;
+    }
+    .custom-haojen-container .post-preview:nth-child(2) h2{
+        padding-top: 65px;
+    }
 
 
 
+</style>
 
-<div class="post-preview">
+
+<div class="post-preview" >
 
     <a href="/2016/05/08/恐龙与史前生命/">
         <h2 class="post-title">
@@ -200,7 +217,7 @@
 </div>
 <hr>
 
-<div class="post-preview">
+<div class="post-preview" >
 
     <a href="/2016/05/02/如何写影评-笔记/">
         <h2 class="post-title">
@@ -237,7 +254,7 @@
 </div>
 <hr>
 
-<div class="post-preview">
+<div class="post-preview" >
 
     <a href="/2016/01/24/电子技术自学宝典/">
         <h2 class="post-title">
@@ -264,7 +281,45 @@
 </div>
 <hr>
 
-<div class="post-preview">
+<div class="post-preview" >
+
+    <a href="/2016/01/04/CSS 设计指南/">
+        <h2 class="post-title">
+            CSS 设计指南笔记
+        </h2>
+        <p class="post-meta">
+            2016-01-04
+        </p>
+        
+            <h3 class="post-subtitle">
+                不定期抱持更新
+            </h3>
+        
+        <div class="post-content-preview">
+            阅读动机:
+
+深入系统的了解 CSS3
+CSS3 实战
+
+
+第一章 HTML 标记与文档结构因为内容基础,基本已经了解到足够深入,所以已在第一遍阅读时略过
+第二章 CSS 工作原理知识点:
+
+CSS 的层叠机制
+CSS 的选择符
+CSS Rule
+
+所有用于选择特定元素的选择符又分三种。
+
+上下文选择符。基于祖先或同胞元素选择一个元素。
+ID 和类选择符。基于 id 和 class 属性的值...
+        </div>
+    </a>
+
+</div>
+<hr>
+
+<div class="post-preview" >
 
     <a href="/2015/12/17/锋利的 jQuery 学习笔记/">
         <h2 class="post-title">
@@ -282,28 +337,6 @@
             1 DOM对象和 JQ 对象的区别JQ 对象就是通过 JQ 包装 DOM 对象后产生的对象, JQ 对象是 JQ 独有的, 这意味着如果一个对象是 JQ 对象,那么就可以使用 JQ 里面的方法;需要注意的是 JQ 对象无法使用 DOM 对象的任何方法,同样的 DOM 对象也无法使用 JQ 里的任何方法
 JQ 对象与 DOM 对象的互转
 将 JQ 对象转换成 DOM 对象的两种方法, JQ 对...
-        </div>
-    </a>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/12/17/jQuery 下的「AJAX」/">
-        <h2 class="post-title">
-            jQuery 下的「AJAX」
-        </h2>
-        <p class="post-meta">
-            2015-12-17
-        </p>
-        
-            <h3 class="post-subtitle">
-                简单的了解 jQuery 下常用的 AJAX 方法
-            </h3>
-        
-        <div class="post-content-preview">
-            Load()该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送的数据, 第三个参数为 callback用来从服务器加载数据，并把返回的数据放入被选元素中。$(selector).load(URL,data,callback);必需的 URL 参数规定您希望加载的 URL。可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。可选的 callback...
         </div>
     </a>
 
@@ -408,11 +441,13 @@ JQ 对象与 DOM 对象的互转
                     <div class="tags">
                         
                         
-                        
-                        
-                        
-                        
                         <a href="/tags/#JS" title="JS" rel="6">JS</a>
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -426,9 +461,9 @@ JQ 对象与 DOM 对象的互转
                         
                         
                         
+                        
+                        
                         <a href="/tags/#HTML" title="HTML" rel="2">HTML</a>
-                        
-                        
                         
                         
                         
