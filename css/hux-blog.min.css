@@ -558,7 +558,8 @@ pre code {
 
 .post-preview > a {
     color: #404040;
-    display: inline-block;
+    display: block;
+    height: 100%;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -567,7 +568,7 @@ pre code {
     outline: none;
 }
 .post-preview > a:hover h3{
-    color: black;
+    /*color: black;*/
 }
 
 .post-preview > a > .post-title {
@@ -1276,7 +1277,9 @@ body {
     margin-bottom: 0;
 }
 
-
+@media screen and (max-width: 768px){
+    h2{font-size: 19px!important;}
+}
 
 
 

@@ -101,13 +101,13 @@
                     
                         
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
@@ -158,10 +158,9 @@
             background-repeat: no-repeat;
             height: 320px;
             border-radius: 5px;
-            margin-top: 5px;
+            margin-top: 15px;
         }
         .custom-haojen-container .post-preview:nth-child(1) h2{
-            padding-top: 65px;
         }
         .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
         .custom-haojen-container .post-preview:not(:nth-child(1)){
@@ -170,18 +169,24 @@
         .custom-haojen-container hr:nth-of-type(1){
             display: none;
         }
+        /*配色主题*/
+        .custom-haojen-container .post-preview:nth-of-type(1)>a{
+            padding-top: 65px;
+            color: #fff;
+            text-shadow: 0 0 5px black;
+        }
         @media (max-width: 400px){
             .custom-haojen-container .post-preview:nth-child(1){
                 height: auto;
                 border-radius: 3px;
+                min-height: 149px;
+            }
+            .custom-haojen-container .post-preview:nth-of-type(1)>a{
+                padding-top: 5px;
             }
         }
         
-        /*配色主题*/
-        .custom-haojen-container .post-preview:nth-of-type(1)>a{
-            color: #fff;
-            text-shadow: 0 0 5px black;
-        }
+
     </style>
 
 
@@ -442,11 +447,11 @@ JSON 对象有两个方法：stringify() 和parse() , 这两个方法分别用�
                         
                         
                         
+                        
+                        
+                        
+                        
                         <a href="/tags/#JS" title="JS" rel="6">JS</a>
-                        
-                        
-                        
-                        
                         
                         
                         
