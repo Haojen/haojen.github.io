@@ -95,25 +95,19 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
                             <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/xxx/">xxx</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -158,18 +152,19 @@
     
 
     <style>
-        .custom-haojen-container .post-preview:nth-child(1){
+        .custom-haojen-container .post-preview:nth-of-type(1),
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
             text-align: center;
             background-repeat: no-repeat;
-            height: 320px;
+            height: 300px;
             border-radius: 5px;
-            margin-top: 15px; //调整上边距
+            margin-top: 15px;
             background-color: rgba(255, 248, 220, 0.5);
-            background-image: none!important;
+            background-size: cover;
+            padding:0 70px;
         }
-        /*诗词主体*/
-        .custom-haojen-container .post-preview-poetry{
-
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
+            background-image: none!important;
         }
         /*诗词标题*/
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
@@ -195,7 +190,7 @@
             font-size: 1.19em;
         }
             /*不显示摘要*/
-        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-content-preview{display: none}
         /*只第一个显示背景图片*/
         .custom-haojen-container .post-preview:not(:nth-child(1)){
             background-image: none!important;
@@ -204,19 +199,15 @@
         .custom-haojen-container hr:nth-of-type(1){
             display: none;
         }
-        /*配色主题*/
+        /*主题*/
         .custom-haojen-container .post-preview:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #fff;
-            text-shadow: 0 0 5px black;
+            padding-top: 40px;
+            /*color: #fff;*/
+            /*text-shadow: 0 0 5px black;*/
         }
-        /*配色主题*/
+        /*诗词主题*/
         .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #000;
-            text-shadow: 0 0 3px rgba(158,158,158,.2);
-            background-size: cover;
-            border-radius: 4px;
+            /*padding-top: 65px;*/
         }
         .custom-haojen-container .post-preview:nth-of-type(1) .post-meta{
         }
@@ -239,7 +230,7 @@
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block">
                 <div class="site-heading">
                     <h1>Haojen Ma</h1>
                     <span class="subheading">『生活多美好』</span>
@@ -266,7 +257,7 @@
             post-preview-poetry
         "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/15/poetry-test-3/">
+    <a href="/2016/05/15/空谷幽兰/">
         <h2 class="post-title">
             空谷幽兰
         </h2>
@@ -303,42 +294,24 @@
 
 
 <div class="post-preview "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/15/poetry-test-2/">
+        style="background-image: url('http://7xu09g.com1.z0.glb.clouddn.com/post%2Fhead%2FTyrannosaurus%20Rex.jpg?imageView2/1/w/1000/h/400/q/75')">
+    <a href="/2016/05/08/恐龙与史前生命/">
         <h2 class="post-title">
-            poetry test 2
+            恐龙与史前生命
         </h2>
         <p class="post-meta">
-            2016-05-15
+            2016-05-08
         </p>
+        
+            <h3 class="post-subtitle">
+                200多种恐龙和始祖生物的详细资料
+            </h3>
         
         <div class="post-content-preview">
             <p>
-                test agan
+                
+恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的
 
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-<div class="post-preview 
-            post-preview-poetry
-        "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/15/poetry22/">
-        <h2 class="post-title">
-            poetry22
-        </h2>
-        <p class="post-meta">
-            2016-05-15
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                
             </p>
         </div>
     </a>
@@ -349,17 +322,33 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/15/works/">
+    <a href="/2016/05/02/如何写影评-笔记/">
         <h2 class="post-title">
-            works
+            如何写影评
         </h2>
         <p class="post-meta">
-            2016-05-15
+            2016-05-02
         </p>
+        
+            <h3 class="post-subtitle">
+                写影评之外, 是对喜爱的影片应得的尊重
+            </h3>
         
         <div class="post-content-preview">
             <p>
-                
+                chapter 1 关于电影的写作1.1 为什么要评写电影
+理解电影中的内容更深刻
+能享受到更多微妙的愉悦
+结交更多志同道合的朋友
+增进和朋友之间的友谊
+锻炼自身的写作和逻辑思维能力
+
+
+任何形式的分析都有可能破坏我们观影的乐趣
+
+1.2 你的读者和你写影评的目的目的:   
+
+向读者和你身边...
             </p>
         </div>
     </a>
@@ -370,17 +359,65 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/15/works-test/">
+    <a href="/2016/01/24/电子技术自学宝典/">
         <h2 class="post-title">
-            works test
+            电子技术自学宝典
         </h2>
         <p class="post-meta">
-            2016-05-15
+            2016-01-24
         </p>
+        
+            <h3 class="post-subtitle">
+                一本帮我敲开电子世界的大门
+            </h3>
         
         <div class="post-content-preview">
             <p>
-                
+                第一章 物理的背景知识原子结构发生细微的变化都会让物质的性质发生变化
+1.2 质子 中子和原子序数
+原子的原子核,也就是核心部分决定了元素的特征.一个原子核包含两种粒子, **质子和中子**
+质子和中子的区别:重量几乎相同,但质子带有电荷,中子却没有
+在某种元素的原子核中,**质子的数量**决...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/01/04/CSS 设计指南/">
+        <h2 class="post-title">
+            CSS 设计指南笔记
+        </h2>
+        <p class="post-meta">
+            2016-01-04
+        </p>
+        
+            <h3 class="post-subtitle">
+                不定期抱持更新
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                阅读动机:
+
+深入系统的了解 CSS3
+CSS3 实战
+
+
+第一章 HTML 标记与文档结构因为内容基础,基本已经了解到足够深入,所以已在第一遍阅读时略过
+第二章 CSS 工作原理知识点:
+
+CSS 的层叠机制
+CSS 的选择符
+CSS Rule
+
+所有用于选择特定元素的选择符又分三种。
+
+上...
             </p>
         </div>
     </a>

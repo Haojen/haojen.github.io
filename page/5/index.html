@@ -95,25 +95,19 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
                             <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/xxx/">xxx</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -158,18 +152,19 @@
     
 
     <style>
-        .custom-haojen-container .post-preview:nth-child(1){
+        .custom-haojen-container .post-preview:nth-of-type(1),
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
             text-align: center;
             background-repeat: no-repeat;
-            height: 320px;
+            height: 300px;
             border-radius: 5px;
-            margin-top: 15px; //调整上边距
+            margin-top: 15px;
             background-color: rgba(255, 248, 220, 0.5);
-            background-image: none!important;
+            background-size: cover;
+            padding:0 70px;
         }
-        /*诗词主体*/
-        .custom-haojen-container .post-preview-poetry{
-
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
+            background-image: none!important;
         }
         /*诗词标题*/
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
@@ -195,7 +190,7 @@
             font-size: 1.19em;
         }
             /*不显示摘要*/
-        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-content-preview{display: none}
         /*只第一个显示背景图片*/
         .custom-haojen-container .post-preview:not(:nth-child(1)){
             background-image: none!important;
@@ -204,19 +199,15 @@
         .custom-haojen-container hr:nth-of-type(1){
             display: none;
         }
-        /*配色主题*/
+        /*主题*/
         .custom-haojen-container .post-preview:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #fff;
-            text-shadow: 0 0 5px black;
+            padding-top: 40px;
+            /*color: #fff;*/
+            /*text-shadow: 0 0 5px black;*/
         }
-        /*配色主题*/
+        /*诗词主题*/
         .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #000;
-            text-shadow: 0 0 3px rgba(158,158,158,.2);
-            background-size: cover;
-            border-radius: 4px;
+            /*padding-top: 65px;*/
         }
         .custom-haojen-container .post-preview:nth-of-type(1) .post-meta{
         }
@@ -239,7 +230,7 @@
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block">
                 <div class="site-heading">
                     <h1>Haojen Ma</h1>
                     <span class="subheading">『生活多美好』</span>
@@ -264,136 +255,23 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/11/11/js_命名规范/">
+    <a href="/2015/10/24/Javascript权威指南-数组/">
         <h2 class="post-title">
-            Javascript 不同的数据类型命名规范
+            JavaScript 数组
         </h2>
         <p class="post-meta">
-            2015-11-11
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Array  前缀 aaSomeArray //etc
-Boolean 前缀 bbSomeBoolean //etc
-浮点数 前缀 ffSomeFloat //etc
-函数 前缀 fnfnSomeFunction //etc
-整数 前缀 iiSomeInteger //etc
-对象 ooSom...
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-<div class="post-preview "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/11/10/定时器学习/">
-        <h2 class="post-title">
-            定时器
-        </h2>
-        <p class="post-meta">
-            2015-11-10
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                setTimeOutvar timer = setTimeOut(function(){},1000 )//第一个参数是需要执行的程序，第二个是执行前的等待时间
-设定一个程序触发后，执行前的等待时间
-clearTimeOutclearTimeOut(timer)
-清除 setTimeOut 触...
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-<div class="post-preview "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/10/31/Javascript高级程序设计-深入系统化/">
-        <h2 class="post-title">
-            JavaScript 高级程序设计之深入系统化
-        </h2>
-        <p class="post-meta">
-            2015-10-31
+            2015-10-24
         </p>
         
             <h3 class="post-subtitle">
-                系统性的深入学习
+                数组特性详解
             </h3>
         
         <div class="post-content-preview">
             <p>
-                一章 JS 简介小结JS 是一种专门为网页交互而设计的脚本语言,由下列三个不同部分组成:
+                数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为索引数组特性:
 
-核心 ECMAScript, 提供ECMA 定义, 提供核心语言功能
-文档对象模型 DOM, 提高访问和操作网页内容的方法和接口
-浏览器对象模型 BOM, 提供与浏览器交互的方法和接口
-
-二章 使用 J...
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-<div class="post-preview "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/10/30/meta_标签/">
-        <h2 class="post-title">
-            Meta 标签
-        </h2>
-        <p class="post-meta">
-            2015-10-30
-        </p>
-        
-            <h3 class="post-subtitle">
-                带你系统性的了解 meta 标签究竟为何物
-            </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                该元素可提供有关页面的元信息, 比如针对搜索引擎和更新频度的描述和关键词.meta 标签位于文档的头部, 不包含任何内容, 该标签的属性定义了与文档相关联的名称/值对元数据不会显示在页面上，但是对于机器是可读的。主要面向的是搜索引擎之类的机器人,它可用于浏览器（如何显示内容或重新加载页面），搜...
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr>
-
-
-<div class="post-preview "
-        style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/10/30/Float 布局详解/">
-        <h2 class="post-title">
-            Float 布局详解
-        </h2>
-        <p class="post-meta">
-            2015-10-30
-        </p>
-        
-            <h3 class="post-subtitle">
-                简单的了解float的历史，其本来的作用，及其特性
-            </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                Float 的的设计初衷Float 的设计初衷仅仅是为了实现文字环绕效果,所以了解了 Float的设计初衷,我们就能明白 Float的特有的行为表现了
-包裹和破坏增强浮动的感性认知
-包裹 包裹的特性的是
-
-坚挺
-收缩
-隔绝
-这种特性称之为 BFC, 具有这种包裹性的元素有
-
-display:i...
+1:JS中的数组是无类型的:这代表着数组元素可以是任意类型.2:JS中的数组是动态的:可以根据需要增长或缩减,并且在创建的时候无需声明固定的大小,也无需在数组发生变化的时候重新分配空间JS...
             </p>
         </div>
     </a>
@@ -411,10 +289,6 @@ display:i...
             <a href="/page/4/">&larr; Newer Posts</a>
         </li>
     
-    
-        <li class="next">
-            <a href="/page/6/">Older Posts &rarr;</a>
-        </li>
     
 </ul>
 

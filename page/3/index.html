@@ -95,25 +95,19 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
                             <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/xxx/">xxx</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -158,18 +152,19 @@
     
 
     <style>
-        .custom-haojen-container .post-preview:nth-child(1){
+        .custom-haojen-container .post-preview:nth-of-type(1),
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
             text-align: center;
             background-repeat: no-repeat;
-            height: 320px;
+            height: 300px;
             border-radius: 5px;
-            margin-top: 15px; //调整上边距
+            margin-top: 15px;
             background-color: rgba(255, 248, 220, 0.5);
-            background-image: none!important;
+            background-size: cover;
+            padding:0 70px;
         }
-        /*诗词主体*/
-        .custom-haojen-container .post-preview-poetry{
-
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
+            background-image: none!important;
         }
         /*诗词标题*/
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
@@ -195,7 +190,7 @@
             font-size: 1.19em;
         }
             /*不显示摘要*/
-        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-content-preview{display: none}
         /*只第一个显示背景图片*/
         .custom-haojen-container .post-preview:not(:nth-child(1)){
             background-image: none!important;
@@ -204,19 +199,15 @@
         .custom-haojen-container hr:nth-of-type(1){
             display: none;
         }
-        /*配色主题*/
+        /*主题*/
         .custom-haojen-container .post-preview:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #fff;
-            text-shadow: 0 0 5px black;
+            padding-top: 40px;
+            /*color: #fff;*/
+            /*text-shadow: 0 0 5px black;*/
         }
-        /*配色主题*/
+        /*诗词主题*/
         .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
-            padding-top: 65px;
-            color: #000;
-            text-shadow: 0 0 3px rgba(158,158,158,.2);
-            background-size: cover;
-            border-radius: 4px;
+            /*padding-top: 65px;*/
         }
         .custom-haojen-container .post-preview:nth-of-type(1) .post-meta{
         }
@@ -239,7 +230,7 @@
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block">
                 <div class="site-heading">
                     <h1>Haojen Ma</h1>
                     <span class="subheading">『生活多美好』</span>
@@ -264,33 +255,22 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/05/02/如何写影评-笔记/">
+    <a href="/2015/12/05/聆听音乐_by_耶鲁大学/">
         <h2 class="post-title">
-            如何写影评
+            聆听音乐
         </h2>
         <p class="post-meta">
-            2016-05-02
+            2015-12-05
         </p>
         
             <h3 class="post-subtitle">
-                写影评之外, 是对喜爱的影片应得的尊重
+                音乐是意志的本尊--叔本华
             </h3>
         
         <div class="post-content-preview">
             <p>
-                chapter 1 关于电影的写作1.1 为什么要评写电影
-理解电影中的内容更深刻
-能享受到更多微妙的愉悦
-结交更多志同道合的朋友
-增进和朋友之间的友谊
-锻炼自身的写作和逻辑思维能力
-
-
-任何形式的分析都有可能破坏我们观影的乐趣
-
-1.2 你的读者和你写影评的目的目的:   
-
-向读者和你身边...
+                该笔记内容处理在该视频或书籍中学到的东西，整理出来帮助我更好的加深与理解，且在学习的过程中锻炼我在阅读书籍或者视频的过程中集中精力，更好的理解内容本身。所以在记录的过程中， 只根据个人的判断对内容的重要性进行记录
+1 导言大脑中的哪里是处理声音的？左半脑，颞叶中左右两侧的初级听觉皮层，但如果想...
             </p>
         </div>
     </a>
@@ -301,25 +281,24 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/01/24/电子技术自学宝典/">
+    <a href="/2015/11/25/一元运算符/">
         <h2 class="post-title">
-            电子技术自学宝典
+            一元运算符
         </h2>
         <p class="post-meta">
-            2016-01-24
+            2015-11-25
         </p>
-        
-            <h3 class="post-subtitle">
-                一本帮我敲开电子世界的大门
-            </h3>
         
         <div class="post-content-preview">
             <p>
-                第一章 物理的背景知识原子结构发生细微的变化都会让物质的性质发生变化
-1.2 质子 中子和原子序数
-原子的原子核,也就是核心部分决定了元素的特征.一个原子核包含两种粒子, **质子和中子**
-质子和中子的区别:重量几乎相同,但质子带有电荷,中子却没有
-在某种元素的原子核中,**质子的数量**决...
+                前++ &amp; 前–在计算表达式之前将给定的值进行自增或自减操作
+var a =2
+var b =++a //b输出 3
+后++ &amp; 后- -在计算表达式之后将给定的值进行自增或自减操作
+var a=2
+var  b=a-- //此时 b等于 a
+var c =b //c =1
+t...
             </p>
         </div>
     </a>
@@ -330,36 +309,22 @@
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2016/01/04/CSS 设计指南/">
+    <a href="/2015/11/11/js_命名规范/">
         <h2 class="post-title">
-            CSS 设计指南笔记
+            Javascript 不同的数据类型命名规范
         </h2>
         <p class="post-meta">
-            2016-01-04
+            2015-11-11
         </p>
-        
-            <h3 class="post-subtitle">
-                不定期抱持更新
-            </h3>
         
         <div class="post-content-preview">
             <p>
-                阅读动机:
-
-深入系统的了解 CSS3
-CSS3 实战
-
-
-第一章 HTML 标记与文档结构因为内容基础,基本已经了解到足够深入,所以已在第一遍阅读时略过
-第二章 CSS 工作原理知识点:
-
-CSS 的层叠机制
-CSS 的选择符
-CSS Rule
-
-所有用于选择特定元素的选择符又分三种。
-
-上...
+                Array  前缀 aaSomeArray //etc
+Boolean 前缀 bbSomeBoolean //etc
+浮点数 前缀 ffSomeFloat //etc
+函数 前缀 fnfnSomeFunction //etc
+整数 前缀 iiSomeInteger //etc
+对象 ooSom...
             </p>
         </div>
     </a>
@@ -370,21 +335,20 @@ CSS Rule
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/12/17/锋利的 jQuery 学习笔记/">
+    <a href="/2015/11/10/定时器学习/">
         <h2 class="post-title">
-            锋利的 jQuery
+            定时器
         </h2>
         <p class="post-meta">
-            2015-12-17
+            2015-11-10
         </p>
-        
-            <h3 class="post-subtitle">
-                不定期保持更新
-            </h3>
         
         <div class="post-content-preview">
             <p>
-                1 DOM对象和 JQ 对象的区别JQ 对象就是通过 JQ 包装 DOM 对象后产生的对象, JQ 对象是 JQ 独有的, 这意味着如果一个对象是 JQ 对象,那么就可以使用 JQ 里面的方法;需要注意的是 JQ 对象无法使用 DOM 对象的任何方法,同样的 DOM 对象也无法使用 JQ 里的...
+                setTimeOutvar timer = setTimeOut(function(){},1000 )//第一个参数是需要执行的程序，第二个是执行前的等待时间
+设定一个程序触发后，执行前的等待时间
+clearTimeOutclearTimeOut(timer)
+清除 setTimeOut 触...
             </p>
         </div>
     </a>
@@ -395,21 +359,27 @@ CSS Rule
 
 <div class="post-preview "
         style="background-image: url('/img/home-bg.jpg')">
-    <a href="/2015/12/17/jQuery 下的「AJAX」/">
+    <a href="/2015/10/31/Javascript高级程序设计-深入系统化/">
         <h2 class="post-title">
-            jQuery 下的「AJAX」
+            JavaScript 高级程序设计之深入系统化
         </h2>
         <p class="post-meta">
-            2015-12-17
+            2015-10-31
         </p>
         
             <h3 class="post-subtitle">
-                简单的了解 jQuery 下常用的 AJAX 方法
+                系统性的深入学习
             </h3>
         
         <div class="post-content-preview">
             <p>
-                Load()该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送的数据, 第三个参数为 callback用来从服务器加载数据，并把返回的数据放入被选元素中。$(selector).load(URL,data,callback);必需的 URL 参数规定您希望加载的...
+                一章 JS 简介小结JS 是一种专门为网页交互而设计的脚本语言,由下列三个不同部分组成:
+
+核心 ECMAScript, 提供ECMA 定义, 提供核心语言功能
+文档对象模型 DOM, 提高访问和操作网页内容的方法和接口
+浏览器对象模型 BOM, 提供与浏览器交互的方法和接口
+
+二章 使用 J...
             </p>
         </div>
     </a>
