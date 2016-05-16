@@ -70,7 +70,7 @@
             </button>
             <a class="navbar-brand" href="/">
                 <span class="brand-logo">
-                    Haojen
+                    Haojen Ma
                 </span>
                 's Blog
             </a>
@@ -108,6 +108,12 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/xxx/">xxx</a>
                         </li>
                         
                     
@@ -154,18 +160,47 @@
     <style>
         .custom-haojen-container .post-preview:nth-child(1){
             text-align: center;
-            background-size: cover;
             background-repeat: no-repeat;
             height: 320px;
             border-radius: 5px;
-            margin-top: 15px;
+            margin-top: 15px; //调整上边距
+            background-color: rgba(255, 248, 220, 0.5);
+            background-image: none!important;
         }
-        .custom-haojen-container .post-preview:nth-child(1) h2{
+        /*诗词主体*/
+        .custom-haojen-container .post-preview-poetry{
+
         }
+        /*诗词标题*/
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
+            font-size: 35px;
+            font-family:  STKaiti;
+            color: rgba(15,15,15,.75);
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            text-shadow: 0 0 1px rgba(15,15,15,0.3);
+            letter-spacing: 1px;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            font-family: -apple-system STSong;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta{
+            font-size: .9em;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            letter-spacing: 8px;
+            font-size: 1.19em;
+        }
+            /*不显示摘要*/
         .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        /*只第一个显示背景图片*/
         .custom-haojen-container .post-preview:not(:nth-child(1)){
             background-image: none!important;
         }
+        /*第一个分界线去掉*/
         .custom-haojen-container hr:nth-of-type(1){
             display: none;
         }
@@ -175,8 +210,15 @@
             color: #fff;
             text-shadow: 0 0 5px black;
         }
+        /*配色主题*/
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
+            padding-top: 65px;
+            color: #000;
+            text-shadow: 0 0 3px rgba(158,158,158,.2);
+            background-size: cover;
+            border-radius: 4px;
+        }
         .custom-haojen-container .post-preview:nth-of-type(1) .post-meta{
-            color: #eee;
         }
         @media (max-width: 400px){
             .custom-haojen-container .post-preview:nth-child(1){
@@ -199,8 +241,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>Haojen</h1>
-                    <span class="subheading">生活多美好</span>
+                    <h1>Haojen Ma</h1>
+                    <span class="subheading">『生活多美好』</span>
                 </div>
             </div>
         </div>
@@ -219,143 +261,127 @@
 
 
 
-<div class="post-preview" style="background-image: url('http://7xu09g.com1.z0.glb.clouddn.com/post%2Fhead%2FTyrannosaurus%20Rex.jpg?imageView2/1/w/1000/h/400/q/75')">
 
-    <a href="/2016/05/08/恐龙与史前生命/">
+<div class="post-preview 
+            post-preview-poetry
+        "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/05/15/poetry-test-3/">
         <h2 class="post-title">
-            恐龙与史前生命
+            空谷幽兰
         </h2>
         <p class="post-meta">
-            2016-05-08
+            2016-05-15
         </p>
         
             <h3 class="post-subtitle">
-                200多种恐龙和始祖生物的详细资料
+                如幻大千, 惊鸿一瞥
             </h3>
         
         <div class="post-content-preview">
-            
-恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的
-
+            <p>
+                纵有红颜 百生千劫
+难消君心 万古情愁
+青峰之巅 山外之山
+晚霞寂照 星夜无眠
+如幻大千 惊鸿一瞥
+一曲终了 悲欣交集
+夕阳之间 天外之天
+梅花清幽 独立春寒
+红尘中 你的无上清凉
+寂静光明 默默照耀世界
+行如风 如君一骑绝尘
+空谷绝响 至今谁在倾听
+一念净心 花开遍世界
+每临绝境 峰回路又转...
+            </p>
         </div>
     </a>
 
 </div>
 <hr>
 
-<div class="post-preview" style="background-image: url('/img/home-bg.jpg')">
 
-    <a href="/2016/05/02/如何写影评-笔记/">
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/05/15/poetry-test-2/">
         <h2 class="post-title">
-            如何写影评
+            poetry test 2
         </h2>
         <p class="post-meta">
-            2016-05-02
+            2016-05-15
         </p>
         
-            <h3 class="post-subtitle">
-                写影评之外, 是对喜爱的影片应得的尊重
-            </h3>
-        
         <div class="post-content-preview">
-            chapter 1 关于电影的写作1.1 为什么要评写电影
-理解电影中的内容更深刻
-能享受到更多微妙的愉悦
-结交更多志同道合的朋友
-增进和朋友之间的友谊
-锻炼自身的写作和逻辑思维能力
+            <p>
+                test agan
 
-
-任何形式的分析都有可能破坏我们观影的乐趣
-
-1.2 你的读者和你写影评的目的目的:   
-
-向读者和你身边...
+            </p>
         </div>
     </a>
 
 </div>
 <hr>
 
-<div class="post-preview" style="background-image: url('/img/home-bg.jpg')">
 
-    <a href="/2016/01/24/电子技术自学宝典/">
+<div class="post-preview 
+            post-preview-poetry
+        "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/05/15/poetry22/">
         <h2 class="post-title">
-            电子技术自学宝典
+            poetry22
         </h2>
         <p class="post-meta">
-            2016-01-24
+            2016-05-15
         </p>
         
-            <h3 class="post-subtitle">
-                一本帮我敲开电子世界的大门
-            </h3>
-        
         <div class="post-content-preview">
-            第一章 物理的背景知识原子结构发生细微的变化都会让物质的性质发生变化
-1.2 质子 中子和原子序数
-原子的原子核,也就是核心部分决定了元素的特征.一个原子核包含两种粒子, **质子和中子**
-质子和中子的区别:重量几乎相同,但质子带有电荷,中子却没有
-在某种元素的原子核中,**质子的数量**决...
+            <p>
+                
+            </p>
         </div>
     </a>
 
 </div>
 <hr>
 
-<div class="post-preview" style="background-image: url('/img/home-bg.jpg')">
 
-    <a href="/2016/01/04/CSS 设计指南/">
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/05/15/works/">
         <h2 class="post-title">
-            CSS 设计指南笔记
+            works
         </h2>
         <p class="post-meta">
-            2016-01-04
+            2016-05-15
         </p>
         
-            <h3 class="post-subtitle">
-                不定期抱持更新
-            </h3>
-        
         <div class="post-content-preview">
-            阅读动机:
-
-深入系统的了解 CSS3
-CSS3 实战
-
-
-第一章 HTML 标记与文档结构因为内容基础,基本已经了解到足够深入,所以已在第一遍阅读时略过
-第二章 CSS 工作原理知识点:
-
-CSS 的层叠机制
-CSS 的选择符
-CSS Rule
-
-所有用于选择特定元素的选择符又分三种。
-
-上...
+            <p>
+                
+            </p>
         </div>
     </a>
 
 </div>
 <hr>
 
-<div class="post-preview" style="background-image: url('/img/home-bg.jpg')">
 
-    <a href="/2015/12/17/锋利的 jQuery 学习笔记/">
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2016/05/15/works-test/">
         <h2 class="post-title">
-            锋利的 jQuery
+            works test
         </h2>
         <p class="post-meta">
-            2015-12-17
+            2016-05-15
         </p>
         
-            <h3 class="post-subtitle">
-                不定期保持更新
-            </h3>
-        
         <div class="post-content-preview">
-            1 DOM对象和 JQ 对象的区别JQ 对象就是通过 JQ 包装 DOM 对象后产生的对象, JQ 对象是 JQ 独有的, 这意味着如果一个对象是 JQ 对象,那么就可以使用 JQ 里面的方法;需要注意的是 JQ 对象无法使用 DOM 对象的任何方法,同样的 DOM 对象也无法使用 JQ 里的...
+            <p>
+                
+            </p>
         </div>
     </a>
 
@@ -564,7 +590,7 @@ CSS Rule
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Haojen 2016 
+                    Copyright &copy; Haojen Ma 2016 
                     <br>
                     <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
                     <!--<span style="display: inline-block; margin: 0 5px;">-->

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活多美好">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,mahaozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          Haojen&#39;s
+        
+    </title>
+
+    <link rel="canonical" href="http://ehazon.github.io/page/6/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-istags="false
+" data-ishome = "true" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen Ma
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">my works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/xxx/">xxx</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+
+    <style>
+        .custom-haojen-container .post-preview:nth-child(1){
+            text-align: center;
+            background-repeat: no-repeat;
+            height: 320px;
+            border-radius: 5px;
+            margin-top: 15px; //调整上边距
+            background-color: rgba(255, 248, 220, 0.5);
+            background-image: none!important;
+        }
+        /*诗词主体*/
+        .custom-haojen-container .post-preview-poetry{
+
+        }
+        /*诗词标题*/
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
+            font-size: 35px;
+            font-family:  STKaiti;
+            color: rgba(15,15,15,.75);
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            text-shadow: 0 0 1px rgba(15,15,15,0.3);
+            letter-spacing: 1px;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta,
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            font-family: -apple-system STSong;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-meta{
+            font-size: .9em;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            letter-spacing: 8px;
+            font-size: 1.19em;
+        }
+            /*不显示摘要*/
+        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        /*只第一个显示背景图片*/
+        .custom-haojen-container .post-preview:not(:nth-child(1)){
+            background-image: none!important;
+        }
+        /*第一个分界线去掉*/
+        .custom-haojen-container hr:nth-of-type(1){
+            display: none;
+        }
+        /*配色主题*/
+        .custom-haojen-container .post-preview:nth-of-type(1)>a{
+            padding-top: 65px;
+            color: #fff;
+            text-shadow: 0 0 5px black;
+        }
+        /*配色主题*/
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
+            padding-top: 65px;
+            color: #000;
+            text-shadow: 0 0 3px rgba(158,158,158,.2);
+            background-size: cover;
+            border-radius: 4px;
+        }
+        .custom-haojen-container .post-preview:nth-of-type(1) .post-meta{
+        }
+        @media (max-width: 400px){
+            .custom-haojen-container .post-preview:nth-child(1){
+                height: auto;
+                border-radius: 3px;
+                min-height: 195px;
+            }
+            .custom-haojen-container .post-preview:nth-of-type(1)>a{
+                padding-top: 5px;
+            }
+        }
+        
+
+    </style>
+
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Haojen Ma</h1>
+                    <span class="subheading">『生活多美好』</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+                <!-- Main Content -->
+
+
+
+
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2015/10/26/javascript_string_类型/">
+        <h2 class="post-title">
+            javascript 字符串的属性和方法
+        </h2>
+        <p class="post-meta">
+            2015-10-26
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                简介String 类型是字符串的对象包装类型,可以用String 构造函数的办法来创建
+var str = new String(&apos;hello world&apos;);
+该对象的方法也可以在所有基本的字符串值中访问到, 其中,继承的 valueOf() / toLocaleStri...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2015/10/26/npm学习/">
+        <h2 class="post-title">
+            NPM 学习
+        </h2>
+        <p class="post-meta">
+            2015-10-26
+        </p>
+        
+            <h3 class="post-subtitle">
+                npm 是 node.js 的包管理工具
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                NPM是随NodeJS一起安装的包管理工具, 能解决NodeJS代码部署上的很多问题, 以下是常见的使用场景:
+
+让用户从NPM服务器下载别人编写的命令程序到本地使用
+允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用
+允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2015/10/26/nodejs学习/">
+        <h2 class="post-title">
+            Node.js 学习
+        </h2>
+        <p class="post-meta">
+            2015-10-26
+        </p>
+        
+            <h3 class="post-subtitle">
+                一个用javascript写的后端语言
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                简介简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('/img/home-bg.jpg')">
+    <a href="/2015/10/24/Javascript权威指南-数组/">
+        <h2 class="post-title">
+            JavaScript 数组
+        </h2>
+        <p class="post-meta">
+            2015-10-24
+        </p>
+        
+            <h3 class="post-subtitle">
+                数组特性详解
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为索引数组特性:
+
+1:JS中的数组是无类型的:这代表着数组元素可以是任意类型.2:JS中的数组是动态的:可以根据需要增长或缩减,并且在创建的时候无需声明固定的大小,也无需在数组发生变化的时候重新分配空间JS...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+        <li class="previous">
+            <a href="/page/5/">&larr; Newer Posts</a>
+        </li>
+    
+    
+</ul>
+
+
+            </div>
+
+        <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+                <!-- Short About Me -->
+                <section class="visible-md visible-lg" style="padding: 0 15px">
+                    <div class="short-about">
+
+                        
+                            <img src="img/man.png" />
+                        
+                        <h5><a href="/about/">Haojen Ma</a></h5>
+                        
+                            <p>Stay Hungry , Stay Foolish</p>
+                        
+                        <hr>
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/ehazon">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="http://weibo.com/haojen">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+
+                            
+                                <li>
+                                    <a target="_blank"  href="https://github.com/ehazon">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+
+                            
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!--<h5><a href="<\%= config.root %>tags/">FEATURED TAGS!!!</a></h5>-->
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/#JS" title="JS" rel="6">JS</a>
+                        
+                        
+                        
+                        <a href="/tags/#jQuery" title="jQuery" rel="2">jQuery</a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/#HTML" title="HTML" rel="2">HTML</a>
+                        
+                        
+                        
+                        <a href="/tags/#Node.js" title="Node.js" rel="2">Node.js</a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen Ma 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ehazon.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+    <!-- Image to hack wechat -->
+    <img src="img/man.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

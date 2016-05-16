@@ -82,7 +82,7 @@ h6 {
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     line-height: 1.1;
-    font-weight: bold;
+    font-weight: 300;
 }
 
 h4 {
@@ -168,10 +168,10 @@ pre code {
     color: #337ab7;
 }
 
-.post-container a:hover,
-.post-container a:focus {
-    color: #0085a1;
-}
+/*.post-container a:hover,*/
+/*.post-container a:focus {*/
+    /*color: #0085a1;*/
+/*}*/
 
 .post-container h1,
 .post-container h2,
@@ -564,11 +564,11 @@ pre code {
 .post-preview > a:hover,
 .post-preview > a:focus {
     text-decoration: none;
-    color: #FC7097;
     outline: none;
 }
-.post-preview > a:hover h3{
-    /*color: black;*/
+.post-preview > a > h2{    transition: color .3s;  }
+.post-preview:not(:first-of-type) > a:hover > h2{
+    color: #FC7097;
 }
 
 .post-preview > a > .post-title {
@@ -616,7 +616,7 @@ pre code {
     }
 
     .post-preview .post-meta {
-        font-size: 15px;
+        font-size: 17px;
     }
 }
 
