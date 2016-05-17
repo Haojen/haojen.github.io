@@ -8,6 +8,7 @@
 @media (min-width: 768px) {
     .post-container {
         padding-right: 2%;
+        padding-top: 50px;
     }
 }
 
@@ -662,7 +663,7 @@ footer .list-inline {
 footer .copyright {
     font-size: 14px;
     text-align: center;
-    margin-bottom: 0;
+    margin-top: 12px;
 }
 
 footer .copyright a {
