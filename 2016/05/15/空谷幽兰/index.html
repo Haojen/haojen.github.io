@@ -101,13 +101,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -154,6 +154,7 @@
         background-color: rgba(255, 248, 220, 0.5);
         padding-top: 43px;
         margin-top: -43px;
+        text-align: center;
     }
     .poetry-container .poetry-content{
         writing-mode: vertical-lr;
@@ -162,6 +163,8 @@
         overflow: auto;
         max-width: 85%;
         max-height: 700px;
+        display: inline-block;
+        text-align: start;
     }
     .poetry-head{
         width: 100%;
@@ -193,20 +196,35 @@
 
     /*手机屏幕*/
     @media screen and (max-width: 400px){
-        .poetry-container .poetry-content{max-height: 350px;max-width: 100%}
+        .poetry-container .poetry-content{
+            max-height: 410px;max-width: 100%;
+            margin: 80px auto 0 ;
+            padding-bottom: 20px;
+        }
         .poetry-container .poetry-content p {
             font-size: 16px;
             text-indent: 46px;
             line-height: 30px;
+            font-family: inherit;
+            letter-spacing: 3px;
+
+        }
+        .poetry-container .poetry-content h2{
+            font-family: inherit;
+            margin-top: 24px;
+            width: 30px;
+            line-height: 30px;
+            font-weight:800;
+            margin-right: 6px;
         }
     }
 
 
 </style>
 <div class="poetry-container">
-
+    <!--导航黑色-->
         <div class="poetry-head"></div>
-
+    <!--主内容-->
         <div class="poetry-content">
             <h2>
                 《空谷幽兰》
@@ -215,8 +233,7 @@
 <p>红尘中，你的无上清凉。寂静光明，默默照耀世界。行如风，如君一骑绝尘。空谷绝响，至今谁在倾听。一念净心，花开遍世界。每临绝境，峰回路又转。但凭净信，自在出乾坤。恰似如梦初醒，归途在眼前。行尽天涯，静默山水间。倾听晚风，拂柳笛声残。踏破芒鞋，烟雨任平生。慧行坚勇，究畅恒无极。</p>
 
         </div>
-
-
+    <!--多说评论-->
         <div class=" col-lg-6 col-lg-offset-3
                         col-md-8 col-md-offset-2
                         col-sm-12
