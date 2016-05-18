@@ -567,6 +567,9 @@ pre code {
     text-decoration: none;
     outline: none;
 }
+a:focus {
+    outline: none;
+}
 .post-preview > a > h2{    transition: color .3s;  }
 .post-preview:not(:first-of-type) > a:hover > h2{
     color: #FC7097;
