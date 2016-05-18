@@ -95,6 +95,12 @@
                     
                         
                         <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -102,12 +108,6 @@
                         
                         <li>
                             <a href="/my-works/">my works</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            <a href="/about/">About me</a>
                         </li>
                         
                     
@@ -189,6 +189,16 @@
         text-shadow: 0 0 1px rgba(15,15,15,.3);
         text-indent: 63px;
         line-height: 60px;
+    }
+
+    /*手机屏幕*/
+    @media screen and (max-width: 400px){
+        .poetry-container .poetry-content{max-height: 350px;max-width: 100%}
+        .poetry-container .poetry-content p {
+            font-size: 16px;
+            text-indent: 46px;
+            line-height: 30px;
+        }
     }
 
 
