@@ -458,12 +458,12 @@ pre code {
 }
 
 .intro-header .site-heading {
-    padding: 100px 0 70px;
+    padding: 85px 0 70px;
 }
 
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading {
-        padding: 150px;
+        /*padding: 150px;*/
     }
 }
 
@@ -1286,7 +1286,20 @@ body {
 
 
 
-
+.site-heading .about-me img{
+    width: 100px;height: 100px;
+    border-radius: 50%;
+}
+.site-heading h5 a{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.site-heading p{
+    margin: 0px;
+    color: #eee;
+    font-size: 15px;
+}
 
 
 
