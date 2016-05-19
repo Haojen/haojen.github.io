@@ -438,7 +438,6 @@ pre code {
 @media only screen and (min-width: 768px) {
     .intro-header {
         margin-bottom: 20px;
-        /* response on desktop */
     }
 }
 
@@ -446,7 +445,6 @@ pre code {
 .intro-header .post-heading,
 .intro-header .page-heading {
     padding: 85px 0 55px;
-    color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -457,15 +455,7 @@ pre code {
     }
 }
 
-.intro-header .site-heading {
-    padding: 85px 0 70px;
-}
 
-@media only screen and (min-width: 768px) {
-    .intro-header .site-heading {
-        /*padding: 150px;*/
-    }
-}
 
 .intro-header .site-heading,
 .intro-header .page-heading {
@@ -1287,7 +1277,7 @@ body {
 
 
 .site-heading .about-me img{
-    width: 100px;height: 100px;
+    width: 120px;height: 120px;
     border-radius: 50%;
 }
 .site-heading h5 a{
