@@ -1269,6 +1269,14 @@ body {
     color: #eee;
     font-size: 15px;
 }
+.custom-haojen-container{
+    padding-top: 0;
+}
+@media (min-width: 992px) {
+    .custom-haojen-container {
+        padding-top: 100px;
+    }
+}
 
 
 
