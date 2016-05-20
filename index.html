@@ -13,7 +13,7 @@
 
     <title>
         
-          Haojen
+          Haojen&#39;s Blog
         
     </title>
 
@@ -70,7 +70,7 @@
             </button>
             <a class="navbar-brand" href="/">
                 <span class="brand-logo">
-                    Haojen&#39;s Blog
+                    Haojen
                 </span>
                 's Blog
             </a>
@@ -101,13 +101,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -152,12 +152,14 @@
     
 
     <style>
+        .custom-haojen-container{
+            padding-top: 0;
+        }
         .custom-haojen-container .post-preview:nth-of-type(1),
         .custom-haojen-container .post-preview-poetry:nth-of-type(1){
             text-align: center;
             background-repeat: no-repeat;
             border-radius: 3px;
-            margin-top: 15px;
             background-color: rgba(255, 248, 220, 0.5);
             background-size: cover;
             padding:0 70px;
@@ -200,11 +202,10 @@
         /*主题*/
         .custom-haojen-container .post-preview:nth-of-type(1)>a{
             padding-top: 40px;
-            /*color: #fff;*/
         }
         /*诗词主题*/
         .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
-            /*padding-top: 65px;*/
+            padding-top: 65px;
         }
         /*诗词标题*/
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
@@ -215,24 +216,40 @@
         .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta{
             color: #0e2231;
         }
+        /*手机屏幕*/
         @media (max-width: 400px){
+
             .custom-haojen-container .post-preview:nth-child(1){
                 height: 195px;
             }
             .custom-haojen-container .post-preview:nth-of-type(1)>a{
-                padding-top: 15px;
+                /*padding-top: 15px;*/
             }
         }
+
+        @media (max-width: 768px) {
+            .custom-haojen-container .post-preview:nth-child(1) {
+                margin-top: 15px;
+                height: 240px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .custom-haojen-container {
+                padding-top: 100px;
+            }
+        }
+
 
 
     </style>
 
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header" style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/home-bg.jpg')">
+            <div class="container">
                 <div class="site-heading">
                     <div class="about-me">
                         <img src="http://o7bkkhiex.bkt.clouddn.com/avatar_man.png" />
@@ -241,9 +258,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
-</header>
+</div>
+
 
 <!-- Main Content -->
 <div class="container custom-haojen-container">
@@ -439,7 +457,7 @@ CSS Rule
             ">
 
                 <!-- About Me -->
-                <section class="visible-md visible-lg" style="padding: 60px 18px 0">
+                <section class="visible-md visible-lg" style="padding: 0 18px">
                     <div class="short-about">
 
                         
@@ -554,7 +572,6 @@ CSS Rule
                 
             </div>
     </div>
-</div>
 
 
     <!-- Footer -->
@@ -614,7 +631,7 @@ CSS Rule
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Haojen&#39;s Blog 2016 
+                    Copyright &copy; Haojen 2016 
                     <br>
                     <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
                     <!--<span style="display: inline-block; margin: 0 5px;">-->

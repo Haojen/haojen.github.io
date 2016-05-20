@@ -7,8 +7,7 @@
 
 @media (min-width: 768px) {
     .post-container {
-        padding-right: 2%;
-        padding-top: 50px;
+        /*padding-top: 75px;*/
     }
 }
 
@@ -382,16 +381,9 @@ pre code {
 
 @media only screen and (min-width: 1170px) {
     .navbar-custom {
-        /* -webkit-transition: background-color 0.3s;
-         -moz-transition: background-color 0.3s;
-         transition: background-color 0.3s;*/
-        /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
         -ms-transform: translate3d(0, 0, 0);
         -o-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
 
@@ -427,32 +419,20 @@ pre code {
     background: no-repeat center center;
     background-color: #808080;
     background-attachment: scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
     margin-bottom: 0px;
-    max-height: 300px;
+    height: 300px;
 }
 
-@media only screen and (min-width: 768px) {
-    .intro-header {
-        margin-bottom: 20px;
-    }
-}
 
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
     padding: 85px 0 55px;
 }
-
+.intro-header .post-heading { color: #fff;}
 @media only screen and (min-width: 768px) {
-    .intro-header .site-heading,
-    .intro-header .post-heading,
-    .intro-header .page-heading {
-        padding: 70px 0 95px;
-    }
+
 }
 
 
@@ -460,6 +440,7 @@ pre code {
 .intro-header .site-heading,
 .intro-header .page-heading {
     text-align: center;
+    color: #fff;
 }
 
 .intro-header .site-heading h1,
@@ -471,11 +452,6 @@ pre code {
 
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-    /* Hux learn from
-       *     TypeIsBeautiful,
-       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-       */
-
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     font-size: 18px;
@@ -486,13 +462,6 @@ pre code {
 
 }
 
-@media only screen and (min-width: 768px) {
-    .intro-header .site-heading h1,
-    .intro-header .page-heading h1 {
-        /*@haojen adjust font size*/
-        /*font-size: 70px;*/
-    }
-}
 
 .intro-header .post-heading h1 {
     font-size: 24px;
@@ -544,6 +513,16 @@ pre code {
 
     .intro-header .post-heading .meta {
         font-size: 16px;
+    }
+
+    .intro-header .site-heading,
+    .intro-header .post-heading,
+    .intro-header .page-heading {
+        padding-top: 110px;
+    }
+    .intro-header {
+        margin-bottom: 20px;
+        height: 370px;
     }
 }
 
