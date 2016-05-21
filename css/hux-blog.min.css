@@ -82,12 +82,15 @@ h6 {
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     line-height: 1.1;
-    font-weight: 300;
+    font-weight: 400;
 }
 
-h4 {
-    font-size: 21px;
-}
+h2{font-size: 26px}
+h3{font-size: 22px}
+h4{font-size: 20px}
+h5{font-size: 18px}
+h6{font-size: 16px;font-weight: 500}
+h3,h4,h5{font-weight: 300}
 
 a {
     color: #404040;
@@ -557,13 +560,15 @@ a:focus {
     margin: 0;
     font-weight: 300;
     margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.8)
 }
 /*.post-preview .post-meta*/
 .post-preview .post-meta {
-    font-family: 'Source-Sans', sans-serif;
+    font-family: 'STSong',serif;
     color: #808080;
-    font-size: 15px;
+    font-size: 16px;
     margin:0;
+    padding-left: 2px;
     margin-bottom: 15px;
 }
 
@@ -585,11 +590,11 @@ a:focus {
     }
 
     .post-preview > a > .post-subtitle {
-        font-size: 16px;
+        font-size: 19px;
     }
 
     .post-preview .post-meta {
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 
@@ -601,7 +606,7 @@ a:focus {
 
 @media only screen and (min-width: 768px) {
     .post-content-preview {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -1247,6 +1252,9 @@ body {
 }
 .post-preview > a > .post-title{
     margin-bottom: 0;
+    font-weight: 400;
+    font-family: STSong, serif;
+    text-shadow: 0 0 1px rgba(15,15,15,.2);
 }
 
 @media screen and (max-width: 768px){
