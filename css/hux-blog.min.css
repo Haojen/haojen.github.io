@@ -900,7 +900,6 @@ body {
 
 .listing-seperator {
     color: #0085a1;
-    font-weight: 500;
     font-size: 21px !important;
 }
 
@@ -916,7 +915,7 @@ body {
 }
 
 .one-tag-list .tag-text {
-    font-weight: 200;
+    font-weight: 500;
     /* Hux learn from
        *     TypeIsBeautiful,
        *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
@@ -936,8 +935,9 @@ body {
 }
 
 .one-tag-list .post-preview > a .post-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     padding-top: 5px;
+    font-weight: 400;
 }
 
 .one-tag-list .post-preview > .post-meta {
