@@ -900,6 +900,7 @@ body {
 
 .listing-seperator {
     color: #0085a1;
+    font-weight: 500;
     font-size: 21px !important;
 }
 
@@ -935,7 +936,8 @@ body {
 }
 
 .one-tag-list .post-preview > a .post-subtitle {
-    font-size: 12px;
+    font-size: 14px;
+    padding-top: 5px;
 }
 
 .one-tag-list .post-preview > .post-meta {
@@ -958,7 +960,7 @@ body {
     }
 
     .one-tag-list .post-preview > a > .post-subtitle {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .one-tag-list .post-preview .post-meta {
