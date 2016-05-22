@@ -419,6 +419,7 @@ pre code {
 }
 
 .intro-header {
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #808080;
     background-attachment: scroll;
