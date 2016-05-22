@@ -101,13 +101,13 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
@@ -187,15 +187,15 @@
                 
                     <a href="#AJAX" title="AJAX" rel="1">AJAX</a>
                 
-                    <a href="#Node.js" title="Node.js" rel="2">Node.js</a>
-                
                     <a href="#HTML" title="HTML" rel="2">HTML</a>
+                
+                    <a href="#Node.js" title="Node.js" rel="2">Node.js</a>
                 
                     <a href="#npm" title="npm" rel="1">npm</a>
                 
-                    <a href="#科普" title="科普" rel="1">科普</a>
-                
                     <a href="#观影" title="观影" rel="1">观影</a>
+                
+                    <a href="#科普" title="科普" rel="1">科普</a>
                 
                     <a href="#JSON" title="JSON" rel="1">JSON</a>
                 
@@ -218,13 +218,13 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2015/10/30/Float 布局详解/">
+                     <a href="/2016/01/04/CSS 设计指南/">
                         <h2 class="post-title">
-                            Float 布局详解
+                            CSS 设计指南笔记
                         </h2>
                         
                             <h3 class="post-subtitle">
-                                简单的了解float的历史，其本来的作用，及其特性
+                                不定期抱持更新
                             </h3>
                         
                     </a>
@@ -237,13 +237,13 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/2016/01/04/CSS 设计指南/">
+                     <a href="/2015/10/30/Float 布局详解/">
                         <h2 class="post-title">
-                            CSS 设计指南笔记
+                            Float 布局详解
                         </h2>
                         
                             <h3 class="post-subtitle">
-                                不定期抱持更新
+                                简单的了解float的历史，其本来的作用，及其特性
                             </h3>
                         
                     </a>
@@ -456,6 +456,47 @@
             </div>
             
             <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="HTML">
+                    <span class="tag-text">HTML</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/10/30/meta_标签/">
+                        <h2 class="post-title">
+                            Meta 标签
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                带你系统性的了解 meta 标签究竟为何物
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/12/11/复习整理/">
+                        <h2 class="post-title">
+                            HTML 初学复习笔记
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Node.js">
                     <span class="tag-text">Node.js</span>
                 </span>
@@ -501,47 +542,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="HTML">
-                    <span class="tag-text">HTML</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/10/30/meta_标签/">
-                        <h2 class="post-title">
-                            Meta 标签
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                带你系统性的了解 meta 标签究竟为何物
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/12/11/复习整理/">
-                        <h2 class="post-title">
-                            HTML 初学复习笔记
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="npm">
                     <span class="tag-text">npm</span>
                 </span>
@@ -568,32 +568,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="科普">
-                    <span class="tag-text">科普</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2016/05/08/恐龙与史前生命/">
-                        <h2 class="post-title">
-                            恐龙与史前生命
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                200多种恐龙和始祖生物的详细资料
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="观影">
                     <span class="tag-text">观影</span>
                 </span>
@@ -610,6 +584,32 @@
                         
                             <h3 class="post-subtitle">
                                 写影评之外, 是对喜爱的影片应得的尊重
+                            </h3>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="科普">
+                    <span class="tag-text">科普</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2016/05/08/恐龙与史前生命/">
+                        <h2 class="post-title">
+                            恐龙与史前生命
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                200多种恐龙和始祖生物的详细资料
                             </h3>
                         
                     </a>
