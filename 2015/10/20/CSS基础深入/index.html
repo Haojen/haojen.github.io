@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活多美好">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,mahaozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          CSS 基础深入 - Haojen&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ehazon.github.io/2015/10/20/CSS基础深入/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">my works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<img src="http://o7bkkhiex.bkt.clouddn.com/?imageView2/1/w/1400/h/400/interlace/1/q/90" alt="wechat share" height="0" width="0" style="position: absolute">
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+    }
+</style>
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>CSS 基础深入</h1>
+                    
+                        <h2 class="subheading">一些 CSS3 里面的新特性演练</h2>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma 
+                         <span>
+                          日期 2015-10-20
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" post-title-haojen">
+        <span>
+            CSS 基础深入
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2><p>利用border-radius 制作半个圆的方法：<br>\<code\> </code\></p>
+<p>element{<br>width:50px;<br>height:100px;<br>border-radius:50px 0 0 50px;<br>background:green;<br>}</p>
+<p>\</p>
+<h2 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h2><p>参数介绍：box-shadow: X轴偏移量 Y轴偏移量 <a href="">阴影模糊半径</a> <a href="">阴影扩展半径</a> <a href="">阴影颜色</a> <a href="">投影方式</a>;<br>\<blockquote\><br>阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；<br>阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；<br>\</blockquote\></p>
+<p>\<code\></code\></p>
+<p>\&lt;!–out shadow–><br>element{<br>width:100px;<br>height:100px;<br>box-shadow:0 0 5px 5px black;<br>}<br>\&lt;!–inset shadow–><br>element{<br>  width:100px;<br>  height:100px;<br>  box-shadow:0 0 5px 5px black inset;<br>}<br>\&lt;!–inset and out –><br>element{<br>box-shadow:0 0 5px 5px , -5px -5px 5px 5px,<br>0 0 5px 5px inset;<br>}</p>
+<p>\</p>
+<h2 id="CSS3-Gradient-分为线性渐变-linear-和径向渐变-radial"><a href="#CSS3-Gradient-分为线性渐变-linear-和径向渐变-radial" class="headerlink" title="CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)"></a>CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)</h2><h3 id="线性渐变（linear）"><a href="#线性渐变（linear）" class="headerlink" title="线性渐变（linear）"></a>线性渐变（linear）</h3><p>\<code\></code\></p>
+<p>element{<br>background-image：linear-gradient（to right , blue,red）；<br>}</p>
+<p>\</p>
+<p>参数举例：<br>to left:从右渐变到左<br>to right:从左渐变到右<br>to lft top:从右下角渐变到左上角<br>(gradient 翻译：斜坡的意思)<br>}</p>
+<h2 id="text-overflow-和-word-wrap"><a href="#text-overflow-和-word-wrap" class="headerlink" title="text-overflow 和 word-wrap"></a>text-overflow 和 word-wrap</h2><p>text-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。<br>但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的效果</p>
+<p>\<code\></code\></p>
+<p>elment{<br>text-overflow:clip|ellipsis;<br>overflow:hidden;<br>word-wrap：normal|break-word;<br>}</p>
+<p>\</p>
+<h2 id="font-face"><a href="#font-face" class="headerlink" title="@font-face"></a>@font-face</h2><p>@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。</p>
+<p>\<code\></code\></p>
+<p>@font-face{<br>font-family:”font name”;<br>src:url(“font address”)<br>}</p>
+<p>\</p>
+<h2 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h2><p>用来设置文本的阴影<br>参数：text-shadow:x,y,blur,color</p>
+<p>\<code\></code\></p>
+<p>element{<br>text-shadow:5px,5px,0,red;<br>}</p>
+<p>\</p>
+<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><h3 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a>background-origin</h3><p>指定图片的起始位置,如果背景不是no-repeat，这个属性无效，它会从边框开始显示。<br>设置的参数有：<br>border-box|padding-box|content-box</p>
+<p>\<code\></code\></p>
+<p>element{<br>background-image:no-repeat;<br> background-origin:content-box<br> \&lt;!– 从内容开始 –><br>}</p>
+<p>\</p>
+<h3 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a>background-clip</h3><p>将背景图片做适当的剪裁，默认为不剪裁<br>设置的参数有：<br>border-box|padding-box|content-box</p>
+<p>\<code\></code\></p>
+<p>element{<br>background-clip:content-box;<br>\&lt;!– 将内容区域以外的背景图像遮罩 –><br>与background-origin的不同是，clip不改变图像的起始显示位置。<br>}</p>
+<p>\</p>
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h3><p>设置背景图片的大小<br>设置的参数有：<br>background-size: auto | \&lt;长度值> | \&lt;百分比> | cover | contain</p>
+<p>\<blockquote\><br>1、auto：默认值，不改变背景图片的原始高度和宽度；<br>2、\&lt;长度值>：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；<br>3、\&lt;百分比>：0％100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；<br>4、cover：顾名思义为覆盖，即将背景图片等比缩放以填满整个容器；<br>5、contain：容纳，即将背景图片等比缩放至某一边紧贴容器边缘为止。<br>\</blockquote\></p>
+<p>\<code\></code\></p>
+<p>element{<br>background-size:cover;<br>\&lt;!–覆盖整个元素–><br>background-size:contain;<br>\&lt;!–等比例缩放，且某一边紧贴容器边缘–><br>}</p>
+<p>\</p>
+<h3 id="background-position"><a href="#background-position" class="headerlink" title="background-position"></a>background-position</h3><p>设置背景图像的起始位置。<br>设置的参数有：<br>top left<br>top center<br>top right<br>center left<br>center center<br>center right<br>bottom left<br>bottom center<br>bottom right<br>如果您仅规定了一个关键词，那么第二个值将是”center”。<br>默认值：0% 0%。</p>
+<p>x% y%<br>第一个值是水平位置，第二个值是垂直位置。<br>左上角是 0% 0%。右下角是 100% 100%。<br>如果您仅规定了一个值，另一个值将是 50%。</p>
+<p>xpos ypos<br>第一个值是水平位置，第二个值是垂直位置。<br>左上角是 0 0。单位是像素 (0px 0px) 或任何其他的 CSS 单位。<br>如果您仅规定了一个值，另一个值将是50%。<br>您可以混合使用 % 和 position 值。</p>
+<h3 id="background-attachment"><a href="#background-attachment" class="headerlink" title="background-attachment"></a>background-attachment</h3><p>固定图像不随页面文字滚动</p>
+<h3 id="multiple-backgrounds-多重背景"><a href="#multiple-backgrounds-多重背景" class="headerlink" title="multiple backgrounds(多重背景)"></a>multiple backgrounds(多重背景)</h3><p>多重背景，也就是CSS2里background的属性外加origin、clip和size组成的新background的多次叠加，缩写时为用逗号隔开的每组值；用分解写法时，如果有多个背景图片，而其他属性只有一个（例如background-repeat只有一个），表明所有背景图片应用该属性值。<br>语法缩写</p>
+<p>\<code\></code\></p>
+<p>background ： <a href="">background-color</a> | <a href="">background-image</a> | <a href="">background-position</a><a href="">/background-size</a> | <a href="">background-repeat</a> | <a href="">background-attachment</a> | <a href="">background-clip</a> | <a href="">background-origin</a>,…</p>
+<p>\</p>
+<p>可以把上面的缩写拆解成以下形式：<br>background-image:url1,url2,…,urlN;</p>
+<p>\<code\></code\></p>
+<p>background-repeat : repeat1,repeat2,…,repeatN;<br>backround-position : position1,position2,…,positionN;<br>background-size : size1,size2,…,sizeN;<br>background-attachment : attachment1,attachment2,…,attachmentN;<br>background-clip : clip1,clip2,…,clipN;<br>background-origin : origin1,origin2,…,originN;<br>background-color : color;</p>
+<p>\</p>
+<p>用逗号隔开每组 background 的缩写值；<br>如果有 size 值，需要紧跟 position 并且用 “/“ 隔开；<br>如果有多个背景图片，而其他属性只有一个（例如 background-repeat 只有一个），表明所有背景图片应用该属性值。<br>background-color 只能设置一个。</p>
+<h3 id="利用background添加列表下划线渐变"><a href="#利用background添加列表下划线渐变" class="headerlink" title="利用background添加列表下划线渐变"></a>利用background添加列表下划线渐变</h3><p>\<code\></code\></p>
+<p>content:” “;  //该属性用于定义元素之前或之后放置的生成内容。默认地，这往往是行内内容，不过该                                     内容创建的框类型可以用属性 display 控制。<br>position:absolute;<br>right:0;<br>width:2px;<br>height:100%;<br>background-image:linear-gradient(to top ,             rgba(168,58,68,.1),rgba(168,58,68,1),rgba(168,58,68,.1)); //设置渐变<br>background-size:1px 15px;//x,y 轴的设置大小<br>background-repeat:no-repeat;//设置不重复<br>background-position:center;//定位方式为X,Y居中</p>
+<p>\</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>在CSS2中引入了一些属性选择器，而CSS3在CSS2的基础上对属性选择器进行了扩展，新增了3个属性选择器，使得属性选择器有了通配符的概念，这三个属性选择器与CSS2的属性选择器共同构成了CSS功能强大的属性选择器。</p>
+<p>\<pre\></pre\></p>
+<p>\<code\></code\></p>
+<p>e<a href="">att^=”val”</a> 选择该属性值以”val”开头的任何字段;<br>e<a href="">att$=”val”</a> 选择该属性值以”val”结尾的任何字段;<br>e<a href="">att*=”val”</a> 选择出现该属性值”val”的任何地方相匹配;</p>
+<p>\</p>
+<p>\</p>
+<h3 id="结构性伪类选择器–not"><a href="#结构性伪类选择器–not" class="headerlink" title="结构性伪类选择器–not"></a>结构性伪类选择器–not</h3><p>选择器称为否定选择器，和jQuery中的:not选择器一模一样，可以选择除某个元素之外的所有元素。</p>
+<h3 id="CSS小众选择器"><a href="#CSS小众选择器" class="headerlink" title="CSS小众选择器"></a>CSS小众选择器</h3><p>:root 选择html根元素<br>:empty 选择内容为空的元素(连空格都没有)<br>:target选择器称为目标选择器，用来匹配文档(页面)的url的某个标志符的目标元素。<br>例如:</p>
+<p>\<pre\></pre\></p>
+<p>\<code\></code\></p>
+<h1 id="e-target"><a href="#e-target" class="headerlink" title="e:target{"></a>e:target{</h1><p>当该链接点击的时候,改变某元素的CSS.<br>貌似只对该元素和该元素的子元素或同胞元素起作用.<br>}</p>
+<p>\</p>
+<p>\</p>
+<p>nth-of-type元素<br>当混合使用的时候,如果还有其他元素的话, 使用e:nth-of-type(2n+1)等表达式时, 计算的是匹配符合e元素的奇数,而不是e和其他元素的之和的奇数</p>
+<p>::selection选择器<br>::selection”伪元素是用来匹配突出显示的文本(用鼠标选择文本时的文本)。浏览器默认情况下，用鼠标选择网页文本是以“深蓝的背景，白色的字体”显示的</p>
+<p>例如如果有h1和p元素同在, p::selection{do something},选择文字的时候就不会设置h1的样式</p>
+<h2 id="transform-变形"><a href="#transform-变形" class="headerlink" title="transform 变形"></a>transform 变形</h2><h3 id="rotate"><a href="#rotate" class="headerlink" title="rotate()"></a>rotate()</h3><p>旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转。<br>单位( 度or deg )</p>
+<h3 id="skew"><a href="#skew" class="headerlink" title="skew()"></a>skew()</h3><p>扭曲<br>参数 x,y</p>
+<h3 id="scale"><a href="#scale" class="headerlink" title="scale()"></a>scale()</h3><p>缩放 scale()函数 让元素根据中心原点对对象进行缩放。</p>
+<h3 id="translate"><a href="#translate" class="headerlink" title="translate()"></a>translate()</h3><p>ranslate()函数可以将元素向指定的方向移动，类似于position中的relative。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。</p>
+<p>该代码实现了水平垂直居中<br>.wrapper {<br>  padding: 20px;<br>  background:orange;<br>  color:#fff;<br>  position:absolute;<br>  top:50%;<br>  left:50%;<br>  border-radius: 5px;<br>transform:translate(-50%,-50%);</p>
+<p>}</p>
+<h3 id="matrix"><a href="#matrix" class="headerlink" title="matrix()"></a>matrix()</h3><p>是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个<a href="">a b c d e f</a>变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。</p>
+<h2 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h2><p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。</p>
+<h2 id="transition-动画"><a href="#transition-动画" class="headerlink" title="transition 动画"></a>transition 动画</h2><p>在CSS中创建简单的过渡效果可以从以下几个步骤来实现：<br>第一，在默认样式中声明元素的初始状态样式；<br>第二，声明过渡元素最终状态样式，比如悬浮状态；<br>第三，在默认样式中通过添加过渡函数，添加一些不同的样式。<br>CSS3的过度transition属性是一个复合属性，主要包括以下几个子属性：<br>•    transition-property:指定过渡或动态模拟的CSS属性  </p>
+<p>•    transition-duration:指定完成过渡所需的时间  </p>
+<p>•    transition-timing-function:指定过渡函数  </p>
+<p>•    transition-delay:指定开始出现的延迟时间  </p>
+<p>transition-property用来指定过渡动画的CSS属性名称，而这个过渡属性只有具备一个中点值的属性（需要产生动画的属性）才能具备过渡效果</p>
+<p>transition-duration<br>transition-duration属性主要用来设置一个属性过渡到另一个属性所需的时间，也就是从旧属性过渡到新属性花费的时间长度，俗称持续时间。<br>transition-timing-function属性指的是过渡的“缓动函数”。主要用来指定浏览器的过渡速度，以及过渡期间的操作进展情况，其中要包括以下几种函数:</p>
+<blockquote>
+<p>ease 默认值;先快然后逐渐变慢<br>linear 匀速<br>ease-in 速度越来越快,(渐显效果)<br>ease-out 速度越来越慢,(渐隐效果)<br>ease-in-out 起始速度越来越快,然后快要结束的时候渐渐变慢(渐显渐隐效果)<br>transition-delay<br>该属性和transition-duration属性极其类似，不同的是transition-duration是用来设置过渡动画的持续时间，而transition-delay主要用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行。</p>
+</blockquote>
+<p>Keyframes被称为关键帧，其类似于Flash中的关键帧。在CSS3中其主要以“@keyframes”开头，后面紧跟着是动画名称加上一对花括号“{…}”，括号中就是一些不同时间段样式规则。<br>@keyframes change-color{<br>  0%{<br>   background: red;<br>  }<br>  100%{<br>background: green;<br>  }<br>}<br>在一个“@keyframes”中的样式规则可以由多个百分比构成的，如在“0%”到“100%”之间创建更多个百分比，分别给每个百分比中给需要有动画效果的元素加上不同的样式，从而达到一种在不断变化的效果。<br>经验与技巧：在@keyframes中定义动画名称时，其中0%和100%还可以使用关键词from和to来代表，其中0%对应的是from，100%对应的是to。</p>
+<p>animation-name属性主要是用来调用 @keyframes 定义好的动画。需要特别注意: animation-name 调用的动画名需要和“@keyframes”定义的动画名称完全一致（区分大小写），如果不一致将不具有任何动画效果</p>
+<p>animation-iteration-count属性主要用来定义动画的播放次数,默认值为1;<br>参数值可以是数值,也可以是 infinite (无限次)</p>
+<p>animation-direction属性主要用来设置动画播放方向，其语法规则如下：<br>animation-direction:normal | alternate <a href="">, normal | alternate</a>* 其主要有两个值：normal、alternate<br>1、normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；<br>2、另一个值是alternate，他的作用是，如果 animation-direction 值是 “alternate”，则动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等）向后播放。</p>
+<p>animation-play-state属性主要用来控制元素动画的播放状态。<br>参数：<br>其主要有两个值：running和paused。<br>其中running是其默认值，主要作用就是类似于音乐播放器一样，可以通过paused将正在播放的动画停下来，也可以通过running将暂停的动画重新播放，这里的重新播放不一定是从元素动画的开始播放，而是从暂停的那个位置开始播放。另外如果暂停了动画的播放，元素的样式将回到最原始设置状态。</p>
+<p>animation-fill-mode 属性<br>animation-fill-mode 属性规定动画在播放之前或之后，其动画效果是否可见。</p>
+<h2 id="多列布局——Columns"><a href="#多列布局——Columns" class="headerlink" title="多列布局——Columns"></a>多列布局——Columns</h2><p>多列布局columns属性参数主要就两个属性参数：列宽和列数。<br>\<column-width\><br>主要用来定义多列中每列的宽度<br>该属性可以设置的参数有:auto|length ; auto 是根据列数自动调整<br>\<column-count\><br>主要用来定义多列中的列数和允许的最大列数<br>可以设置的参数有:column-count：auto | \<integer(整数)\><br>auto: 表示只有一列,主要依靠浏览器计算自动设置;<br>integer: 必须为大于0的整数非负数<br>需要注意的是哪怕设置了很多的列数,该容器宽度不够也不会显示出来</integer(整数)\></column-count\></column-width\></p>
+<p>column-gap主要用来设置列与列之间的间距，其语法规则如下：<br>column-gap: normal || \<length\><br>normal<br>默认值，默值为1em（如果你的字号是px，其默认值为你的font-size值）。<br>\<length\><br>此值用来设置列与列之间的距离，其可以使用px,em单位的任何整数值，但不能是负值。</length\></length\></p>
+<p>列表边框column-rule<br>边框颜色。简单点说，就有点类似于常用的border属性。但column-rule是不占用任何空间位置的，在列与列之间改变其宽度不会改变任何列的位置。<br>语法规则：<br>column-rule:\<column-rule-width\>|\<column-rule-style\>|\<column-rule-color\><br>取值说明：<br>属性值<br>属性值说明<br>column-rule-width<br>类似于border-width属性，主要用来定义列边框的宽度，其默认值为“medium”，column-rule-width属性接受任意浮点数，但不接收负值。但也像border-width属性一样，可以使用关键词：medium、thick和thin。<br>column-rule-style<br>类似于border-style属性，主要用来定义列边框样式，其默认值为“none”。column-rule-style属性值与border-style属值相同，包括none、hidden、dotted、dashed、solid、double、groove、ridge、inset、outset。<br>column-rule-color<br>类似于border-color属性，主要用来定义列边框颜色，其默认值为前景色color的值，使用时相当于border-color。column-rule-color接受所有的颜色。如果不希望显示颜色，也可以将其设置为transparent(透明色)</column-rule-color\></column-rule-style\></column-rule-width\></p>
+<p>跨列设置column-span<br>column-span主要用来定义一个分列元素中的子元素能跨列多少。column-width、column-count等属性能让一元素分成多列，不管里面元素如何排放顺序，他们都是从左向右的放置内容，但有时我们需要基中一段内容或一个标题不进行分列，也就是横跨所有列，此时column-span就可以轻松实现，此属性的语法如下。<br>column-span: none | all<br>取值说明<br>属性值<br>属性值说明<br>none<br>此值为column-span的默认值，表示不跨越任何列。<br>all<br>这个值跟none值刚好相反，表示的是元素跨越所有列，并定位在列的Ｚ轴之上。</p>
+<h2 id="W3C标准盒模型"><a href="#W3C标准盒模型" class="headerlink" title="W3C标准盒模型"></a>W3C标准盒模型</h2><p>外盒尺寸计算（元素空间尺寸）</p>
+<p>element空间高度＝内容高度＋内距＋边框＋外距</p>
+<p>element空间宽度＝内容宽度＋内距＋边框＋外距</p>
+<p>内盒尺寸计算（元素大小）</p>
+<p>element高度＝内容高度＋内距＋边框（height为内容高度）</p>
+<p>element宽度＝内容宽度＋内距＋边框（width为内容宽度）</p>
+<h2 id="Media-Queries-媒体查询"><a href="#Media-Queries-媒体查询" class="headerlink" title="Media Queries ( 媒体查询)"></a>Media Queries ( 媒体查询)</h2><p>在实际中媒体类型有近十种之多，实际之中常用的也就那么几种，不过媒体类型的引用方法也有多种，常见的有：link标签、@import和CSS3新增的@media几种：<br>link方法<br>link方法引入媒体类型其实就是在\<link\>标签引用样式的时候，通过link标签中的media属性来指定不同的媒体类型。如下所示。<br>\<link rel="stylesheet" type="text/css" href="style.css" media="screen" \=""><br>\<link rel="stylesheet" type="text/css" href="print.css" media="print" \=""><br>@import方法<br>@import可以引用样式文件，同样也可以用来引用媒体类型。@import引入媒体类型主要有两种方式，一种是在样式中通过@import调用另一个样式文件；另一种方法是在\<head\>\</head\>标签中的\<style\>\</style\>中引入，但这种使用方法在IE67都不被支持，如样式文件中调用另一个样式文件时，就可以指定对应的媒体类型。<br>@importurl(reset.css) screen;<br>@importurl(print.css) print;<br>在\<head\>中的\<style\>标签中引入媒体类型方法。<br>\<head\><br>\<style type="text/css" \=""><br>@importurl(style.css) all;<br>\</style\><br>\</head\><br>@media方法<br>@media是CSS3中新引进的一个特性，被称为媒体查询。在页面中也可以通过这个属性来引入媒体类型。@media引入媒体类型和@import有点类似也具有两方式。<br>（1）在样式文件中引用媒体类型：<br>@media screen {<br>   选择器{/<em>你的样式代码写在这里…</em>/}<br>}<br>（2）使用@media引入媒体类型的方式是在\<head\>标签中的\<style\>中引用。</p>
+<p>Media Queries使用方法<br>了解完这些概念性的东西，同学们最想知道的是Media Queries要如何使用？下面我们一起来探讨其使用方法：<br>Media Queries能在不同的条件下使用不同的样式，使页面在不同在终端设备下达到不同的渲染效果。前面简单的介绍了Media Queries如何引用到项目中，但Media Queries有其自己的使用规则。具体来说,Media Queries的使用方法如下。<br>@media 媒体类型and （媒体特性）{你的样式}<br>注意：使用Media Queries必须要使用“@media”开头，然后指定媒体类型（也可以称为设备类型），随后是指定媒体特性（也可以称之为设备特性）。媒体特性的书写方式和样式的书写方式非常相似，主要分为两个部分，第一个部分指的是媒体特性，第二部分为媒体特性所指定的值，而且这两个部分之间使用冒号分隔。例如：<br>(max-width: 480px)<br>从前面表中可以得知，主要有十种媒体类型和13种媒体特性，将其组合就类似于不同的CSS集合。但与CSS属性不同的是，媒体特性是通过min/max来表示大于等于或小于做为逻辑判断，而不是使用小于（\&lt;）和大于（>）这样的符号来判断。接下来一起来看看Media Queries在实际项目中常用的方式。</p>
+<ol>
+<li>最大宽度max-width<br>“max-width”是媒体特性中最常用的一个特性，其意思是指媒体类型小于或等于指定的宽度时，样式生效。如：<br>@media screen and (max-width:480px){<br>.ads {<br>display:none;<br>}<br>}<br>上面表示的是：当屏幕小于或等于480px时,页面中的广告区块（.ads）都将被隐藏。<br>2.最小宽度min-width<br>“min-width”与“max-width”相反，指的是媒体类型大于或等于指定宽度时，样式生效。<br>@media screen and (min-width:900px){<br>.wrapper{width: 980px;}<br>}<br>上面表示的是：当屏幕大于或等于900px时，容器“.wrapper”的宽度为980px。<br>3.多个媒体特性使用<br>Media Queries可以使用关键词”and”将多个媒体特性结合在一起。也就是说，一个Media Query中可以包含0到多个表达式，表达式又可以包含0到多个关键字，以及一种媒体类型。<br>当屏幕在600px900px之间时，body的背景色渲染为“#f5f5f5”，如下所示。<br>@media screen and (min-width:600px) and (max-width:900px){<br>body {background-color:#f5f5f5;}<br>}<br>4.设备屏幕的输出宽度Device Width<br>在智能设备上，例如iPhone、iPad等，还可以根据屏幕设备的尺寸来设置相应的样式（或者调用相应的样式文件）。同样的，对于屏幕设备同样可以使用“min/max”对应参数，如“min-device-width”或者“max-device-width”。<br>\<link rel="stylesheet" media="screen and (max-device-width:480px)" href="iphone.css" /\><br>上面的代码指的是“iphone.css”样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的“max-device-width”所指的是设备的实际分辨率，也就是指可视面积分辨率。</li>
+<li>not关键词<br>使用关键词“not”是用来排除某种制定的媒体类型，也就是用来排除符合表达式的设备。换句话说，not关键词表示对后面的表达式执行取反操作，如：<br>@media not print and (max-width: 1200px){样式代码}<br>上面代码表示的是：样式代码将被使用在除打印设备和设备宽度小于1200px下所有设备中。<br>6.only关键词<br>only用来指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。其实only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。其主要有：支持媒体特性的设备，正常调用样式，此时就当only不存在；表示不支持媒体特性但又支持媒体类型的设备，这样就会不读样式，因为其先会读取only而不是screen；另外不支持Media Queries的浏览器，不论是否支持only，样式都不会被采用。如<br>\<linkrel="stylesheet" media="only screen and (max-device-width:240px)" href="android240.css" /\><br>在Media Query中如果没有明确指定Media Type，那么其默认为all，如：<br>\<linkrel="stylesheet" media="(min-width:701px) and (max-width:900px)" href="mediu.css" /\><br>另外在样式中，还可以使用多条语句来将同一个样式应用于不同的媒体类型和媒体特性中，指定方式如下所示。<br>\<linkrel="stylesheet" type="text/css" href="style.css" media="handheld and (max-width:480px), screen and (min-width:960px)" /\><br>上面代码中style.css样式被用在宽度小于或等于480px的手持设备上，或者被用于屏幕宽度大于或等于960px的设备上。<br>到目前为止，CSS3 Media Queries得到了众多浏览器支持，除了IE6-8浏览器不支持之外，在所有现代浏览器中都可以完美支持。还有一个与众不同的时，Media Queries在其他浏览器中不要像其他CSS3属性一样在不同的浏览器中添加前缀</li>
+</ol>
+<h3 id="Responsive设计（一）"><a href="#Responsive设计（一）" class="headerlink" title="Responsive设计（一）"></a>Responsive设计（一）</h3><p>什么是响应式设计呢？维基百科是这样对响应式作的描述：“Responsive设计简单的称为RWD，是精心提供各种设备都能浏览网页的一种设计方法，RWD能让你的网页在不同的设备中展现不同的设计风格。”从这一点描述来说，RWD不是流体布局，也不是网格布局，而是一种独特的网页设计方法。<br>响应式设计要考虑元素布局的秩序，而且还需要做到“有求必应”，那就需要满足以下三个条件：网站必须建立灵活的网格基础；引用到网站的图片必须是可伸缩的；不同的显示风格，需要在Media Queries上写不同的样式。<br>要想灵活的使用Responsive，仅满足这几个条件还是不够的，我们必须对Responsive有一个全面的了解，那么要了解Responsive，就得先了解他的一些术语：<br>1.流体网格<br>流体网格是一个简单的网格系统，这种网格设计参考了流体设计中的网格系统，将每个网格格子使用百分比单位来控制网格大小。这种网格系统最大的好处是让你的网格大小随时根据屏幕尺寸大小做出相对应的比例缩放。<br>2.弹性图片<br>弹性图片指的是不给图片设置固定尺寸，而是根据流体网格进行缩放，用于适应各种网格的尺寸。而实现方法是比较简单，一句代码就能搞定的事情。<br>img {max-width:100%;}<br>不幸的是，这句代码在IE8浏览器存在一个严重的问题，让你的图片会失踪。当然弹性图片在响应式设计中如何更好的实现，到目前为止都还存在争议，也还在不断的改善之中。<br>为每一个断点提供不同的图片，这是一个比较头痛的事情，因为Media Queries并不能改变图片“src”的属性值，那有没有办分法可以解决呢？可以参考一下下面的解决方法。使用background-image给元素使用背景图片，显示/隐藏父元素，给父元素使用不同的图片，然后通过Media Queries来控制这些图片显示或隐藏。<br>来看一个断点解决图片自适应的例子。<br>\<img src="image.jpg" data-src-600px="image-600px.jpg" data-src-800px="image-800px.jpg" alt="" /\><br>对应的CSS代码：<br>@media (min-device-width:600px){<br>img<a href="">data-src-600px</a>{<br>  content: attr(data-src-600px,url);<br>  }<br>}<br>@media (min-device-width:800px){<br>  img<a href="">data-src-800px</a> {<br>  content:attr(data-src-800px,url);<br>  }<br>}<br> 请注意：这仅仅是解决响应式图片自适应的一种思路，但这种方案仅仅适配的断点较少。并不太实用，此处仅为扩展同学们的思路。<br>3.媒体查询<br>媒体查询在CSS3中得到了强大的扩展。使用这个属性可以让你的设计根据用户终端设备适配对应的样式。这也是响应式设计中最为关键的。可以说Responsive设计离开了Medial Queries就失去了他生存的意义。简单的说媒体查询可以根据设备的尺寸，查询出适配的样式。Responsive设计最关注的就是：根据用户的使用设备的当前宽度，你的Web页面将加载一个备用的样式，实现特定的页面风格。<br>4.屏幕分辨率<br>屏幕分辨简单点说就是用户显示器的分辨率，深一点说，屏幕分辨率指的是用户使用的设备浏览您的Web页面时的显示屏幕的分辨率，比如说智能手机浏览器、移动电脑浏览器、平板电脑浏览器和桌面浏览器的分辨率。Responsive设计利用Media Queries属性针对浏览器使用的分辨率来适配对应的CSS样式。因此屏幕分辨率在Responsive设计中是一个很重要的东西，因为只有知道Web页面要在哪种分辨率下显示何种效果，才能调用对应的样式。<br>5.主要断点<br>主要断点，在Web开发中是一个新词，但对于Responsive设计中是一个很重要的一部分。简单的描述就是，设备宽度的临界点。在Media Queries中，其中媒体特性“min-width”和“max-width”对应的属性值就是响应式设计中的断点值。简单点说，就是使用主要断点和次要断点，创建媒体查询的条件。而每个断点会对应调用一个样式文件（或者样式代码）</p>
+<h3 id="Responsive布局技巧"><a href="#Responsive布局技巧" class="headerlink" title="Responsive布局技巧"></a>Responsive布局技巧</h3><p>通过上面的介绍，大家对响应式设计有了一定的了解，但在实际制作中还是有一些布局技巧的：<br>在Responsive布局中，可以毫无保留的丢弃：<br>第一， 尽量少用无关紧要的div；<br>第二，不要使用内联元素（inline）；<br>第三，尽量少用JS或flash；<br>第四，丢弃没用的绝对定位和浮动样式；<br>第五，摒弃任何冗余结构和不使用100%设置。<br>有舍才有得，丢弃了一些对Responsive有影响的东东，那么有哪些东东能帮助Responsive确定更好的布局呢？<br>第一，使用HTML5 Doctype和相关指南；<br>第二，重置好你的样式（reset.css）；<br>第三，一个简单的有语义的核心布局；<br>第四，给重要的网页元素使用简单的技巧，比如导航菜单之类元素。</p>
+<p>自由缩放属性resize<br>为了增强用户体验，CSS3增加了很多新的属性，其中resize就是一个重要的属性，它允许用户通过拖动的方式来修改元素的尺寸来改变元素的大小。到目前为止，可以使用overflow属性的任何容器元素。</p>
+<p>CSS3 outline 外轮廓属性<br>外轮廓outline在页面中呈现的效果和边框border呈现的效果极其相似，但和元素边框border完全不同，外轮廓线不占用网页布局空间，不一定是矩形，外轮廓是属于一种动态样式，只有元素获取到焦点或者被激活时呈现。<br>参数值有:<br>color , style , width , offset</p>
+</style></head\></style\></head\></link\></p>
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2015/10/20/CSS基础深入/"
+                    data-title="CSS 基础深入"
+                    data-url="http://ehazon.github.io/2015/10/20/CSS基础深入/"
+                    data-images=""
+                    data-content="border-radius利用border-radius 制作半个圆的方法：\ 
+elemen... | Haojen&#39;s blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/10/24/Javascript权威指南-数组/" data-toggle="tooltip" data-placement="top" title="JavaScript 数组">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2015/10/20/CSS基础深入/"
+                        data-title="CSS 基础深入"
+                        data-url="http://ehazon.github.io/2015/10/20/CSS基础深入/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#border-radius"><span class="toc-text">border-radius</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#box-shadow"><span class="toc-text">box-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-Gradient-分为线性渐变-linear-和径向渐变-radial"><span class="toc-text">CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性渐变（linear）"><span class="toc-text">线性渐变（linear）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-overflow-和-word-wrap"><span class="toc-text">text-overflow 和 word-wrap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-face"><span class="toc-text">@font-face</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-shadow"><span class="toc-text">text-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#background"><span class="toc-text">background</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#background-origin"><span class="toc-text">background-origin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-clip"><span class="toc-text">background-clip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-size"><span class="toc-text">background-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-position"><span class="toc-text">background-position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-attachment"><span class="toc-text">background-attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-backgrounds-多重背景"><span class="toc-text">multiple backgrounds(多重背景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用background添加列表下划线渐变"><span class="toc-text">利用background添加列表下划线渐变</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性选择器"><span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构性伪类选择器–not"><span class="toc-text">结构性伪类选择器–not</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS小众选择器"><span class="toc-text">CSS小众选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#e-target"><span class="toc-text">e:target{</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#transform-变形"><span class="toc-text">transform 变形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rotate"><span class="toc-text">rotate()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#skew"><span class="toc-text">skew()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scale"><span class="toc-text">scale()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#translate"><span class="toc-text">translate()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matrix"><span class="toc-text">matrix()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transform-origin"><span class="toc-text">transform-origin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transition-动画"><span class="toc-text">transition 动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多列布局——Columns"><span class="toc-text">多列布局——Columns</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#W3C标准盒模型"><span class="toc-text">W3C标准盒模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Media-Queries-媒体查询"><span class="toc-text">Media Queries ( 媒体查询)</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                <h5 class="text-center">
+                    <a href="/tags/">FEATURED TAGS</a>
+                </h5>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ehazon.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+</body>
+
+</html>
