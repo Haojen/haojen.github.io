@@ -13,11 +13,11 @@
 
     <title>
         
-          CSS Position &amp; Display｜Haojen&#39;s blog
+          xxx2｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/2016/05/23/CSS-Position/">
+    <link rel="canonical" href="http://ehazon.github.io/2016/05/23/xxx2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,9 +165,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>CSS Position &amp; Display</h1>
-                    
-                        <h2 class="subheading">网页布局中最重要的部分莫过于定位和 box model</h2>
+                    <h1>xxx2</h1>
                     
                     <span class="meta">
                          作者 Haojen Ma 
@@ -177,8 +175,6 @@
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
-                        
                     </div>
                 </div>
             </div>
@@ -186,7 +182,7 @@
     </div>
     <div class=" post-title-haojen">
         <span>
-            CSS Position & Display
+            xxx2
         </span>
     </div>
 </header>
@@ -198,22 +194,7 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h2 id="display"><a href="#display" class="headerlink" title="display"></a>display</h2><h3 id="width-height-属性："><a href="#width-height-属性：" class="headerlink" title="width height 属性："></a>width height 属性：</h3><p>只有元素不为inline的情况才可以应用生效，否则应用无效果，因为width和height属性是设置内容元素的宽高，而内联元素的特性是宽高由内容的宽高大小而定。</p>
-<h3 id="padding-margin-border-属性："><a href="#padding-margin-border-属性：" class="headerlink" title="padding margin border 属性："></a>padding margin border 属性：</h3><p>可以应用在所有盒子模型上面， 不区分 position 和display 属性，但内联元素中的margin和padding属性的应用，只在水平方向有效。</p>
-<h3 id="inline-与-inline-block-和-block-区别"><a href="#inline-与-inline-block-和-block-区别" class="headerlink" title="inline 与 inline-block 和 block 区别"></a>inline 与 inline-block 和 block 区别</h3><p>inline不可以设置width和height属性，block和inline-block 可以设置width和height属性，且margin的外边框垂直和水平方向皆可设置并显示完整，而inline只能显示出水平方向的外边距和内边距。<br>inline和block的最大区别就在inline属性不会前后换行显示，block会前后换行（废话啊），这个时候就inline-block就出现了，inline-block是他们两者之间的折中办法， 它具有inline属性的前后不会产生换行，也可以对inline-block属性进行width和height属性的应用，且外边距和内边距可以垂直显示。</p>
-<p>Note<br>内联元素在设置了border和背景颜色后，会表现出来，背景会覆盖遮挡周围的元素，但如果没有border和背景的话，虽然在浏览器的调试工具里发现垂直内边距有出现，但是不会对周边内容产生影响</p>
-<h2 id="Float"><a href="#Float" class="headerlink" title="Float"></a>Float</h2><p>float元素的设置不区分任何元素， 如 span p 内联元素和div块级元素等，如果float和position属性被同时设置（非static），则float属性会被position覆盖<br>如果某个元素设置了margin 0 auto 用来居中显示的同时，也设置了float，则水平居中会失效<br>float属性会隐性的将内联和块级元素设置为inline-block<br>设置float元素后，该元素并不会脱离普通文档流，但会检测到父元素的包含框<br>设置了float元素后， 该元素会对相邻元素产生影响（相邻后面的元素）<br>引用：浮动元素的下边界没有要求，因此当容器不足以容下浮动元素时，浮动元素会向下延伸（我说：这是溢出吗？）。但部分浏览器会采取增大容器高度以容下浮动元素，而对于符合CSS2.1规范的浏览器要想让容器容下浮动元素的一个可行方法是：让容器也浮动。</p>
-<h2 id="Clear"><a href="#Clear" class="headerlink" title="Clear"></a>Clear</h2><p>1》clear不能用于非块级元素，因此如果对内联元素应用clear来清除浮动，则不会有任何效果，除非改变该内联元素的属性为display：block<br>2》如果某元素应用clear清除浮动， 则此元素设置的上边距（margin-top）会被忽略，如果希望此元素与浮动元素之间有一个明确的间隔，可以在浮动元素上设置下外边距（margin-bottom）<br>3》浮动非替换元素，必须为其指定width，否则元素的width趋于0，而导致浮动元素不能完整显示<br>float的另一种办法就是在其后面的元素中设置width：100%，overflow：hidden<br>设置clear的原因：在使用float后，因为在其float父容器没有设置高度的情况下，父元素无法检测出该float的元素的高度，从而使该float元素溢出父元素，如果我们想让该float元素识别出内部元素的高度，需要使用clear属性来清除浮动。</p>
-<h2 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h2><blockquote>
-<p> top bottom left right 属性：只有在设置了position属性不为static时，才能激活使用</p>
-</blockquote>
-<h3 id="Absolute"><a href="#Absolute" class="headerlink" title="Absolute"></a>Absolute</h3><p>absolute 属性会隐性的改变设置了该元素的display属性为inline-block（none除外,经过测试如果将display设置为none ， position设置的属性会失效）；<br>如果某元素设置了absolute 属性，且并有display（display属性应该是默认的inline-block）和float属性，而float属性将会被重置为none;<br>使用absoulte或fixed定位的话，必须指定 left、right、 top、 bottom 属性中的至少一个，否则left/right/top/bottom属性会使用它们的默认值 auto ，这将导致对象遵从正常的HTML布局规则，在前一个对象之后立即被呈递，简单讲就是都变成relative，会占用文档空间，这点非常重要，很多人使用absolute定位后发现没有脱离文档流就是这个原因，这里要特别注意~~~<br>未测试 祖先类的margin会让子类的absoulte跟着偏移，而padding却不会让子类的absolute发生偏移。总结一下，就是absoulte是根据祖先类的border进行的定位。<br>如果应用了margin 0 auto 后并同时应用absolute定位的话， 水平居中会失效</p>
-<h3 id="Relative"><a href="#Relative" class="headerlink" title="Relative"></a>Relative</h3><p>该属性不会隐性的改变display属性</p>
-<h3 id="Fixed"><a href="#Fixed" class="headerlink" title="Fixed"></a>Fixed</h3><p>该属性表现的同absolute大致相同，唯一的不同点是fixed是根据浏览器窗口的边进行定位，并固定显示在视角中。</p>
-<h3 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h3><p>无特殊定位，它是html元素默认的定位方式，即我们不设定元素的position属性时默认的position值就是static，它遵循正常的文档流对象，对象占用文档空间，该定位方式下，top、right、bottom、left、z-index等属性是无效的。</p>
-<p>Note</p>
-<p>Note : 绝对(absolute)定位对象在可视区域之外会导致滚动条出现。而放置相对(relative)定位对象在可视区域之外，滚动条不会出现。</p>
-
+                
 
                 <hr>
 
@@ -221,11 +202,11 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/05/23/CSS-Position/"
-                    data-title="CSS Position &amp; Display"
-                    data-url="http://ehazon.github.io/2016/05/23/CSS-Position/"
+                    data-thread-key="2016/05/23/xxx2/"
+                    data-title="xxx2"
+                    data-url="http://ehazon.github.io/2016/05/23/xxx2/"
                     data-images=""
-                    data-content="displaywidth height 属性：只有元素不为inline的情况才可以应用生效，否... | Haojen&#39;s blog " >
+                    data-content=" | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -243,13 +224,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/05/23/Notes/2016-05-23 13-57-44/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/05/15/空谷幽兰/" data-toggle="tooltip" data-placement="top" title="《空谷幽兰》">Next Post &rarr;</a>
+                            <a href="/2016/05/23/xxx-2/" data-toggle="tooltip" data-placement="top" title="xxx">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -258,9 +235,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/05/23/CSS-Position/"
-                        data-title="CSS Position &amp; Display"
-                        data-url="http://ehazon.github.io/2016/05/23/CSS-Position/" >
+                        data-thread-key="2016/05/23/xxx2/"
+                        data-title="xxx2"
+                        data-url="http://ehazon.github.io/2016/05/23/xxx2/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -272,7 +249,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#display"><span class="toc-text">display</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#width-height-属性："><span class="toc-text">width height 属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#padding-margin-border-属性："><span class="toc-text">padding margin border 属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inline-与-inline-block-和-block-区别"><span class="toc-text">inline 与 inline-block 和 block 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Float"><span class="toc-text">Float</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clear"><span class="toc-text">Clear</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Position"><span class="toc-text">Position</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Absolute"><span class="toc-text">Absolute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relative"><span class="toc-text">Relative</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fixed"><span class="toc-text">Fixed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Static"><span class="toc-text">Static</span></a></li></ol></li></ol>
+                    
                 </div>
             </div>
         </div>
@@ -293,8 +270,6 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
                     </div>
                 </section>
