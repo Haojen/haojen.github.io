@@ -425,7 +425,7 @@ pre code {
     background-attachment: scroll;
     background-size: cover;
     margin-bottom: 0px;
-    height: 320px;
+    height: 300px;
 }
 
 
@@ -530,7 +530,7 @@ pre code {
     }
 }
 
-.post-preview > a {
+    .post-preview > a {
     color: #404040;
     display: block;
     height: 100%;
@@ -1288,7 +1288,11 @@ body {
     .custom-haojen-container {
         padding-top: 90px;
     }
+    .intro-header{
+        height: 400px;
+    }
 }
+
 
 
 
