@@ -1288,6 +1288,8 @@ body {
     .custom-haojen-container {
         padding-top: 90px;
     }
+}
+@media (min-width: 1600px) {
     .intro-header{
         height: 400px;
     }

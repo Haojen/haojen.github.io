@@ -95,6 +95,12 @@
                     
                         
                         <li>
+                            <a href="/my-works/">my works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
                             <a href="/about/">About me</a>
                         </li>
                         
@@ -102,12 +108,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
@@ -150,6 +150,431 @@
 
     <!-- Main Content -->
     
+
+    <style>
+
+        .custom-haojen-container .post-preview:nth-of-type(1),
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
+            text-align: center;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+            background-color: rgba(255, 248, 220, 0.5);
+            background-size: cover;
+            padding:0;
+            height: 300px;
+        }
+        /*去掉诗歌的背景图片*/
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
+            background-image: none!important;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) h2,
+        .custom-haojen-container .post-preview:nth-child(1) .post-meta,
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
+            text-shadow: 0 0 6px rgba(15,15,15,.5);
+            letter-spacing: 1px;
+            color: #fff;
+            font-family: unset;
+            font-weight:300;
+
+        }
+        .custom-haojen-container .post-preview hr{
+            margin:0!important;
+        }
+        .custom-haojen-container .post-preview:nth-child(1) .post-meta{
+            font-size: .9em;
+        }
+        .custom-haojen-container .post-preview .post-content-preview>p{
+            margin-top: 0;
+        }
+        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
+            letter-spacing: 6px;
+            font-size: 18px;
+            font-family: unset;
+        }
+            /*不显示摘要*/
+        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
+        /*只第一个显示背景图片*/
+        .custom-haojen-container .post-preview:not(:nth-child(1)){
+            background-image: none!important;
+        }
+        /*第一个分界线去掉*/
+        .custom-haojen-container hr:nth-of-type(1){
+            display: none;
+        }
+        .custom-haojen-container hr{margin:0;}
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-subtitle{
+            color: rgba(15,15,15,.75)
+        }
+        /*主题*/
+        .custom-haojen-container .post-preview:nth-of-type(1)>a{
+            padding: 65px 70px 0;
+        }
+        /*诗词主题*/
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1)>a{
+            padding-top: 50px;
+        }
+        /*诗词标题*/
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
+            font-size: 35px;
+            font-family:  STKaiti;
+            color: rgba(15,15,15,.85);
+        }
+        .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta{
+            color: #0e2231;
+        }
+        @media (max-width: 768px)  {
+            .custom-haojen-container .post-preview:nth-child(1) {
+                margin-top: 15px;
+                height: 240px;
+            }
+            .custom-haojen-container .post-preview-poetry:nth-of-type(1) > a {
+                padding-top: 30px;
+            }
+            .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
+                font-size: 28px!important;
+            }
+            .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
+                font-size: 18px;
+                font-weight:400;
+            }
+        }
+
+        /*手机屏幕*/
+        @media (max-width: 400px){
+            .custom-haojen-container .post-preview:nth-child(1){
+                height: 195px;
+                padding: 12px 30px;
+            }
+            .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
+                font-size: 20px!important;
+            }
+            .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
+                font-size: 16px;
+            }
+            .post-preview > a > .post-subtitle{
+                font-weight:400;
+            }
+            .custom-haojen-container .post-preview:nth-child(1) a{padding-top: 0;}
+        }
+    </style>
+
+<img src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90" alt="wechat share" height="0" width="0" style="position: absolute;">
+<!-- Page Header -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header" style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/home-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')">
+            <div class="container">
+                <div class="site-heading">
+                    <div class="about-me">
+                        <img src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90" />
+                        <h5><a href="/about/">Haojen Ma</a></h5>
+                        <p>Stay Hungry , Stay Foolish</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    </div>
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <!-- Post Container -->
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <!-- Main Content -->
+
+
+
+
+<div class="post-preview 
+    post-preview-poetry"
+        style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/800/h/300/interlace/1/q/70')">
+    <a href="/2016/05/23/逍遥行/">
+        <h2 class="post-title">
+            逍遥行
+        </h2>
+        <p class="post-meta">
+            2016-05-23
+        </p>
+        
+            <h3 class="post-subtitle">
+                北冥有鱼，其名为鲲，鲲之大，不知其几千里也。
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                如何才是你真正韵律 自由的流淌遍布身心每一个音符都与你的心愿 永相应
+世界是一支飞在空中的花朵 生命是一场通往幸福的航行对你我来讲 只是一天路程而已你的超然物外 逍遥自在我的寂寞精彩
+世界是一支飞在空中的花朵 生命是一场通往幸福的航行对你我来讲 只是一天路程而已宛如日出东海 注定落西山
+道路艰...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/800/h/300/interlace/1/q/70')">
+    <a href="/2016/05/23/CSS-Position/">
+        <h2 class="post-title">
+            CSS Position & Display
+        </h2>
+        <p class="post-meta">
+            2016-05-23
+        </p>
+        
+            <h3 class="post-subtitle">
+                网页布局中最重要的部分莫过于定位和 box model
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                displaywidth height 属性：只有元素不为inline的情况才可以应用生效，否则应用无效果，因为width和height属性是设置内容元素的宽高，而内联元素的特性是宽高由内容的宽高大小而定。
+padding margin border 属性：可以应用在所有盒子模型上面， 不区分...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview 
+    post-preview-poetry"
+        style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/800/h/300/interlace/1/q/70')">
+    <a href="/2016/05/15/空谷幽兰/">
+        <h2 class="post-title">
+            空谷幽兰
+        </h2>
+        <p class="post-meta">
+            2016-05-15
+        </p>
+        
+            <h3 class="post-subtitle">
+                如幻大千, 惊鸿一瞥
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                纵有红颜，百生千劫。难消君心，万古情愁。青峰之巅，山外之山。晚霞寂照，星夜无眠。 如幻大千，惊鸿一瞥。一曲终了，悲欣交集；夕阳之间，天外之天。梅花清幽，独立春寒。
+红尘中，你的无上清凉。寂静光明，默默照耀世界。行如风，如君一骑绝尘。空谷绝响，至今谁在倾听。一念净心，花开遍世界。每临绝境，峰回路...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/800/h/300/interlace/1/q/70')">
+    <a href="/2016/05/08/恐龙与史前生命/">
+        <h2 class="post-title">
+            恐龙与史前生命
+        </h2>
+        <p class="post-meta">
+            2016-05-08
+        </p>
+        
+            <h3 class="post-subtitle">
+                200多种恐龙和始祖生物的详细资料
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                恐龙的进化恐龙进化的第一步发生在 二叠纪 ,被称为”初龙” , 这个时候”初龙”还没有进化成真正意义上的恐龙, 实际上真正意义上的恐龙,鳄鱼,翼龙类的进化都是发生在三叠纪,从初龙进化而来的
+
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+<div class="post-preview "
+        style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/800/h/300/interlace/1/q/70')">
+    <a href="/2016/05/02/如何写影评-笔记/">
+        <h2 class="post-title">
+            如何写影评
+        </h2>
+        <p class="post-meta">
+            2016-05-02
+        </p>
+        
+            <h3 class="post-subtitle">
+                写影评之外, 是对喜爱的影片应得的尊重
+            </h3>
+        
+        <div class="post-content-preview">
+            <p>
+                chapter 1 关于电影的写作1.1 为什么要评写电影
+理解电影中的内容更深刻
+能享受到更多微妙的愉悦
+结交更多志同道合的朋友
+增进和朋友之间的友谊
+锻炼自身的写作和逻辑思维能力
+
+
+任何形式的分析都有可能破坏我们观影的乐趣
+
+1.2 你的读者和你写影评的目的目的:   
+
+向读者和你身边...
+            </p>
+        </div>
+    </a>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+        <li class="next">
+            <a href="/page/2/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+        </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+                <!-- About Me -->
+                <section class="visible-md visible-lg" style="padding: 0 18px">
+                    <div class="short-about">
+
+                        
+                            <img src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90" />
+                        
+                        <h5><a href="/about/">Haojen Ma</a></h5>
+                        
+                            <p>Stay Hungry , Stay Foolish</p>
+                        
+                        <hr>
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/ehazon">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="http://weibo.com/haojen">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+
+                            
+                                <li>
+                                    <a target="_blank"  href="https://github.com/ehazon">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+
+                            
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!--<h5><a href="<\%= config.root %>tags/">FEATURED TAGS!!!</a></h5>-->
+                    <div class="tags">
+                        
+                        
+                        <a href="/tags/#CSS" title="CSS" rel="4">CSS</a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/#jQuery" title="jQuery" rel="2">jQuery</a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/#JS" title="JS" rel="6">JS</a>
+                        
+                        
+                        
+                        <a href="/tags/#Node.js" title="Node.js" rel="2">Node.js</a>
+                        
+                        
+                        
+                        <a href="/tags/#HTML" title="HTML" rel="2">HTML</a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/#诗词" title="诗词" rel="2">诗词</a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+            </div>
+    </div>
+</div>
+
+
 
     <!-- Footer -->
     <!-- Footer -->
