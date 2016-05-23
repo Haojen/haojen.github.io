@@ -1276,7 +1276,7 @@ body {
     letter-spacing: 1px;
     font-weight: 400;
 }
-.site-heading p{
+.site-heading p {
     margin: 0px;
     color: #eee;
     font-size: 15px;
@@ -1287,11 +1287,6 @@ body {
 @media (min-width: 992px) {
     .custom-haojen-container {
         padding-top: 90px;
-    }
-}
-@media (min-width: 1600px) {
-    .intro-header{
-        height: 400px;
     }
 }
 
