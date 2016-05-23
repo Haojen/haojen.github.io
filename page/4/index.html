@@ -95,12 +95,6 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
-                        </li>
-                        
-                    
-                        
-                        <li>
                             <a href="/my-works/">my works</a>
                         </li>
                         
@@ -108,6 +102,12 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
@@ -171,11 +171,11 @@
         .custom-haojen-container .post-preview:nth-child(1) h2,
         .custom-haojen-container .post-preview:nth-child(1) .post-meta,
         .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            text-shadow: 0 0 6px rgba(15, 15, 15, .5);
+            text-shadow: 0 0 3px rgba(15, 15, 15, .4);
             letter-spacing: 1px;
             color: #fff;
             font-family: unset;
-            font-weight: 300;
+            font-weight: 500;
         }
         .custom-haojen-container .post-preview hr{
             margin:0!important;
@@ -232,18 +232,19 @@
             }
             .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
                 font-size: 28px!important;
+                margin-top: 0;
             }
             .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
                 font-size: 18px;
                 font-weight:400;
             }
+            .custom-haojen-container .post-preview:nth-of-type(1) > a{padding: 55px}
         }
 
         /*手机屏幕*/
         @media (max-width: 400px){
             .custom-haojen-container .post-preview:nth-child(1){
                 height: 195px;
-                padding: 12px 30px;
             }
             .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
                 font-size: 20px!important;
@@ -254,7 +255,9 @@
             .post-preview > a > .post-subtitle{
                 font-weight:400;
             }
-            .custom-haojen-container .post-preview:nth-child(1) a{padding:0;}
+            .custom-haojen-container .post-preview:nth-child(1) a{
+                padding: 30px 20px;
+            }
         }
     </style>
 
@@ -526,9 +529,9 @@ var str = new String(&apos;hello world&apos;);
                         
                         
                         
+                        
+                        
                         <a href="/tags/#JS" title="JS" rel="6">JS</a>
-                        
-                        
                         
                         
                         
