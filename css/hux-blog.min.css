@@ -69,14 +69,12 @@ p {
 }
 
 h1,
-h2{
-    font-weight: 400;
-}
+h2,
 h3,
 h4,
 h5,
 h6{
-    font-weight: 300;
+    font-weight: 400;
 }
 h2{font-size: 28px}
 h3{font-size: 25px}
@@ -406,6 +404,7 @@ article .post-container h6 {
     height: 300px;
     display: table;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .intro-header>.container{
@@ -452,15 +451,9 @@ article .post-container h6 {
 
 
 .intro-header .post-heading .subheading {
-    /* Hux learn from
-       *     TypeIsBeautiful,
-       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-       */
-    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-    line-height: 1.7;
     font-size: 30px;
     line-height: 1.4;
-    font-weight: normal;
+    /*font-weight: normal;*/
     margin-bottom: 0;
 }
 
@@ -494,7 +487,6 @@ article .post-container h6 {
     }
 
     .intro-header {
-        margin-bottom: 20px;
         height: 370px;
     }
 }
