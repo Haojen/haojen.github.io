@@ -426,6 +426,7 @@ article .post-container h6 {
 .intro-header>.container{
     display: table-cell;
     vertical-align: middle;
+    padding-top: 55px;
 }
 
 
@@ -494,6 +495,7 @@ article .post-container h6 {
         font-weight: 300;
     }
     .intro-header .post-heading h1 {
+        margin-top: 0;
         font-size: 36px;
     }
 
