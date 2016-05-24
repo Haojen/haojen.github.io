@@ -321,6 +321,7 @@ article .post-container h6 {
     color: white;
     height: 56px;
     line-height: 25px;
+
 }
 
 .navbar-custom .navbar-brand:hover {
@@ -333,6 +334,7 @@ article .post-container h6 {
     line-height: 20px;
     font-weight: 800;
     letter-spacing: 1px;
+    text-shadow: 0 0 1px rgba(0,0,0,.1);
 }
 
 .navbar-custom .nav li a:active {
@@ -344,17 +346,14 @@ article .post-container h6 {
         background: transparent;
         border-bottom: 1px solid transparent;
     }
-
     .navbar-custom body {
         font-size: 20px;
     }
-
     .navbar-custom .navbar-brand {
         color: white;
         padding: 20px;
         line-height: 17px;
     }
-
     .navbar-custom .navbar-brand:hover,
     .navbar-custom .navbar-brand:focus {
         color: rgba(255, 255, 255, 0.8);
@@ -395,19 +394,9 @@ article .post-container h6 {
     .navbar-custom.is-fixed .nav li a {
         color: #404040;
     }
-
     .navbar-custom.is-fixed .nav li a:hover,
     .navbar-custom.is-fixed .nav li a:focus {
         color: #0085a1;
-    }
-
-    .navbar-custom.is-visible {
-        /* if the user changes the scrolling direction, we show the header */
-        /*-webkit-transform: translate3d(0, 100%, 0);
-        -moz-transform: translate3d(0, 100%, 0);
-        -ms-transform: translate3d(0, 100%, 0);
-        -o-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);*/
     }
 }
 
@@ -420,7 +409,6 @@ article .post-container h6 {
     height: 300px;
     display: table;
     width: 100%;
-    /*padding-top: 55px; !*防止上方的导航栏遮挡*!*/
 }
 
 .intro-header>.container{
@@ -543,15 +531,14 @@ a:focus {
     font-size: 15px;
     line-height: 1.3;
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 10px;
-    color: rgba(0, 0, 0, 0.8)
+    color: rgba(0, 0, 0, 0.65)
 }
 /*.post-preview .post-meta*/
 .post-preview .post-meta {
-    font-family: 'STSong',serif;
     color: #808080;
-    font-size: 16px;
+    font-size: 12px;
     margin:0;
     padding-left: 2px;
     margin-bottom: 15px;
@@ -579,7 +566,7 @@ a:focus {
     }
 
     .post-preview .post-meta {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
