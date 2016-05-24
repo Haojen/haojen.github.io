@@ -1187,7 +1187,7 @@ img::-moz-selection {
     }
 }
 
-@media screen and  (max-width: 769px){
+@media screen and  (max-width: 768px){
     .post-title-fixed span{
         max-width: 160px;
         font-size: 14px;
@@ -1205,7 +1205,7 @@ img::-moz-selection {
 .post-preview > a > .post-title{
     margin-bottom: 0;
     font-family: STSong;
-    text-shadow: 0 0 1px rgba(0,0,0,.3);
+    text-shadow: 0 0 1px rgba(0,0,0,.15);
 }
 .site-heading .about-me img{
     width: 120px;height: 120px;
