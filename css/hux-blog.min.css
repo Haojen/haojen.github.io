@@ -74,8 +74,6 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1.7;
-    line-height: 1.1;
     font-weight: 400;
 }
 
@@ -172,7 +170,7 @@ article .post-container h3,
 article .post-container h4,
 article .post-container h5,
 article .post-container h6 {
-    margin-top:-70px;
+    margin-top:-100px;
     padding: 100px 0 10px;
 }
 
@@ -1214,13 +1212,6 @@ img::-moz-selection {
     font-family: STSong, serif;
     text-shadow: 0 0 1px rgba(15,15,15,.2);
 }
-
-@media screen and (max-width: 768px){
-    h2{font-size: 19px!important;}
-}
-
-
-
 .site-heading .about-me img{
     width: 120px;height: 120px;
     border-radius: 50%;
