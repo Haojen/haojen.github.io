@@ -167,7 +167,7 @@ pre code {
 }
 
 
-
+/*点击博文内部的目录时,跳转到指定标题*/
 article .post-container h1,
 article .post-container h2,
 article .post-container h3,
@@ -417,22 +417,21 @@ article .post-container h6 {
     background-color: #808080;
     background-attachment: scroll;
     background-size: cover;
-    margin-bottom: 0px;
     height: 300px;
     display: table;
     width: 100%;
+    /*padding-top: 55px; !*防止上方的导航栏遮挡*!*/
+}
+
+.intro-header>.container{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 
-.intro-header .site-heading,
-.intro-header .post-heading,
-.intro-header .page-heading {
-    padding: 85px 0 55px;
-}
 .intro-header .site-heading,
 .intro-header .page-heading,
 .intro-header .post-heading{
-    text-align: center;
     color: #fff;
 }
 
@@ -453,6 +452,11 @@ article .post-container h6 {
     margin: 10px 0 0;
 }
 
+/*导航内部标题居中*/
+.intro-header .display-mid{
+    display: table-cell;
+    vertical-align: middle;
+}
 
 .intro-header .post-heading h1 {
     font-size: 24px;
@@ -466,7 +470,6 @@ article .post-container h6 {
        *     TypeIsBeautiful,
        *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
        */
-    text-align: center;
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     font-size: 30px;
@@ -496,17 +499,13 @@ article .post-container h6 {
 
     .intro-header .post-heading .subheading {
         font-size: 28px;
+        margin:0;
     }
 
     .intro-header .post-heading .meta {
         font-size: 16px;
     }
 
-    .intro-header .site-heading,
-    .intro-header .post-heading,
-    .intro-header .page-heading {
-        padding-top: 90px;
-    }
     .intro-header {
         margin-bottom: 20px;
         height: 370px;
@@ -1079,9 +1078,6 @@ body {
     text-align: center;
 }
 
-.intro-header .post-heading .tags {
-    /*text-align: left;/*/
-}
 
 @media screen and (max-width: 768px) {
     .intro-header .post-heading .subheading {
