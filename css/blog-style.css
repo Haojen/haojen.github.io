@@ -82,7 +82,9 @@ h3{font-size: 20px}
 h4{font-size: 18px}
 h5{font-size: 16px}
 h6{font-size: 15px}
-
+article .post-container h2{
+    font-weight: 600;
+}
 a {
     color: #404040;
 }
@@ -172,23 +174,13 @@ article .post-container h6 {
     margin-top:-90px;
     padding: 100px 0 0;
 }
-article .post-container h2{
-    padding-bottom: 10px;
-}
-.post-container h5 {
-    font-size: 19px;
-    font-weight: 600;
-    color: gray;
+
+article blockquote footer{
+    padding: 5px 20px 0;
 }
 
 .post-container h5 + p {
     margin-top: 5px;
-}
-
-.post-container h6 {
-    font-size: 16px;
-    font-weight: 600;
-    color: gray;
 }
 
 .post-container h6 + p {
@@ -197,7 +189,7 @@ article .post-container h2{
 
 .post-container ul,
 .post-container ol {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
