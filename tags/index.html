@@ -42,11 +42,18 @@
     <script></script>
 </head>
 
-
+<style>
+    .intro-header{
+        background-image:url(
+        'http://o7bkkhiex.bkt.clouddn.com/tag-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
+        )
+    }
+</style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
+    <!--wechat title img-->
 
-    <!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
@@ -85,13 +92,13 @@
                     
                         
                         <li>
-                            <a href="/about/">About me</a>
+                            <a href="/my-works/">my works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/about/">About me</a>
                         </li>
                         
                     
@@ -146,13 +153,12 @@
 </style>
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('http://o7bkkhiex.bkt.clouddn.com/tag-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')">
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading text-center">
                     <h1>Tags</h1>
-                    <!--<hr class="small">-->
                     <span class="subheading">在这里你可以根据标签，快速检索文章</span>
                 </div>
             </div>
@@ -169,17 +175,17 @@
                 
                     <a href="#CSS" title="CSS" rel="4">CSS</a>
                 
-                    <a href="#layout" title="layout" rel="1">layout</a>
-                
                     <a href="#JS" title="JS" rel="6">JS</a>
+                
+                    <a href="#layout" title="layout" rel="1">layout</a>
                 
                     <a href="#jQuery" title="jQuery" rel="2">jQuery</a>
                 
                     <a href="#AJAX" title="AJAX" rel="1">AJAX</a>
                 
-                    <a href="#HTML" title="HTML" rel="2">HTML</a>
-                
                     <a href="#Node.js" title="Node.js" rel="2">Node.js</a>
+                
+                    <a href="#HTML" title="HTML" rel="2">HTML</a>
                 
                     <a href="#npm" title="npm" rel="1">npm</a>
                 
@@ -204,17 +210,12 @@
             </div>
 
             <!-- 标签列表 -->
-
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="CSS">
                     <span class="tag-text">CSS</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/01/04/CSS 设计指南/">
                         <h2 class="post-title">
@@ -226,14 +227,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/05/23/CSS-Position/">
                         <h2 class="post-title">
@@ -245,14 +241,23 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2015/10/30/Float 布局详解/">
+                        <h2 class="post-title">
+                            Float 布局详解
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                简单的了解float的历史，其本来的作用，及其特性
+                            </h3>
+                        
+                    </a>
+                </div>
+                <hr>
+                
                  <div class="post-preview">
                      <a href="/2015/10/20/CSS基础深入/">
                         <h2 class="post-title">
@@ -264,52 +269,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/10/30/Float 布局详解/">
-                        <h2 class="post-title">
-                            Float 布局详解
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                简单的了解float的历史，其本来的作用，及其特性
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="layout">
-                    <span class="tag-text">layout</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/10/30/Float 布局详解/">
-                        <h2 class="post-title">
-                            Float 布局详解
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                简单的了解float的历史，其本来的作用，及其特性
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -320,10 +279,6 @@
                     <span class="tag-text">JS</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/24/Javascript权威指南-数组/">
                         <h2 class="post-title">
@@ -335,14 +290,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/31/Javascript高级程序设计-深入系统化/">
                         <h2 class="post-title">
@@ -354,14 +304,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/26/javascript_string_类型/">
                         <h2 class="post-title">
@@ -369,14 +314,9 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/11/11/js_命名规范/">
                         <h2 class="post-title">
@@ -384,14 +324,9 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/11/25/一元运算符/">
                         <h2 class="post-title">
@@ -399,14 +334,9 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/11/10/定时器学习/">
                         <h2 class="post-title">
@@ -414,7 +344,27 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="layout">
+                    <span class="tag-text">layout</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2015/10/30/Float 布局详解/">
+                        <h2 class="post-title">
+                            Float 布局详解
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                简单的了解float的历史，其本来的作用，及其特性
+                            </h3>
+                        
+                    </a>
                 </div>
                 <hr>
                 
@@ -425,10 +375,6 @@
                     <span class="tag-text">jQuery</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/12/17/jQuery 下的「AJAX」/">
                         <h2 class="post-title">
@@ -440,14 +386,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/12/17/锋利的 jQuery 学习笔记/">
                         <h2 class="post-title">
@@ -459,7 +400,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -470,10 +410,6 @@
                     <span class="tag-text">AJAX</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/12/17/jQuery 下的「AJAX」/">
                         <h2 class="post-title">
@@ -485,48 +421,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="HTML">
-                    <span class="tag-text">HTML</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/10/30/meta_标签/">
-                        <h2 class="post-title">
-                            Meta 标签
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                带你系统性的了解 meta 标签究竟为何物
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2015/12/11/复习整理/">
-                        <h2 class="post-title">
-                            HTML 初学复习笔记
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -537,10 +431,6 @@
                     <span class="tag-text">Node.js</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/26/nodejs学习/">
                         <h2 class="post-title">
@@ -552,14 +442,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/26/npm学习/">
                         <h2 class="post-title">
@@ -571,7 +456,37 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="HTML">
+                    <span class="tag-text">HTML</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2015/10/30/meta_标签/">
+                        <h2 class="post-title">
+                            Meta 标签
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                带你系统性的了解 meta 标签究竟为何物
+                            </h3>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+                 <div class="post-preview">
+                     <a href="/2015/12/11/复习整理/">
+                        <h2 class="post-title">
+                            HTML 初学复习笔记
+                        </h2>
+                        
+                    </a>
                 </div>
                 <hr>
                 
@@ -582,10 +497,6 @@
                     <span class="tag-text">npm</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/10/26/npm学习/">
                         <h2 class="post-title">
@@ -597,7 +508,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -608,10 +518,6 @@
                     <span class="tag-text">Foo</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2013/12/24/tags/">
                         <h2 class="post-title">
@@ -619,7 +525,6 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -630,10 +535,6 @@
                     <span class="tag-text">Bar</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2013/12/24/tags/">
                         <h2 class="post-title">
@@ -641,7 +542,6 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -652,10 +552,6 @@
                     <span class="tag-text">Baz</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2013/12/24/tags/">
                         <h2 class="post-title">
@@ -663,7 +559,6 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -674,10 +569,6 @@
                     <span class="tag-text">观影</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/05/02/如何写影评-笔记/">
                         <h2 class="post-title">
@@ -689,7 +580,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -700,10 +590,6 @@
                     <span class="tag-text">科普</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/05/08/恐龙与史前生命/">
                         <h2 class="post-title">
@@ -715,7 +601,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -726,10 +611,6 @@
                     <span class="tag-text">JSON</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/12/10/我所不知道的_json/">
                         <h2 class="post-title">
@@ -737,7 +618,6 @@
                         </h2>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -748,10 +628,6 @@
                     <span class="tag-text">电子</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/01/24/电子技术自学宝典/">
                         <h2 class="post-title">
@@ -763,7 +639,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -774,10 +649,6 @@
                     <span class="tag-text">诗词</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/05/15/空谷幽兰/">
                         <h2 class="post-title">
@@ -789,14 +660,9 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2016/05/23/逍遥行/">
                         <h2 class="post-title">
@@ -808,7 +674,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -819,10 +684,6 @@
                     <span class="tag-text">Music</span>
                 </span>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
                  <div class="post-preview">
                      <a href="/2015/12/05/聆听音乐_by_耶鲁大学/">
                         <h2 class="post-title">
@@ -834,7 +695,6 @@
                             </h3>
                         
                     </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
                 </div>
                 <hr>
                 
@@ -970,6 +830,8 @@
 
 
 
+
+    <img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90">
 
 </body>
 

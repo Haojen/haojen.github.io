@@ -1179,8 +1179,11 @@ img::-moz-selection {
         padding-top: 90px;
     }
 }
-
-
-
+/*wechat 标题图片优化*/
+.wechat-title-img{
+    position: absolute;
+    height:0;
+    width:0;
+}
 
 
