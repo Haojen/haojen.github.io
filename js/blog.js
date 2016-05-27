@@ -81,12 +81,11 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         var introHeader = introHeader > 497 ? introHeader : 400;
         var toc = document.querySelector('.toc-wrap');
         var postTitle = document.querySelector('.post-title-haojen');
-        scrollCheck(toc,'toc-fixed',introHeader-60)
+        scrollCheck(toc,'toc-fixed',introHeader-60);
         scrollCheck(navbar,'is-fixed');
         scrollCheck(postTitle,'post-title-fixed',introHeader-60);
-
     }else {
     }
-})()
+})();
 
 

@@ -1100,10 +1100,10 @@ img::-moz-selection {
 .navbar-custom.is-fixed .navbar-toggle span {
     background: black;
 }
-
 .post-title-haojen{
     display: none;
 }
+
 .post-title-fixed{
     display: block;
     position: fixed;
@@ -1112,6 +1112,7 @@ img::-moz-selection {
     z-index: 6;
     text-align: center;
     white-space: nowrap;
+    left:0;
 }
 .post-title-fixed span{
     display: inline-block;
