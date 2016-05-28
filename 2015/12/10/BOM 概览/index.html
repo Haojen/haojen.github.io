@@ -12,11 +12,11 @@
 
     <title>
         
-          Videos｜Haojen&#39;s blog
+          BOM 概览｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://ehazon.github.io/2013/12/25/videos/">
+    <link rel="canonical" href="http://ehazon.github.io/2015/12/10/BOM 概览/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -161,15 +161,21 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Videos</h1>
+                    <h1>BOM 概览</h1>
+                    
+                        <h2 class="subheading">BOM 的简单介绍，也涉及到 DOM</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2013-12-25
+                          日期 2015-12-10
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#DOM" title="DOM">DOM</a>
+                        
+                        <a class="tag" href="/tags/#BOM" title="BOM">BOM</a>
                         
                     </div>
                 </div>
@@ -178,7 +184,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Videos
+            BOM 概览
         </span>
     </div>
 </header>
@@ -190,11 +196,26 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>This is a video test post.</p>
-<p><strong>Youtube</strong></p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/TIbZDRXM-Tg" frameborder="0" allowfullscreen></iframe></div>
-<p><strong>Vimeo</strong></p>
-<div class="video-container"><iframe src="//player.vimeo.com/video/82090131" frameborder="0" allowfullscreen></iframe></div>
+                <h2 id="window-对象"><a href="#window-对象" class="headerlink" title="window 对象"></a>window 对象</h2><p>Javascript 的全局作用域 global</p>
+<h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><p>浏览器的 URL ， 前进后退</p>
+<h2 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h2><p>浏览器的版本信息，获取用户的平台， 配置等信息</p>
+<h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2><p>浏览器的历史记录</p>
+<h2 id="screen-对象"><a href="#screen-对象" class="headerlink" title="screen 对象"></a>screen 对象</h2><p>用户的显示器信息</p>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p><strong>需要了解的概念是 DOM 范围</strong></p>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p>JS 与 HTML 之间的交互是通过事件实现的。事件，就是文档或者浏览器窗口中发生的一些动态或特定的交互瞬间。可以使用侦听器或者说是处理程序来预备处理事件，以便事件发生时执行相应的代码，这种模式在软件工程中被称为观察员模式的模型，支持页面的行为 （JS 代码）与页面的外观之间的松散耦合</p>
+<h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><p>IE 的是事件冒泡流，既事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接受， 然后逐级向上传播到较为不具体的节点（文档）<br>网景的是事件捕获流，事件捕获的思想是不太具体的节点应该更早的接收到事件， 而最具体的节点应该最后接收到事件。 事件捕获的用意在于时间到预定目标之前捕获他。<br>DOM 0 级 和 DOM2 级 事件的区别在于：前者每个事件只支持一个事件处理程序。而后者可以按照先后顺序执行多个</p>
+<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><p>UI 事件：当用户与页面中的元素交互时触发</p>
+<ol>
+<li>load 事件：当页面完全加载后在 window 上面触发， 当所有的框架都加在完毕时在框架集上面触发， 当图像加载完毕时在 img 元素上触发</li>
+<li>unload ： 当页面完全卸载后在 window 上面触发， 当所有框架.. 同上。</li>
+<li>resize : 当窗口或框架的大小变化时在 window 或框架上面触发</li>
+<li>scroll ： 当用户滚动带滚动条的元素中的内容时， 在该元素上面触发。 body 元素中包含所加载页面的滚动条 </li>
+</ol>
+<p>焦点事件： 当元素获得或者失去焦点时触发<br>鼠标事件： 当用户使用鼠标在页面上操作时触发</p>
+<ol>
+<li>除了 mouseenter 和 mouseleave 外，其他所有鼠标事件都会冒泡，也可以取消，但是取消鼠标事件将会影响浏览器的默认行为。<br>滚轮事件：<br>文本事件： 当用户在文档中输入文本时触发<br>键盘事件： 当用户在页面中使用键盘时触发<br>合成事件：<br>变动事件：当底层 DOM 结构发生变化时触发<br>常用的事件： 鼠标，键盘，滚轮，文本</li>
+</ol>
+
 
                 <hr>
 
@@ -202,15 +223,12 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2013/12/25/videos/"
-                    data-title="Videos"
-                    data-url="http://ehazon.github.io/2013/12/25/videos/"
+                    data-thread-key="2015/12/10/BOM 概览/"
+                    data-title="BOM 概览"
+                    data-url="http://ehazon.github.io/2015/12/10/BOM 概览/"
                     data-images=""
-                    data-content="This is a video test post.
-Youtube
-
-Vimeo
- | Haojen&#39;s blog " >
+                    data-content="window 对象Javascript 的全局作用域 global
+location 对象浏览... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -229,12 +247,12 @@ Vimeo
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2013/12/25/excerpts/" data-toggle="tooltip" data-placement="top" title="Excerpts">&larr; Previous Post</a>
+                            <a href="/2015/12/10/我所不知道的_json/" data-toggle="tooltip" data-placement="top" title="你所不知道的 JSON">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2013/12/25/gallery-post/" data-toggle="tooltip" data-placement="top" title="Gallery Post">Next Post &rarr;</a>
+                            <a href="/2015/12/05/人类的性存在/" data-toggle="tooltip" data-placement="top" title="人类的性存在">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -243,9 +261,9 @@ Vimeo
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2013/12/25/videos/"
-                        data-title="Videos"
-                        data-url="http://ehazon.github.io/2013/12/25/videos/" >
+                        data-thread-key="2015/12/10/BOM 概览/"
+                        data-title="BOM 概览"
+                        data-url="http://ehazon.github.io/2015/12/10/BOM 概览/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -257,7 +275,7 @@ Vimeo
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#window-对象"><span class="toc-text">window 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location-对象"><span class="toc-text">location 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#navigator-对象"><span class="toc-text">navigator 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history-对象"><span class="toc-text">history 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#screen-对象"><span class="toc-text">screen 对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事件"><span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#事件流"><span class="toc-text">事件流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件类型"><span class="toc-text">事件类型</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -278,6 +296,10 @@ Vimeo
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
+                        
+                          <a class="tag" href="/tags/#DOM" title="DOM">DOM</a>
+                        
+                          <a class="tag" href="/tags/#BOM" title="BOM">BOM</a>
                         
                     </div>
                 </section>
