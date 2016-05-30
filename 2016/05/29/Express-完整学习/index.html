@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="马浩珍在 Github 上的个人博客">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          Express 完整学习｜Haojen&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ehazon.github.io/2016/05/29/Express-完整学习/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<style>
+    .intro-header{
+        background-image:url(
+        'http://o7bkkhiex.bkt.clouddn.com/home-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
+        )
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">My works</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!--only post-->
+<img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90">
+
+<!-- Post Header -->
+<!-- only post bg-->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+    }
+</style>
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Express 完整学习</h1>
+                    
+                        <h2 class="subheading">The Truth is single one</h2>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma
+                         <span>
+                          日期 2016-05-29
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#Express" title="Express">Express</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Express 完整学习
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+
+                <blockquote>
+<p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强大特性帮助你创建各种Web应用.</p>
+</blockquote>
+<p><img src="http://blog.newrelic.com/wp-content/uploads/expresslogo.png" alt="express"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>express 作为一个依赖，安装到项目中。你可以在项目根目录中直接使用</p>
+<pre><code>npm install express --save // --save 是保存到`packge.json dependencies`依赖里
+</code></pre><p>或者直接在<code>package.json dependencies</code>下写入<code>“express”:&quot;*&quot;</code>,然后在根目录下运行</p>
+<pre><code>npm install
+</code></pre><p>安装完成后，你可以通过<code>npm ls</code>察看express的依赖。</p>
+<h2 id="创建一个express应用"><a href="#创建一个express应用" class="headerlink" title="创建一个express应用"></a>创建一个express应用</h2><p>创建一个express应用。</p>
+<pre><code>var express = require(&apos;express&apos;); //加载exress
+var app = exress(); //实例化一个express应用
+
+// 在express上侦听get请求
+app.get(&apos;/&apos;,function(request, response){
+    response.send(&apos;hi, this express application!&apos;)
+});
+
+//监听服务器
+app.listen(3000);
+</code></pre><p>上述代码的作用是：建立一个express应用，当服务器侦测到<code>get</code>方法的<code>/</code>根目录请求时，会使用<code>res.send</code>方法返回给浏览器我们指定好的字符串，<code>app.get()</code>就是一个路由（routing）<br>而实际应用中，我们可以指定多个路由请求。</p>
+<pre><code>var express = require(&apos;express&apos;)
+var app = express()
+
+app.get(&apos;/&apos;.function(){}) // 主页请求
+app.get(&apos;user&apos;,function(){}) // user 请求
+app.get(&apos;admin&apos;,function(){}) // admin 请求
+
+app.listen(3000);
+</code></pre><p>实际上，当我们挂在更多的路由时，我们会将其编写专门的路由文件，然后将它导入主项目，上面的路由我们可以写成下面这样</p>
+<pre><code>var express = require(&apos;express&apos;)
+var app = express()
+
+//将项目导出
+module.exports = function(app){
+    app.get(&apos;/&apos;.function(){}) // 主页请求
+    app.get(&apos;user&apos;,function(){}) // user 请求
+    app.get(&apos;admin&apos;,function(){}) // admin 请求
+}
+</code></pre><p>然后我们再在主项目文件中调用它</p>
+<pre><code>//...省略部分代码
+var routers = require(&apos;./routers&apos;) //路由目录
+routers(app) //传入express 实例
+
+app.lissten(3000)
+</code></pre><h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>路由是指如何定义应用的端点URL以及如何响应处理客户端的请求<br>路由是由一个 url and http 请求方法和若干个句柄组成，它的结构如下：app.METHOD(path, [callback…], callback)<br>app 是express对象的一个实例，METHOD是一个HTTP请求方法，path代表了服务器的路径，callback是当路由匹配时要执行的函数。</p>
+<pre><code>var express = require（&apos;express&apos;）
+var app = express()
+
+app.get(&apos;/&apos;,function(req, res){
+    res.send(&apos;hi&apos;)
+})
+</code></pre><h3 id="路由方法"><a href="#路由方法" class="headerlink" title="路由方法"></a>路由方法</h3><p>路由方法源于http请求方法， 和express实例相关，实例如下：</p>
+<pre><code>app.get(&apos;/&apos;,function(req, res){
+    res.send(&apos;send message&apos;)
+})
+
+app.post(&apos;/&apos;,function(req, res){
+    res.send(&apos;is a POST send message&apos;)
+})
+</code></pre><h4 id="app-all"><a href="#app-all" class="headerlink" title="app.all()"></a>app.all()</h4><p>一个特殊的路由方法，没有任何http方法与其对应，它的作用是<strong>对于一个路径上的所有请求加载中间件</strong>，在下面的例子中，来自 /user 的请求，不管使用什么http请求方法，里面的句柄都会得到执行</p>
+<pre><code>app.all(&apos;/user&apos;,function(req, res, next){
+    console.log(&apos;accessing the secret section...&apos;)
+    next()
+})
+</code></pre><h3 id="路由路径"><a href="#路由路径" class="headerlink" title="路由路径"></a>路由路径</h3><p>路由路径和请求方法一起定义了请求的端点， 它可以是字符串、字符串模式或正则表达式</p>
+<pre><code>app.get(&apos;/&apos;,fn) //匹配根路径的get请求
+
+app.get(&apos;/about&apos;,fn) //匹配 /about 路径的请求
+
+app.get(&apos;/random.text&apos;,fn) //匹配random.text文件的路径请求
+</code></pre><h4 id="字符串模式匹配"><a href="#字符串模式匹配" class="headerlink" title="字符串模式匹配"></a>字符串模式匹配</h4><pre><code>app.get(&apos;/ab?cd&apos;,fn) //匹配 acd or abcd
+
+app.get(&apos;/ab+cd&apos;) //匹配 abcd abbcd abbbcd ..
+
+app.get(&apos;/ab*cd&apos;) //匹配 abcd abxcd ab123cd ..
+
+// 匹配 /abe 和 /abcde
+app.get(&apos;/ab(cd)?e&apos;, function(req, res) {
+    res.send(&apos;ab(cd)?e&apos;);
+});
+</code></pre><blockquote>
+<p>字符 ?、+、* 和 () 是正则表达式的子集，- 和 . 在基于字符串的路径中按照字面值解释</p>
+</blockquote>
+<h3 id="路由句柄"><a href="#路由句柄" class="headerlink" title="路由句柄"></a>路由句柄</h3><p>可以为请求提供多个回调函数，路由句柄可以有多个型式：一个回调函数，回调函数数组，回调函数和函数数组混合。</p>
+<pre><code>var c0 = function(req,res,next){
+    //do something...
+    next()
+}
+
+var c2 = function(req,res,next){
+    //do something...
+    next()
+}
+
+app.get(&apos;/&apos;,function(req,res,next){
+    // do something..
+    next() //调用函数数组
+},[c0,c1])
+</code></pre><h3 id="响应方法"><a href="#响应方法" class="headerlink" title="响应方法"></a>响应方法</h3><p>下表中响应对象（res）的方法向客户端返回响应，终结请求响应的循环。如果在路由句柄中一个http方法都没调用，来自客户端的请求会一直挂起。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">res.download()</td>
+<td style="text-align:left">提示下载文件</td>
+</tr>
+<tr>
+<td style="text-align:left">res.end()</td>
+<td style="text-align:left">结束响应</td>
+</tr>
+<tr>
+<td style="text-align:left">res.json()</td>
+<td style="text-align:left">发送一个JSON格式的响应</td>
+</tr>
+<tr>
+<td style="text-align:left">res.jsonp()</td>
+<td style="text-align:left">发送一个支持 JSONP 的 JSON 格式的响应</td>
+</tr>
+<tr>
+<td style="text-align:left">res.redircet()</td>
+<td style="text-align:left">重定向</td>
+</tr>
+<tr>
+<td style="text-align:left">res.send()</td>
+<td style="text-align:left">发送各种类型的响应</td>
+</tr>
+<tr>
+<td style="text-align:left">res.render()</td>
+<td style="text-align:left">渲染模板</td>
+</tr>
+<tr>
+<td style="text-align:left">res.sendFile</td>
+<td style="text-align:left">以八位字节流型式发送文件</td>
+</tr>
+<tr>
+<td style="text-align:left">res.sendStatus</td>
+<td style="text-align:left">发送浏览器状态码</td>
+</tr>
+</tbody>
+</table>
+<h3 id="app-route"><a href="#app-route" class="headerlink" title="app.route()"></a>app.route()</h3><p>创建路由路径的链式路由句柄。由于路径在一个地方指定，这样做有助于创建模块化的路由，而且减少了代码冗余和拼写错误。</p>
+<pre><code>app.route(&apos;/user&apos;) //指定路径
+    .get(function(req,res){})
+    .post(function(req,res){})
+    .put(function(req,res){})
+</code></pre><h3 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router()"></a>express.Router()</h3><p>可使用 express.Router 类创建模块化、可挂载的路由句柄。Router 实例是一个完整的中间件和路由系统，因此常称其为一个 “mini-app”。</p>
+<pre><code>var express = require(&apos;express&apos;)
+var router = express.Router()
+
+router.use(function(req,res,next){
+    //do something
+    next()
+})
+
+router.get(&apos;/&apos;,function(req,res,next){})
+router.get(&apos;/about&apos;,function(req,res,next){})
+
+moudle.exports = router
+</code></pre><p>在 index.js 入口文件里导入 router 文件</p>
+<pre><code>var express = require(&apos;express&apos;)
+var app = express()
+
+var router = require(&apos;./router&apos;)
+// 使用
+app.use(&apos;/admin&apos;,router)
+</code></pre><h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><p>中间件就是处理HTTP请求的函数，其特点是一个中间件处理完，再传递给下一个中间件。APP在运行的过程中，会调用一系列的中间件。<br><em>中间件(Middleware)</em>是一个函数，它可以访问请求对象（request object），和响应对象（response object），一般按照约定，我们在调用时会依次简写成 <code>req</code>和<code>res</code>，另一个回调参数命名为<code>next</code>，用来将http对象传递给下一个中间件。</p>
+<pre><code>function demoMiddleware(req,res,next){
+    next() //将request请求对象传递给下一个中间件
+    next(&apos;some value&apos;) //如果next中间件里带有参数，则代表抛出一个错误，且后续的中间件不会运行，直到该错误有被函数处理为之。
+}
+</code></pre><p>中间件的功能包括：</p>
+<ul>
+<li>执行任何代码</li>
+<li>修改请求和响应对象</li>
+<li>终结请求-响应循环</li>
+<li>调用堆栈中的下一个中间件</li>
+</ul>
+<p>需要注意的是，如果当前中间件没有终结请求-响应循环，则必须调用<code>next()</code>方法将控制权交给下一个中间件，否则请求就会一直挂起。</p>
+<p><strong>Express 中间件的种类</strong></p>
+<ul>
+<li>应用级中间件</li>
+<li>路由级中间件</li>
+<li>错误处理中间件</li>
+<li>内置中间件</li>
+<li>第三方中间件</li>
+</ul>
+<h3 id="应用级中间件"><a href="#应用级中间件" class="headerlink" title="应用级中间件"></a>应用级中间件</h3><p>应用级中间件绑定在 app 对象，使用app.use()和app.METHOD()，METHOD 是需要处理的HTTP 请求的方法，例如：GET, PUT, POST 等。例如：</p>
+<pre><code>var app = express();
+
+// 没有挂载路径的中间件， 应用的**每个**请求都会执行该中间件。
+app.use(function(req, res, next){
+    console.log(&apos;应用的每个请求都会执行该中间件&apos;)
+    next() //next方法将中间件完整的传递给下一个中间件。
+})
+
+// 挂载至 /user/:id 的中间件，任何指向 /user/:id 的请求都会执行它
+app.use(&apos;/user/:id&apos;,function(req, res, next){
+    console.log(&apos;request type:&apos;, req.method)
+    next()
+})
+
+// 一个路由和句柄函数，处理指向 /user/:id 的 GET 请求
+app.get(&apos;/user/:id&apos;, function(req, res, next){
+    res.send(&apos;USER&apos;)
+})
+</code></pre><p>装载一组中间件：</p>
+<pre><code>app.use(&apos;/user/:id&apos;,function(req, res, next){
+    //do something
+    next() //调用下一个中间件
+},function(req, res, next){
+    res.send(&apos;user info&apos;); 
+})
+</code></pre><p>给同一个请求路径定义多个路由：</p>
+<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
+    //do something
+    next()
+})
+
+app.get(&apos;user/:id&apos;,function(req,res,next){
+    res.end(&apos;do something&apos;)
+})
+</code></pre><p>但是注意，下面这个例子的第二个路由永远不会被调用</p>
+<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
+    //do something
+    next()
+},function(req,res,next){
+    res.send(&apos;responsed End!&apos;)
+})
+
+// 下面的代码永远不会被调用，因为上述GET请求的第二个中间件已经结束了请求-响应循环。
+app.get(&apos;user/:id&apos;,function(req,res,next){
+    res.end(&apos;do something&apos;)
+})
+</code></pre><p>在中间件栈中跳过剩余中间件的方法：在 <code>next()</code> 方法里传入 ‘route’字符串参数。next(‘route’)只对使用 app.VERB() or router.VERB()加载的中间件有效。</p>
+<blockquote>
+<p>如果在 next()里传入其它参数（除了「router」字符串），当前next后面的其它非错误处理路由/中间件函数不会被调用，next里的参数也会被当成错误信息抛出。如果需要对错误进行处理，需要创建新的错误处理函数路由。</p>
+</blockquote>
+<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
+    //do something
+    next(&apos;route&apos;)
+},function(req, res){
+    //这里永远不会调用
+})
+
+//第一个路径请求执行后，会执行这个请求
+app.get(&apos;user/:id&apos;,function(req,res,next){
+    res.end(&apos;do something&apos;)
+})
+</code></pre><h3 id="路由级中间件"><a href="#路由级中间件" class="headerlink" title="路由级中间件"></a>路由级中间件</h3><p>路由级中间件和应用级中间件一样，只是它绑定的对象为 express.Router()</p>
+<pre><code>var router = express.Router()
+</code></pre><p>路由级使用 router.use() 或 router.VERB() 加载。</p>
+<pre><code>var express = require(&apos;express&apos;)
+var app = exprees()
+
+var router = express.Router()
+
+router.get(&apos;/foo&apos;,function(req,res,next){}) //..
+</code></pre><p>挂载到应用</p>
+<pre><code>app.use(router)
+//OR
+app.use(&apos;/user&apos;,router) //输出路径为 /user/foo
+</code></pre><h3 id="错误处理中间件"><a href="#错误处理中间件" class="headerlink" title="错误处理中间件"></a>错误处理中间件</h3><p>错误处理中间件和其它中间件定义类似，只是需要四个参数，而不是三个。其参数如下：（err,req,res,next）</p>
+<blockquote>
+<p>错误处理中间件必须有上述四个参数，即便不需要也得声明它，否则中间件会被识别成一个常规中间件，不能处理错误。</p>
+</blockquote>
+<pre><code>app.use(function(err,req,res,next){
+    //do something..
+    res.status(500).send(&apos;something broke&apos;) //返回500状态码和一个错误信息
+})
+</code></pre><h3 id="内置中间件"><a href="#内置中间件" class="headerlink" title="内置中间件"></a>内置中间件</h3><p>从 4.x 版本开始， Express 已经不再依赖 Connect 了。除了 express.static ，Express 以前内置的中间件现在已经全部单独作为模块安装使用了。详情请参阅 <a href="https://github.com/senchalabs/connect#middleware" target="_blank" rel="external">中间件列表</a></p>
+<p>express.static(root,[options])</p>
+<p>express.static is express onl one inside middleware. 它基于 serve-static，负责在 express 应用中提供托管静态资源。<br>可选的 options 参数如下：</p>
+<ul>
+<li>dotfiles</li>
+<li>etag</li>
+<li>extensions</li>
+<li>index</li>
+<li>lastModified</li>
+<li>maxAge</li>
+<li>redirect</li>
+<li>setHeaders</li>
+</ul>
+<h3 id="第三方中间件"><a href="#第三方中间件" class="headerlink" title="第三方中间件"></a>第三方中间件</h3><p>通过使用第三方中间件为express应用增加更多功能。</p>
+<p>使用方式：</p>
+<pre><code>npm install cookie-parser --save //安装一个express插件 ，该插件用来解析cookie
+
+//..省略引入代码
+var cookieParser = require(&apos;cookie-parser&apos;);
+
+app.use(cookieParser()) //加载
+</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我理解的中间件</p>
+<p>中间件分出路由级中间件的好处就是可以更好的将路由整合成一个单独的模块，便于管理。</p>
+<h2 id="Express-模板引擎"><a href="#Express-模板引擎" class="headerlink" title="Express 模板引擎"></a>Express 模板引擎</h2><p>设置模板引擎</p>
+<ul>
+<li>views 放模板文件的目录，app.set(‘views’,’./views’)</li>
+<li>view engine 设置模板引擎， app.set(‘view engine’,’jade’) //jade or ejs</li>
+</ul>
+<p>安装</p>
+<pre><code>npm install jade --save
+</code></pre>
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/05/29/Express-完整学习/"
+                    data-title="Express 完整学习"
+                    data-url="http://ehazon.github.io/2016/05/29/Express-完整学习/"
+                    data-images=""
+                    data-content="
+Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强大特性帮助... | Haojen&#39;s blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/05/28/Anisina-Guide/" data-toggle="tooltip" data-placement="top" title="Anisina Guide">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/05/29/Express-完整学习/"
+                        data-title="Express 完整学习"
+                        data-url="http://ehazon.github.io/2016/05/29/Express-完整学习/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col" >
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个express应用"><span class="toc-text">创建一个express应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路由方法"><span class="toc-text">路由方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-all"><span class="toc-text">app.all()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由路径"><span class="toc-text">路由路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串模式匹配"><span class="toc-text">字符串模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由句柄"><span class="toc-text">路由句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应方法"><span class="toc-text">响应方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-route"><span class="toc-text">app.route()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express-Router"><span class="toc-text">express.Router()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中间件"><span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用级中间件"><span class="toc-text">应用级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由级中间件"><span class="toc-text">路由级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理中间件"><span class="toc-text">错误处理中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置中间件"><span class="toc-text">内置中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方中间件"><span class="toc-text">第三方中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express-模板引擎"><span class="toc-text">Express 模板引擎</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                <h5 class="text-center">
+                    <a href="/tags/">FEATURED TAGS</a>
+                </h5>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Express" title="Express">Express</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ehazon.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90">
+</body>
+
+</html>
