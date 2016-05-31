@@ -469,7 +469,11 @@ app.use(&apos;/user&apos;,router) //输出路径为 /user/foo
     //do something..
     res.status(500).send(&apos;something broke&apos;) //返回500状态码和一个错误信息
 })
-</code></pre><h3 id="内置中间件"><a href="#内置中间件" class="headerlink" title="内置中间件"></a>内置中间件</h3><p>从 4.x 版本开始， Express 已经不再依赖 Connect 了。除了 express.static ，Express 以前内置的中间件现在已经全部单独作为模块安装使用了。详情请参阅 <a href="https://github.com/senchalabs/connect#middleware" target="_blank" rel="external">中间件列表</a></p>
+</code></pre><p>express 内置了一个错误处理句柄，它可以捕获应用中可能出现的任意错误。这个缺省的错误处理中间件将被添加到中间件堆栈的底部。如果你向next（）传递了一个error，而你并没有在错误处理句柄中处理这个error，express内置的默认错误处理句柄就是最后兜底的。最后错误将被连同堆栈追踪信息一同反馈开发模式下的客户端。</p>
+<blockquote>
+<p>设置环境变量 NODE_ENV 为 production 就可以让应用运行在生产环境模式下</p>
+</blockquote>
+<h3 id="内置中间件"><a href="#内置中间件" class="headerlink" title="内置中间件"></a>内置中间件</h3><p>从 4.x 版本开始， Express 已经不再依赖 Connect 了。除了 express.static ，Express 以前内置的中间件现在已经全部单独作为模块安装使用了。详情请参阅 <a href="https://github.com/senchalabs/connect#middleware" target="_blank" rel="external">中间件列表</a></p>
 <p>express.static(root,[options])</p>
 <p>express.static is express onl one inside middleware. 它基于 serve-static，负责在 express 应用中提供托管静态资源。<br>可选的 options 参数如下：</p>
 <ul>
@@ -499,7 +503,116 @@ app.use(cookieParser()) //加载
 </ul>
 <p>安装</p>
 <pre><code>npm install jade --save
-</code></pre>
+</code></pre><p>引用</p>
+<pre><code>app.set(&apos;view engine&apos;,&apos;jade&apos;)
+</code></pre><p>使用</p>
+<pre><code>app.get(&apos;/&apos;,function(req, res, next){
+// 需要注意的是 如果没有设置 view engine ，需要指定 render path 模板的后缀名，用来确定使用的模板引擎
+    res.render(&apos;index&apos;,{
+        //模板变量
+    }) 
+})
+</code></pre><h2 id="HTTP-请求对象"><a href="#HTTP-请求对象" class="headerlink" title="HTTP 请求对象"></a>HTTP 请求对象</h2><p>request 对象代表http请求，及请求中的查询字符串、请求体、http头等。request对象继承自node.js的incomingMessage对象，该对象中的属性，事件，方法，在request对象中都可以使用。我们可以在路由处理器（回调函数）中访问这个对象。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="req-app"><a href="#req-app" class="headerlink" title="req.app"></a>req.app</h4><p>req.app 是对express application实例的引用，通过这个属性，我们可以访问app对象中的设置、属性、中间件等。</p>
+<p>如果我们创建了一个模块，如果我们仅在exports导出了中间件函数，且在主文件中require()引用了它，那么我们可以在express的req.app实例中访问这个文件。</p>
+<pre><code>//index.js
+app.get(&apos;/somepath&apos;,require(&apos;./test.js&apos;))
+
+//test.js
+module.exports = function(req,res){
+    res.send(&apos;send something..&apos;)
+}
+</code></pre><h4 id="req-baseUrl"><a href="#req-baseUrl" class="headerlink" title="req.baseUrl"></a>req.baseUrl</h4><p>路由实例被挂载后的URL路径。</p>
+<h4 id="req-body"><a href="#req-body" class="headerlink" title="req.body"></a>req.body</h4><p>表示请求体的一个key-value数据对象。默认值是undeifined，<strong>其在body-parser和multer等body解析后</strong>可访问。</p>
+<blockquote>
+<p>意味着如果你需要解析req.body里面的数据，你需要先使用中间件将其解析后才能使用。</p>
+</blockquote>
+<pre><code>//..省略部分代码
+var bodyParser = require(&apos;body-parser&apos;)
+
+var multer = require(&apos;multer&apos;) // 尚未用过
+
+// use then
+app.use(bodyParser.json()) //解析JSON数据
+</code></pre><h4 id="req-cookies"><a href="#req-cookies" class="headerlink" title="req.cookies"></a>req.cookies</h4><p>当使用cookie-parser中间件解析cookie后，req.cookies属性是一个表示cookie的key-value对象。没有使用cookie时，其值为{}</p>
+<h4 id="req-fresh"><a href="#req-fresh" class="headerlink" title="req.fresh"></a>req.fresh</h4><p>新鲜度判断，待补充</p>
+<h4 id="req-hostname"><a href="#req-hostname" class="headerlink" title="req.hostname"></a>req.hostname</h4><p>请求的主机名</p>
+<h4 id="req-ip"><a href="#req-ip" class="headerlink" title="req.ip"></a>req.ip</h4><p>请求的主机IP</p>
+<h4 id="req-ips"><a href="#req-ips" class="headerlink" title="req.ips"></a>req.ips</h4><p>返回一个IP数组</p>
+<h4 id="req-method"><a href="#req-method" class="headerlink" title="req.method"></a>req.method</h4><p>返回请求调用的方法： get、post、put、delete 等等..</p>
+<h4 id="req-originaUrl"><a href="#req-originaUrl" class="headerlink" title="req.originaUrl"></a>req.originaUrl</h4><p>原始url</p>
+<h4 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h4><p>这是一个表示路径参数的对象。如，我们使用/user/:name路径时，那么req.params.name表示路径中的:name属性。该对象默认值为{}。</p>
+<pre><code>app.get(&apos;/user/:someUser&apos;,function(req,res,next){
+    console.log(req.parmas.someUser) 
+})
+</code></pre><h4 id="req-path"><a href="#req-path" class="headerlink" title="req.path"></a>req.path</h4><p>表示请求中的路径部分</p>
+<pre><code>// www.haojen.com/admin?password=abcd
+app.get(&apos;/login&apos;,function(req,res,next){
+    console.log(req.path) // “admin”
+})
+</code></pre><h4 id="req-protocol"><a href="#req-protocol" class="headerlink" title="req.protocol"></a>req.protocol</h4><p>表示http请求的协议类型</p>
+<h4 id="req-query"><a href="#req-query" class="headerlink" title="req.query"></a>req.query</h4><p>这个属性表示URL查询字符串（’?’之后的部分）的key-value对象。如果请求中不包括查询字符串，这个属性的值为{}。</p>
+<pre><code>// GET /search?q=tobi+ferret
+req.query.q
+// =&gt; &quot;tobi ferret&quot;
+
+// GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse
+req.query.order
+// =&gt; &quot;desc&quot;
+
+req.query.shoe.color
+// =&gt; &quot;blue&quot;
+
+req.query.shoe.type
+// =&gt; &quot;converse&quot;
+</code></pre><h4 id="req-route"><a href="#req-route" class="headerlink" title="req.route"></a>req.route</h4><p>显示当前匹配的路径路由信息</p>
+<h4 id="req-secure"><a href="#req-secure" class="headerlink" title="req.secure"></a>req.secure</h4><p>表示是否使用TLS连接的一个布尔值。</p>
+<h4 id="req-signedCookies"><a href="#req-signedCookies" class="headerlink" title="req.signedCookies"></a>req.signedCookies</h4><p>当使用cookie解析中间件时，该属性表示请求时使用的cookie签名，签名的作用是防止cookie被篡改。</p>
+<h4 id="req-stale"><a href="#req-stale" class="headerlink" title="req.stale"></a>req.stale</h4><p>表示请求是”stale”（旧请求）的，与req.fresh属性相对。</p>
+<h4 id="req-subdomains"><a href="#req-subdomains" class="headerlink" title="req.subdomains"></a>req.subdomains</h4><p>一个表示请求中的子域名的数组。</p>
+<pre><code>// Host: &quot;tobi.ferrets.itbilu.com&quot;
+req.subdomains
+// =&gt; [&quot;ferrets&quot;, &quot;tobi&quot;]
+</code></pre><h4 id="req-xhr"><a href="#req-xhr" class="headerlink" title="req.xhr"></a>req.xhr</h4><p>一个表示客户是否使用Ajax请求的布尔值，如果X-Requested-With请求头为XMLHttpRequest时，则为true。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="检测内容类型：req-accepts"><a href="#检测内容类型：req-accepts" class="headerlink" title="检测内容类型：req.accepts()"></a>检测内容类型：req.accepts()</h4><pre><code>req.accepts(types) //types 是类型
+</code></pre><p>检测是否是可访问的内容类型，基于AcceptHTTP请求头检测。如果匹配失败，则返回false，这时应用应该响应406（不可接受的请求类型）。</p>
+<h4 id="字符集检测：req-acceptsCharsets"><a href="#字符集检测：req-acceptsCharsets" class="headerlink" title="字符集检测：req.acceptsCharsets()"></a>字符集检测：req.acceptsCharsets()</h4><pre><code>req.acceptsCharsets(charset [, ...])
+</code></pre><p>返回一个可接受的字符集。该方法会根据Accept-CharsetHTTP头检测，如果指定的字符集不可用，则返回false。</p>
+<h4 id="编码方式检测：req-acceptsEncodings"><a href="#编码方式检测：req-acceptsEncodings" class="headerlink" title="编码方式检测：req.acceptsEncodings()"></a>编码方式检测：req.acceptsEncodings()</h4><pre><code>req.acceptsEncodings(encoding [, ...])
+</code></pre><p>返回一个可接受的编码方式。该方法会根据Accept-EncodingHTTP头检测，如果指定的字符集不可用，则返回false。</p>
+<h4 id="语言检测：req-acceptsLanguages"><a href="#语言检测：req-acceptsLanguages" class="headerlink" title="语言检测：req.acceptsLanguages()"></a>语言检测：req.acceptsLanguages()</h4><pre><code>req.acceptsLanguages(lang [, ...])
+</code></pre><p>返回一个可接受的语言。该方法会根据Accept-LanguageHTTP头检测，如果指定的语言不可用，则返回false。</p>
+<h4 id="获取HTTP请求头值：req-get"><a href="#获取HTTP请求头值：req-get" class="headerlink" title="获取HTTP请求头值：req.get()"></a>获取HTTP请求头值：req.get()</h4><pre><code>req.get(field)
+</code></pre><p>返回指定HTTP请求头的字段值（不区分大小写），推荐使用Referrer替换Referer字段。</p>
+<p>MIMＥ类型检查：req.is()</p>
+<h4 id="req-is-type"><a href="#req-is-type" class="headerlink" title="req.is(type)"></a>req.is(type)</h4><p>检查Content-TypeHTTP头中是否是指定类型的typeMIME类型。</p>
+<pre><code>// 当 Content-Type: text/html; charset=utf-8
+req.is(&apos;html&apos;);
+req.is(&apos;text/html&apos;);
+req.is(&apos;text/*&apos;);
+// =&gt; true
+
+//  当 Content-Type 是 application/json
+req.is(&apos;json&apos;);
+req.is(&apos;application/json&apos;);
+req.is(&apos;application/*&apos;);
+// =&gt; true
+
+req.is(&apos;html&apos;);
+// =&gt; false
+</code></pre><h4 id="req-param"><a href="#req-param" class="headerlink" title="req.param()"></a>req.param()</h4><pre><code>req.param(name[,defaultValue])
+</code></pre><p>获取 req.params,req.body or req.query 的参数值，其获取顺序为：</p>
+<ul>
+<li>req.params</li>
+<li>req.body</li>
+<li><p>req.query</p>
+<p>  //?name=haojen<br>  req.param(‘nname’)</p>
+<p>  //POST name = haojen<br>  req.param(‘name’)</p>
+<p>  // /user/tobi for /user/:name<br>  req.param(‘name’)</p>
+</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>request对象的属性和方法主要的用途是用来获取请求的状态、类型，和解析传递过来的信息。</p>
+
 
                 <hr>
 
@@ -555,7 +668,7 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个express应用"><span class="toc-text">创建一个express应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路由方法"><span class="toc-text">路由方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-all"><span class="toc-text">app.all()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由路径"><span class="toc-text">路由路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串模式匹配"><span class="toc-text">字符串模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由句柄"><span class="toc-text">路由句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应方法"><span class="toc-text">响应方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-route"><span class="toc-text">app.route()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express-Router"><span class="toc-text">express.Router()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中间件"><span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用级中间件"><span class="toc-text">应用级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由级中间件"><span class="toc-text">路由级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理中间件"><span class="toc-text">错误处理中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置中间件"><span class="toc-text">内置中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方中间件"><span class="toc-text">第三方中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express-模板引擎"><span class="toc-text">Express 模板引擎</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个express应用"><span class="toc-text">创建一个express应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路由方法"><span class="toc-text">路由方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-all"><span class="toc-text">app.all()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由路径"><span class="toc-text">路由路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串模式匹配"><span class="toc-text">字符串模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由句柄"><span class="toc-text">路由句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应方法"><span class="toc-text">响应方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-route"><span class="toc-text">app.route()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express-Router"><span class="toc-text">express.Router()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中间件"><span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用级中间件"><span class="toc-text">应用级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由级中间件"><span class="toc-text">路由级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理中间件"><span class="toc-text">错误处理中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置中间件"><span class="toc-text">内置中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方中间件"><span class="toc-text">第三方中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express-模板引擎"><span class="toc-text">Express 模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-请求对象"><span class="toc-text">HTTP 请求对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#req-app"><span class="toc-text">req.app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-baseUrl"><span class="toc-text">req.baseUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-body"><span class="toc-text">req.body</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-cookies"><span class="toc-text">req.cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-fresh"><span class="toc-text">req.fresh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-hostname"><span class="toc-text">req.hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-ip"><span class="toc-text">req.ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-ips"><span class="toc-text">req.ips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-method"><span class="toc-text">req.method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-originaUrl"><span class="toc-text">req.originaUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-params"><span class="toc-text">req.params</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-path"><span class="toc-text">req.path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-protocol"><span class="toc-text">req.protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-query"><span class="toc-text">req.query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-route"><span class="toc-text">req.route</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-secure"><span class="toc-text">req.secure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-signedCookies"><span class="toc-text">req.signedCookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-stale"><span class="toc-text">req.stale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-subdomains"><span class="toc-text">req.subdomains</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-xhr"><span class="toc-text">req.xhr</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#检测内容类型：req-accepts"><span class="toc-text">检测内容类型：req.accepts()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符集检测：req-acceptsCharsets"><span class="toc-text">字符集检测：req.acceptsCharsets()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编码方式检测：req-acceptsEncodings"><span class="toc-text">编码方式检测：req.acceptsEncodings()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语言检测：req-acceptsLanguages"><span class="toc-text">语言检测：req.acceptsLanguages()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取HTTP请求头值：req-get"><span class="toc-text">获取HTTP请求头值：req.get()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-is-type"><span class="toc-text">req.is(type)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-param"><span class="toc-text">req.param()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结-1"><span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
