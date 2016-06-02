@@ -175,7 +175,7 @@
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#database" title="database">database</a>
+                        <a class="tag" href="/tags/#Database" title="Database">Database</a>
                         
                     </div>
                 </div>
@@ -213,13 +213,13 @@ db.on(&apos;error&apos;,console.error.bind(console,&apos;connection wrong&apos;)
 db.once(&apos;open&apos;,function(){
     console.log(&apos;success&apos;)
 })
-</code></pre><h3 id="schema"><a href="#schema" class="headerlink" title="schema"></a>schema</h3><p>在mongoose里，一切都派生自<code>Schema</code>。下面是一个schema创建的实例</p>
+</code></pre><h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>在mongoose里，一切都派生自<code>Schema</code>。下面是一个schema创建的实例</p>
 <pre><code>var kittySchema = mongoose.Schema({
     name: String //data type is String
 })
 </code></pre><p>目前为止，我们在这个schema里创建了一个<code>String</code>类型的<code>name</code>属性。下面我们将把这个schema装载进一个<code>Model</code>里</p>
 <pre><code>var Kitten = mongoose.model(&apos;Kitten&apos;,kittySchema)
-</code></pre><p>一个model就是一个构造类，每个类的实例都具有里面其在Schema里定义的属性和行为</p>
+</code></pre><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>一个model就是一个构造类，每个类的实例都具有里面其在Schema里定义的属性和行为</p>
 <pre><code>//小猫实例
 var silence = new Kitten({name:&apos;Silence&apos;})
 console.log(silence.name) //&apos;Silence&apos;
@@ -235,7 +235,7 @@ var Kitten = mongoose.model(&apos;Kitten&apos;,kittySchema)
 </code></pre><p>在这里，我们将这个方法添加到schema的<code>methods</code>属性中，然后使用该schema的<code>Model</code>都会继承这个方法</p>
 <pre><code>var fluffy = new Kitten({name:&apos;fluffy&apos;})
 fluffy.speak() // meow name is fluffy
-</code></pre><p>但目前我们仍没有保存任何数据到<code>MongoDB</code>数据库，现在我们可以在实例上调用<code>save</code>方法，保存数据。</p>
+</code></pre><h3 id="保存数据"><a href="#保存数据" class="headerlink" title="保存数据"></a>保存数据</h3><p>但目前我们仍没有保存任何数据到<code>MongoDB</code>数据库，现在我们可以在实例上调用<code>save</code>方法，保存数据。</p>
 <pre><code>回调函数中的第一个参数，用来接收错误。
 fluffy.save(function(err,fluffy){
     if(err) return console.log(err)
@@ -307,7 +307,7 @@ fluffy.save(function(err,fluffy){
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始"><span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#schema"><span class="toc-text">schema</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始"><span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Schema"><span class="toc-text">Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model"><span class="toc-text">Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存数据"><span class="toc-text">保存数据</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -329,7 +329,7 @@ fluffy.save(function(err,fluffy){
                 </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#database" title="database">database</a>
+                          <a class="tag" href="/tags/#Database" title="Database">Database</a>
                         
                     </div>
                 </section>
