@@ -12,11 +12,11 @@
 
     <title>
         
-          我对 Apple WWDC 的猜想｜Haojen&#39;s blog
+          Chrome 53 性能大幅度提升的背后｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2016/06/14/我对-Apple-WWDC-的猜想/">
+    <link rel="canonical" href="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -45,7 +45,7 @@
 <style>
     .intro-header{
         background-image:url(
-        'http://o7bkkhiex.bkt.clouddn.com/http://cdn.sspai.com/attachment/thumbnail/2016/06/11/1f44218064e4e842d197b9525cc2b4c4512c2_mw_800.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
+        'http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
         )
     }
 </style>
@@ -148,13 +148,13 @@
     
 <!-- Image to hack wechat -->
 <!--only post-->
-<img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/http://cdn.sspai.com/attachment/thumbnail/2016/06/11/1f44218064e4e842d197b9525cc2b4c4512c2_mw_800.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90">
+<img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90">
 
 <!-- Post Header -->
 <!-- only post bg-->
 <style type="text/css">
     header.intro-header{
-        background-image: url('http://o7bkkhiex.bkt.clouddn.com/http://cdn.sspai.com/attachment/thumbnail/2016/06/11/1f44218064e4e842d197b9525cc2b4c4512c2_mw_800.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+        background-image: url('http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 </style>
 
@@ -163,17 +163,19 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>我对 Apple WWDC 的猜想</h1>
+                    <h1>Chrome 53 性能大幅度提升的背后</h1>
                     
-                        <h2 class="subheading">到底万众瞩目的 WWDC 2016 会带来什么样的变革呢，发布之前来一些猜测。</h2>
+                        <h2 class="subheading">主要针对渲染层进行了优化</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2016-06-14
+                          日期 2016-06-29
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
                         
                     </div>
                 </div>
@@ -182,7 +184,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            我对 Apple WWDC 的猜想
+            Chrome 53 性能大幅度提升的背后
         </span>
     </div>
 </header>
@@ -195,22 +197,35 @@
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
                 <blockquote>
-<p>这是我发布在少数派的一段评论。</p>
+<p>这是我发布在知乎上有关 Chrome 53 的回答</p>
 </blockquote>
-<p>首先抱怨一下库克上台后，Apple 对产品新功能研发的保密措施相对乔布斯时代有很大的退步，相信是有意为之。之前看新闻说乔布斯为了产品的保密性和新产品发布时的惊艳感，几乎变态式的管理。这也是很多人当时采访被诟病的话题。库克上台说不定为了笼络人心，改变了乔布斯式保密的这种现状，带来的负面结果就是任何小道消息到现在成为客观的事实的机率大大提告，嗯，高的程度就像你买了十张彩票，发现已经有七八张中奖了..</p>
-<p>WWDC的期待么？</p>
-<ol>
-<li><p>前段时间试用了 Apple music，就像文章中所述，真的已被其复杂的交互逻辑搞的晕头转向，到底是 iTunes Music ，还是 Apple Music ,对于 「new」栏目的定义一直搞不清楚，到底是为我新推荐的内容，还只是一个在线专辑列表？其次就是 Apple Music 在国内的网速上，相信大家都深有体会。这方面严重影响试用到期后继续付费购买的欲望，试想谁会买一个网速堪比56K猫的在线音乐播放呢？何况国内就有更好的正版替代音乐app。<br>所以，期望和猜测觉得 Apple 会改善 Apple Music 的实用性。</p>
-</li>
-<li><p>看发布会海报，猜测这次肯定会仍以 Apple 推出的开源语言 Swift 为重头戏，多彩的代码高亮，会不会是暗示着更强大友好的 Swift 3 的到来，还是全软件产品都开始强制从 OC（Object-C，一种编程语言）转换到 Swift，毕竟 Swift 已经推出有两三个年头了，按照 Apple 的习惯，推陈布新，雷厉风行的策略，可能性也是很高。</p>
-</li>
-<li><p>文中很少提到苹果手表，实际上我觉得这也可能是个重头戏之一，前段时间 Apple 致电开发者，要求开发者们尽快解决 iPhone 与 iWatch 之间 App 的高度依赖性，使其 iWatch 能自成一体，脱离依赖iPhone妈妈的尴尬。我觉得这会对 iWatch 有很大的变革，意为着它不仅仅是你手腕上的装饰和仅仅炫耀你对 Apple 的忠诚。它多了一个更实用的理由，你可以利用它记录各种传感数据，然后同步到你的 iPhone or  Android ，这实际上它就是一款集成于N多运动传感器的手表，你可以用它来记录你爬山的数据，跑步的数据，心跳，但不限于 iPhone 的存在，当然这样的产品已经存在，但我认为 iWatch 可以做的更好，我也相信 Apple 也发现了 iWatch 仍有很大的上升潜力。</p>
-</li>
-<li><p>苹果在 iCloud 时代就已经放出大 Apple 共荣圈的信号了，Mac 上没干完的活用 iOS 继续干，你电话不在身边，那就对着你的巨型 iMac 麦克风交谈吧。在一切放在云端，无缝体验上， Apple 一直想做到最好，我们也能看到在这方面微软和安卓根本就不具备条件。恰逢最近 Apple和 FBI 的安全新闻铺天盖地，Apple 也自然会利用这个机会，主打安全，将 iPhone 的 Touch ID 直接无缝体验到其它 Apple 设备产品上，我觉得不仅仅只是 Mac，毕竟指纹解锁还可以做的更多，比密码方便多了，在 Mac 上安装应用或者需要权限的时候，直接可以用 TouchID 购买或解锁权限。相比于几年前笔电就内置指纹解锁却形同虚设的时代，Touch ID 的来临我觉得实用多了。</p>
-</li>
+<p>—— 6. 18. 2016 更新 ——<br>—新增 有关内存占用的问题—</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>先来聊聊 Chrome 的故事， Chrome 昔日曾以 V8 引擎一骑绝尘的运行速度碾压对手，荣登为快不破之榜首，只是惊喜之后，越来越多的用户发现超高速引擎的背后是大量的内存占用，随后越来越多的人开始抱怨声讨 Chrome 内存占用问题，人类的不满足和抱怨是天性，也正是这一点使我们现在比过去做的更好。也或许正是这些抱怨起了作用，在 Chrome 53 中，迎来了绝对是 chrome 目前为止史上最大幅度性能的提升。或许过去没有，未来也不会再有。Chrome 53 只有一个，时光飞逝，即便 Chrome 65 、chrome 78 来临，我们回想这个遥远的午后，还会为第一次见如此恐怖的性能提升为之惊讶和感叹往昔峥嵘..</p>
+<h1 id="总体对比："><a href="#总体对比：" class="headerlink" title="总体对比："></a>总体对比：</h1><ol>
+<li>Chrome 53， 在 Mac 上的表现，相对于 Chrome 51 总体上提升46.9%</li>
+<li>Chrome 53， 在 Android 上的表现，相对于 Chrome 51 总体上提升了 209%</li>
+<li>在 iPad Air 2 下的 safari 与 android M 下的 Chrome 53 对比，提升了 103%</li>
+<li>Chrome 53 与 Safari 在 Mac 下的对比，提升 -1.78%，真的是 -1.78%</li>
 </ol>
-<p>虽然我心中的最佳情人奖仍旧留给乔布斯，但库克的确做的很棒，除了每年给iPhone发明新颜色之外，他的确做了很多变革，这方面来看隔壁的微软就谨慎了很多，当然谁都知道微软惹不起用户，盖茨从 iPhone 发布之初也预言过 iPhone 不会成功，最近盖茨仍旧在说 iPhone 正在失去创新。谁知道呢，曾不被盖茨看好的 iPhone 最辉煌的时候每个季度的销量都远远超过 Windows Phone + PC 的整体销量。</p>
-<p>总之，WWDC 不亚于 Apple 新品发布会，因为有 WWDC 的存在，Apple 和乔布斯的灵魂才得以在各类Apple设备中传承流淌，永不凋零。</p>
+<p>如果以上的数据如果还没让你惊讶，或许下面的细节提升程度会让你觉得这不符合科学，就好象违反了弗雷德里克·布鲁克斯 在其著作《人月神话》中说的那样：计算机语言对性能提升程度，远远赶不上硬件上的摩尔定律。但冰冷冷的数字就在下面，你看或者不看，它就在那里，不增不减。</p>
+<p>在 Mac 上的细节提升，主要体现在了 HTML 套件，和 SVG 渲染上，HTML 套件提升了大约 161%，测试数据都是针对相同平台下的 Chrome 51 稳定版， SVG 套件提升了大约 151%。这只是开胃菜，然而你也知道：好戏还在后头..</p>
+<p>也不知是 Google 也在彻底贯彻移动为先的时代，而有意针对自家移动设备大幅度优化，还是纯属技术自然更新迭代，总之 Chrome 53 在移动设备上的提升才是重头戏，先来看看数据：<br>HTML 套件提升约 590%， SVG 套件提升 1087% ，虽然我数学一直不好，但不可否认这的确是一个恐怖的提升，也特别的好奇：之前的chrome在这方面的表现到底是有多差？</p>
+<h1 id="Chrome-53-为什么这么快？"><a href="#Chrome-53-为什么这么快？" class="headerlink" title="Chrome 53 为什么这么快？"></a>Chrome 53 为什么这么快？</h1><p>使用基准试验的情况下， 简单来说，GPU的团队改善了GPU的渲染瓶颈，使得 CSS 和 SVG 渲染更快，Canvas 和 WebGL 也表现的更好。<br>你也可以在chrome://flags 下开启 强制GPU栅格化（force gpu resterization），自行测试性能提升：<br>–force-gpu-rasterization</p>
+<h1 id="有关-Chrome-53-内存占用多少的疑问"><a href="#有关-Chrome-53-内存占用多少的疑问" class="headerlink" title="有关 Chrome 53 内存占用多少的疑问"></a>有关 Chrome 53 内存占用多少的疑问</h1><p>很多人都好奇这个版本的内存占用是不是变大了啊，毕竟羊毛出在羊身上，要是这几十年没有硬件产品的更新迭代，性能提升，就算你底层优化的再好，也不可能野鸡变凤凰啊~~<br>但实际上，这次的性能提升，根据现有的官方文档说，chrome 团队好像只是在 GPU 光栅渲染架构方面进行了调整，并没有涉及到内存占用方面，也就是说：Chrome 占用内存可能还是跟现在一样的大小，但是速度变快了。不知道这是一个好消息还是坏消息，就好像现在的宽带资费一样，价钱不变，但是网速给你提上去。运营商美言：宽带免费提速，加量不加价。<br>当然也不排除Chrome 53 的GPU调整和内存之间也有见不得人的勾当，毕竟集成显卡和内存的关系也是千丝万缕，离开谁也活不了啊。</p>
+<p>另外，这次性能的提升和 V8引擎没有啥关系啊，所以大家不要嘀咕 Node.js 会不会因此变得更美好了啦..</p>
+<p>如果你看到这里，已经迫不及待的想要尝试 Chrome 53 了， 它就在这里：Chrome Canary ，鉴于大家都是 chromer，翻墙这种小事你自己搞定啦~~</p>
+<p>如果你想查看更多细节上的信息，可以点开整个评测文档： Google Doc，为了方便，我已经贴上了更详细的多平台对比 ，玩儿的开心　：）</p>
+<h1 id="Chrome-53-在-Mac-上的总体表现："><a href="#Chrome-53-在-Mac-上的总体表现：" class="headerlink" title="Chrome 53 在 Mac 上的总体表现："></a>Chrome 53 在 Mac 上的总体表现：</h1><p><img src="https://pic3.zhimg.com/0382d02d4203d0abb2fc8095bee1cb42_b.png" alt="chrome on mac"></p>
+<p>细节表现：</p>
+<p><img src="https://pic1.zhimg.com/3c5f7e0d2ee72be972007963d38bb0d8_b.png" alt="detail"><br><img src="https://pic3.zhimg.com/aedc35fb1c291b668fd1769598bd07a2_b.png" alt="detail"></p>
+<h1 id="最新版的-Safari-技术预览版-与-Chrome-的对比："><a href="#最新版的-Safari-技术预览版-与-Chrome-的对比：" class="headerlink" title="最新版的 Safari 技术预览版 与 Chrome 的对比："></a>最新版的 Safari 技术预览版 与 Chrome 的对比：</h1><p><img src="https://pic4.zhimg.com/9caf14d26a658e5ffbecce1ee42ed4fb_b.png" alt="safari vs chrome"></p>
+<p>细节表现：</p>
+<p><img src="https://pic1.zhimg.com/419e5b557c4a723c73bd5e2c9ab7db6c_r.png" alt="detail"></p>
+<p>＃在移动端 iOS 9.3. iPad Air 2 设备 与搭载Android M 系统的 Pixel C （某平版电脑）之间的对比 ，但需要注意的是因为硬件参数有很多不同，测试数据所以不太有说服力。<br>细节表现：</p>
+<h1 id="在安卓平版上："><a href="#在安卓平版上：" class="headerlink" title="在安卓平版上："></a>在安卓平版上：</h1><p><img src="https://pic2.zhimg.com/10852ff901ce7077858b072178497b7d_b.png" alt="android table"></p>
+<p>细节表现：</p>
+<p><img src="https://pic1.zhimg.com/ef21e54b431e9b11068173bf9c0e8ddc_b.png" alt="detail"><br><img src="https://pic3.zhimg.com/e96bacc8b1c9289c95963c2a55875536_b.png" alt="detail"></p>
+<p>以上是全部数据统计。<br>或许你已经被 chrome 的内存占用折磨的苦不堪言，早已逃离 chrome 多年，当你看完chrome53恐怖的提升程度后，或许你会小小的尝试一下改变 ：）<br>另外，因为没有chrome53内存占用的数据对比，所以我们可以随便猜测， 哈哈。</p>
 
 
                 <hr>
@@ -219,14 +234,14 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/06/14/我对-Apple-WWDC-的猜想/"
-                    data-title="我对 Apple WWDC 的猜想"
-                    data-url="http://haojen.github.io/2016/06/14/我对-Apple-WWDC-的猜想/"
-                    data-images="http://haojen.github.io/2016/06/14/我对-Apple-WWDC-的猜想/http://cdn.sspai.com/attachment/thumbnail/2016/06/11/1f44218064e4e842d197b9525cc2b4c4512c2_mw_800.jpg"
+                    data-thread-key="2016/06/29/Chrome-53-性能大幅度提升的背后/"
+                    data-title="Chrome 53 性能大幅度提升的背后"
+                    data-url="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/"
+                    data-images="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/fresh_google_chrome_logo.jpg"
                     data-content="
-这是我发布在少数派的一段评论。
+这是我发布在知乎上有关 Chrome 53 的回答
 
-首先抱怨一下库克上台后，Apple 对产品新功能研发的保密... | Haojen&#39;s blog " >
+—— 6. 18. 2016 更新 —... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -244,13 +259,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/06/29/Chrome-53-性能大幅度提升的背后/" data-toggle="tooltip" data-placement="top" title="Chrome 53 性能大幅度提升的背后">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/06/07/恐龙与史前生命/" data-toggle="tooltip" data-placement="top" title="恐龙与史前生命">Next Post &rarr;</a>
+                            <a href="/2016/06/14/我对-Apple-WWDC-的猜想/" data-toggle="tooltip" data-placement="top" title="我对 Apple WWDC 的猜想">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -259,9 +270,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/06/14/我对-Apple-WWDC-的猜想/"
-                        data-title="我对 Apple WWDC 的猜想"
-                        data-url="http://haojen.github.io/2016/06/14/我对-Apple-WWDC-的猜想/" >
+                        data-thread-key="2016/06/29/Chrome-53-性能大幅度提升的背后/"
+                        data-title="Chrome 53 性能大幅度提升的背后"
+                        data-url="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -273,7 +284,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总体对比："><span class="toc-text">总体对比：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome-53-为什么这么快？"><span class="toc-text">Chrome 53 为什么这么快？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#有关-Chrome-53-内存占用多少的疑问"><span class="toc-text">有关 Chrome 53 内存占用多少的疑问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome-53-在-Mac-上的总体表现："><span class="toc-text">Chrome 53 在 Mac 上的总体表现：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最新版的-Safari-技术预览版-与-Chrome-的对比："><span class="toc-text">最新版的 Safari 技术预览版 与 Chrome 的对比：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在安卓平版上："><span class="toc-text">在安卓平版上：</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -294,6 +305,8 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
                         
                     </div>
                 </section>
