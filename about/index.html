@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="马浩珍在 Github 上的个人博客">
+    <meta name="keyword"  content="马浩珍,haojen,Haozhen,前端,nodejs,javascript,全栈,full stack,hexo,express,ehazon">
+    <link rel="shortcut icon" href="/img/coffee.png">
+
+    <title>
+        
+          About me｜Haojen&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://haojen.github.io/about/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<style>
+    .intro-header{
+        background-image:url(
+        'http://o7bkkhiex.bkt.clouddn.com/about-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
+        )
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="brand-logo">
+                    Haojen
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                        
+                    
+                        
+                    
+                        
+                        <li>
+                            <a href="/about/">About me</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                        
+                        <li>
+                            <a href="/my-works/">My works</a>
+                        </li>
+                        
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+    <!-- Main Content -->
+    
+<style>
+    #about-header{
+        margin-top: 100px;
+    }
+    #about-header img{
+        width: 150px;height: 150px;
+    }
+    .offer-body,
+    .person-body,
+    .project-body,
+    .skills-body,
+    .work-body,
+    .learn-body{
+        padding-left: 25px;
+    }
+    p{
+        margin:0;
+    }
+    .body-section{
+        padding-left: 15px;
+    }
+
+
+</style>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+    <div class="content" id="about-header">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4 ">
+                <div>
+                    <img  src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90" />
+                </div>
+                <div class="text-center">
+                    <h2>马浩珍/男/22岁</h2>
+                    <p>我将自己定位成一个乐于将有限的精力投入到无限的技术学习当中的求知者，平凡但前行的每一步都使我看得更深远 ：）</p>
+                </div>
+            </div>
+        </div>
+        <!--正文-->
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="offer-info">
+                    <h3 class="title">应聘职位:</h3>
+                    <div class="offer-body">
+                        <p>前端工程师</p>
+                        <p>Node.js 后端工程师</p>
+                    </div>
+                </div>
+                <div class="person-info">
+                    <h3 class="title">个人信息</h3>
+                    <div class="person-body">
+                        <p>教育经历: 初中</p>
+                        <p>个人博客: <a href="undefined">undefined</a></p>
+                        <p>邮箱: </p>
+                        <p>兴趣爱好: 编程；电子硬件、单片机；旅行健身；读书；影音</p>
+                        <p>特长：计算机硬件维修、小型局域网布线维修；编程；吉它；影视制作后期；</p>
+                        <p>英语水平：能阅读及编写开发文档</p>
+                        <p>GitHub：http://github.com/haojen</p>
+                    </div>
+                </div>
+                <div class="project-show">
+                    <h3 class="title">项目展示</h3>
+                    <div class="project-body">
+                        <p>地址：http://haojen.github.io/my-works/</p>
+                    </div>
+                </div>
+                <div class="skills-show">
+                    <h3 class="title">技能掌握</h3>
+                    <div class="skills-body">
+                        <h4 class="body-header">前端:</h4>
+                        <div class="body-section">
+                            <h5>HTML / CSS</h5>
+                            <ul>
+                                <li>利用 HTML 编写语意化的页面结构 / CSS 样式与结构完全分离</li>
+                                <li>使用 Sass 等 CSS 预处理语言更有效率的编写 CSS</li>
+                                <li>熟练使用 Bootstrap 响应式框架</li>
+
+                            </ul>
+
+                            <h5>JavaScript</h5>
+                            <ul>
+                                <li>熟悉原生 JavaScript ，能不依赖 jQuery 类框架编写项目</li>
+                                <li>熟练使用 jQuery 类库和其插件，了解过 AngluarJS</li>
+                                <li>了解大致 CMD / AMD 规范</li>
+                            </ul>
+
+                            <h5>自动化工具</h5>
+                            <ul>
+                                <li>熟练使用 Yeoman / Bower / Gulp 等前端自动化工具</li>
+                                <li>熟练使用 npm , Node.js 下的包管理工具管理项目依赖</li>
+                            </ul>
+                            <h5>Photoshop</h5>
+                            <ul>
+                            <li>
+                                熟练使用 Ps 切图 / 修图 / 抠图 / 后期
+                                <a href="">（查看作品）</a>
+                            </li>
+                            </ul>
+                        </div>
+                        <h4>后端:</h4>
+                        <div class="body-section">
+                            <h5>语言</h5>
+                            <ul>
+                                <li>熟悉 Node.js 及其框架 （Express / Koa）</li>
+                                <li>了解过PHP</li>
+                                <li>了解过 C</li>
+                                <li>了解过 Java</li>
+                            </ul>
+                            <h5>其它</h5>
+                            <ul>
+                                <li>看过《HTTP 权威指南》，了解通信协议状态码和缓存机制</li>
+                            </ul>
+                        </div>
+                        <h4>生产力：</h4>
+                        <div class="body-section">
+                            <h5>版本控制</h5>
+                            <ul>
+                                <li>Git</li>
+                                <li>SVN</li>
+                            </ul>
+                            <h5>IDE</h5>
+                            <ul>
+                                <li>WebStorm</li>
+                                <li>Sublime</li>
+                            </ul>
+                            <h5>系统平台使用</h5>
+                            <ul>
+                                <li>Windows 7/8/10</li>
+                                <li>macOS (目前在用的系统)</li>
+                                <li>Ubuntu</li>
+                            </ul>
+                            <h5>其它</h5>
+                            <ul>
+                                <li>会翻墙, Google 重度用户</li>
+                                <li>熟练使用 Macdown 语法编辑器</li>
+                                <li>对硬件底层有一定的认识，CPU的运行原理，计算机架构，发展史</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="work-show">
+                    <h3>工作经历：</h3>
+                    <div class="work-body">
+                        <ul>
+                            <li>
+                                <span>2010-2012年: 计算机维修</span>
+                                <p>
+                                    主要工作内容是负责维修和排查硬件的损坏，和重装系统, 在这里使我学习和认识到了计算机底层的运行原理结构，
+                                    开始对编程有了个概念,萌生了解代码的冲动。
+                                </p>
+                            </li>
+                            <li>
+                                <span>2013 年: 咖啡师兼美甲师</span>
+                                <p>家里亲戚开店，人手不够，去帮忙</p>
+                            </li>
+                            <li>
+                                <span>2014年: </span>
+                                <p>
+                                    搭车旅行，年轻，对小县城外面的世界感到好奇，萌生了这样的想法，
+                                    2013年开始准备，锻炼身体，了解路上的信息,
+                                    攒钱购买装备。搭车进藏，骑行回家。
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="learn-show">
+                    <h3>学习经历：</h3>
+                    <div class="learn-body">
+                        <p>
+                            看 W3C 官网文档，先对前端技术有一个大概的了解后，配合着 Codecademy 网站一边实践，
+                            有不懂的英文单词就 Google ，就这样我对 Html，CSS，JavaScript 逐渐有了大概的认识。
+
+                            后，通过一些在线视频类的网站继续学习，网易云课堂，iMooc，极客学院等，继续更深入了解。但慢慢发现有些技术点我仍然是只知其一，不知其二。想了解的更深入更系统只能花更多的时间啃书，以下是我的阅读书单，随着我的技术从浅到深入，依次排列：
+                        </p>
+
+                        <p>实体书：</p>
+                        <ul>
+                            <li>Head First 系列之 HTML 与 CSS</li>
+                            <li>Head First 系列之 HTML5 开发</li>
+                            <li>网页设计指南</li>
+                            <li>精通 CSS</li>
+                            <li>JavaScript DOM 编程艺术</li>
+                            <li>JavaScript 精粹</li>
+                            <li>JavaScript 高级程序设计</li>
+                            <li>锋利的 jQuery</li>
+                        </ul>
+                        <p>电子书</p>
+                        <ul>
+                            <li>Javascript 权威指南</li>
+                            <li>JavaScript 设计模式</li>
+                            <li>Node.js 入门经典</li>
+                            <li>mongdoDB 权威指南</li>
+                            <li>高性能Javascript</li>
+                            <li>Express 指南</li>
+                            <li>HTTP 权威指南</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Haojen 2016 
+                    <br>
+                    <!--Theme by <a href="https://github.com/Kaijun/">Kaijun</a>-->
+                    <!--<span style="display: inline-block; margin: 0 5px;">-->
+                        <!--<i class="fa fa-heart"></i>-->
+                    <!--</span> -->
+                    Theme by <a href="http://ehazon.github.io/">Haojen Ma</a>
+                    <!--<iframe-->
+                        <!--style="margin-left: 2px; margin-bottom:-5px;"-->
+                        <!--frameborder="0" scrolling="0" width="91px" height="20px"-->
+                        <!--src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >-->
+                    <!--</iframe>-->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://haojen.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/avatar_man_2.png?imageView2/2/w/300/h/300/interlace/1/q/90">
+</body>
+
+</html>
