@@ -12,11 +12,11 @@
 
     <title>
         
-          Chrome 53 性能大幅度提升的背后｜Haojen&#39;s blog
+          Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/">
+    <link rel="canonical" href="http://haojen.github.io/2016/07/01/友人问与我答/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -45,7 +45,7 @@
 <style>
     .intro-header{
         background-image:url(
-        'http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
+        'http://o7bkkhiex.bkt.clouddn.com/home-bg.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90'
         )
     }
 </style>
@@ -148,13 +148,13 @@
     
 <!-- Image to hack wechat -->
 <!--only post-->
-<img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90">
+<img class="wechat-title-img" src="http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90">
 
 <!-- Post Header -->
 <!-- only post bg-->
 <style type="text/css">
     header.intro-header{
-        background-image: url('http://o7bkkhiex.bkt.clouddn.com/fresh_google_chrome_logo.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+        background-image: url('http://o7bkkhiex.bkt.clouddn.com/post-default.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 </style>
 
@@ -163,19 +163,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Chrome 53 性能大幅度提升的背后</h1>
-                    
-                        <h2 class="subheading">主要针对渲染层进行了优化</h2>
+                    <h1></h1>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2016-06-29
+                          日期 2016-07-01
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
                         
                     </div>
                 </div>
@@ -184,7 +180,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Chrome 53 性能大幅度提升的背后
+            
         </span>
     </div>
 </header>
@@ -196,36 +192,16 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <blockquote>
-<p>这是我发布在知乎上有关 Chrome 53 的回答</p>
+                <h1 id="友人问与我答"><a href="#友人问与我答" class="headerlink" title="友人问与我答"></a>友人问与我答</h1><blockquote>
+<p>友人对编程的印象和困惑</p>
 </blockquote>
-<p>—— 6. 18. 2016 更新 ——<br>—新增 有关内存占用的问题—</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>先来聊聊 Chrome 的故事， Chrome 昔日曾以 V8 引擎一骑绝尘的运行速度碾压对手，荣登为快不破之榜首，只是惊喜之后，越来越多的用户发现超高速引擎的背后是大量的内存占用，随后越来越多的人开始抱怨声讨 Chrome 内存占用问题，人类的不满足和抱怨是天性，也正是这一点使我们现在比过去做的更好。也或许正是这些抱怨起了作用，在 Chrome 53 中，迎来了绝对是 chrome 目前为止史上最大幅度性能的提升。或许过去没有，未来也不会再有。Chrome 53 只有一个，时光飞逝，即便 Chrome 65 、chrome 78 来临，我们回想这个遥远的午后，还会为第一次见如此恐怖的性能提升为之惊讶和感叹往昔峥嵘..</p>
-<h1 id="总体对比："><a href="#总体对比：" class="headerlink" title="总体对比："></a>总体对比：</h1><ol>
-<li>Chrome 53， 在 Mac 上的表现，相对于 Chrome 51 总体上提升46.9%</li>
-<li>Chrome 53， 在 Android 上的表现，相对于 Chrome 51 总体上提升了 209%</li>
-<li>在 iPad Air 2 下的 safari 与 android M 下的 Chrome 53 对比，提升了 103%</li>
-<li>Chrome 53 与 Safari 在 Mac 下的对比，提升 -1.78%，真的是 -1.78%</li>
-</ol>
-<p>如果以上的数据如果还没让你惊讶，或许下面的细节提升程度会让你觉得这不符合科学，就好象违反了弗雷德里克·布鲁克斯 在其著作《人月神话》中说的那样：计算机语言对性能提升程度，远远赶不上硬件上的摩尔定律。但冰冷冷的数字就在下面，你看或者不看，它就在那里，不增不减。</p>
-<p>在 Mac 上的细节提升，主要体现在了 HTML 套件，和 SVG 渲染上，HTML 套件提升了大约 161%，测试数据都是针对相同平台下的 Chrome 51 稳定版， SVG 套件提升了大约 151%。这只是开胃菜，然而你也知道：好戏还在后头..</p>
-<p>也不知是 Google 也在彻底贯彻移动为先的时代，而有意针对自家移动设备大幅度优化，还是纯属技术自然更新迭代，总之 Chrome 53 在移动设备上的提升才是重头戏，先来看看数据：<br>HTML 套件提升约 590%， SVG 套件提升 1087% ，虽然我数学一直不好，但不可否认这的确是一个恐怖的提升，也特别的好奇：之前的chrome在这方面的表现到底是有多差？</p>
-<h1 id="Chrome-53-为什么这么快？"><a href="#Chrome-53-为什么这么快？" class="headerlink" title="Chrome 53 为什么这么快？"></a>Chrome 53 为什么这么快？</h1><p>使用基准试验的情况下， 简单来说，GPU的团队改善了GPU的渲染瓶颈，使得 CSS 和 SVG 渲染更快，Canvas 和 WebGL 也表现的更好。<br>你也可以在chrome://flags 下开启 强制GPU栅格化（force gpu resterization），自行测试性能提升：<br>–force-gpu-rasterization</p>
-<h1 id="有关-Chrome-53-内存占用多少的疑问"><a href="#有关-Chrome-53-内存占用多少的疑问" class="headerlink" title="有关 Chrome 53 内存占用多少的疑问"></a>有关 Chrome 53 内存占用多少的疑问</h1><p>很多人都好奇这个版本的内存占用是不是变大了啊，毕竟羊毛出在羊身上，要是这几十年没有硬件产品的更新迭代，性能提升，就算你底层优化的再好，也不可能野鸡变凤凰啊~~<br>但实际上，这次的性能提升，根据现有的官方文档说，chrome 团队好像只是在 GPU 光栅渲染架构方面进行了调整，并没有涉及到内存占用方面，也就是说：Chrome 占用内存可能还是跟现在一样的大小，但是速度变快了。不知道这是一个好消息还是坏消息，就好像现在的宽带资费一样，价钱不变，但是网速给你提上去。运营商美言：宽带免费提速，加量不加价。<br>当然也不排除Chrome 53 的GPU调整和内存之间也有见不得人的勾当，毕竟集成显卡和内存的关系也是千丝万缕，离开谁也活不了啊。</p>
-<p>另外，这次性能的提升和 V8引擎没有啥关系啊，所以大家不要嘀咕 Node.js 会不会因此变得更美好了啦..</p>
-<p>如果你看到这里，已经迫不及待的想要尝试 Chrome 53 了， 它就在这里：Chrome Canary ，鉴于大家都是 chromer，翻墙这种小事你自己搞定啦~~</p>
-<p>如果你想查看更多细节上的信息，可以点开整个评测文档： Google Doc，为了方便，我已经贴上了更详细的多平台对比 ，玩儿的开心　：）</p>
-<h1 id="Chrome-53-在-Mac-上的总体表现："><a href="#Chrome-53-在-Mac-上的总体表现：" class="headerlink" title="Chrome 53 在 Mac 上的总体表现："></a>Chrome 53 在 Mac 上的总体表现：</h1><p><img src="https://pic3.zhimg.com/0382d02d4203d0abb2fc8095bee1cb42_b.png" alt="chrome on mac"></p>
-<p>细节表现：</p>
-<p><img src="https://pic1.zhimg.com/3c5f7e0d2ee72be972007963d38bb0d8_b.png" alt="detail"><br><img src="https://pic3.zhimg.com/aedc35fb1c291b668fd1769598bd07a2_b.png" alt="detail"></p>
-<h1 id="最新版的-Safari-技术预览版-与-Chrome-的对比："><a href="#最新版的-Safari-技术预览版-与-Chrome-的对比：" class="headerlink" title="最新版的 Safari 技术预览版 与 Chrome 的对比："></a>最新版的 Safari 技术预览版 与 Chrome 的对比：</h1><p><img src="https://pic4.zhimg.com/9caf14d26a658e5ffbecce1ee42ed4fb_b.png" alt="safari vs chrome"></p>
-<p>细节表现：</p>
-<p><img src="https://pic1.zhimg.com/419e5b557c4a723c73bd5e2c9ab7db6c_r.png" alt="detail"></p>
-<p>＃在移动端 iOS 9.3. iPad Air 2 设备 与搭载Android M 系统的 Pixel C （某平版电脑）之间的对比 ，但需要注意的是因为硬件参数有很多不同，测试数据所以不太有说服力。<br>细节表现：</p>
-<h1 id="在安卓平版上："><a href="#在安卓平版上：" class="headerlink" title="在安卓平版上："></a>在安卓平版上：</h1><p><img src="https://pic2.zhimg.com/10852ff901ce7077858b072178497b7d_b.png" alt="android table"></p>
-<p>细节表现：</p>
-<p><img src="https://pic1.zhimg.com/ef21e54b431e9b11068173bf9c0e8ddc_b.png" alt="detail"><br><img src="https://pic3.zhimg.com/e96bacc8b1c9289c95963c2a55875536_b.png" alt="detail"></p>
-<p>以上是全部数据统计。<br>或许你已经被 chrome 的内存占用折磨的苦不堪言，早已逃离 chrome 多年，当你看完chrome53恐怖的提升程度后，或许你会小小的尝试一下改变 ：）<br>另外，因为没有chrome53内存占用的数据对比，所以我们可以随便猜测， 哈哈。</p>
+<p>问：印象中，它太像数学，本科的学习，C语言的课时最长，考试往往是做题式，感觉有无穷多的经典例题等着我</p>
+<p>答：在严谨性上的确和数学类似，但学编程需要的不是数学多厉害，而是需要逻辑和根据其代码语言规范的书写，我数学就不行，但依然可以写代码。我倒觉得学编程兴趣和坚持有一个探溯的心态比懂不懂数学更重要 : )</p>
+<p>问：也有可能没有与周边的软件结合起来，光是运行C，只是得出一个数字结果，没有任何有趣之处</p>
+<p>答：这个问题问得非常好，当所学却无法解决身边的问题或者说短期内能见到成效，的确非常打击学习兴趣。这也是我喜欢 HTML 前端的原因之一，不过刚学某一门新语言的基础的时候，真的无法避免不知道自己在干嘛的状态，这个时候你应该清楚的认识到：你是在为编写出产品级的 app 打基础，且需要你在宏观的角度上明白代码只是一种解释给机器运行的工具，而你正在学习这门工具语言。要想做出 app ，你首先需要搞明白它，其实跟我们小时候学习汉字是一样的，你想想看。</p>
+<p>问：本科学了四年计算机，觉得学得够够的，毕业以后并不能用它来做一些自己想做的东西（也许是能力欠缺，只是跟着老师学，并没有自学的部分），因此没有成就感<br>答：我能想到的有两点，一：编程入门，很多人就被其一坨坨的代码瞎的不轻，再加上教学方式上再不够生动，也就更没兴趣接触编程了，另一方面是你可能没有真的学会，没有作品。但是一旦写出一些自己的东西来，逐渐你就开始有成就感形成良性循环了，万事开头难，一旦做出一个成熟的 app ，我相信你会爱上编程的感觉，尤其是配着咖啡 ：）</p>
+<p>问：本科的学习太欠缺，毕业之后觉得自己其实什么都不会，很多常见、简单的东西，我不会，例如CS，做个动画，剪辑视频，连局域网，自己做系统等等都觉得有困难</p>
+<p>答：CS 你都会，红色警戒也没少玩儿吧？我不认为本科的学习后，你能掌握上述软件工具，正如你所说学校里兜售的只是很基础的东西（上述软件随便拿出一个来，都是吃饭的家伙，需要长年累月的学习积累呢）但实则非常重要，正所谓万变不离其宗。<br>    有关这个问题，我认为是一个伪问题不成立。</p>
 
 
                 <hr>
@@ -234,14 +210,14 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/06/29/Chrome-53-性能大幅度提升的背后/"
-                    data-title="Chrome 53 性能大幅度提升的背后"
-                    data-url="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/"
-                    data-images="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/fresh_google_chrome_logo.jpg"
-                    data-content="
-这是我发布在知乎上有关 Chrome 53 的回答
+                    data-thread-key="2016/07/01/友人问与我答/"
+                    data-title=""
+                    data-url="http://haojen.github.io/2016/07/01/友人问与我答/"
+                    data-images=""
+                    data-content="友人问与我答
+友人对编程的印象和困惑
 
-—— 6. 18. 2016 更新 —... | Haojen&#39;s blog " >
+问：印象中，它太像数学，本科的学习，C语言的课时最长，... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -260,12 +236,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/07/01/友人问与我答/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                            <a href="/2016/07/09/漫谈前后端模块化/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2016/06/14/我对-Apple-WWDC-的猜想/" data-toggle="tooltip" data-placement="top" title="我对 Apple WWDC 的猜想">Next Post &rarr;</a>
+                            <a href="/2016/06/29/Chrome-53-性能大幅度提升的背后/" data-toggle="tooltip" data-placement="top" title="Chrome 53 性能大幅度提升的背后">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -274,9 +250,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/06/29/Chrome-53-性能大幅度提升的背后/"
-                        data-title="Chrome 53 性能大幅度提升的背后"
-                        data-url="http://haojen.github.io/2016/06/29/Chrome-53-性能大幅度提升的背后/" >
+                        data-thread-key="2016/07/01/友人问与我答/"
+                        data-title=""
+                        data-url="http://haojen.github.io/2016/07/01/友人问与我答/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -288,7 +264,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总体对比："><span class="toc-text">总体对比：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome-53-为什么这么快？"><span class="toc-text">Chrome 53 为什么这么快？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#有关-Chrome-53-内存占用多少的疑问"><span class="toc-text">有关 Chrome 53 内存占用多少的疑问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome-53-在-Mac-上的总体表现："><span class="toc-text">Chrome 53 在 Mac 上的总体表现：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最新版的-Safari-技术预览版-与-Chrome-的对比："><span class="toc-text">最新版的 Safari 技术预览版 与 Chrome 的对比：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在安卓平版上："><span class="toc-text">在安卓平版上：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#友人问与我答"><span class="toc-text">友人问与我答</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -309,8 +285,6 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
                         
                     </div>
                 </section>
