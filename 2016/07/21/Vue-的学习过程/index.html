@@ -12,11 +12,11 @@
 
     <title>
         
-          粒子效果源码心得｜Haojen&#39;s blog
+          Vue 的学习过程｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2016/07/18/粒子效果源码剖析/">
+    <link rel="canonical" href="http://haojen.github.io/2016/07/21/Vue-的学习过程/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -163,12 +163,14 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>粒子效果源码心得</h1>
+                    <h1>Vue 的学习过程</h1>
+                    
+                        <h2 class="subheading">Vue 是一款轻量级的 MVVM 框架</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2016-07-18
+                          日期 2016-07-21
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -182,7 +184,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            粒子效果源码心得
+            Vue 的学习过程
         </span>
     </div>
 </header>
@@ -194,189 +196,9 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>好奇萌小助官网的粒子效果，所以在网上找到了一个类似的例子，尝试理解其实现原理</p>
-<h2 id="源码实现的大致流程"><a href="#源码实现的大致流程" class="headerlink" title="源码实现的大致流程"></a>源码实现的大致流程</h2><p>1 初始化粒子容器、设置粒子的样式、步进速度</p>
-<pre><code> var canvasEl = document.getElementById(&apos;canvas&apos;);
-var ctx = canvasEl.getContext(&apos;2d&apos;);
-var mousePos = [0, 0];
-
-var easingFactor = 5.0; // 鼠标跟随移动响应速度
-
-var backgroundColor = &apos;black&apos;;
-var nodeColor = &apos;#fff&apos;;
-var edgeColor = &apos;#fff&apos;;
-
-var nodes = [];
-var edges = [];
-</code></pre><p>2 创建粒子，然后push到数组里</p>
-<pre><code>function constructNodes() {
-
-    var nodeNumber = 60; // 生成指定数量的 node
-
-    for (var i = 0; i &lt;= nodeNumber; i++) {
-
-        var node = {
-            drivenByMouse: i == 0, // 返回一个 boolean
-            x: Math.random() * canvasEl.width, // 随机生成 canvas 的位置, 限定在 canvas 的宽度内
-            y: Math.random() * canvasEl.height,// 随机生成 canvas 的位置, 限定在 canvas 的长度内
-            vx: Math.random()  - .1, // 步进
-            vy: Math.random()  - .1, // 步进
-            radius: Math.random() &gt; 0.9 ? 3 + Math.random() * 3 : 1 + Math.random() * 3 // 节点的尺寸
-        };
-
-        nodes.push(node); // 将生成的每一个结果都添加到节点数组里
-    }
-
-    nodes.forEach(function (e) {
-        nodes.forEach(function (e2) {
-            if (e == e2) {
-                return;
-            }
-
-            // 如果这两个元素不是同一个, 那就链接他们,在一定的距离内
-            var edge = {
-                from: e,
-                to: e2
-            };
-
-            addEdge(edge);
-            edges.push(edge); //将他们的节点关系保存到边缘数组里
-        });
-    });
-}
-</code></pre><p>3 捆绑粒子，将两个不同的粒子相捆绑</p>
-<pre><code>function addEdge(edge) {
-
-    var ignore = false; // 开关
-
-    edges.forEach(function (e) {
-
-        if (e.form == edge.form &amp;&amp; e.to == edge.to ) {
-            ignore = true;
-        }
-
-        if (e.to == edge.from &amp;&amp; e.form == edge.to) {
-            ignore = true;
-        }
-
-    });
-
-    if (!ignore) {
-        edges.push(edge);
-    }
-}
-</code></pre><p>4 生成粒子和将胡同的粒子捆绑之后，开始移动他们的位置</p>
-<pre><code> function step() {
-    nodes.forEach(function (e) {
-        // 不操作第一个节点
-        if (e.drivenByMouse) {
-            return;
-        }
-
-        e.x += e.vx; // 改变位置 x
-        e.y += e.vy; // 改变位置 y
-
-        function clamp(min, max, value) {
-            if (value &gt; max) {
-                return max;
-            }
-            if (value &lt; min) {
-                return min;
-            }
-
-            return value;
-        }
-
-        if (e.x &lt;= 0 || e.x &gt;= canvasEl.width) {
-            e.vx *= -1;
-            e.x = clamp(0, canvasEl.width, e.x)
-        }
-
-        if (e.y &lt;= 0 || e.y &gt;= canvasEl.height) {
-            e.vy *= -1;
-            e.y = clamp(0, canvasEl.height, e.y)
-        }
-    });
-
-    adjustNodeDrivenByMouse();
-    render();
-    window.requestAnimationFrame(step);
-}
-</code></pre><p>5 鼠标移到粒子上的效果</p>
-<pre><code>function adjustNodeDrivenByMouse() {
-    nodes[0].x += (mousePos[0] - nodes[0].x) / easingFactor;
-    nodes[0].y += (mousePos[1] - nodes[0].y) / easingFactor;
-}
-
-  function lengthOfEdge(edge) {
-    return Math.sqrt(Math.pow((edge.from.x - edge.to.x), 2) + Math.pow((edge.from.y - edge.to.y), 2));
-}
-</code></pre><p>6 渲染</p>
-<pre><code> function render() {
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
-
-    edges.forEach(function (e) {
-        var l = lengthOfEdge(e);
-        var threshold = canvasEl.width / 8; // 连线距离
-
-        if (l &gt; threshold) {
-            return;
-        }
-
-        ctx.strokeStyle = edgeColor;
-        ctx.lineWidth = (1.0 - l / threshold) * 2.5;
-        ctx.globalAlpha = 1.0 - l / threshold; // 根据距离渐变线段的清晰度
-        ctx.beginPath();
-        ctx.moveTo(e.from.x, e.from.y);
-        ctx.lineTo(e.to.x, e.to.y);
-        ctx.stroke();
-    });
-    ctx.globalAlpha = 1.0; // 删掉后有出奇不意的好效果
-
-    nodes.forEach(function (e) {
-        if (e.drivenByMouse) {
-            // 过滤掉第一个粒子
-            return;
-        }
-
-        ctx.fillStyle = nodeColor;
-        ctx.beginPath();
-        ctx.arc(e.x, e.y, e.radius, 0, 2 * Math.PI);
-        ctx.fill();
-    });
-}
-</code></pre><p>7 窗口改变的时候调整 canvas 的大小，因为canvas是位图，而非SVG的矢量</p>
-<pre><code> window.onresize = function () {
-
-    //画布的分辨率随着窗口的调整而改变
-    canvasEl.width = canvasEl.clientWidth;
-    canvasEl.height = canvasEl.clientHeight;
-
-    if (nodes.length == 0) {
-        // 如果第一次执行的话, 就创建node
-        constructNodes();
-    }
-
-    render();
-};
-</code></pre><p>8 鼠标的位置偏移</p>
-<pre><code>  window.onmousemove = function (e) {
-    mousePos[0] = e.clientX;
-    mousePos[1] = e.clientY;
-};
-</code></pre><p>10 第一次打开时手动触发一次页面</p>
-<pre><code>window.onresize();
-</code></pre><p>11 动画定时器 ES5<br>     window.requestAnimationFrame(step);</p>
-<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><h3 id="Canvas-性能问题"><a href="#Canvas-性能问题" class="headerlink" title="Canvas 性能问题"></a>Canvas 性能问题</h3><p>使用canvas的时候，发现粒子较多的时候CPU占用很高，但可以通过在 css 样式里添加一个 trick，强制启用 GPU 硬件加速，从而降低对 CPU 的运算的依赖提升性能。<br>（唐阳）</p>
-<h3 id="模块化函数"><a href="#模块化函数" class="headerlink" title="模块化函数"></a>模块化函数</h3><p>在该源码中，每一个函数都是一个简单明了的功能，和有一个语意化的函数名。<br>这样做的好处，我意识到有以下几点：</p>
-<ol>
-<li>降低了代码之间的耦合，有助于二次开发和查错。</li>
-<li>每个函数应该只专注一件事；</li>
-<li>语意化的名称有助于理解函数或对象的作用，无形的注释。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>代码是一种工具，亦是思想的体现。越是在写前对代码的 <strong>整体结构</strong> 和 <strong>需求</strong> 越有清晰的认识，写出的代码越就是 可维护性高、更健壮。</p>
-<p>算是第一次写阅读源码心得，与其说在源码中学到了什么，不如说学习如何阅读源代码。</p>
+                <blockquote>
+<p>Vue.js 是一个构建数据驱动的 web 界面的库。 Vue.js 的目标是通过尽可能简单的 API 实现 <strong>响应的数据绑定</strong> 和 <strong>组合的视图组件</strong></p>
+</blockquote>
 
 
                 <hr>
@@ -385,12 +207,12 @@ var edges = [];
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/07/18/粒子效果源码剖析/"
-                    data-title="粒子效果源码心得"
-                    data-url="http://haojen.github.io/2016/07/18/粒子效果源码剖析/"
+                    data-thread-key="2016/07/21/Vue-的学习过程/"
+                    data-title="Vue 的学习过程"
+                    data-url="http://haojen.github.io/2016/07/21/Vue-的学习过程/"
                     data-images=""
-                    data-content="好奇萌小助官网的粒子效果，所以在网上找到了一个类似的例子，尝试理解其实现原理
-源码实现的大致流... | Haojen&#39;s blog " >
+                    data-content="
+Vue.js 是一个构建数据驱动的 web 界面的库。 Vue.js 的目标是通过尽可能简单... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -408,13 +230,9 @@ var edges = [];
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/07/19/WebPack 学习心得/" data-toggle="tooltip" data-placement="top" title="WebPack 学习心得">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/07/09/漫谈前后端模块化/" data-toggle="tooltip" data-placement="top" title="漫谈前后端模块化">Next Post &rarr;</a>
+                            <a href="/2016/07/20/avalon-项目拜读/" data-toggle="tooltip" data-placement="top" title="Avalon 项目拜读">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -423,9 +241,9 @@ var edges = [];
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/18/粒子效果源码剖析/"
-                        data-title="粒子效果源码心得"
-                        data-url="http://haojen.github.io/2016/07/18/粒子效果源码剖析/" >
+                        data-thread-key="2016/07/21/Vue-的学习过程/"
+                        data-title="Vue 的学习过程"
+                        data-url="http://haojen.github.io/2016/07/21/Vue-的学习过程/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -437,7 +255,7 @@ var edges = [];
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码实现的大致流程"><span class="toc-text">源码实现的大致流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Canvas-性能问题"><span class="toc-text">Canvas 性能问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化函数"><span class="toc-text">模块化函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+                    
                 </div>
             </div>
         </div>

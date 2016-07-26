@@ -12,11 +12,11 @@
 
     <title>
         
-          Bootstrap Modal组件的源码心得｜Haojen&#39;s blog
+          模块化学习心得｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2016/07/19/Bootstrap Modal组件的源码心得/">
+    <link rel="canonical" href="http://haojen.github.io/2016/07/20/模块化学习/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -163,12 +163,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Bootstrap Modal组件的源码心得</h1>
+                    <h1>模块化学习心得</h1>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2016-07-19
+                          日期 2016-07-20
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -182,7 +182,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Bootstrap Modal组件的源码心得
+            模块化学习心得
         </span>
     </div>
 </header>
@@ -194,14 +194,14 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h2 id="组件结构"><a href="#组件结构" class="headerlink" title="组件结构"></a>组件结构</h2><ol>
-<li>声明一个函数表达式，作为主体</li>
-<li>在函数主体上的 prototype 添加属性和方法</li>
-<li>最后挂载为 jQuery 插件</li>
+                <blockquote>
+<p>经常用到模块化，但好奇内部咋实现的</p>
+</blockquote>
+<h2 id="为什么会有模块化？"><a href="#为什么会有模块化？" class="headerlink" title="为什么会有模块化？"></a>为什么会有模块化？</h2><ol>
+<li>解决全局变量污染</li>
+<li>隔离作用域</li>
 </ol>
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>工厂模式配合原型继承</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Bootstrap 中组件封装方式多以工厂模式+原型继承模式，将复用方法写到 prototype 上以便复用，在这个项目的源代码中最大收获是学到了javascript的其中一种设计模式，</p>
-
+<h2 id="内部咋实现的？"><a href="#内部咋实现的？" class="headerlink" title="内部咋实现的？"></a>内部咋实现的？</h2><h2 id="模块咋用？"><a href="#模块咋用？" class="headerlink" title="模块咋用？"></a>模块咋用？</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
 
                 <hr>
 
@@ -209,14 +209,18 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/07/19/Bootstrap Modal组件的源码心得/"
-                    data-title="Bootstrap Modal组件的源码心得"
-                    data-url="http://haojen.github.io/2016/07/19/Bootstrap Modal组件的源码心得/"
+                    data-thread-key="2016/07/20/模块化学习/"
+                    data-title="模块化学习心得"
+                    data-url="http://haojen.github.io/2016/07/20/模块化学习/"
                     data-images=""
-                    data-content="组件结构
-声明一个函数表达式，作为主体
-在函数主体上的 prototype 添加属性和方法
-最... | Haojen&#39;s blog " >
+                    data-content="
+经常用到模块化，但好奇内部咋实现的
+
+为什么会有模块化？
+解决全局变量污染
+隔离作用域
+
+内... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -234,6 +238,10 @@
 
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2016/07/20/avalon-项目拜读/" data-toggle="tooltip" data-placement="top" title="Avalon 项目拜读">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
                             <a href="/2016/07/19/WebPack 学习心得/" data-toggle="tooltip" data-placement="top" title="WebPack 学习心得">Next Post &rarr;</a>
@@ -245,9 +253,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/19/Bootstrap Modal组件的源码心得/"
-                        data-title="Bootstrap Modal组件的源码心得"
-                        data-url="http://haojen.github.io/2016/07/19/Bootstrap Modal组件的源码心得/" >
+                        data-thread-key="2016/07/20/模块化学习/"
+                        data-title="模块化学习心得"
+                        data-url="http://haojen.github.io/2016/07/20/模块化学习/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -259,7 +267,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组件结构"><span class="toc-text">组件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式"><span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么会有模块化？"><span class="toc-text">为什么会有模块化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部咋实现的？"><span class="toc-text">内部咋实现的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块咋用？"><span class="toc-text">模块咋用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
                 </div>
             </div>
         </div>

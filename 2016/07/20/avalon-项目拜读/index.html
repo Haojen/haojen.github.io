@@ -12,11 +12,11 @@
 
     <title>
         
-          Haojen&#39;s blog
+          Avalon 项目拜读｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2016/07/01/友人问与我答/">
+    <link rel="canonical" href="http://haojen.github.io/2016/07/20/avalon-项目拜读/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -163,15 +163,19 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1></h1>
+                    <h1>Avalon 项目拜读</h1>
+                    
+                        <h2 class="subheading">拜读公司大牛们的实战项目</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
                          <span>
-                          日期 2016-07-01
+                          日期 2016-07-20
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#心得" title="心得">心得</a>
                         
                     </div>
                 </div>
@@ -180,7 +184,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            
+            Avalon 项目拜读
         </span>
     </div>
 </header>
@@ -192,16 +196,14 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h1 id="友人问与我答"><a href="#友人问与我答" class="headerlink" title="友人问与我答"></a>友人问与我答</h1><blockquote>
-<p>友人对编程的印象和困惑</p>
+                <h2 id="什么是-Avalon-？"><a href="#什么是-Avalon-？" class="headerlink" title="什么是 Avalon ？"></a>什么是 Avalon ？</h2><p>理解 Avalon 之前， 先简单的复习了一下啥是 MVVM :</p>
+<blockquote>
+<p>大概来说 MVVM 将前端代码彻底分成两部分，视图的处理通过绑定实现，业务逻辑则集中在一个叫 VM 的对象中处理。我们只操作 VM 的数据，它就能即时的在视图中得到显示。</p>
 </blockquote>
-<p>问：印象中，它太像数学，本科的学习，C语言的课时最长，考试往往是做题式，感觉有无穷多的经典例题等着我</p>
-<p>答：在严谨性上的确和数学类似，但学编程需要的不是数学多厉害，而是需要逻辑和根据其代码语言规范的书写，我数学就不行，但依然可以写代码。我倒觉得学编程兴趣和坚持有一个探溯的心态比懂不懂数学更重要 : )</p>
-<p>问：也有可能没有与周边的软件结合起来，光是运行C，只是得出一个数字结果，没有任何有趣之处</p>
-<p>答：这个问题问得非常好，当所学却无法解决身边的问题或者说短期内能见到成效，的确非常打击学习兴趣。这也是我喜欢 HTML 前端的原因之一，不过刚学某一门新语言的基础的时候，真的无法避免不知道自己在干嘛的状态，这个时候你应该清楚的认识到：你是在为编写出产品级的 app 打基础，且需要你在宏观的角度上明白代码只是一种解释给机器运行的工具，而你正在学习这门工具语言。要想做出 app ，你首先需要搞明白它，其实跟我们小时候学习汉字是一样的，你想想看。</p>
-<p>问：本科学了四年计算机，觉得学得够够的，毕业以后并不能用它来做一些自己想做的东西（也许是能力欠缺，只是跟着老师学，并没有自学的部分），因此没有成就感<br>答：我能想到的有两点，一：编程入门，很多人就被其一坨坨的代码瞎的不轻，再加上教学方式上再不够生动，也就更没兴趣接触编程了，另一方面是你可能没有真的学会，没有作品。但是一旦写出一些自己的东西来，逐渐你就开始有成就感形成良性循环了，万事开头难，一旦做出一个成熟的 app ，我相信你会爱上编程的感觉，尤其是配着咖啡 ：）</p>
-<p>问：本科的学习太欠缺，毕业之后觉得自己其实什么都不会，很多常见、简单的东西，我不会，例如CS，做个动画，剪辑视频，连局域网，自己做系统等等都觉得有困难</p>
-<p>答：CS 你都会，红色警戒也没少玩儿吧？我不认为本科的学习后，你能掌握上述软件工具，正如你所说学校里兜售的只是很基础的东西（上述软件随便拿出一个来，都是吃饭的家伙，需要长年累月的学习积累呢）但实则非常重要，正所谓万变不离其宗。<br>    有关这个问题，我认为是一个伪问题不成立。</p>
+<p>avalon2 是司徒正美基于虚拟 DOM 的超高性能 MVVM 框架， 兼容到 IE6，同类型的 MVVM 框架还有 AngularJS 、Vue。</p>
+<p>相比与其它 MVVM 框架的优势在于 轻量和相对简单。</p>
+<h2 id="依赖的框架"><a href="#依赖的框架" class="headerlink" title="依赖的框架"></a>依赖的框架</h2><p>样式： ratchet (bootstrap 专为混合应用搭造的样式)<br>MVVM：Avalon （国人打造的一款轻量级 MVVM框架）</p>
+<h2 id="项目流程"><a href="#项目流程" class="headerlink" title="项目流程"></a>项目流程</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h3 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h3><h3 id="素材"><a href="#素材" class="headerlink" title="素材"></a>素材</h3><h3 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h3><h3 id="依赖组件"><a href="#依赖组件" class="headerlink" title="依赖组件"></a>依赖组件</h3><h2 id="脚手架工具"><a href="#脚手架工具" class="headerlink" title="脚手架工具"></a>脚手架工具</h2><p>Fis3: 是面向前端的工程构建工具。解决前端工                                                                                                                                                    程中性能优化、资源加载（异步、同步、按需、预加载、依赖管理、合并、内嵌）、模块化开发、自动化工具、开发规范、代码部署等问题。</p>
 
 
                 <hr>
@@ -210,14 +212,13 @@
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/07/01/友人问与我答/"
-                    data-title=""
-                    data-url="http://haojen.github.io/2016/07/01/友人问与我答/"
+                    data-thread-key="2016/07/20/avalon-项目拜读/"
+                    data-title="Avalon 项目拜读"
+                    data-url="http://haojen.github.io/2016/07/20/avalon-项目拜读/"
                     data-images=""
-                    data-content="友人问与我答
-友人对编程的印象和困惑
+                    data-content="什么是 Avalon ？理解 Avalon 之前， 先简单的复习了一下啥是 MVVM :
 
-问：印象中，它太像数学，本科的学习，C语言的课时最长，... | Haojen&#39;s blog " >
+大... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -236,12 +237,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/07/09/漫谈前后端模块化/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                            <a href="/2016/07/21/Vue-的学习过程/" data-toggle="tooltip" data-placement="top" title="Vue 的学习过程">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2016/06/29/Chrome-53-性能大幅度提升的背后/" data-toggle="tooltip" data-placement="top" title="Chrome 53 性能大幅度提升的背后">Next Post &rarr;</a>
+                            <a href="/2016/07/20/模块化学习/" data-toggle="tooltip" data-placement="top" title="模块化学习心得">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -250,9 +251,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/01/友人问与我答/"
-                        data-title=""
-                        data-url="http://haojen.github.io/2016/07/01/友人问与我答/" >
+                        data-thread-key="2016/07/20/avalon-项目拜读/"
+                        data-title="Avalon 项目拜读"
+                        data-url="http://haojen.github.io/2016/07/20/avalon-项目拜读/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -264,7 +265,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#友人问与我答"><span class="toc-text">友人问与我答</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Avalon-？"><span class="toc-text">什么是 Avalon ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖的框架"><span class="toc-text">依赖的框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目流程"><span class="toc-text">项目流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript"><span class="toc-text">Javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#素材"><span class="toc-text">素材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API文档"><span class="toc-text">API文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖组件"><span class="toc-text">依赖组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#脚手架工具"><span class="toc-text">脚手架工具</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -285,6 +286,8 @@
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
+                        
+                          <a class="tag" href="/tags/#心得" title="心得">心得</a>
                         
                     </div>
                 </section>
