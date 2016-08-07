@@ -1149,16 +1149,19 @@ img::-moz-selection {
         display: inline-block;
     }
 }
-@media screen and (max-width: 500px) {
-    .post-title-fixed span{
-       display: none;
-       top:57px;
-    }
-}
 .post-preview > a > .post-title{
     margin-bottom: 0;
     font-weight: 200;
     text-shadow: 0 0 1px rgba(0,0,0,.15);
+}
+@media screen and (max-width: 500px) {
+    .post-title-fixed span{
+        display: none;
+        top:57px;
+    }
+    .post-preview > a > .post-title{
+        font-weight: normal;
+    }
 }
 .site-heading .about-me img{
     width: 120px;height: 120px;
