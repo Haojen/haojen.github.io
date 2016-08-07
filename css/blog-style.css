@@ -1166,6 +1166,8 @@ img::-moz-selection {
 .site-heading .about-me img{
     width: 120px;height: 120px;
     border-radius: 50%;
+    /*头像半透明效果*/
+    opacity: .9;
 }
 .site-heading h5 a{
     color: #fff;
