@@ -1154,7 +1154,7 @@ img::-moz-selection {
 }
 .post-preview > a > .post-title{
     margin-bottom: 0;
-    font-family: STSong;
+    font-weight: 100;
     text-shadow: 0 0 1px rgba(0,0,0,.15);
 }
 .site-heading .about-me img{
