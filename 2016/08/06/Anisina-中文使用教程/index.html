@@ -93,13 +93,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -194,7 +194,8 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <h3 id="V2-0-新功能"><a href="#V2-0-新功能" class="headerlink" title="V2.0 新功能"></a>V2.0 新功能</h3><ol>
+                <p>一个简单轻巧的响应式主题，支持七牛图床<br>[<img src="http://o7bkkhiex.bkt.clouddn.com/Anisina.png" alt="Anisina">]<br>(<a href="http://haojen.github.io/">http://haojen.github.io/</a>)</p>
+<h3 id="V2-0-新功能"><a href="#V2-0-新功能" class="headerlink" title="V2.0 新功能"></a>V2.0 新功能</h3><ol>
 <li>双击顶部导航条返回顶部</li>
 <li>支持swiftfy搜索</li>
 <li>新增友链功能</li>
@@ -214,6 +215,113 @@
 <li>在微信或其它国产移动浏览器中双击导航条无法返回顶部的问题</li>
 </ol>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>推荐大家移动端使用 Chrome 浏览器，主题专门针对 Chrome &amp; Safari 优化 ：）</p>
+<h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><ul>
+<li><strong>作者</strong>： Haojen Ma</li>
+<li><strong>最新版本</strong>：v2</li>
+<li><strong>兼容</strong>： Hexo 3 or Lanter</li>
+</ul>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>响应式</li>
+<li>支持七牛CDN</li>
+<li>支持TOC</li>
+<li>支持多说和 Disqus</li>
+<li>支持谷歌和百度统计</li>
+<li>SEO</li>
+<li>移动端沉浸式状态栏</li>
+<li>搜索</li>
+<li>浏览统计</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><p>第一步</p>
+<p> git clone <a href="https://github.com/Haojen/hexo-theme-Anisina.git" target="_blank" rel="external">https://github.com/Haojen/hexo-theme-Anisina.git</a></p>
+</li>
+</ol>
+<p>然后将 clone 下的文件夹拷贝到 Hexo <strong>theme</strong> folder</p>
+<ol>
+<li>修改 <figure class="highlight plain"><figcaption><span>themes 为：</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	themes: Anisina</span><br><span class="line">	</span><br><span class="line">3. 或者直接拷贝 Anisina 文件夹下的 `_config.yml` 替换 hexo 默认的 _config.yml</span><br><span class="line"></span><br><span class="line">4. Done</span><br><span class="line"></span><br><span class="line">### 快速开始</span><br><span class="line"></span><br><span class="line">#### 配置</span><br><span class="line"></span><br><span class="line">You can easily get stared by modifying ```config.yml</span><br></pre></td></tr></table></figure></li>
+</ol>
+<pre><code>Site settings
+title: Anisina Blog             # title of your website
+SEOTitle: Anisina Blog          # check out docs for more detail
+description: &quot;Cool Blog&quot;    
+
+SNS settings      
+github_username: haojen     # modify this account to yours
+weibo_username: haojen      # the footer woule be auto-updated.
+
+cdn-url: &quot;http://your-cdn.com/&quot;      # images cdn path
+
+# Qiniu imageView2 API
+clip-content: &quot;?imageView2/1/w/1400/h/400/interlace/1/q/90&quot;
+clip-avatar: &quot;?imageView2/2/w/300/h/300/interlace/1/q/90&quot;
+clip-post: &quot;?&quot; # you can custom post width and height
+clip-home-post-bg: &quot;?imageView2/1/w/800/h/300/interlace/1/q/70&quot;
+
+#post default images
+post-default-img: post-default.jpg
+</code></pre><h4 id="cdn-url"><a href="#cdn-url" class="headerlink" title="cdn-url"></a>cdn-url</h4><ol>
+<li><p>注册一个你自己的七牛CDN ，然后拷贝你自己的CDN URL ：</p>
+<pre><code>cdn-url: http://you-cdn.com/
+</code></pre></li>
+<li><p>在七牛里上传图片</p>
+</li>
+<li><p>在博文的 <strong>front-matter</strong> 上指定图片名称</p>
+<pre><code>header-img: some-images.png
+</code></pre></li>
+</ol>
+<h4 id="clip"><a href="#clip" class="headerlink" title="clip-*"></a>clip-*</h4><p>七牛 imageView2 API</p>
+<p>如果你想使用 imageView2 API ，你必须使用七牛CDN<br>关于该API的详情，请点击这里：<a href="http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html" target="_blank" rel="external">click here</a></p>
+<h4 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h4><p>Google 统计和百度统计配置:</p>
+<pre><code>#Baidu Analytics**
+ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+
+#Google Analytics
+ga_track_id: &apos;UA-49627206-1&apos;            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
+</code></pre><p>拷贝你自己的配置信息到上述地址。</p>
+<h4 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h4><p>主题支持 Disqus 和多说评论，要想使用这两者，需要对其进行使用配置</p>
+<p>首先，你需要注册其中任何一个评论系统的帐号，这非常简单</p>
+<p>第二步，你可以将你注册好的配置信息，填写到以下配置项里：</p>
+<pre><code>duoshuo_username: _your_duoshuo_short_name_
+# OR
+disqus_username: _your_disqus_short_name_
+</code></pre><h4 id="功能标签"><a href="#功能标签" class="headerlink" title="功能标签"></a>功能标签</h4><pre><code>featured-tags: true  
+featured-condition-size: 1     # A tag will be featured if the size of     it is more than this condition value
+</code></pre><h4 id="侧边栏的个人简介"><a href="#侧边栏的个人简介" class="headerlink" title="侧边栏的个人简介"></a>侧边栏的个人简介</h4><pre><code># Sidebar settings
+sidebar: true
+sidebar-about-description: &quot;your description here&quot;
+sidebar-avatar: avatar-hux.jpg     
+</code></pre><!--Mini-About-Me module display all your SNS buttons also your avatar and the description if you set sidebar-avatar and sidebar-about-description which is very useful and common for a sidebar so it is default with your sidebar.-->
+<!--
+It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
+-->
+<h3 id="博文"><a href="#博文" class="headerlink" title="博文"></a>博文</h3><p>以下是博文配置</p>
+<pre><code>---
+layout: post
+title: &quot;Hola 2016&quot;
+subtitle: &quot;hi, I&apos;m haojen ma&quot;
+date: 2016-05-26 06:00
+author: &quot;Haojen Ma&quot;
+header-img: &quot;img/post-default.jpg&quot;
+cdn: &apos;header-on&apos;
+tags:
+    - Movies
+    - Life
+---
+</code></pre><h4 id="创建一条博文"><a href="#创建一条博文" class="headerlink" title="创建一条博文"></a>创建一条博文</h4><pre><code>hexo new &quot;your-post-name&quot;
+</code></pre><p>创建一条博文的同时，也会创建一个以该博文名命名的文件夹： <code>source/_posts</code> </p>
+<p>如果你喜欢古诗，你也可以使用  <code>poetry</code> 布局：</p>
+<pre><code>hexo new poetry &apos;your-poetry-name&apos;
+</code></pre><p>下面是个演示</p>
+<p><img src="http://o7bkkhiex.bkt.clouddn.com/poetry-show.png" alt="poetry-demo"></p>
+<h4 id="博文标题背景图片"><a href="#博文标题背景图片" class="headerlink" title="博文标题背景图片"></a>博文标题背景图片</h4><p>如果你没有设置的话，会默认使用 <code>_config.yml</code> 下指定的背景图像</p>
+<h4 id="cdn-V2-0-新功能"><a href="#cdn-V2-0-新功能" class="headerlink" title="cdn (V2.0 新功能)"></a>cdn (V2.0 新功能)</h4><p>使用 <code>cdn</code> 标签，切换单页面背景图片的URL</p>
+<pre><code>cdn: &apos;header-off&apos; 
+header-img: &quot;http://www.imagestest.com/god.png&quot;
+</code></pre><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
+<li>如果你喜欢的话不妨给一个 star ，或者有任何建议的话可以直接在github上联系我 ：）</li>
+</ul>
+<h2 id="开源协议"><a href="#开源协议" class="headerlink" title="开源协议"></a>开源协议</h2><p>Apache License Version 2.0</p>
 
 
                 <hr>
@@ -226,11 +334,7 @@
                     data-title="Anisina 中文使用教程"
                     data-url="http://haojen.github.io/2016/08/06/Anisina-中文使用教程/"
                     data-images=""
-                    data-content="V2.0 新功能
-双击顶部导航条返回顶部
-支持swiftfy搜索
-新增友链功能
-自由切换CDN... | Haojen&#39;s blog " >
+                    data-content="一个简单轻巧的响应式主题，支持七牛图床[](http://haojen.github.io/)... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -273,7 +377,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#V2-0-新功能"><span class="toc-text">V2.0 新功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整"><span class="toc-text">调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别感谢"><span class="toc-text">特别感谢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知问题"><span class="toc-text">已知问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#V2-0-新功能"><span class="toc-text">V2.0 新功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整"><span class="toc-text">调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别感谢"><span class="toc-text">特别感谢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知问题"><span class="toc-text">已知问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概览"><span class="toc-text">概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-url"><span class="toc-text">cdn-url</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clip"><span class="toc-text">clip-*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统计"><span class="toc-text">统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#评论系统"><span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#功能标签"><span class="toc-text">功能标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#侧边栏的个人简介"><span class="toc-text">侧边栏的个人简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#博文"><span class="toc-text">博文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一条博文"><span class="toc-text">创建一条博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#博文标题背景图片"><span class="toc-text">博文标题背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-V2-0-新功能"><span class="toc-text">cdn (V2.0 新功能)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源协议"><span class="toc-text">开源协议</span></a>
                 </div>
             </div>
         </div>
