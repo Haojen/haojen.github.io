@@ -56,7 +56,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -180,9 +180,9 @@
                 
                     <a href="#Tools" title="Tools" rel="1">Tools</a>
                 
-                    <a href="#Express" title="Express" rel="1">Express</a>
-                
                     <a href="#layout" title="layout" rel="1">layout</a>
+                
+                    <a href="#Express" title="Express" rel="1">Express</a>
                 
                     <a href="#JS" title="JS" rel="6">JS</a>
                 
@@ -206,11 +206,11 @@
                 
                     <a href="#GFW" title="GFW" rel="1">GFW</a>
                 
-                    <a href="#观影" title="观影" rel="1">观影</a>
-                
                     <a href="#生活" title="生活" rel="1">生活</a>
                 
                     <a href="#科普" title="科普" rel="1">科普</a>
+                
+                    <a href="#观影" title="观影" rel="1">观影</a>
                 
                     <a href="#JSON" title="JSON" rel="1">JSON</a>
                 
@@ -389,27 +389,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Express">
-                    <span class="tag-text">Express</span>
-                </span>
-                
-                 <div class="post-preview">
-                     <a href="/2016/05/29/Express-完整学习/">
-                        <h2 class="post-title">
-                            Express 完整学习
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                The Truth is single one
-                            </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="layout">
                     <span class="tag-text">layout</span>
                 </span>
@@ -422,6 +401,27 @@
                         
                             <h3 class="post-subtitle">
                                 简单的了解float的历史，其本来的作用，及其特性
+                            </h3>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Express">
+                    <span class="tag-text">Express</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2016/05/29/Express-完整学习/">
+                        <h2 class="post-title">
+                            Express 完整学习
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                The Truth is single one
                             </h3>
                         
                     </a>
@@ -742,27 +742,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="观影">
-                    <span class="tag-text">观影</span>
-                </span>
-                
-                 <div class="post-preview">
-                     <a href="/2016/05/02/如何写影评-笔记/">
-                        <h2 class="post-title">
-                            如何写影评
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                写影评之外, 是对喜爱的影片应得的尊重
-                            </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="生活">
                     <span class="tag-text">生活</span>
                 </span>
@@ -792,6 +771,27 @@
                         
                             <h3 class="post-subtitle">
                                 200多种恐龙和始祖生物的详细资料
+                            </h3>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="观影">
+                    <span class="tag-text">观影</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2016/05/02/如何写影评-笔记/">
+                        <h2 class="post-title">
+                            如何写影评
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                写影评之外, 是对喜爱的影片应得的尊重
                             </h3>
                         
                     </a>
@@ -905,7 +905,9 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <span class="text-muted"style="font-size: 14px">双击导航条返回顶部</span>
+                <br>
                 <ul class="list-inline text-center">
                 
                 
@@ -957,12 +959,13 @@
 
                 </ul>
                 <p class="copyright text-muted">
+                    <br>
                     Copyright &copy; Haojen 2016
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
                     Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-
+                    <br>
                 </p>
 
             </div>
@@ -1020,14 +1023,6 @@
 
 <!-- Baidu Tongji -->
 
-
-<!-- totop start -->
-<div id="totop" style="position:fixed;bottom:50px;right:30px;cursor: pointer;">
-<a title="返回顶部"><img src="/img/totop.png"/></a>
-</div>
-
-<script src="/js/totop.js"></script>
-<!-- totop end -->
 
 <!-- swiftype -->
 <script type="text/javascript">

@@ -56,7 +56,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " data-ispost = "true" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -422,7 +422,9 @@ expires: 31 Dec 2008
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <span class="text-muted"style="font-size: 14px">双击导航条返回顶部</span>
+                <br>
                 <ul class="list-inline text-center">
                 
                 
@@ -474,12 +476,13 @@ expires: 31 Dec 2008
 
                 </ul>
                 <p class="copyright text-muted">
+                    <br>
                     Copyright &copy; Haojen 2016
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
                     Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-
+                    <br>
                 </p>
 
             </div>
@@ -537,14 +540,6 @@ expires: 31 Dec 2008
 
 <!-- Baidu Tongji -->
 
-
-<!-- totop start -->
-<div id="totop" style="position:fixed;bottom:50px;right:30px;cursor: pointer;">
-<a title="返回顶部"><img src="/img/totop.png"/></a>
-</div>
-
-<script src="/js/totop.js"></script>
-<!-- totop end -->
 
 <!-- swiftype -->
 <script type="text/javascript">
