@@ -195,6 +195,10 @@
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
                 <p>一个简单轻巧的响应式主题，支持七牛图床<br><a href="http://haojen.github.io/"><img src="http://o7bkkhiex.bkt.clouddn.com/Anisina.png" alt="Anisina"></a></p>
+<h2 id="下个版本考虑添加的功能"><a href="#下个版本考虑添加的功能" class="headerlink" title="下个版本考虑添加的功能"></a>下个版本考虑添加的功能</h2><ul>
+<li>添加自订页面logo功能 ( 感谢 @thankuu 的建议)</li>
+<li>如果你有更多更好的建议 , 请联系我, 我的邮箱 haojen.ma@gmail.com , 或者你也可以在主题里发起 issue 给我留言 : )</li>
+</ul>
 <h3 id="V2-0-新功能"><a href="#V2-0-新功能" class="headerlink" title="V2.0 新功能"></a>V2.0 新功能</h3><ol>
 <li>双击顶部导航条返回顶部</li>
 <li>支持swiftfy搜索</li>
@@ -212,12 +216,12 @@
 </ol>
 <h3 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h3><p>感谢 @HipHopCoderS 对主题的PR</p>
 <h3 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h3><ol>
-<li>在微信或其它国产移动浏览器中双击导航条无法返回顶部的问题</li>
+<li>在微信或其它国产移动浏览器中双击导航条无法返回顶部的问题(因为双击微信标题就可以回到页面顶部了,所以这个bug不太影响体验)</li>
 </ol>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>推荐大家移动端使用 Chrome 浏览器，主题专门针对 Chrome &amp; Safari 优化 ：）</p>
 <h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><ul>
 <li><strong>作者</strong>： Haojen Ma</li>
-<li><strong>最新版本</strong>：v2</li>
+<li><strong>最新版本</strong>：v2.0</li>
 <li><strong>兼容</strong>： Hexo 3 or Lanter</li>
 </ul>
 <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
@@ -238,7 +242,7 @@
 </ol>
 <p>然后将 clone 下的文件夹拷贝到 Hexo <strong>theme</strong> folder</p>
 <ol>
-<li>修改 <figure class="highlight plain"><figcaption><span>themes 为：</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	themes: Anisina</span><br><span class="line">	</span><br><span class="line">3. 或者直接拷贝 Anisina 文件夹下的 `_config.yml` 替换 hexo 默认的 _config.yml</span><br><span class="line"></span><br><span class="line">4. Done</span><br><span class="line"></span><br><span class="line">### 快速开始</span><br><span class="line"></span><br><span class="line">#### 配置</span><br><span class="line"></span><br><span class="line">You can easily get stared by modifying ```config.yml</span><br></pre></td></tr></table></figure></li>
+<li>修改 <figure class="highlight plain"><figcaption><span>themes 为：</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	themes: Anisina</span><br><span class="line">	</span><br><span class="line">3. 或者直接拷贝 Anisina 文件夹下的 `_config.yml` 替换 hexo 默认的 _config.yml</span><br><span class="line"></span><br><span class="line">4. 完</span><br><span class="line"></span><br><span class="line">### 快速开始</span><br><span class="line"></span><br><span class="line">#### 配置</span><br><span class="line"></span><br><span class="line">You can easily get stared by modifying ```config.yml</span><br></pre></td></tr></table></figure></li>
 </ol>
 <pre><code>Site settings
 title: Anisina Blog             # title of your website
@@ -257,8 +261,20 @@ clip-avatar: &quot;?imageView2/2/w/300/h/300/interlace/1/q/90&quot;
 clip-post: &quot;?&quot; # you can custom post width and height
 clip-home-post-bg: &quot;?imageView2/1/w/800/h/300/interlace/1/q/70&quot;
 
-#post default images
+# 博文默认图片(如果不设置这一项, 博文标题的图片默认是灰色的)
 post-default-img: post-default.jpg
+
+# 友链, 请务必按以下格式书写
+friends: [
+    {
+        title: &quot;your friend title&quot;,
+        href: &quot;your fiend path&quot;
+    },
+    {
+        title: &quot;your friend title 2&quot;,
+        href: &quot;your friend path 2&quot;
+    }
+] 
 </code></pre><h4 id="cdn-url"><a href="#cdn-url" class="headerlink" title="cdn-url"></a>cdn-url</h4><ol>
 <li><p>注册一个你自己的七牛CDN ，然后拷贝你自己的CDN URL ：</p>
 <pre><code>cdn-url: http://you-cdn.com/
@@ -268,6 +284,11 @@ post-default-img: post-default.jpg
 <li><p>在博文的 <strong>front-matter</strong> 上指定图片名称</p>
 <pre><code>header-img: some-images.png
 </code></pre></li>
+</ol>
+<h4 id="创建一个-Tags-导航页面"><a href="#创建一个-Tags-导航页面" class="headerlink" title="创建一个 Tags 导航页面"></a>创建一个 Tags 导航页面</h4><ol>
+<li>运行命令:<code>hexo new page &quot;Tags&quot;</code> , 这会在博客的 <code>source</code> 目录下生成一个名为 <code>Tags</code> 的文件夹, 里面会有一个 <code>index.md</code> 格式的页面,如果没有请手动创建.</li>
+<li>然后打开 <code>yourblog/source</code> 文件夹 , 找到 <code>Tags/index.md</code> 这个文件, 然后设置在两条的<code>---</code>里面, 指定一个 <code>layout: tags</code>值.注意 key 和 value  之间的空格</li>
+<li>然后运行命令,重新生成博客内容: <code>hexo clean &amp;&amp; hexo g</code> , 然后可以运行 <code>hexo serve</code> 在本地查看效果</li>
 </ol>
 <h4 id="clip"><a href="#clip" class="headerlink" title="clip-*"></a>clip-*</h4><p>七牛 imageView2 API</p>
 <p>如果你想使用 imageView2 API ，你必须使用七牛CDN<br>关于该API的详情，请点击这里：<a href="http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html" target="_blank" rel="external">click here</a></p>
@@ -314,7 +335,10 @@ tags:
 <pre><code>hexo new poetry &apos;your-poetry-name&apos;
 </code></pre><p>下面是个演示</p>
 <p><img src="http://o7bkkhiex.bkt.clouddn.com/poetry-show.png" alt="poetry-demo"></p>
-<h4 id="博文标题背景图片"><a href="#博文标题背景图片" class="headerlink" title="博文标题背景图片"></a>博文标题背景图片</h4><p>如果你没有设置的话，会默认使用 <code>_config.yml</code> 下指定的背景图像</p>
+<h4 id="博文标题背景图片"><a href="#博文标题背景图片" class="headerlink" title="博文标题背景图片"></a>博文标题背景图片</h4><blockquote>
+<p>header-img: “<a href="http://sometest.png" target="_blank" rel="external">http://sometest.png</a>“</p>
+</blockquote>
+<p>如果你没有设置的话，会默认使用 <code>_config.yml</code> 下 <code>post-default-img</code>指定的背景图像</p>
 <h4 id="cdn-V2-0-新功能"><a href="#cdn-V2-0-新功能" class="headerlink" title="cdn (V2.0 新功能)"></a>cdn (V2.0 新功能)</h4><p>使用 <code>cdn</code> 标签，切换单页面背景图片的URL</p>
 <pre><code>cdn: &apos;header-off&apos; 
 header-img: &quot;http://www.imagestest.com/god.png&quot;
@@ -335,9 +359,8 @@ header-img: &quot;http://www.imagestest.com/god.png&quot;
                     data-url="http://haojen.github.io/2016/08/06/Anisina-中文使用教程/"
                     data-images=""
                     data-content="一个简单轻巧的响应式主题，支持七牛图床
-V2.0 新功能
-双击顶部导航条返回顶部
-支持swif... | Haojen&#39;s blog " >
+下个版本考虑添加的功能
+添加自订页面logo功能 ( ... | Haojen&#39;s blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -354,6 +377,10 @@ V2.0 新功能
                 
 
                 <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/08/07/A-Touch-Of-Zen/" data-toggle="tooltip" data-placement="top" title="A Touch Of Zen">&larr; Previous Post</a>
+                        </li>
                     
                     
                         <li class="next">
@@ -380,7 +407,7 @@ V2.0 新功能
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#V2-0-新功能"><span class="toc-text">V2.0 新功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整"><span class="toc-text">调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别感谢"><span class="toc-text">特别感谢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知问题"><span class="toc-text">已知问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概览"><span class="toc-text">概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-url"><span class="toc-text">cdn-url</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clip"><span class="toc-text">clip-*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统计"><span class="toc-text">统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#评论系统"><span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#功能标签"><span class="toc-text">功能标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#侧边栏的个人简介"><span class="toc-text">侧边栏的个人简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#博文"><span class="toc-text">博文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一条博文"><span class="toc-text">创建一条博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#博文标题背景图片"><span class="toc-text">博文标题背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-V2-0-新功能"><span class="toc-text">cdn (V2.0 新功能)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源协议"><span class="toc-text">开源协议</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下个版本考虑添加的功能"><span class="toc-text">下个版本考虑添加的功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#V2-0-新功能"><span class="toc-text">V2.0 新功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整"><span class="toc-text">调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别感谢"><span class="toc-text">特别感谢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知问题"><span class="toc-text">已知问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概览"><span class="toc-text">概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-url"><span class="toc-text">cdn-url</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个-Tags-导航页面"><span class="toc-text">创建一个 Tags 导航页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clip"><span class="toc-text">clip-*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统计"><span class="toc-text">统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#评论系统"><span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#功能标签"><span class="toc-text">功能标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#侧边栏的个人简介"><span class="toc-text">侧边栏的个人简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#博文"><span class="toc-text">博文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一条博文"><span class="toc-text">创建一条博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#博文标题背景图片"><span class="toc-text">博文标题背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn-V2-0-新功能"><span class="toc-text">cdn (V2.0 新功能)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源协议"><span class="toc-text">开源协议</span></a></li></ol>
                 </div>
             </div>
         </div>
