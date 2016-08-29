@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,38 +139,42 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>jQuery 下的「AJAX」</h1>
                     
-                        <h2 class="subheading">简单的了解 jQuery 下常用的 AJAX 方法</h2>
+                    <h2 class="subheading">简单的了解 jQuery 下常用的 AJAX 方法</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-12-17
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#jQuery" title="jQuery">jQuery</a>
+                        <a class="tag" href="/tags/#jQuery"
+                           title="jQuery">jQuery</a>
                         
-                        <a class="tag" href="/tags/#AJAX" title="AJAX">AJAX</a>
+                        <a class="tag" href="/tags/#AJAX"
+                           title="AJAX">AJAX</a>
                         
                     </div>
                 </div>
@@ -188,52 +192,65 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="Load"><a href="#Load" class="headerlink" title="Load()"></a>Load()</h2><p>该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送的数据, 第三个参数为 callback<br>用来从服务器加载数据，并把返回的数据放入被选元素中。$(selector).load(URL,data,callback);<br>必需的 URL 参数规定您希望加载的 URL。<br>可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。<br>可选的 callback 参数是 load() 方法完成后所执行的函数名称。</p>
-<h2 id="getJSON"><a href="#getJSON" class="headerlink" title="getJSON()"></a>getJSON()</h2><p>jQuery.getJSON(url,[data],callback) : 第一个参数接收一个 URL , 第二个为可选的 data , 第三个参数为callback</p>
-<h2 id="getScript"><a href="#getScript" class="headerlink" title="getScript()"></a>getScript()</h2><p>jQuery.getScript(url,[callback]) 方法用来异步请求并执行服务器中的 JavaScript 格式的文件.<br>通过 HTTP GET 请求载入并执行 JavaScript 文件。</p>
-<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="$.AJAX()"></a>$.AJAX()</h2><p>ajax() 方法通过 HTTP 请求加载远程数据。$.ajax(opts);opts为json格式，常见参数url、type、data等。</p>
-<h2 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h2><p>通过 HTTP GET 请求从服务器上请求数据。<br>$.get(URL,callback);<br>必需的 URL 参数规定您希望请求的 URL。<br>可选的 callback 参数是请求成功后所执行的函数名。</p>
-
+                <h2>Load()</h2>
+<p>该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送的数据, 第三个参数为 callback
+用来从服务器加载数据，并把返回的数据放入被选元素中。$(selector).load(URL,data,callback);
+必需的 URL 参数规定您希望加载的 URL。
+可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+可选的 callback 参数是 load() 方法完成后所执行的函数名称。</p>
+<h2>getJSON()</h2>
+<p>jQuery.getJSON(url,[data],callback) : 第一个参数接收一个 URL , 第二个为可选的 data , 第三个参数为callback</p>
+<h2>getScript()</h2>
+<p>jQuery.getScript(url,[callback]) 方法用来异步请求并执行服务器中的 JavaScript 格式的文件.
+通过 HTTP GET 请求载入并执行 JavaScript 文件。</p>
+<h2>$.AJAX()</h2>
+<p>ajax() 方法通过 HTTP 请求加载远程数据。$.ajax(opts);opts为json格式，常见参数url、type、data等。</p>
+<h2>$.get()</h2>
+<p>通过 HTTP GET 请求从服务器上请求数据。
+$.get(URL,callback);
+必需的 URL 参数规定您希望请求的 URL。
+可选的 callback 参数是请求成功后所执行的函数名。</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/12/17/jQuery 下的「AJAX」/"
-                    data-title="jQuery 下的「AJAX」"
-                    data-url="https://haojen.github.io/2015/12/17/jQuery 下的「AJAX」/"
-                    data-images=""
-                    data-content="Load()该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发送... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/12/17/jQuery 下的「AJAX」/"
+                     data-title="jQuery 下的「AJAX」"
+                     data-url="https://haojen.github.io/2015/12/17/jQuery 下的「AJAX」/"
+                     data-images=""
+                     data-content="Load()
+该方法的第一个参数接受一个 url , 第二个为可选项 data 参数为请求时发... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/12/17/锋利的 jQuery 学习笔记/" data-toggle="tooltip" data-placement="top" title="锋利的 jQuery">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/12/17/锋利的 jQuery 学习笔记/" data-toggle="tooltip" data-placement="top"
+                           title="锋利的 jQuery">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/12/11/复习整理/" data-toggle="tooltip" data-placement="top" title="HTML 初学复习笔记">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/12/11/复习整理/" data-toggle="tooltip" data-placement="top"
+                           title="HTML 初学复习笔记">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -241,9 +258,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/12/17/jQuery 下的「AJAX」/"
-                        data-title="jQuery 下的「AJAX」"
-                        data-url="https://haojen.github.io/2015/12/17/jQuery 下的「AJAX」/" >
+                         data-thread-key="2015/12/17/jQuery 下的「AJAX」/"
+                         data-title="jQuery 下的「AJAX」"
+                         data-url="https://haojen.github.io/2015/12/17/jQuery 下的「AJAX」/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -253,9 +270,9 @@
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Load"><span class="toc-text">Load()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getJSON"><span class="toc-text">getJSON()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getScript"><span class="toc-text">getScript()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX"><span class="toc-text">$.AJAX()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get"><span class="toc-text">$.get()</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Load()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">getJSON()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">getScript()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">$.AJAX()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">$.get()</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -272,14 +289,16 @@
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#jQuery" title="jQuery">jQuery</a>
+                        <a class="tag" href="/tags/#jQuery"
+                           title="jQuery">jQuery</a>
                         
-                          <a class="tag" href="/tags/#AJAX" title="AJAX">AJAX</a>
+                        <a class="tag" href="/tags/#AJAX"
+                           title="AJAX">AJAX</a>
                         
                     </div>
                 </section>
@@ -287,24 +306,24 @@
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -319,19 +338,18 @@
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -343,7 +361,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -416,7 +433,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

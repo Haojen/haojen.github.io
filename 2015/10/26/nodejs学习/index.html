@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,36 +139,39 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>Node.js 学习</h1>
                     
-                        <h2 class="subheading">一个用javascript写的后端语言</h2>
+                    <h2 class="subheading">一个用javascript写的后端语言</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-10-26
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
+                        <a class="tag" href="/tags/#Node.js"
+                           title="Node.js">Node.js</a>
                         
                     </div>
                 </div>
@@ -186,58 +189,68 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>简单的说 Node.js 就是运行在服务端的 JavaScript。<br>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。<br>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
-<h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><p>打开terminal, 键入node进入命令交互模式, 可以输入一条代码语句后立即执行并显示结果,例如:</p>
+                <h2>简介</h2>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。
+Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。
+Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
+<h2>交互模式</h2>
+<p>打开terminal, 键入node进入命令交互模式, 可以输入一条代码语句后立即执行并显示结果,例如:</p>
 <pre><code>node
-&gt;console.log(&apos;Hello World&apos;);
+&gt;console.log('Hello World');
 Hello World //输出的字符
-</code></pre><h2 id="创建第一个-Node-js-应用"><a href="#创建第一个-Node-js-应用" class="headerlink" title="创建第一个 Node.js 应用"></a>创建第一个 Node.js 应用</h2><h3 id="Node-js-构成部分"><a href="#Node-js-构成部分" class="headerlink" title="Node.js 构成部分"></a>Node.js 构成部分</h3><ol>
+</code></pre>
+<h2>创建第一个 Node.js 应用</h2>
+<h3>Node.js 构成部分</h3>
+<ol>
 <li>引入required (翻译:必须的,需求)模块:我们可以使用require指令来载入 Node.js 模块</li>
 <li>创建服务器: 服务器可以监听客户端的请求,类似于 Apache . Nginx 等 HTTP 服务器</li>
 <li>请求接受与相应请求: 服务器很容易创建, 客户端可以用浏览器或者终端发送 HTTP 请求, 服务器接收到请求后返回相应数据</li>
 </ol>
-<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><p>####步骤一: 创建服务器<br>使用 http.createServer() 方法创建服务器, 并使用 listen 方法绑定8888端口. 函数通过 request , response 参数来接受和响应数据</p>
-
+<h3>创建应用</h3>
+<p>####步骤一: 创建服务器
+使用 http.createServer() 方法创建服务器, 并使用 listen 方法绑定8888端口. 函数通过 request , response 参数来接受和响应数据</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/10/26/nodejs学习/"
-                    data-title="Node.js 学习"
-                    data-url="https://haojen.github.io/2015/10/26/nodejs学习/"
-                    data-images=""
-                    data-content="简介简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/10/26/nodejs学习/"
+                     data-title="Node.js 学习"
+                     data-url="https://haojen.github.io/2015/10/26/nodejs学习/"
+                     data-images=""
+                     data-content="简介
+简单的说 Node.js 就是运行在服务端的 JavaScript。
+Node.js 是... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/10/26/npm学习/" data-toggle="tooltip" data-placement="top" title="NPM 学习">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/10/26/npm学习/" data-toggle="tooltip" data-placement="top"
+                           title="NPM 学习">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/10/24/Javascript权威指南-数组/" data-toggle="tooltip" data-placement="top" title="JavaScript 数组">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/10/24/Javascript权威指南-数组/" data-toggle="tooltip" data-placement="top"
+                           title="JavaScript 数组">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -245,9 +258,9 @@ Hello World //输出的字符
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/10/26/nodejs学习/"
-                        data-title="Node.js 学习"
-                        data-url="https://haojen.github.io/2015/10/26/nodejs学习/" >
+                         data-thread-key="2015/10/26/nodejs学习/"
+                         data-title="Node.js 学习"
+                         data-url="https://haojen.github.io/2015/10/26/nodejs学习/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -257,9 +270,9 @@ Hello World //输出的字符
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交互模式"><span class="toc-text">交互模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建第一个-Node-js-应用"><span class="toc-text">创建第一个 Node.js 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-构成部分"><span class="toc-text">Node.js 构成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建应用"><span class="toc-text">创建应用</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">交互模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">创建第一个 Node.js 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Node.js 构成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">创建应用</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -276,12 +289,13 @@ Hello World //输出的字符
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
+                        <a class="tag" href="/tags/#Node.js"
+                           title="Node.js">Node.js</a>
                         
                     </div>
                 </section>
@@ -289,24 +303,24 @@ Hello World //输出的字符
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -321,19 +335,18 @@ Hello World //输出的字符
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -345,7 +358,6 @@ Hello World //输出的字符
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -418,7 +430,6 @@ Hello World //输出的字符
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,19 +139,21 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -160,13 +162,14 @@
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2016-07-18
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#心得" title="心得">心得</a>
+                        <a class="tag" href="/tags/#心得"
+                           title="心得">心得</a>
                         
                     </div>
                 </div>
@@ -184,24 +187,25 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <p>好奇萌小助官网的粒子效果，所以在网上找到了一个类似的例子，尝试理解其实现原理</p>
-<h2 id="源码实现的大致流程"><a href="#源码实现的大致流程" class="headerlink" title="源码实现的大致流程"></a>源码实现的大致流程</h2><p>1 初始化粒子容器、设置粒子的样式、步进速度</p>
-<pre><code> var canvasEl = document.getElementById(&apos;canvas&apos;);
-var ctx = canvasEl.getContext(&apos;2d&apos;);
+<h2>源码实现的大致流程</h2>
+<p>1 初始化粒子容器、设置粒子的样式、步进速度</p>
+<pre><code> var canvasEl = document.getElementById('canvas');
+var ctx = canvasEl.getContext('2d');
 var mousePos = [0, 0];
 
 var easingFactor = 5.0; // 鼠标跟随移动响应速度
 
-var backgroundColor = &apos;black&apos;;
-var nodeColor = &apos;#fff&apos;;
-var edgeColor = &apos;#fff&apos;;
+var backgroundColor = 'black';
+var nodeColor = '#fff';
+var edgeColor = '#fff';
 
 var nodes = [];
 var edges = [];
-</code></pre><p>2 创建粒子，然后push到数组里</p>
+</code></pre>
+<p>2 创建粒子，然后push到数组里</p>
 <pre><code>function constructNodes() {
 
     var nodeNumber = 60; // 生成指定数量的 node
@@ -237,7 +241,8 @@ var edges = [];
         });
     });
 }
-</code></pre><p>3 捆绑粒子，将两个不同的粒子相捆绑</p>
+</code></pre>
+<p>3 捆绑粒子，将两个不同的粒子相捆绑</p>
 <pre><code>function addEdge(edge) {
 
     var ignore = false; // 开关
@@ -258,7 +263,8 @@ var edges = [];
         edges.push(edge);
     }
 }
-</code></pre><p>4 生成粒子和将胡同的粒子捆绑之后，开始移动他们的位置</p>
+</code></pre>
+<p>4 生成粒子和将胡同的粒子捆绑之后，开始移动他们的位置</p>
 <pre><code> function step() {
     nodes.forEach(function (e) {
         // 不操作第一个节点
@@ -295,7 +301,8 @@ var edges = [];
     render();
     window.requestAnimationFrame(step);
 }
-</code></pre><p>5 鼠标移到粒子上的效果</p>
+</code></pre>
+<p>5 鼠标移到粒子上的效果</p>
 <pre><code>function adjustNodeDrivenByMouse() {
     nodes[0].x += (mousePos[0] - nodes[0].x) / easingFactor;
     nodes[0].y += (mousePos[1] - nodes[0].y) / easingFactor;
@@ -304,7 +311,8 @@ var edges = [];
   function lengthOfEdge(edge) {
     return Math.sqrt(Math.pow((edge.from.x - edge.to.x), 2) + Math.pow((edge.from.y - edge.to.y), 2));
 }
-</code></pre><p>6 渲染</p>
+</code></pre>
+<p>6 渲染</p>
 <pre><code> function render() {
     ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
@@ -339,7 +347,8 @@ var edges = [];
         ctx.fill();
     });
 }
-</code></pre><p>7 窗口改变的时候调整 canvas 的大小，因为canvas是位图，而非SVG的矢量</p>
+</code></pre>
+<p>7 窗口改变的时候调整 canvas 的大小，因为canvas是位图，而非SVG的矢量</p>
 <pre><code> window.onresize = function () {
 
     //画布的分辨率随着窗口的调整而改变
@@ -353,62 +362,72 @@ var edges = [];
 
     render();
 };
-</code></pre><p>8 鼠标的位置偏移</p>
+</code></pre>
+<p>8 鼠标的位置偏移</p>
 <pre><code>  window.onmousemove = function (e) {
     mousePos[0] = e.clientX;
     mousePos[1] = e.clientY;
 };
-</code></pre><p>10 第一次打开时手动触发一次页面</p>
+</code></pre>
+<p>10 第一次打开时手动触发一次页面</p>
 <pre><code>window.onresize();
-</code></pre><p>11 动画定时器 ES5<br>     window.requestAnimationFrame(step);</p>
-<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><h3 id="Canvas-性能问题"><a href="#Canvas-性能问题" class="headerlink" title="Canvas 性能问题"></a>Canvas 性能问题</h3><p>使用canvas的时候，发现粒子较多的时候CPU占用很高，但可以通过在 css 样式里添加一个 trick，强制启用 GPU 硬件加速，从而降低对 CPU 的运算的依赖提升性能。<br>（唐阳）</p>
-<h3 id="模块化函数"><a href="#模块化函数" class="headerlink" title="模块化函数"></a>模块化函数</h3><p>在该源码中，每一个函数都是一个简单明了的功能，和有一个语意化的函数名。<br>这样做的好处，我意识到有以下几点：</p>
+</code></pre>
+<p>11 动画定时器 ES5	
+window.requestAnimationFrame(step);</p>
+<h2>心得</h2>
+<h3>Canvas 性能问题</h3>
+<p>使用canvas的时候，发现粒子较多的时候CPU占用很高，但可以通过在 css 样式里添加一个 trick，强制启用 GPU 硬件加速，从而降低对 CPU 的运算的依赖提升性能。
+（唐阳）</p>
+<h3>模块化函数</h3>
+<p>在该源码中，每一个函数都是一个简单明了的功能，和有一个语意化的函数名。
+这样做的好处，我意识到有以下几点：</p>
 <ol>
 <li>降低了代码之间的耦合，有助于二次开发和查错。</li>
 <li>每个函数应该只专注一件事；</li>
 <li>语意化的名称有助于理解函数或对象的作用，无形的注释。</li>
 </ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>代码是一种工具，亦是思想的体现。越是在写前对代码的 <strong>整体结构</strong> 和 <strong>需求</strong> 越有清晰的认识，写出的代码越就是 可维护性高、更健壮。</p>
+<h3>总结</h3>
+<p>代码是一种工具，亦是思想的体现。越是在写前对代码的 <strong>整体结构</strong> 和 <strong>需求</strong> 越有清晰的认识，写出的代码越就是 可维护性高、更健壮。</p>
 <p>算是第一次写阅读源码心得，与其说在源码中学到了什么，不如说学习如何阅读源代码。</p>
 
-
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2016/07/18/粒子效果源码剖析/"
-                    data-title="粒子效果源码心得"
-                    data-url="https://haojen.github.io/2016/07/18/粒子效果源码剖析/"
-                    data-images=""
-                    data-content="好奇萌小助官网的粒子效果，所以在网上找到了一个类似的例子，尝试理解其实现原理
-源码实现的大致流... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2016/07/18/粒子效果源码剖析/"
+                     data-title="粒子效果源码心得"
+                     data-url="https://haojen.github.io/2016/07/18/粒子效果源码剖析/"
+                     data-images=""
+                     data-content="好奇萌小助官网的粒子效果，所以在网上找到了一个类似的例子，尝试理解其实现原理
+源码实现的大致流... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/07/21/友人问与我答/" data-toggle="tooltip" data-placement="top" title="有关学编程的探讨">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2016/07/21/友人问与我答/" data-toggle="tooltip" data-placement="top"
+                           title="有关学编程的探讨">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2016/06/29/Chrome-53-性能大幅度提升的背后/" data-toggle="tooltip" data-placement="top" title="Chrome 53 性能大幅度提升的背后">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2016/06/29/Chrome-53-性能大幅度提升的背后/" data-toggle="tooltip" data-placement="top"
+                           title="Chrome 53 性能大幅度提升的背后">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -416,9 +435,9 @@ var edges = [];
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/18/粒子效果源码剖析/"
-                        data-title="粒子效果源码心得"
-                        data-url="https://haojen.github.io/2016/07/18/粒子效果源码剖析/" >
+                         data-thread-key="2016/07/18/粒子效果源码剖析/"
+                         data-title="粒子效果源码心得"
+                         data-url="https://haojen.github.io/2016/07/18/粒子效果源码剖析/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -428,9 +447,9 @@ var edges = [];
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码实现的大致流程"><span class="toc-text">源码实现的大致流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得"><span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Canvas-性能问题"><span class="toc-text">Canvas 性能问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化函数"><span class="toc-text">模块化函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">源码实现的大致流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Canvas 性能问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">模块化函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">总结</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -447,12 +466,13 @@ var edges = [];
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#心得" title="心得">心得</a>
+                        <a class="tag" href="/tags/#心得"
+                           title="心得">心得</a>
                         
                     </div>
                 </section>
@@ -460,24 +480,24 @@ var edges = [];
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -492,19 +512,18 @@ var edges = [];
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -516,7 +535,6 @@ var edges = [];
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -589,7 +607,6 @@ var edges = [];
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

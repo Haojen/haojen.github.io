@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,19 +139,21 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -160,13 +162,14 @@
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-10-26
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </div>
@@ -184,139 +187,186 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>String 类型是字符串的对象包装类型,可以用String 构造函数的办法来创建</p>
-<pre><code>var str = new String(&apos;hello world&apos;);
-</code></pre><p>该对象的方法也可以在所有基本的字符串值中访问到, <strong>其中,继承的 valueOf() / toLocaleString() 和 toString() 方法都返回对象所表示的基本字符串值</strong></p>
+                <h2>简介</h2>
+<p>String 类型是字符串的对象包装类型,可以用String 构造函数的办法来创建</p>
+<pre><code>var str = new String('hello world');
+</code></pre>
+<p>该对象的方法也可以在所有基本的字符串值中访问到, <strong>其中,继承的 valueOf() / toLocaleString() 和 toString() 方法都返回对象所表示的基本字符串值</strong></p>
 <p>String类型的每个实例都有一个 length 属性,表示字符串中有多少个字符串</p>
-<pre><code>var str = &apos;hello world&apos;;
+<pre><code>var str = 'hello world';
 str.length //length 的属性值为11 , 因为空格也算一个字符
-</code></pre><h2 id="字符方法"><a href="#字符方法" class="headerlink" title="字符方法"></a>字符方法</h2><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>chartAt() 和 charCodeAt(),这两个方法都接受一个参数,即基于0的字符位置<br>其中, chartAt()方法以单字符串的形式返回给定位置的那个字符,如下代码所示:</p>
-<pre><code>var  str = &apos;hello world&apos;;
-str.chartAt(1) // 输出字符&apos;e&apos;
-</code></pre><p>而 chartCodeAt()则是返回的字符编码</p>
-<pre><code>var  str = &apos;hello world&apos;;
-str.chartCodeAt(1) // 输出字符&apos;e&apos;的字符编码&quot;101&quot;
-</code></pre><p>ECMA5中还可以用类似于数组的形式访问字符串中指定的字符:</p>
-<pre><code>var  str = &apos;hello world&apos;;
-str[1] // 方括号加索引值, 输出字符&apos;e&apos;
-</code></pre><p>但是会有一定的兼容问题, 在 IE7及一下的浏览器中,会返回 undefined</p>
-<h3 id="indexOf-and-lastIndexOf"><a href="#indexOf-and-lastIndexOf" class="headerlink" title="indexOf and lastIndexOf"></a>indexOf and lastIndexOf</h3><p>有两个可以从字符串中查找子字符串的方法: indexOf() 和 lastIndexOf(),  这两个办法都是从一个字符串中搜寻给定的子字符串, 然后返回子字符串的位置, 如果没有找到该字符串,则会返回-1, 两者的区别在于,前者从字符串的开头向尾部搜索, 后者从字符串的尾部向首部搜索.</p>
+</code></pre>
+<h2>字符方法</h2>
+<h3>查询</h3>
+<p>chartAt() 和 charCodeAt(),这两个方法都接受一个参数,即基于0的字符位置
+其中, chartAt()方法以单字符串的形式返回给定位置的那个字符,如下代码所示:</p>
+<pre><code>var  str = 'hello world';
+str.chartAt(1) // 输出字符'e'
+</code></pre>
+<p>而 chartCodeAt()则是返回的字符编码</p>
+<pre><code>var  str = 'hello world';
+str.chartCodeAt(1) // 输出字符'e'的字符编码&quot;101&quot;
+</code></pre>
+<p>ECMA5中还可以用类似于数组的形式访问字符串中指定的字符:</p>
+<pre><code>var  str = 'hello world';
+str[1] // 方括号加索引值, 输出字符'e'
+</code></pre>
+<p>但是会有一定的兼容问题, 在 IE7及一下的浏览器中,会返回 undefined</p>
+<h3>indexOf and lastIndexOf</h3>
+<p>有两个可以从字符串中查找子字符串的方法: indexOf() 和 lastIndexOf(),  这两个办法都是从一个字符串中搜寻给定的子字符串, 然后返回子字符串的位置, 如果没有找到该字符串,则会返回-1, 两者的区别在于,前者从字符串的开头向尾部搜索, 后者从字符串的尾部向首部搜索.</p>
 <pre><code>var str =&quot;hello world&quot;;
 str.indexOf(&quot;o&quot;) //4
 str.LastIndexOf(&quot;o&quot;)//7
-</code></pre><p>如果指定的字符值只出现了一次,那么 indexOf()和 lastIndexOf() 会返回相同的位置值.<br>这两个方法都可以接受<strong>可选</strong>的第二个参数,用来表示从字符串中的哪个位置开始搜索, 且会忽略该位置之前的所有字符</p>
+</code></pre>
+<p>如果指定的字符值只出现了一次,那么 indexOf()和 lastIndexOf() 会返回相同的位置值.
+这两个方法都可以接受<strong>可选</strong>的第二个参数,用来表示从字符串中的哪个位置开始搜索, 且会忽略该位置之前的所有字符</p>
 <pre><code>var str =&quot;hello world&quot;;
 str.indexOf(&quot;o&quot;,6) //7
 str.LastIndexOf(&quot;o&quot;,6)//4
-</code></pre><p>利用这两种方法的特性,我们可以通过循环调用他们,来查找所有匹配的子字符串 :</p>
-<pre><code>var str =&apos;everything  be okay&apos;;
-var    array = new Array();
-var strIndex =str.indexOf(&apos;e&apos;);
+</code></pre>
+<p>利用这两种方法的特性,我们可以通过循环调用他们,来查找所有匹配的子字符串 :</p>
+<pre><code>var str ='everything  be okay';
+var	array = new Array();
+var strIndex =str.indexOf('e');
 while(strIndex&gt;-1){
-    array.push(strIndex)
-     strIndex =str.indexOf(&apos;e&apos;,strIndex++);
+	array.push(strIndex)
+	 strIndex =str.indexOf('e',strIndex++);
 }
 
 alert(array)//输出str里面的所有的 e 的位置
-</code></pre><p>###连接字符串<br>concat()用于将一个或多个字符串拼接起来,返回拼接得到的新字符串.</p>
-<pre><code>var str =&apos;hello&apos;;
-var result = str.concat(&apos;world&apos;,&apos;!&apos;) //输出结果 &quot;hello world!&quot;;
+</code></pre>
+<p>###连接字符串
+concat()用于将一个或多个字符串拼接起来,返回拼接得到的新字符串.</p>
+<pre><code>var str ='hello';
+var result = str.concat('world','!') //输出结果 &quot;hello world!&quot;;
 str //不变
-</code></pre><p>用’+’号也能进行字符串之间的拼接:</p>
-<pre><code>var str =&apos;hello&apos;;
-var result = str+&apos; world &apos;+&apos;!&apos;;
+</code></pre>
+<p>用'+'号也能进行字符串之间的拼接:</p>
+<pre><code>var str ='hello';
+var result = str+' world '+'!';
 result//hello world!;
-</code></pre><h3 id="剪裁"><a href="#剪裁" class="headerlink" title="剪裁"></a>剪裁</h3><p>slice()<strong>翻译: 菜刀,切下</strong>,substr(),substring() 这三个方法都会返回被操作字符串的一个子字符串, 而且也都接受一个或者两个参数.第一个参数指定子字符串的开始位置, 第二个参数(在指定情况下)表示子字符串到哪里结束.具体来说 slice() 和 substring() 的第二个参数指定的是最后一个子字符串的位置. 而 substr() 的第二个参数指定的则是返回的字符个数.如果没给这些方法传递第二个参数,则将字符串的长度作为结束位置.与 concat()方法一样, slice() substr() 和 substring() 也不会修改字符串本身的值,他们只是返回一个基本类型的字符串值,对原始字符串没有任何影响.</p>
-<h4 id="slice"><a href="#slice" class="headerlink" title="slice():"></a>slice():</h4><p>第一个参数代表开始位置,第二个参数代表结束位置的下一个位置,截取出来的字符串的长度为第二个参数与第一个参数之间的差;若第二个参数值为负数,则将该值加上字符串长度后转为正值;若第一个参数等于大于第二个参数,则返回空字符串.<br> slice 的第一个参数为负数, 那么 slice 也会负数与该字符串的长度相加,转换成正值,当然第二个也允许负值<br>    var str =”hello world”;<br>    str.slice(3) //返回从第三个字符包括后面的所有字符 : lo world<br>    str.slice(3,6)//    返回 “lo “<br>    str.slice(-3,-1)//结果是总字符串的长度+-3 =8, 然后再加-1,结果是10, 等同于 str.slice(8,10)</p>
-<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><pre><code>var str =&quot;hello world&quot;;
+</code></pre>
+<h3>剪裁</h3>
+<p>slice()<strong>翻译: 菜刀,切下</strong>,substr(),substring() 这三个方法都会返回被操作字符串的一个子字符串, 而且也都接受一个或者两个参数.第一个参数指定子字符串的开始位置, 第二个参数(在指定情况下)表示子字符串到哪里结束.具体来说 slice() 和 substring() 的第二个参数指定的是最后一个子字符串的位置. 而 substr() 的第二个参数指定的则是返回的字符个数.如果没给这些方法传递第二个参数,则将字符串的长度作为结束位置.与 concat()方法一样, slice() substr() 和 substring() 也不会修改字符串本身的值,他们只是返回一个基本类型的字符串值,对原始字符串没有任何影响.</p>
+<h4>slice():</h4>
+<p>第一个参数代表开始位置,第二个参数代表结束位置的下一个位置,截取出来的字符串的长度为第二个参数与第一个参数之间的差;若第二个参数值为负数,则将该值加上字符串长度后转为正值;若第一个参数等于大于第二个参数,则返回空字符串.
+slice 的第一个参数为负数, 那么 slice 也会负数与该字符串的长度相加,转换成正值,当然第二个也允许负值
+	var str =&quot;hello world&quot;;
+	str.slice(3) //返回从第三个字符包括后面的所有字符 : lo world
+	str.slice(3,6)//	返回 &quot;lo &quot;
+	str.slice(-3,-1)//结果是总字符串的长度+-3 =8, 然后再加-1,结果是10, 等同于 str.slice(8,10)</p>
+<h4>substring()</h4>
+<pre><code>var str =&quot;hello world&quot;;
 str.substring(3)//&quot;lo world&quot;
 str.substring(3,6)//与 slice表现相同,返回 lo for
-</code></pre><p>与 slice()菜刀 唯一不同的是 substring() 参数为负的时候, substring() 方法会把所有的负值参数都转换为0,且 substring 总是把最小的数为起始位置, 这就意味着</p>
+</code></pre>
+<p>与 slice()菜刀 唯一不同的是 substring() 参数为负的时候, substring() 方法会把所有的负值参数都转换为0,且 substring 总是把最小的数为起始位置, 这就意味着</p>
 <pre><code>str.substring(2,-3) ==str.substring(0,2)
 str.substring(-3) 
-</code></pre><p>结果与 substring(0) 相同结果是 hello world</p>
-<h4 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h4><p>与以上两个方法的第二个参数不同的是, substr()方法的第二个参数指定的是要返回的字符个数, 而不是要返回的位置;</p>
-<pre><code>var str = &apos;hello world&apos;
+</code></pre>
+<p>结果与 substring(0) 相同结果是 hello world</p>
+<h4>substr()</h4>
+<p>与以上两个方法的第二个参数不同的是, substr()方法的第二个参数指定的是要返回的字符个数, 而不是要返回的位置;</p>
+<pre><code>var str = 'hello world'
 str.substr(1,6)//返回ello w
-</code></pre><p>substr() 在负数的情况下也会将第二个参数转换为0,这也就意味着返回包含零个字符的字符串,也就是一个空的字符串</p>
-<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>这个方法可以基于指定的分隔符将一个字符串分割成多个子字符串,并将结果放在一个数组中, 分隔符可以是字符串, 也可以是一个 RegExp 对象. 且 solit()方法可以接受可选的第二个参数,用于指定数组的大小,以便确保范湖的数组不会超过既定的大小<br><strong>注意: 该方法有兼容性的问题</strong></p>
-<pre><code>var colorText =&apos;red ,blue ,green,yellow&apos;;
-var color1= colorText.split(&apos;,&apos;) //[&apos;red&apos;,&apos;blue&apos;,&apos;green&apos;,&apos;yellow&apos;]
-var color1= colorText.split(&apos;,&apos; , 2) //[&apos;red&apos;,&apos;blue&apos;]
-</code></pre><h4 id="trim-修剪-装饰"><a href="#trim-修剪-装饰" class="headerlink" title="trim() (修剪,装饰)"></a>trim() (修剪,装饰)</h4><p>这个方法会创建一个字符串的副本, 删除前置及后缀的所有空格,然后返回结果<br>    var str = “ hello world   “<br>    var trimStr =str.trim();// 结果是” hello  world”</p>
+</code></pre>
+<p>substr() 在负数的情况下也会将第二个参数转换为0,这也就意味着返回包含零个字符的字符串,也就是一个空的字符串</p>
+<h4>split()</h4>
+<p>这个方法可以基于指定的分隔符将一个字符串分割成多个子字符串,并将结果放在一个数组中, 分隔符可以是字符串, 也可以是一个 RegExp 对象. 且 solit()方法可以接受可选的第二个参数,用于指定数组的大小,以便确保范湖的数组不会超过既定的大小
+<strong>注意: 该方法有兼容性的问题</strong></p>
+<pre><code>var colorText ='red ,blue ,green,yellow';
+var color1= colorText.split(',') //['red','blue','green','yellow']
+var color1= colorText.split(',' , 2) //['red','blue']
+</code></pre>
+<h4>trim() (修剪,装饰)</h4>
+<p>这个方法会创建一个字符串的副本, 删除前置及后缀的所有空格,然后返回结果
+	var str = &quot; hello world   &quot;
+	var trimStr =str.trim();// 结果是&quot; hello  world&quot;</p>
 <p>trim()返回的是字符串的副本, 不会改变原始值, 还有该方法指定具体方向的方法 trimLeft() 和 trimRight, 用于删除字符串开头和末尾的空格</p>
-<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><p>ECMAScript中涉及字符串大小写转换的方法有4个:</p>
+<h3>大小写转换</h3>
+<p>ECMAScript中涉及字符串大小写转换的方法有4个:</p>
 <ol>
 <li>toLowerCase()</li>
 <li>toLocaleLowerCase() //针对某些地区实现正确转换的方法</li>
 <li>toUpperCase()</li>
 <li>toLocaleUpperCase()  //针对某些地区实现正确转换的方法</li>
 </ol>
-<h3 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h3><h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><p>String 类型定义了几个用于在字符串中匹配模式的方法, 第一个方法就是 match() , 该方法只接受一个参数,要么是一个正则表达式,要么是一个 RegExp 对象</p>
+<h3>匹配</h3>
+<h4>match()</h4>
+<p>String 类型定义了几个用于在字符串中匹配模式的方法, 第一个方法就是 match() , 该方法只接受一个参数,要么是一个正则表达式,要么是一个 RegExp 对象</p>
 <pre><code>var text = &quot;cat, bat, sat , fat&quot;;
 var pattern =/.at/;
 //与 pattern.exec(text)相同
 matches[0] //cat
-</code></pre><h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p>这个参数的唯一参数与 match()方法的参数相同: 由字符串或者 RegExp 对象指定的一个正则表达式. 该方法返回字符串中<strong>第一个</strong>匹配项的索引;且如果没有找到匹配项, 则返回-1; 而且, search() 方法始终是从字符串开头向后查找</p>
+</code></pre>
+<h4>search()</h4>
+<p>这个参数的唯一参数与 match()方法的参数相同: 由字符串或者 RegExp 对象指定的一个正则表达式. 该方法返回字符串中<strong>第一个</strong>匹配项的索引;且如果没有找到匹配项, 则返回-1; 而且, search() 方法始终是从字符串开头向后查找</p>
 <pre><code>var text= &quot;cat, bat, sat , fat&quot;;
-var pos = text.search(/at/); //返回 1 , 即&apos; at&apos; 在字符串中第一次出现的位置
-</code></pre><h4 id="replace-–未完待续"><a href="#replace-–未完待续" class="headerlink" title="replace() –未完待续"></a>replace() –未完待续</h4><p>为了简化替换子字符串的操作, ECMAScrpt 提供了 该方法, 这个方法接受两个参数: 第一个参数可以是一个 RegExp对象或者是一个字符串, 第二个参数可以是一个字符串或者一个函数. 如果第一个参数是字符串, 那么只会替换第一个子字符串. 如果要替换所有的子字符串, 就是提供一个正则表达式,且指定全局( g )</p>
+var pos = text.search(/at/); //返回 1 , 即' at' 在字符串中第一次出现的位置
+</code></pre>
+<h4>replace() --未完待续</h4>
+<p>为了简化替换子字符串的操作, ECMAScrpt 提供了 该方法, 这个方法接受两个参数: 第一个参数可以是一个 RegExp对象或者是一个字符串, 第二个参数可以是一个字符串或者一个函数. 如果第一个参数是字符串, 那么只会替换第一个子字符串. 如果要替换所有的子字符串, 就是提供一个正则表达式,且指定全局( g )</p>
 <pre><code>var text =&quot;cat, bat, sat , fat&quot;;
-var    result = text.replace(&apos;at&apos;,&apos;ond&apos;); //输出 cont, bat,sat,fat
-              text.replace(/at/g,&apos;ond&apos;)//cont,bont,sond,fond
-</code></pre><h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>localeCompare() 方法比较两个字符串,并返回下列值中的一个:</p>
+var	result = text.replace('at','ond'); //输出 cont, bat,sat,fat
+			  text.replace(/at/g,'ond')//cont,bont,sond,fond
+</code></pre>
+<h3>比较</h3>
+<p>localeCompare() 方法比较两个字符串,并返回下列值中的一个:</p>
 <ul>
 <li>如果字符串在字母表中应该排在字符串参数之前, 则返回一个负数;(多数情况是-1)</li>
 <li>如果字符串等于字符串参数,则返回0;</li>
 <li>如果字符串在字母表中应该排在字符串参数之后, 则返回一个整数;(多数情况是1)</li>
 </ul>
 <p>需要注意的是大写字母排在小写字母的前面</p>
-<pre><code>var str =&apos;yellow&apos;;
+<pre><code>var str ='yellow';
 str.localeCompare(&quot;brick&quot;) //1  可以理解为, localeCompare左边的unicode 值要大于右面的,返回整数,小于则返回负数,相等返回0
-</code></pre><h3 id="编码字符转换"><a href="#编码字符转换" class="headerlink" title="编码字符转换"></a>编码字符转换</h3><p>fromCharCode()是一个静态方法, 这个方法的功能是接受一个或者多个字符串编码,然后将他们转换成一个字符串,这个方法与实例方法 charCodeAt() 执行的是相反的操作.</p>
+</code></pre>
+<h3>编码字符转换</h3>
+<p>fromCharCode()是一个静态方法, 这个方法的功能是接受一个或者多个字符串编码,然后将他们转换成一个字符串,这个方法与实例方法 charCodeAt() 执行的是相反的操作.</p>
 <pre><code>String.formCharCode(104, 101, 108, 111) ; //hello
 </code></pre>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/10/26/javascript_string_类型/"
-                    data-title="javascript 字符串的属性和方法"
-                    data-url="https://haojen.github.io/2015/10/26/javascript_string_类型/"
-                    data-images=""
-                    data-content="简介String 类型是字符串的对象包装类型,可以用String 构造函数的办法来创建
-var... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/10/26/javascript_string_类型/"
+                     data-title="javascript 字符串的属性和方法"
+                     data-url="https://haojen.github.io/2015/10/26/javascript_string_类型/"
+                     data-images=""
+                     data-content="简介
+String 类型是字符串的对象包装类型,可以用String 构造函数的办法来创建
+va... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/10/30/Float 布局详解/" data-toggle="tooltip" data-placement="top" title="Float 布局详解">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/10/30/Float 布局详解/" data-toggle="tooltip" data-placement="top"
+                           title="Float 布局详解">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/10/26/npm学习/" data-toggle="tooltip" data-placement="top" title="NPM 学习">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/10/26/npm学习/" data-toggle="tooltip" data-placement="top"
+                           title="NPM 学习">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -324,9 +374,9 @@ var... | Haojen&#39;s blog " >
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/10/26/javascript_string_类型/"
-                        data-title="javascript 字符串的属性和方法"
-                        data-url="https://haojen.github.io/2015/10/26/javascript_string_类型/" >
+                         data-thread-key="2015/10/26/javascript_string_类型/"
+                         data-title="javascript 字符串的属性和方法"
+                         data-url="https://haojen.github.io/2015/10/26/javascript_string_类型/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -336,9 +386,9 @@ var... | Haojen&#39;s blog " >
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符方法"><span class="toc-text">字符方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#indexOf-and-lastIndexOf"><span class="toc-text">indexOf and lastIndexOf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#剪裁"><span class="toc-text">剪裁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#slice"><span class="toc-text">slice():</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substring"><span class="toc-text">substring()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substr"><span class="toc-text">substr()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#split"><span class="toc-text">split()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#trim-修剪-装饰"><span class="toc-text">trim() (修剪,装饰)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大小写转换"><span class="toc-text">大小写转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配"><span class="toc-text">匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#match"><span class="toc-text">match()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#search"><span class="toc-text">search()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace-–未完待续"><span class="toc-text">replace() –未完待续</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较"><span class="toc-text">比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编码字符转换"><span class="toc-text">编码字符转换</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">字符方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">indexOf and lastIndexOf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">剪裁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">slice():</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">substring()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">substr()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">split()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">trim() (修剪,装饰)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">大小写转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">match()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">search()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">replace() --未完待续</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">编码字符转换</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -355,12 +405,13 @@ var... | Haojen&#39;s blog " >
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </section>
@@ -368,24 +419,24 @@ var... | Haojen&#39;s blog " >
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -400,19 +451,18 @@ var... | Haojen&#39;s blog " >
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -424,7 +474,6 @@ var... | Haojen&#39;s blog " >
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -497,7 +546,6 @@ var... | Haojen&#39;s blog " >
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

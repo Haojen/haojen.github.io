@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,36 +139,39 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>Express 完整学习</h1>
                     
-                        <h2 class="subheading">The Truth is single one</h2>
+                    <h2 class="subheading">The Truth is single one</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2016-05-29
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Express" title="Express">Express</a>
+                        <a class="tag" href="/tags/#Express"
+                           title="Express">Express</a>
                         
                     </div>
                 </div>
@@ -186,109 +189,132 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <blockquote>
 <p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强大特性帮助你创建各种Web应用.</p>
 </blockquote>
 <p><img src="http://blog.newrelic.com/wp-content/uploads/expresslogo.png" alt="express"></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>express 作为一个依赖，安装到项目中。你可以在项目根目录中直接使用</p>
+<h2>安装</h2>
+<p>express 作为一个依赖，安装到项目中。你可以在项目根目录中直接使用</p>
 <pre><code>npm install express --save // --save 是保存到`packge.json dependencies`依赖里
-</code></pre><p>或者直接在<code>package.json dependencies</code>下写入<code>“express”:&quot;*&quot;</code>,然后在根目录下运行</p>
+</code></pre>
+<p>或者直接在<code>package.json dependencies</code>下写入<code>“express”:&quot;*&quot;</code>,然后在根目录下运行</p>
 <pre><code>npm install
-</code></pre><p>安装完成后，你可以通过<code>npm ls</code>察看express的依赖。</p>
-<h2 id="创建一个express应用"><a href="#创建一个express应用" class="headerlink" title="创建一个express应用"></a>创建一个express应用</h2><p>创建一个express应用。</p>
-<pre><code>var express = require(&apos;express&apos;); //加载exress
+</code></pre>
+<p>安装完成后，你可以通过<code>npm ls</code>察看express的依赖。</p>
+<h2>创建一个express应用</h2>
+<p>创建一个express应用。</p>
+<pre><code>var express = require('express'); //加载exress
 var app = exress(); //实例化一个express应用
 
 // 在express上侦听get请求
-app.get(&apos;/&apos;,function(request, response){
-    response.send(&apos;hi, this express application!&apos;)
+app.get('/',function(request, response){
+	response.send('hi, this express application!')
 });
 
 //监听服务器
 app.listen(3000);
-</code></pre><p>上述代码的作用是：建立一个express应用，当服务器侦测到<code>get</code>方法的<code>/</code>根目录请求时，会使用<code>res.send</code>方法返回给浏览器我们指定好的字符串，<code>app.get()</code>就是一个路由（routing）<br>而实际应用中，我们可以指定多个路由请求。</p>
-<pre><code>var express = require(&apos;express&apos;)
+</code></pre>
+<p>上述代码的作用是：建立一个express应用，当服务器侦测到<code>get</code>方法的<code>/</code>根目录请求时，会使用<code>res.send</code>方法返回给浏览器我们指定好的字符串，<code>app.get()</code>就是一个路由（routing）
+而实际应用中，我们可以指定多个路由请求。</p>
+<pre><code>var express = require('express')
 var app = express()
 
-app.get(&apos;/&apos;.function(){}) // 主页请求
-app.get(&apos;user&apos;,function(){}) // user 请求
-app.get(&apos;admin&apos;,function(){}) // admin 请求
+app.get('/'.function(){}) // 主页请求
+app.get('user',function(){}) // user 请求
+app.get('admin',function(){}) // admin 请求
 
 app.listen(3000);
-</code></pre><p>实际上，当我们挂在更多的路由时，我们会将其编写专门的路由文件，然后将它导入主项目，上面的路由我们可以写成下面这样</p>
-<pre><code>var express = require(&apos;express&apos;)
+</code></pre>
+<p>实际上，当我们挂在更多的路由时，我们会将其编写专门的路由文件，然后将它导入主项目，上面的路由我们可以写成下面这样</p>
+<pre><code>var express = require('express')
 var app = express()
 
 //将项目导出
 module.exports = function(app){
-    app.get(&apos;/&apos;.function(){}) // 主页请求
-    app.get(&apos;user&apos;,function(){}) // user 请求
-    app.get(&apos;admin&apos;,function(){}) // admin 请求
+	app.get('/'.function(){}) // 主页请求
+	app.get('user',function(){}) // user 请求
+	app.get('admin',function(){}) // admin 请求
 }
-</code></pre><p>然后我们再在主项目文件中调用它</p>
+</code></pre>
+<p>然后我们再在主项目文件中调用它</p>
 <pre><code>//...省略部分代码
-var routers = require(&apos;./routers&apos;) //路由目录
+var routers = require('./routers') //路由目录
 routers(app) //传入express 实例
 
 app.lissten(3000)
-</code></pre><h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>路由是指如何定义应用的端点URL以及如何响应处理客户端的请求<br>路由是由一个 url and http 请求方法和若干个句柄组成，它的结构如下：app.METHOD(path, [callback…], callback)<br>app 是express对象的一个实例，METHOD是一个HTTP请求方法，path代表了服务器的路径，callback是当路由匹配时要执行的函数。</p>
-<pre><code>var express = require（&apos;express&apos;）
+</code></pre>
+<h2>路由</h2>
+<p>路由是指如何定义应用的端点URL以及如何响应处理客户端的请求
+路由是由一个 url and http 请求方法和若干个句柄组成，它的结构如下：app.METHOD(path, [callback...], callback)
+app 是express对象的一个实例，METHOD是一个HTTP请求方法，path代表了服务器的路径，callback是当路由匹配时要执行的函数。</p>
+<pre><code>var express = require（'express'）
 var app = express()
 
-app.get(&apos;/&apos;,function(req, res){
-    res.send(&apos;hi&apos;)
+app.get('/',function(req, res){
+	res.send('hi')
 })
-</code></pre><h3 id="路由方法"><a href="#路由方法" class="headerlink" title="路由方法"></a>路由方法</h3><p>路由方法源于http请求方法， 和express实例相关，实例如下：</p>
-<pre><code>app.get(&apos;/&apos;,function(req, res){
-    res.send(&apos;send message&apos;)
+</code></pre>
+<h3>路由方法</h3>
+<p>路由方法源于http请求方法， 和express实例相关，实例如下：</p>
+<pre><code>app.get('/',function(req, res){
+	res.send('send message')
 })
 
-app.post(&apos;/&apos;,function(req, res){
-    res.send(&apos;is a POST send message&apos;)
+app.post('/',function(req, res){
+	res.send('is a POST send message')
 })
-</code></pre><h4 id="app-all"><a href="#app-all" class="headerlink" title="app.all()"></a>app.all()</h4><p>一个特殊的路由方法，没有任何http方法与其对应，它的作用是<strong>对于一个路径上的所有请求加载中间件</strong>，在下面的例子中，来自 /user 的请求，不管使用什么http请求方法，里面的句柄都会得到执行</p>
-<pre><code>app.all(&apos;/user&apos;,function(req, res, next){
-    console.log(&apos;accessing the secret section...&apos;)
-    next()
+</code></pre>
+<h4>app.all()</h4>
+<p>一个特殊的路由方法，没有任何http方法与其对应，它的作用是<strong>对于一个路径上的所有请求加载中间件</strong>，在下面的例子中，来自 /user 的请求，不管使用什么http请求方法，里面的句柄都会得到执行</p>
+<pre><code>app.all('/user',function(req, res, next){
+	console.log('accessing the secret section...')
+	next()
 })
-</code></pre><h3 id="路由路径"><a href="#路由路径" class="headerlink" title="路由路径"></a>路由路径</h3><p>路由路径和请求方法一起定义了请求的端点， 它可以是字符串、字符串模式或正则表达式</p>
-<pre><code>app.get(&apos;/&apos;,fn) //匹配根路径的get请求
+</code></pre>
+<h3>路由路径</h3>
+<p>路由路径和请求方法一起定义了请求的端点， 它可以是字符串、字符串模式或正则表达式</p>
+<pre><code>app.get('/',fn) //匹配根路径的get请求
 
-app.get(&apos;/about&apos;,fn) //匹配 /about 路径的请求
+app.get('/about',fn) //匹配 /about 路径的请求
 
-app.get(&apos;/random.text&apos;,fn) //匹配random.text文件的路径请求
-</code></pre><h4 id="字符串模式匹配"><a href="#字符串模式匹配" class="headerlink" title="字符串模式匹配"></a>字符串模式匹配</h4><pre><code>app.get(&apos;/ab?cd&apos;,fn) //匹配 acd or abcd
+app.get('/random.text',fn) //匹配random.text文件的路径请求
+</code></pre>
+<h4>字符串模式匹配</h4>
+<pre><code>app.get('/ab?cd',fn) //匹配 acd or abcd
 
-app.get(&apos;/ab+cd&apos;) //匹配 abcd abbcd abbbcd ..
+app.get('/ab+cd') //匹配 abcd abbcd abbbcd ..
 
-app.get(&apos;/ab*cd&apos;) //匹配 abcd abxcd ab123cd ..
+app.get('/ab*cd') //匹配 abcd abxcd ab123cd ..
 
 // 匹配 /abe 和 /abcde
-app.get(&apos;/ab(cd)?e&apos;, function(req, res) {
-    res.send(&apos;ab(cd)?e&apos;);
+app.get('/ab(cd)?e', function(req, res) {
+	res.send('ab(cd)?e');
 });
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>字符 ?、+、* 和 () 是正则表达式的子集，- 和 . 在基于字符串的路径中按照字面值解释</p>
 </blockquote>
-<h3 id="路由句柄"><a href="#路由句柄" class="headerlink" title="路由句柄"></a>路由句柄</h3><p>可以为请求提供多个回调函数，路由句柄可以有多个型式：一个回调函数，回调函数数组，回调函数和函数数组混合。</p>
+<h3>路由句柄</h3>
+<p>可以为请求提供多个回调函数，路由句柄可以有多个型式：一个回调函数，回调函数数组，回调函数和函数数组混合。</p>
 <pre><code>var c0 = function(req,res,next){
-    //do something...
-    next()
+	//do something...
+	next()
 }
 
 var c2 = function(req,res,next){
-    //do something...
-    next()
+	//do something...
+	next()
 }
 
-app.get(&apos;/&apos;,function(req,res,next){
-    // do something..
-    next() //调用函数数组
+app.get('/',function(req,res,next){
+	// do something..
+	next() //调用函数数组
 },[c0,c1])
-</code></pre><h3 id="响应方法"><a href="#响应方法" class="headerlink" title="响应方法"></a>响应方法</h3><p>下表中响应对象（res）的方法向客户端返回响应，终结请求响应的循环。如果在路由句柄中一个http方法都没调用，来自客户端的请求会一直挂起。</p>
+</code></pre>
+<h3>响应方法</h3>
+<p>下表中响应对象（res）的方法向客户端返回响应，终结请求响应的循环。如果在路由句柄中一个http方法都没调用，来自客户端的请求会一直挂起。</p>
 <table>
 <thead>
 <tr>
@@ -335,37 +361,45 @@ app.get(&apos;/&apos;,function(req,res,next){
 </tr>
 </tbody>
 </table>
-<h3 id="app-route"><a href="#app-route" class="headerlink" title="app.route()"></a>app.route()</h3><p>创建路由路径的链式路由句柄。由于路径在一个地方指定，这样做有助于创建模块化的路由，而且减少了代码冗余和拼写错误。</p>
-<pre><code>app.route(&apos;/user&apos;) //指定路径
-    .get(function(req,res){})
-    .post(function(req,res){})
-    .put(function(req,res){})
-</code></pre><h3 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router()"></a>express.Router()</h3><p>可使用 express.Router 类创建模块化、可挂载的路由句柄。Router 实例是一个完整的中间件和路由系统，因此常称其为一个 “mini-app”。</p>
-<pre><code>var express = require(&apos;express&apos;)
+<h3>app.route()</h3>
+<p>创建路由路径的链式路由句柄。由于路径在一个地方指定，这样做有助于创建模块化的路由，而且减少了代码冗余和拼写错误。</p>
+<pre><code>app.route('/user') //指定路径
+	.get(function(req,res){})
+	.post(function(req,res){})
+	.put(function(req,res){})
+</code></pre>
+<h3>express.Router()</h3>
+<p>可使用 express.Router 类创建模块化、可挂载的路由句柄。Router 实例是一个完整的中间件和路由系统，因此常称其为一个 “mini-app”。</p>
+<pre><code>var express = require('express')
 var router = express.Router()
 
 router.use(function(req,res,next){
-    //do something
-    next()
+	//do something
+	next()
 })
 
-router.get(&apos;/&apos;,function(req,res,next){})
-router.get(&apos;/about&apos;,function(req,res,next){})
+router.get('/',function(req,res,next){})
+router.get('/about',function(req,res,next){})
 
 moudle.exports = router
-</code></pre><p>在 index.js 入口文件里导入 router 文件</p>
-<pre><code>var express = require(&apos;express&apos;)
+</code></pre>
+<p>在 index.js 入口文件里导入 router 文件</p>
+<pre><code>var express = require('express')
 var app = express()
 
-var router = require(&apos;./router&apos;)
+var router = require('./router')
 // 使用
-app.use(&apos;/admin&apos;,router)
-</code></pre><h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><p>中间件就是处理HTTP请求的函数，其特点是一个中间件处理完，再传递给下一个中间件。APP在运行的过程中，会调用一系列的中间件。<br><em>中间件(Middleware)</em>是一个函数，它可以访问请求对象（request object），和响应对象（response object），一般按照约定，我们在调用时会依次简写成 <code>req</code>和<code>res</code>，另一个回调参数命名为<code>next</code>，用来将http对象传递给下一个中间件。</p>
+app.use('/admin',router)
+</code></pre>
+<h2>中间件</h2>
+<p>中间件就是处理HTTP请求的函数，其特点是一个中间件处理完，再传递给下一个中间件。APP在运行的过程中，会调用一系列的中间件。
+*中间件(Middleware)*是一个函数，它可以访问请求对象（request object），和响应对象（response object），一般按照约定，我们在调用时会依次简写成 <code>req</code>和<code>res</code>，另一个回调参数命名为<code>next</code>，用来将http对象传递给下一个中间件。</p>
 <pre><code>function demoMiddleware(req,res,next){
-    next() //将request请求对象传递给下一个中间件
-    next(&apos;some value&apos;) //如果next中间件里带有参数，则代表抛出一个错误，且后续的中间件不会运行，直到该错误有被函数处理为之。
+	next() //将request请求对象传递给下一个中间件
+	next('some value') //如果next中间件里带有参数，则代表抛出一个错误，且后续的中间件不会运行，直到该错误有被函数处理为之。
 }
-</code></pre><p>中间件的功能包括：</p>
+</code></pre>
+<p>中间件的功能包括：</p>
 <ul>
 <li>执行任何代码</li>
 <li>修改请求和响应对象</li>
@@ -381,96 +415,110 @@ app.use(&apos;/admin&apos;,router)
 <li>内置中间件</li>
 <li>第三方中间件</li>
 </ul>
-<h3 id="应用级中间件"><a href="#应用级中间件" class="headerlink" title="应用级中间件"></a>应用级中间件</h3><p>应用级中间件绑定在 app 对象，使用app.use()和app.METHOD()，METHOD 是需要处理的HTTP 请求的方法，例如：GET, PUT, POST 等。例如：</p>
+<h3>应用级中间件</h3>
+<p>应用级中间件绑定在 app 对象，使用app.use()和app.METHOD()，METHOD 是需要处理的HTTP 请求的方法，例如：GET, PUT, POST 等。例如：</p>
 <pre><code>var app = express();
 
 // 没有挂载路径的中间件， 应用的**每个**请求都会执行该中间件。
 app.use(function(req, res, next){
-    console.log(&apos;应用的每个请求都会执行该中间件&apos;)
-    next() //next方法将中间件完整的传递给下一个中间件。
+	console.log('应用的每个请求都会执行该中间件')
+	next() //next方法将中间件完整的传递给下一个中间件。
 })
 
 // 挂载至 /user/:id 的中间件，任何指向 /user/:id 的请求都会执行它
-app.use(&apos;/user/:id&apos;,function(req, res, next){
-    console.log(&apos;request type:&apos;, req.method)
-    next()
+app.use('/user/:id',function(req, res, next){
+	console.log('request type:', req.method)
+	next()
 })
 
 // 一个路由和句柄函数，处理指向 /user/:id 的 GET 请求
-app.get(&apos;/user/:id&apos;, function(req, res, next){
-    res.send(&apos;USER&apos;)
+app.get('/user/:id', function(req, res, next){
+	res.send('USER')
 })
-</code></pre><p>装载一组中间件：</p>
-<pre><code>app.use(&apos;/user/:id&apos;,function(req, res, next){
-    //do something
-    next() //调用下一个中间件
+</code></pre>
+<p>装载一组中间件：</p>
+<pre><code>app.use('/user/:id',function(req, res, next){
+	//do something
+	next() //调用下一个中间件
 },function(req, res, next){
-    res.send(&apos;user info&apos;); 
+	res.send('user info'); 
 })
-</code></pre><p>给同一个请求路径定义多个路由：</p>
-<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
-    //do something
-    next()
+</code></pre>
+<p>给同一个请求路径定义多个路由：</p>
+<pre><code>app.get('/user/:id',function(req, res, next){
+	//do something
+	next()
 })
-
-app.get(&apos;user/:id&apos;,function(req,res,next){
-    res.end(&apos;do something&apos;)
+	
+app.get('user/:id',function(req,res,next){
+	res.end('do something')
 })
-</code></pre><p>但是注意，下面这个例子的第二个路由永远不会被调用</p>
-<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
-    //do something
-    next()
+</code></pre>
+<p>但是注意，下面这个例子的第二个路由永远不会被调用</p>
+<pre><code>app.get('/user/:id',function(req, res, next){
+	//do something
+	next()
 },function(req,res,next){
-    res.send(&apos;responsed End!&apos;)
+	res.send('responsed End!')
 })
 
 // 下面的代码永远不会被调用，因为上述GET请求的第二个中间件已经结束了请求-响应循环。
-app.get(&apos;user/:id&apos;,function(req,res,next){
-    res.end(&apos;do something&apos;)
+app.get('user/:id',function(req,res,next){
+	res.end('do something')
 })
-</code></pre><p>在中间件栈中跳过剩余中间件的方法：在 <code>next()</code> 方法里传入 ‘route’字符串参数。next(‘route’)只对使用 app.VERB() or router.VERB()加载的中间件有效。</p>
+</code></pre>
+<p>在中间件栈中跳过剩余中间件的方法：在 <code>next()</code> 方法里传入 'route'字符串参数。next('route')只对使用 app.VERB() or router.VERB()加载的中间件有效。</p>
 <blockquote>
 <p>如果在 next()里传入其它参数（除了「router」字符串），当前next后面的其它非错误处理路由/中间件函数不会被调用，next里的参数也会被当成错误信息抛出。如果需要对错误进行处理，需要创建新的错误处理函数路由。</p>
 </blockquote>
-<pre><code>app.get(&apos;/user/:id&apos;,function(req, res, next){
-    //do something
-    next(&apos;route&apos;)
+<pre><code>app.get('/user/:id',function(req, res, next){
+	//do something
+	next('route')
 },function(req, res){
-    //这里永远不会调用
+	//这里永远不会调用
 })
-
+	
 //第一个路径请求执行后，会执行这个请求
-app.get(&apos;user/:id&apos;,function(req,res,next){
-    res.end(&apos;do something&apos;)
+app.get('user/:id',function(req,res,next){
+	res.end('do something')
 })
-</code></pre><h3 id="路由级中间件"><a href="#路由级中间件" class="headerlink" title="路由级中间件"></a>路由级中间件</h3><p>路由级中间件和应用级中间件一样，只是它绑定的对象为 express.Router()</p>
+</code></pre>
+<h3>路由级中间件</h3>
+<p>路由级中间件和应用级中间件一样，只是它绑定的对象为 express.Router()</p>
 <pre><code>var router = express.Router()
-</code></pre><p>路由级使用 router.use() 或 router.VERB() 加载。</p>
-<pre><code>var express = require(&apos;express&apos;)
+</code></pre>
+<p>路由级使用 router.use() 或 router.VERB() 加载。</p>
+<pre><code>var express = require('express')
 var app = exprees()
 
 var router = express.Router()
 
-router.get(&apos;/foo&apos;,function(req,res,next){}) //..
-</code></pre><p>挂载到应用</p>
+router.get('/foo',function(req,res,next){}) //..
+</code></pre>
+<p>挂载到应用</p>
 <pre><code>app.use(router)
 //OR
-app.use(&apos;/user&apos;,router) //输出路径为 /user/foo
-</code></pre><h3 id="错误处理中间件"><a href="#错误处理中间件" class="headerlink" title="错误处理中间件"></a>错误处理中间件</h3><p>错误处理中间件和其它中间件定义类似，只是需要四个参数，而不是三个。其参数如下：（err,req,res,next）</p>
+app.use('/user',router) //输出路径为 /user/foo
+</code></pre>
+<h3>错误处理中间件</h3>
+<p>错误处理中间件和其它中间件定义类似，只是需要四个参数，而不是三个。其参数如下：（err,req,res,next）</p>
 <blockquote>
 <p>错误处理中间件必须有上述四个参数，即便不需要也得声明它，否则中间件会被识别成一个常规中间件，不能处理错误。</p>
 </blockquote>
 <pre><code>app.use(function(err,req,res,next){
-    //do something..
-    res.status(500).send(&apos;something broke&apos;) //返回500状态码和一个错误信息
+	//do something..
+	res.status(500).send('something broke') //返回500状态码和一个错误信息
 })
-</code></pre><p>express 内置了一个错误处理句柄，它可以捕获应用中可能出现的任意错误。这个缺省的错误处理中间件将被添加到中间件堆栈的底部。如果你向next（）传递了一个error，而你并没有在错误处理句柄中处理这个error，express内置的默认错误处理句柄就是最后兜底的。最后错误将被连同堆栈追踪信息一同反馈开发模式下的客户端。</p>
+</code></pre>
+<p>express 内置了一个错误处理句柄，它可以捕获应用中可能出现的任意错误。这个缺省的错误处理中间件将被添加到中间件堆栈的底部。如果你向next（）传递了一个error，而你并没有在错误处理句柄中处理这个error，express内置的默认错误处理句柄就是最后兜底的。最后错误将被连同堆栈追踪信息一同反馈开发模式下的客户端。</p>
 <blockquote>
 <p>设置环境变量 NODE_ENV 为 production 就可以让应用运行在生产环境模式下</p>
 </blockquote>
-<h3 id="内置中间件"><a href="#内置中间件" class="headerlink" title="内置中间件"></a>内置中间件</h3><p>从 4.x 版本开始， Express 已经不再依赖 Connect 了。除了 express.static ，Express 以前内置的中间件现在已经全部单独作为模块安装使用了。详情请参阅 <a href="https://github.com/senchalabs/connect#middleware" target="_blank" rel="external">中间件列表</a></p>
+<h3>内置中间件</h3>
+<p>从 4.x 版本开始， Express 已经不再依赖 Connect 了。除了 express.static ，Express 以前内置的中间件现在已经全部单独作为模块安装使用了。详情请参阅 <a href="https://github.com/senchalabs/connect#middleware" target="_blank" rel="external">中间件列表</a></p>
 <p>express.static(root,[options])</p>
-<p>express.static is express onl one inside middleware. 它基于 serve-static，负责在 express 应用中提供托管静态资源。<br>可选的 options 参数如下：</p>
+<p>express.static is express onl one inside middleware. 它基于 serve-static，负责在 express 应用中提供托管静态资源。
+可选的 options 参数如下：</p>
 <ul>
 <li>dotfiles</li>
 <li>etag</li>
@@ -481,72 +529,99 @@ app.use(&apos;/user&apos;,router) //输出路径为 /user/foo
 <li>redirect</li>
 <li>setHeaders</li>
 </ul>
-<h3 id="第三方中间件"><a href="#第三方中间件" class="headerlink" title="第三方中间件"></a>第三方中间件</h3><p>通过使用第三方中间件为express应用增加更多功能。</p>
+<h3>第三方中间件</h3>
+<p>通过使用第三方中间件为express应用增加更多功能。</p>
 <p>使用方式：</p>
 <pre><code>npm install cookie-parser --save //安装一个express插件 ，该插件用来解析cookie
 
 //..省略引入代码
-var cookieParser = require(&apos;cookie-parser&apos;);
+var cookieParser = require('cookie-parser');
 
 app.use(cookieParser()) //加载
-</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我理解的中间件</p>
+</code></pre>
+<h3>总结</h3>
+<p>我理解的中间件</p>
 <p>中间件分出路由级中间件的好处就是可以更好的将路由整合成一个单独的模块，便于管理。</p>
-<h2 id="Express-模板引擎"><a href="#Express-模板引擎" class="headerlink" title="Express 模板引擎"></a>Express 模板引擎</h2><p>设置模板引擎</p>
+<h2>Express 模板引擎</h2>
+<p>设置模板引擎</p>
 <ul>
-<li>views 放模板文件的目录，app.set(‘views’,’./views’)</li>
-<li>view engine 设置模板引擎， app.set(‘view engine’,’jade’) //jade or ejs</li>
+<li>views 放模板文件的目录，app.set('views','./views')</li>
+<li>view engine 设置模板引擎， app.set('view engine','jade') //jade or ejs</li>
 </ul>
 <p>安装</p>
 <pre><code>npm install jade --save
-</code></pre><p>引用</p>
-<pre><code>app.set(&apos;view engine&apos;,&apos;jade&apos;)
-</code></pre><p>使用</p>
-<pre><code>app.get(&apos;/&apos;,function(req, res, next){
+</code></pre>
+<p>引用</p>
+<pre><code>app.set('view engine','jade')
+</code></pre>
+<p>使用</p>
+<pre><code>app.get('/',function(req, res, next){
 // 需要注意的是 如果没有设置 view engine ，需要指定 render path 模板的后缀名，用来确定使用的模板引擎
-    res.render(&apos;index&apos;,{
-        //模板变量
-    }) 
+	res.render('index',{
+		//模板变量
+	}) 
 })
-</code></pre><h2 id="HTTP-请求对象"><a href="#HTTP-请求对象" class="headerlink" title="HTTP 请求对象"></a>HTTP 请求对象</h2><p>request 对象代表http请求，及请求中的查询字符串、请求体、http头等。request对象继承自node.js的incomingMessage对象，该对象中的属性，事件，方法，在request对象中都可以使用。我们可以在路由处理器（回调函数）中访问这个对象。</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="req-app"><a href="#req-app" class="headerlink" title="req.app"></a>req.app</h4><p>req.app 是对express application实例的引用，通过这个属性，我们可以访问app对象中的设置、属性、中间件等。</p>
+</code></pre>
+<h2>HTTP 请求对象</h2>
+<p>request 对象代表http请求，及请求中的查询字符串、请求体、http头等。request对象继承自node.js的incomingMessage对象，该对象中的属性，事件，方法，在request对象中都可以使用。我们可以在路由处理器（回调函数）中访问这个对象。</p>
+<h3>属性</h3>
+<h4>req.app</h4>
+<p>req.app 是对express application实例的引用，通过这个属性，我们可以访问app对象中的设置、属性、中间件等。</p>
 <p>如果我们创建了一个模块，如果我们仅在exports导出了中间件函数，且在主文件中require()引用了它，那么我们可以在express的req.app实例中访问这个文件。</p>
 <pre><code>//index.js
-app.get(&apos;/somepath&apos;,require(&apos;./test.js&apos;))
+app.get('/somepath',require('./test.js'))
 
 //test.js
 module.exports = function(req,res){
-    res.send(&apos;send something..&apos;)
+	res.send('send something..')
 }
-</code></pre><h4 id="req-baseUrl"><a href="#req-baseUrl" class="headerlink" title="req.baseUrl"></a>req.baseUrl</h4><p>路由实例被挂载后的URL路径。</p>
-<h4 id="req-body"><a href="#req-body" class="headerlink" title="req.body"></a>req.body</h4><p>表示请求体的一个key-value数据对象。默认值是undeifined，<strong>其在body-parser和multer等body解析后</strong>可访问。</p>
+</code></pre>
+<h4>req.baseUrl</h4>
+<p>路由实例被挂载后的URL路径。</p>
+<h4>req.body</h4>
+<p>表示请求体的一个key-value数据对象。默认值是undeifined，<strong>其在body-parser和multer等body解析后</strong>可访问。</p>
 <blockquote>
 <p>意味着如果你需要解析req.body里面的数据，你需要先使用中间件将其解析后才能使用。</p>
 </blockquote>
 <pre><code>//..省略部分代码
-var bodyParser = require(&apos;body-parser&apos;)
+var bodyParser = require('body-parser')
 
-var multer = require(&apos;multer&apos;) // 尚未用过
+var multer = require('multer') // 尚未用过
 
 // use then
 app.use(bodyParser.json()) //解析JSON数据
-</code></pre><h4 id="req-cookies"><a href="#req-cookies" class="headerlink" title="req.cookies"></a>req.cookies</h4><p>当使用cookie-parser中间件解析cookie后，req.cookies属性是一个表示cookie的key-value对象。没有使用cookie时，其值为{}</p>
-<h4 id="req-fresh"><a href="#req-fresh" class="headerlink" title="req.fresh"></a>req.fresh</h4><p>新鲜度判断，待补充</p>
-<h4 id="req-hostname"><a href="#req-hostname" class="headerlink" title="req.hostname"></a>req.hostname</h4><p>请求的主机名</p>
-<h4 id="req-ip"><a href="#req-ip" class="headerlink" title="req.ip"></a>req.ip</h4><p>请求的主机IP</p>
-<h4 id="req-ips"><a href="#req-ips" class="headerlink" title="req.ips"></a>req.ips</h4><p>返回一个IP数组</p>
-<h4 id="req-method"><a href="#req-method" class="headerlink" title="req.method"></a>req.method</h4><p>返回请求调用的方法： get、post、put、delete 等等..</p>
-<h4 id="req-originaUrl"><a href="#req-originaUrl" class="headerlink" title="req.originaUrl"></a>req.originaUrl</h4><p>原始url</p>
-<h4 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h4><p>这是一个表示路径参数的对象。如，我们使用/user/:name路径时，那么req.params.name表示路径中的:name属性。该对象默认值为{}。</p>
-<pre><code>app.get(&apos;/user/:someUser&apos;,function(req,res,next){
-    console.log(req.parmas.someUser) 
+</code></pre>
+<h4>req.cookies</h4>
+<p>当使用cookie-parser中间件解析cookie后，req.cookies属性是一个表示cookie的key-value对象。没有使用cookie时，其值为{}</p>
+<h4>req.fresh</h4>
+<p>新鲜度判断，待补充</p>
+<h4>req.hostname</h4>
+<p>请求的主机名</p>
+<h4>req.ip</h4>
+<p>请求的主机IP</p>
+<h4>req.ips</h4>
+<p>返回一个IP数组</p>
+<h4>req.method</h4>
+<p>返回请求调用的方法： get、post、put、delete 等等..</p>
+<h4>req.originaUrl</h4>
+<p>原始url</p>
+<h4>req.params</h4>
+<p>这是一个表示路径参数的对象。如，我们使用/user/:name路径时，那么req.params.name表示路径中的:name属性。该对象默认值为{}。</p>
+<pre><code>app.get('/user/:someUser',function(req,res,next){
+	console.log(req.parmas.someUser) 
 })
-</code></pre><h4 id="req-path"><a href="#req-path" class="headerlink" title="req.path"></a>req.path</h4><p>表示请求中的路径部分</p>
+</code></pre>
+<h4>req.path</h4>
+<p>表示请求中的路径部分</p>
 <pre><code>// www.haojen.com/admin?password=abcd
-app.get(&apos;/login&apos;,function(req,res,next){
-    console.log(req.path) // “admin”
+app.get('/login',function(req,res,next){
+	console.log(req.path) // “admin”
 })
-</code></pre><h4 id="req-protocol"><a href="#req-protocol" class="headerlink" title="req.protocol"></a>req.protocol</h4><p>表示http请求的协议类型</p>
-<h4 id="req-query"><a href="#req-query" class="headerlink" title="req.query"></a>req.query</h4><p>这个属性表示URL查询字符串（’?’之后的部分）的key-value对象。如果请求中不包括查询字符串，这个属性的值为{}。</p>
+</code></pre>
+<h4>req.protocol</h4>
+<p>表示http请求的协议类型</p>
+<h4>req.query</h4>
+<p>这个属性表示URL查询字符串（'?'之后的部分）的key-value对象。如果请求中不包括查询字符串，这个属性的值为{}。</p>
 <pre><code>// GET /search?q=tobi+ferret
 req.query.q
 // =&gt; &quot;tobi ferret&quot;
@@ -560,181 +635,274 @@ req.query.shoe.color
 
 req.query.shoe.type
 // =&gt; &quot;converse&quot;
-</code></pre><h4 id="req-route"><a href="#req-route" class="headerlink" title="req.route"></a>req.route</h4><p>显示当前匹配的路径路由信息</p>
-<h4 id="req-secure"><a href="#req-secure" class="headerlink" title="req.secure"></a>req.secure</h4><p>表示是否使用TLS连接的一个布尔值。</p>
-<h4 id="req-signedCookies"><a href="#req-signedCookies" class="headerlink" title="req.signedCookies"></a>req.signedCookies</h4><p>当使用cookie解析中间件时，该属性表示请求时使用的cookie签名，签名的作用是防止cookie被篡改。</p>
-<h4 id="req-stale"><a href="#req-stale" class="headerlink" title="req.stale"></a>req.stale</h4><p>表示请求是”stale”（旧请求）的，与req.fresh属性相对。</p>
-<h4 id="req-subdomains"><a href="#req-subdomains" class="headerlink" title="req.subdomains"></a>req.subdomains</h4><p>一个表示请求中的子域名的数组。</p>
+</code></pre>
+<h4>req.route</h4>
+<p>显示当前匹配的路径路由信息</p>
+<h4>req.secure</h4>
+<p>表示是否使用TLS连接的一个布尔值。</p>
+<h4>req.signedCookies</h4>
+<p>当使用cookie解析中间件时，该属性表示请求时使用的cookie签名，签名的作用是防止cookie被篡改。</p>
+<h4>req.stale</h4>
+<p>表示请求是&quot;stale&quot;（旧请求）的，与req.fresh属性相对。</p>
+<h4>req.subdomains</h4>
+<p>一个表示请求中的子域名的数组。</p>
 <pre><code>// Host: &quot;tobi.ferrets.itbilu.com&quot;
 req.subdomains
 // =&gt; [&quot;ferrets&quot;, &quot;tobi&quot;]
-</code></pre><h4 id="req-xhr"><a href="#req-xhr" class="headerlink" title="req.xhr"></a>req.xhr</h4><p>一个表示客户是否使用Ajax请求的布尔值，如果X-Requested-With请求头为XMLHttpRequest时，则为true。</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="检测内容类型：req-accepts"><a href="#检测内容类型：req-accepts" class="headerlink" title="检测内容类型：req.accepts()"></a>检测内容类型：req.accepts()</h4><pre><code>req.accepts(types) //types 是类型
-</code></pre><p>检测是否是可访问的内容类型，基于AcceptHTTP请求头检测。如果匹配失败，则返回false，这时应用应该响应406（不可接受的请求类型）。</p>
-<h4 id="字符集检测：req-acceptsCharsets"><a href="#字符集检测：req-acceptsCharsets" class="headerlink" title="字符集检测：req.acceptsCharsets()"></a>字符集检测：req.acceptsCharsets()</h4><pre><code>req.acceptsCharsets(charset [, ...])
-</code></pre><p>返回一个可接受的字符集。该方法会根据Accept-CharsetHTTP头检测，如果指定的字符集不可用，则返回false。</p>
-<h4 id="编码方式检测：req-acceptsEncodings"><a href="#编码方式检测：req-acceptsEncodings" class="headerlink" title="编码方式检测：req.acceptsEncodings()"></a>编码方式检测：req.acceptsEncodings()</h4><pre><code>req.acceptsEncodings(encoding [, ...])
-</code></pre><p>返回一个可接受的编码方式。该方法会根据Accept-EncodingHTTP头检测，如果指定的字符集不可用，则返回false。</p>
-<h4 id="语言检测：req-acceptsLanguages"><a href="#语言检测：req-acceptsLanguages" class="headerlink" title="语言检测：req.acceptsLanguages()"></a>语言检测：req.acceptsLanguages()</h4><pre><code>req.acceptsLanguages(lang [, ...])
-</code></pre><p>返回一个可接受的语言。该方法会根据Accept-LanguageHTTP头检测，如果指定的语言不可用，则返回false。</p>
-<h4 id="获取HTTP请求头值：req-get"><a href="#获取HTTP请求头值：req-get" class="headerlink" title="获取HTTP请求头值：req.get()"></a>获取HTTP请求头值：req.get()</h4><pre><code>req.get(field)
-</code></pre><p>返回指定HTTP请求头的字段值（不区分大小写），推荐使用Referrer替换Referer字段。</p>
+</code></pre>
+<h4>req.xhr</h4>
+<p>一个表示客户是否使用Ajax请求的布尔值，如果X-Requested-With请求头为XMLHttpRequest时，则为true。</p>
+<h3>方法</h3>
+<h4>检测内容类型：req.accepts()</h4>
+<pre><code>req.accepts(types) //types 是类型
+</code></pre>
+<p>检测是否是可访问的内容类型，基于AcceptHTTP请求头检测。如果匹配失败，则返回false，这时应用应该响应406（不可接受的请求类型）。</p>
+<h4>字符集检测：req.acceptsCharsets()</h4>
+<pre><code>req.acceptsCharsets(charset [, ...])
+</code></pre>
+<p>返回一个可接受的字符集。该方法会根据Accept-CharsetHTTP头检测，如果指定的字符集不可用，则返回false。</p>
+<h4>编码方式检测：req.acceptsEncodings()</h4>
+<pre><code>req.acceptsEncodings(encoding [, ...])
+</code></pre>
+<p>返回一个可接受的编码方式。该方法会根据Accept-EncodingHTTP头检测，如果指定的字符集不可用，则返回false。</p>
+<h4>语言检测：req.acceptsLanguages()</h4>
+<pre><code>req.acceptsLanguages(lang [, ...])
+</code></pre>
+<p>返回一个可接受的语言。该方法会根据Accept-LanguageHTTP头检测，如果指定的语言不可用，则返回false。</p>
+<h4>获取HTTP请求头值：req.get()</h4>
+<pre><code>req.get(field)
+</code></pre>
+<p>返回指定HTTP请求头的字段值（不区分大小写），推荐使用Referrer替换Referer字段。</p>
 <p>MIMＥ类型检查：req.is()</p>
-<h4 id="req-is-type"><a href="#req-is-type" class="headerlink" title="req.is(type)"></a>req.is(type)</h4><p>检查Content-TypeHTTP头中是否是指定类型的typeMIME类型。</p>
+<h4>req.is(type)</h4>
+<p>检查Content-TypeHTTP头中是否是指定类型的typeMIME类型。</p>
 <pre><code>// 当 Content-Type: text/html; charset=utf-8
-req.is(&apos;html&apos;);
-req.is(&apos;text/html&apos;);
-req.is(&apos;text/*&apos;);
+req.is('html');
+req.is('text/html');
+req.is('text/*');
 // =&gt; true
 
 //  当 Content-Type 是 application/json
-req.is(&apos;json&apos;);
-req.is(&apos;application/json&apos;);
-req.is(&apos;application/*&apos;);
+req.is('json');
+req.is('application/json');
+req.is('application/*');
 // =&gt; true
 
-req.is(&apos;html&apos;);
+req.is('html');
 // =&gt; false
-</code></pre><h4 id="req-param"><a href="#req-param" class="headerlink" title="req.param()"></a>req.param()</h4><pre><code>req.param(name[,defaultValue])
-</code></pre><p>获取 req.params,req.body or req.query 的参数值，其获取顺序为：</p>
+</code></pre>
+<h4>req.param()</h4>
+<pre><code>req.param(name[,defaultValue])
+</code></pre>
+<p>获取 req.params,req.body or req.query 的参数值，其获取顺序为：</p>
 <ul>
-<li>req.params</li>
-<li>req.body</li>
-<li><p>req.query</p>
-<p>  //?name=haojen<br>  req.param(‘nname’)</p>
-<p>  //POST name = haojen<br>  req.param(‘name’)</p>
-<p>  // /user/tobi for /user/:name<br>  req.param(‘name’)</p>
+<li>
+<p>req.params</p>
+</li>
+<li>
+<p>req.body</p>
+</li>
+<li>
+<p>req.query</p>
+<p>//?name=haojen
+req.param('nname')</p>
+<p>//POST name = haojen
+req.param('name')</p>
+<p>// /user/tobi for /user/:name
+req.param('name')</p>
 </li>
 </ul>
-<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>request对象的属性和方法主要的用途是用来获取请求的状态、类型，和解析传递过来的信息。</p>
-<h2 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h2><p>response对象代表http响应信息，响应信息在express应用收到http请求后发送给客户端。</p>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><h4 id="res-app"><a href="#res-app" class="headerlink" title="res.app"></a>res.app</h4><p>通过这个属性我们可以访问app对象中的设置、属性、中间件等。<br>res.app 与 request对象中的 req.app 属性完全一样。</p>
-<h4 id="res-headersSent"><a href="#res-headersSent" class="headerlink" title="res.headersSent"></a>res.headersSent</h4><p>一个表示http头信息是否已发送的布尔值</p>
-<pre><code>app.get(&apos;/&apos;,function(req,res,next){
-    console.log(res.headersSent) //false
-    res.send(&apos;OK&apos;);
-    console.log(res.headersSent) //true
+<h4>总结</h4>
+<p>request对象的属性和方法主要的用途是用来获取请求的状态、类型，和解析传递过来的信息。</p>
+<h2>Response对象</h2>
+<p>response对象代表http响应信息，响应信息在express应用收到http请求后发送给客户端。</p>
+<h3>属性</h3>
+<h4>res.app</h4>
+<p>通过这个属性我们可以访问app对象中的设置、属性、中间件等。
+res.app 与 request对象中的 req.app 属性完全一样。</p>
+<h4>res.headersSent</h4>
+<p>一个表示http头信息是否已发送的布尔值</p>
+<pre><code>app.get('/',function(req,res,next){
+	console.log(res.headersSent) //false
+	res.send('OK');
+	console.log(res.headersSent) //true
 })
-</code></pre><h4 id="res-locals"><a href="#res-locals" class="headerlink" title="res.locals"></a>res.locals</h4><p>一个针对当前的包涵在响应信息的局部变量，这个变量是提供给要渲染的视图使用的。这个属性与app.locals完全相同。<br>res.locals 属性很适合在在顶级请求中暴露一些公用信息，如：验证用户的信息、用户设置等。</p>
-<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><h4 id="响应http头添加信息：res-append"><a href="#响应http头添加信息：res-append" class="headerlink" title="响应http头添加信息：res.append( )"></a>响应http头添加信息：res.append( )</h4><pre><code>res.append(field,[value])
-</code></pre><p>向指定http字头段 field 中添加value。如果不存在，会创建字段。</p>
-<pre><code>res.append(&apos;link&apos;)
-res.append(&apos;Set-Cookie&apos;,&apos;foo=bar;path=/;HttpOnly&apos;)
-</code></pre><h4 id="设置附件响应头：res-attachment"><a href="#设置附件响应头：res-attachment" class="headerlink" title="设置附件响应头：res.attachment()"></a>设置附件响应头：res.attachment()</h4><pre><code>res.attachment([filename])
-</code></pre><h4 id="设置Cookie：-res-cookie"><a href="#设置Cookie：-res-cookie" class="headerlink" title="设置Cookie： res.cookie( )"></a>设置Cookie： res.cookie( )</h4><pre><code>res.cookie(name,value[,options])
-</code></pre><p>设置cookie名为「name」的值为「value」。值可以是一个字符串，或是转换为json型式的对象。option是一个可选对象，对象中可以有以下值：</p>
-<p>domain：{String}－Cookie的有效域名。默认为应用的域名<br>encode：{Function}－用户设置Cookie编码方式的函数（同步）。默认为encodeURIComponent<br>expires：{Date}－Cookie超时时间（GTM）。默认为会话Cookie<br>httpOnly：{Boolean}－是否只能通过服务器访问Cookie<br>maxAge：{String}－Cookie最大存在时间，expires的方便写法<br>secure：{Boolean}－是否仅在HTTPS下有效<br>signed：{Boolean}－Cookie是否签名<br>res.cookie()本质上是按照RFC 6265标准设置Set-Cookie头，了解更多请参考Http Cookie机制及Cookie的实现原理。</p>
-<pre><code>res.cookie(&apos;name&apos;, &apos;tobi&apos;, { domain: &apos;.example.com&apos;, path: &apos;/admin&apos;, secure: true });
-res.cookie(&apos;rememberme&apos;, &apos;1&apos;, { expires: new Date(Date.now() + 900000), httpOnly: true });
-</code></pre><h4 id="清除Cookie：res-clearCookie"><a href="#清除Cookie：res-clearCookie" class="headerlink" title="清除Cookie：res.clearCookie( )"></a>清除Cookie：res.clearCookie( )</h4><p>清除指定名称的cookie。可选值options 与res.cookie的一样。</p>
-<p>res.clearCookie(‘name’,{path:’/admin’});</p>
-<h4 id="下载：-res-download"><a href="#下载：-res-download" class="headerlink" title="下载： res.download( )"></a>下载： res.download( )</h4><h4 id="结束响应：-res-end"><a href="#结束响应：-res-end" class="headerlink" title="结束响应： res.end( )"></a>结束响应： res.end( )</h4><p>发送数据后结束响应。不添加任何参数时，会在不响应任何数据的情况下结束响应。</p>
+</code></pre>
+<h4>res.locals</h4>
+<p>一个针对当前的包涵在响应信息的局部变量，这个变量是提供给要渲染的视图使用的。这个属性与app.locals完全相同。
+res.locals 属性很适合在在顶级请求中暴露一些公用信息，如：验证用户的信息、用户设置等。</p>
+<h3>方法</h3>
+<h4>响应http头添加信息：res.append( )</h4>
+<pre><code>res.append(field,[value])
+</code></pre>
+<p>向指定http字头段 field 中添加value。如果不存在，会创建字段。</p>
+<pre><code>res.append('link')
+res.append('Set-Cookie','foo=bar;path=/;HttpOnly')
+</code></pre>
+<h4>设置附件响应头：res.attachment()</h4>
+<pre><code>res.attachment([filename])
+</code></pre>
+<h4>设置Cookie： res.cookie( )</h4>
+<pre><code>res.cookie(name,value[,options])
+</code></pre>
+<p>设置cookie名为「name」的值为「value」。值可以是一个字符串，或是转换为json型式的对象。option是一个可选对象，对象中可以有以下值：</p>
+<p>domain：{String}－Cookie的有效域名。默认为应用的域名
+encode：{Function}－用户设置Cookie编码方式的函数（同步）。默认为encodeURIComponent
+expires：{Date}－Cookie超时时间（GTM）。默认为会话Cookie
+httpOnly：{Boolean}－是否只能通过服务器访问Cookie
+maxAge：{String}－Cookie最大存在时间，expires的方便写法
+secure：{Boolean}－是否仅在HTTPS下有效
+signed：{Boolean}－Cookie是否签名
+res.cookie()本质上是按照RFC 6265标准设置Set-Cookie头，了解更多请参考Http Cookie机制及Cookie的实现原理。</p>
+<pre><code>res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
+res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true });
+</code></pre>
+<h4>清除Cookie：res.clearCookie( )</h4>
+<p>清除指定名称的cookie。可选值options 与res.cookie的一样。</p>
+<p>res.clearCookie('name',{path:'/admin'});</p>
+<h4>下载： res.download( )</h4>
+<h4>结束响应： res.end( )</h4>
+<p>发送数据后结束响应。不添加任何参数时，会在不响应任何数据的情况下结束响应。</p>
 <pre><code>res.end()
 res.status(404).end()
-</code></pre><h4 id="格式化响应：res-format"><a href="#格式化响应：res-format" class="headerlink" title="格式化响应：res.format( )"></a>格式化响应：res.format( )</h4><h4 id="获取响应头：res-get"><a href="#获取响应头：res-get" class="headerlink" title="获取响应头：res.get( )"></a>获取响应头：res.get( )</h4><p>获取指定的http响应头，匹配时不区分大小写</p>
-<pre><code>res.get(&apos;content-type&apos;) // text.plain
-</code></pre><h4 id="响应JSON格式：res-json"><a href="#响应JSON格式：res-json" class="headerlink" title="响应JSON格式：res.json()"></a>响应JSON格式：res.json()</h4><p>发送一个JSON格式的响应。</p>
-<h4 id="响应JSONP格式：res-jsonp"><a href="#响应JSONP格式：res-jsonp" class="headerlink" title="响应JSONP格式：res.jsonp( )"></a>响应JSONP格式：res.jsonp( )</h4><h4 id="设置link头：res-links-）"><a href="#设置link头：res-links-）" class="headerlink" title="设置link头：res.links(）"></a>设置link头：res.links(）</h4><h4 id="设置location头：-res-location"><a href="#设置location头：-res-location" class="headerlink" title="设置location头： res.location( )"></a>设置location头： res.location( )</h4><h4 id="URL重定向：-res-redirect"><a href="#URL重定向：-res-redirect" class="headerlink" title="URL重定向： res.redirect( )"></a>URL重定向： res.redirect( )</h4><h4 id="渲染视图-res-render"><a href="#渲染视图-res-render" class="headerlink" title="渲染视图 res.render( )"></a>渲染视图 res.render( )</h4><pre><code>res.render(view [,locals][,callback])
-</code></pre><p>渲染视图并将渲染后的html发送到客户端。可选参数：</p>
+</code></pre>
+<h4>格式化响应：res.format( )</h4>
+<h4>获取响应头：res.get( )</h4>
+<p>获取指定的http响应头，匹配时不区分大小写</p>
+<pre><code>res.get('content-type') // text.plain
+</code></pre>
+<h4>响应JSON格式：res.json()</h4>
+<p>发送一个JSON格式的响应。</p>
+<h4>响应JSONP格式：res.jsonp( )</h4>
+<h4>设置link头：res.links(）</h4>
+<h4>设置location头： res.location( )</h4>
+<h4>URL重定向： res.redirect( )</h4>
+<h4>渲染视图 res.render( )</h4>
+<pre><code>res.render(view [,locals][,callback])
+</code></pre>
+<p>渲染视图并将渲染后的html发送到客户端。可选参数：</p>
 <ul>
-<li>locals:{Object} 视图使用的本地变量对象</li>
-<li><p>callback: {function} 视图渲染完后的回调函数，格式为：fn（err,html）</p>
-<p>  res.render(‘index’) //发送渲染后的视图</p>
-<p>  res.render(‘index’,function(err,html){</p>
-<pre><code>res.send(html) // 如果制订了回调函数，则渲染后的html需要显式的发送
-</code></pre><p>  })</p>
-<p>  res.render(‘index’,{name:’haojen’},function(err,html){</p>
-<pre><code>//..
-</code></pre><p>  })</p>
+<li>
+<p>locals:{Object} 视图使用的本地变量对象</p>
+</li>
+<li>
+<p>callback: {function} 视图渲染完后的回调函数，格式为：fn（err,html）</p>
+<p>res.render('index') //发送渲染后的视图</p>
+<p>res.render('index',function(err,html){
+	res.send(html) // 如果制订了回调函数，则渲染后的html需要显式的发送
+})</p>
+<p>res.render('index',{name:'haojen'},function(err,html){
+	//..
+})</p>
 </li>
 </ul>
-<h4 id="发送响应文件：res-send"><a href="#发送响应文件：res-send" class="headerlink" title="发送响应文件：res.send( )"></a>发送响应文件：res.send( )</h4><pre><code>res.send([body])
-</code></pre><p>发送http响应，里面的[body]参数可以使一个buffer、字符串、对象或者数组（会转换成JSON格式响应）。这个方法自动做了很多简单有效的工作，如：自动添加content-length响应头，并自动添加http缓存新鲜度支持。</p>
-<h4 id="发送文件：sendFile"><a href="#发送文件：sendFile" class="headerlink" title="发送文件：sendFile( )"></a>发送文件：sendFile( )</h4><pre><code>res.sendFile(path [,options][,fn])
-</code></pre><p>它会发送 path中指定的文件，并自动使用文件扩展名设置content-type响应头，除非在options选项中指定它。path必须是一个绝对路径。</p>
+<h4>发送响应文件：res.send( )</h4>
+<pre><code>res.send([body])
+</code></pre>
+<p>发送http响应，里面的[body]参数可以使一个buffer、字符串、对象或者数组（会转换成JSON格式响应）。这个方法自动做了很多简单有效的工作，如：自动添加content-length响应头，并自动添加http缓存新鲜度支持。</p>
+<h4>发送文件：sendFile( )</h4>
+<pre><code>res.sendFile(path [,options][,fn])
+</code></pre>
+<p>它会发送 path中指定的文件，并自动使用文件扩展名设置content-type响应头，除非在options选项中指定它。path必须是一个绝对路径。</p>
 <p>options对象可选参数如下：</p>
 <ul>
 <li>maxAge：设置缓存Cache-Control头的max-age属性。默认0</li>
 <li>root：相对文件名的根目录</li>
 <li>lastModified：设置Last-Modified头（文件最后修改时间）。默认为Enabled，Express4.9.0+</li>
 <li>headers：文件相关的头信息</li>
-<li>dotfiles：是否支持’.’文件，可选值有：“allow”、“deny”、“ignore”，默认：“ignore”</li>
+<li>dotfiles：是否支持'.'文件，可选值有：“allow”、“deny”、“ignore”，默认：“ignore”</li>
 </ul>
-<h4 id="设置响应状态：res-sendStatus"><a href="#设置响应状态：res-sendStatus" class="headerlink" title="设置响应状态：res.sendStatus()"></a>设置响应状态：res.sendStatus()</h4><p>设置statusCode HTTP状态码    </p>
-<pre><code>res.sendStatus(200); // equivalent to res.status(200).send(&apos;OK&apos;)
-res.sendStatus(403); // 等于 res.status(403).send(&apos;Forbidden&apos;)
-res.sendStatus(404); // 等于 res.status(404).send(&apos;Not Found&apos;)
-res.sendStatus(500); // 等于 res.status(500).send(&apos;Internal Server Error&apos;)
-</code></pre><p>如果是未知的HTTP状态码，则发送的状态码与状态描述一样：</p>
-<pre><code>res.sendStatus(2000); // 等于 res.status(2000).send(&apos;2000&apos;)
-</code></pre><h4 id="设置http响应头：res-set"><a href="#设置http响应头：res-set" class="headerlink" title="设置http响应头：res.set( )"></a>设置http响应头：res.set( )</h4><pre><code>res.set（filed [,opthons]）
-</code></pre><p>可以一次性设置多个，可以传入一个设置对象：</p>
-<pre><code>res.set(&apos;content-type&apos;:&apos;text/plain&apos;);
+<h4>设置响应状态：res.sendStatus()</h4>
+<p>设置statusCode HTTP状态码</p>
+<pre><code>res.sendStatus(200); // equivalent to res.status(200).send('OK')
+res.sendStatus(403); // 等于 res.status(403).send('Forbidden')
+res.sendStatus(404); // 等于 res.status(404).send('Not Found')
+res.sendStatus(500); // 等于 res.status(500).send('Internal Server Error')
+</code></pre>
+<p>如果是未知的HTTP状态码，则发送的状态码与状态描述一样：</p>
+<pre><code>res.sendStatus(2000); // 等于 res.status(2000).send('2000')
+</code></pre>
+<h4>设置http响应头：res.set( )</h4>
+<pre><code>res.set（filed [,opthons]）
+</code></pre>
+<p>可以一次性设置多个，可以传入一个设置对象：</p>
+<pre><code>res.set('content-type':'text/plain');
 or
 res.set({
-    &apos;content-type&apos;:&apos;text/plain&apos;,
-    &apos;content-length&apos;:&apos;123&apos;,
-    &apos;etag&apos;:&apos;12334&apos;
+	'content-type':'text/plain',
+	'content-length':'123',
+	'etag':'12334'
 })
-</code></pre><p>这个方法是 res.header(field [,value])的别名。</p>
-<h4 id="设置状态码-：res-status"><a href="#设置状态码-：res-status" class="headerlink" title="设置状态码 ：res.status()"></a>设置状态码 ：res.status()</h4><pre><code>res.status(code)
-</code></pre><p>设置：</p>
+</code></pre>
+<p>这个方法是 res.header(field [,value])的别名。</p>
+<h4>设置状态码 ：res.status()</h4>
+<pre><code>res.status(code)
+</code></pre>
+<p>设置：</p>
 <pre><code>res.status(403).end();
-res.status(400).send(&apos;bad req&apos;)
-res.status(200).send(&apos;sucees&apos;)
-</code></pre><h4 id="设置content-type：res-type"><a href="#设置content-type：res-type" class="headerlink" title="设置content-type：res.type( )"></a>设置content-type：res.type( )</h4><pre><code>res.type(type)
+res.status(400).send('bad req')
+res.status(200).send('sucees')
+</code></pre>
+<h4>设置content-type：res.type( )</h4>
+<pre><code>res.type(type)
 
 使用mime.lookup()返回的type值设置Content-Type 响应头。
 
-res.type(&apos;.html&apos;);              // =&gt; &apos;text/html&apos;
-res.type(&apos;html&apos;);               // =&gt; &apos;text/html&apos;
-res.type(&apos;json&apos;);               // =&gt; &apos;application/json&apos;
-res.type(&apos;application/json&apos;);   // =&gt; &apos;application/json&apos;
-res.type(&apos;png&apos;);                // =&gt; image/png:
-</code></pre><h4 id="设置vary：res-vary"><a href="#设置vary：res-vary" class="headerlink" title="设置vary：res.vary( )"></a>设置vary：res.vary( )</h4><pre><code>res.vary(field)
-</code></pre><p>将Vary字段添加到响应头，如果指定的字段不存在时。</p>
-<pre><code>res.vary(&apos;User-Agent&apos;).render(&apos;docs&apos;);
-</code></pre><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>response 对象的用途是：按照需求，将不同类型的数据发送给客户端浏览器，并设置cookie和状态码信息。</p>
-<h2 id="express学习总结"><a href="#express学习总结" class="headerlink" title="express学习总结"></a>express学习总结</h2><p>epxress是基于node.js的框架，基于底层进行了封装和添加更多的常用方法，使用框架的好处便是让我们更专注与业务层面的实现，而不用于去重复的造轮子。但这不应该是我们不去学习底层的理由，相反的，我们应该去了解原生的nodejs，这样做显而易见的好处便是：调试和查找bug，和实现nodejs框架所没有的功能。</p>
-
+res.type('.html');              // =&gt; 'text/html'
+res.type('html');               // =&gt; 'text/html'
+res.type('json');               // =&gt; 'application/json'
+res.type('application/json');   // =&gt; 'application/json'
+res.type('png');                // =&gt; image/png:
+</code></pre>
+<h4>设置vary：res.vary( )</h4>
+<pre><code>res.vary(field)
+</code></pre>
+<p>将Vary字段添加到响应头，如果指定的字段不存在时。</p>
+<pre><code>res.vary('User-Agent').render('docs');
+</code></pre>
+<h4>小结</h4>
+<p>response 对象的用途是：按照需求，将不同类型的数据发送给客户端浏览器，并设置cookie和状态码信息。</p>
+<h2>express学习总结</h2>
+<p>epxress是基于node.js的框架，基于底层进行了封装和添加更多的常用方法，使用框架的好处便是让我们更专注与业务层面的实现，而不用于去重复的造轮子。但这不应该是我们不去学习底层的理由，相反的，我们应该去了解原生的nodejs，这样做显而易见的好处便是：调试和查找bug，和实现nodejs框架所没有的功能。</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2016/05/29/Express-完整学习/"
-                    data-title="Express 完整学习"
-                    data-url="https://haojen.github.io/2016/05/29/Express-完整学习/"
-                    data-images=""
-                    data-content="
-Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强大特性帮助... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2016/05/29/Express-完整学习/"
+                     data-title="Express 完整学习"
+                     data-url="https://haojen.github.io/2016/05/29/Express-完整学习/"
+                     data-images=""
+                     data-content="
+Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强大特性帮助... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/06/01/Mongoose/" data-toggle="tooltip" data-placement="top" title="[译]Mongoose">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2016/06/01/Mongoose/" data-toggle="tooltip" data-placement="top"
+                           title="[译]Mongoose">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2016/05/28/Anisina-Guide/" data-toggle="tooltip" data-placement="top" title="Anisina Guide">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2016/05/28/Anisina-Guide/" data-toggle="tooltip" data-placement="top"
+                           title="Anisina Guide">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -742,9 +910,9 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/05/29/Express-完整学习/"
-                        data-title="Express 完整学习"
-                        data-url="https://haojen.github.io/2016/05/29/Express-完整学习/" >
+                         data-thread-key="2016/05/29/Express-完整学习/"
+                         data-title="Express 完整学习"
+                         data-url="https://haojen.github.io/2016/05/29/Express-完整学习/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -754,9 +922,9 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个express应用"><span class="toc-text">创建一个express应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路由方法"><span class="toc-text">路由方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-all"><span class="toc-text">app.all()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由路径"><span class="toc-text">路由路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串模式匹配"><span class="toc-text">字符串模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由句柄"><span class="toc-text">路由句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应方法"><span class="toc-text">响应方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-route"><span class="toc-text">app.route()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express-Router"><span class="toc-text">express.Router()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中间件"><span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用级中间件"><span class="toc-text">应用级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由级中间件"><span class="toc-text">路由级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理中间件"><span class="toc-text">错误处理中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置中间件"><span class="toc-text">内置中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方中间件"><span class="toc-text">第三方中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express-模板引擎"><span class="toc-text">Express 模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-请求对象"><span class="toc-text">HTTP 请求对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#req-app"><span class="toc-text">req.app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-baseUrl"><span class="toc-text">req.baseUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-body"><span class="toc-text">req.body</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-cookies"><span class="toc-text">req.cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-fresh"><span class="toc-text">req.fresh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-hostname"><span class="toc-text">req.hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-ip"><span class="toc-text">req.ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-ips"><span class="toc-text">req.ips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-method"><span class="toc-text">req.method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-originaUrl"><span class="toc-text">req.originaUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-params"><span class="toc-text">req.params</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-path"><span class="toc-text">req.path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-protocol"><span class="toc-text">req.protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-query"><span class="toc-text">req.query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-route"><span class="toc-text">req.route</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-secure"><span class="toc-text">req.secure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-signedCookies"><span class="toc-text">req.signedCookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-stale"><span class="toc-text">req.stale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-subdomains"><span class="toc-text">req.subdomains</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-xhr"><span class="toc-text">req.xhr</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#检测内容类型：req-accepts"><span class="toc-text">检测内容类型：req.accepts()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符集检测：req-acceptsCharsets"><span class="toc-text">字符集检测：req.acceptsCharsets()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编码方式检测：req-acceptsEncodings"><span class="toc-text">编码方式检测：req.acceptsEncodings()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语言检测：req-acceptsLanguages"><span class="toc-text">语言检测：req.acceptsLanguages()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取HTTP请求头值：req-get"><span class="toc-text">获取HTTP请求头值：req.get()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-is-type"><span class="toc-text">req.is(type)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#req-param"><span class="toc-text">req.param()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结-1"><span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Response对象"><span class="toc-text">Response对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#res-app"><span class="toc-text">res.app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#res-headersSent"><span class="toc-text">res.headersSent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#res-locals"><span class="toc-text">res.locals</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#响应http头添加信息：res-append"><span class="toc-text">响应http头添加信息：res.append( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置附件响应头：res-attachment"><span class="toc-text">设置附件响应头：res.attachment()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置Cookie：-res-cookie"><span class="toc-text">设置Cookie： res.cookie( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#清除Cookie：res-clearCookie"><span class="toc-text">清除Cookie：res.clearCookie( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载：-res-download"><span class="toc-text">下载： res.download( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结束响应：-res-end"><span class="toc-text">结束响应： res.end( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#格式化响应：res-format"><span class="toc-text">格式化响应：res.format( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取响应头：res-get"><span class="toc-text">获取响应头：res.get( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#响应JSON格式：res-json"><span class="toc-text">响应JSON格式：res.json()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#响应JSONP格式：res-jsonp"><span class="toc-text">响应JSONP格式：res.jsonp( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置link头：res-links-）"><span class="toc-text">设置link头：res.links(）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置location头：-res-location"><span class="toc-text">设置location头： res.location( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#URL重定向：-res-redirect"><span class="toc-text">URL重定向： res.redirect( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#渲染视图-res-render"><span class="toc-text">渲染视图 res.render( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发送响应文件：res-send"><span class="toc-text">发送响应文件：res.send( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发送文件：sendFile"><span class="toc-text">发送文件：sendFile( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置响应状态：res-sendStatus"><span class="toc-text">设置响应状态：res.sendStatus()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置http响应头：res-set"><span class="toc-text">设置http响应头：res.set( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置状态码-：res-status"><span class="toc-text">设置状态码 ：res.status()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置content-type：res-type"><span class="toc-text">设置content-type：res.type( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置vary：res-vary"><span class="toc-text">设置vary：res.vary( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#express学习总结"><span class="toc-text">express学习总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">创建一个express应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">路由方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">app.all()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">路由路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">字符串模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">路由句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">响应方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">app.route()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">express.Router()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">应用级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">路由级中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">错误处理中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">内置中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">第三方中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Express 模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">HTTP 请求对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.baseUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.body</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.fresh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.ips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.originaUrl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.params</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.route</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.secure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.signedCookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.stale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.subdomains</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.xhr</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">检测内容类型：req.accepts()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">字符集检测：req.acceptsCharsets()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">编码方式检测：req.acceptsEncodings()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">语言检测：req.acceptsLanguages()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">获取HTTP请求头值：req.get()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.is(type)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">req.param()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Response对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">res.app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">res.headersSent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">res.locals</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">响应http头添加信息：res.append( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置附件响应头：res.attachment()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置Cookie： res.cookie( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">清除Cookie：res.clearCookie( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">下载： res.download( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">结束响应： res.end( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">格式化响应：res.format( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">获取响应头：res.get( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">响应JSON格式：res.json()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">响应JSONP格式：res.jsonp( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置link头：res.links(）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置location头： res.location( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">URL重定向： res.redirect( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">渲染视图 res.render( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">发送响应文件：res.send( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">发送文件：sendFile( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置响应状态：res.sendStatus()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置http响应头：res.set( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置状态码 ：res.status()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置content-type：res.type( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">设置vary：res.vary( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">express学习总结</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -773,12 +941,13 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Express" title="Express">Express</a>
+                        <a class="tag" href="/tags/#Express"
+                           title="Express">Express</a>
                         
                     </div>
                 </section>
@@ -786,24 +955,24 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -818,19 +987,18 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -842,7 +1010,6 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -915,7 +1082,6 @@ Express 是一个简洁而灵活的 node.js Web应用框架, 提供一系列强�
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,38 +139,42 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>NPM 学习</h1>
                     
-                        <h2 class="subheading">npm 是 node.js 的包管理工具</h2>
+                    <h2 class="subheading">npm 是 node.js 的包管理工具</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-10-26
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
+                        <a class="tag" href="/tags/#Node.js"
+                           title="Node.js">Node.js</a>
                         
-                        <a class="tag" href="/tags/#npm" title="npm">npm</a>
+                        <a class="tag" href="/tags/#npm"
+                           title="npm">npm</a>
                         
                     </div>
                 </div>
@@ -188,28 +192,32 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <p>NPM是随NodeJS一起安装的包管理工具, 能解决NodeJS代码部署上的很多问题, 以下是常见的使用场景:</p>
 <ol>
 <li>让用户从NPM服务器下载别人编写的命令程序到本地使用</li>
 <li>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用</li>
 <li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用</li>
 </ol>
-<a id="more"></a>
+<p>&lt;!-- more --&gt;</p>
 <p>##安装</p>
 <p>新版的nodejs已经竟成了NPM,所以NPM也一并安装上了.检查是否成功安装NPM,可以在终端输入以下命令来测试是否安装成功</p>
 <pre><code>nam -v
-</code></pre><p>更新NPM版本的命令:</p>
+</code></pre>
+<p>更新NPM版本的命令:</p>
 <pre><code>sudo npm install nam -g
-</code></pre><p>##使用</p>
+</code></pre>
+<p>##使用</p>
 <p>npm安装nodejs模块语法格式:</p>
 <pre><code>npm install &lt;Moudle Name&gt;
-</code></pre><h3 id="全局安装与本地安装"><a href="#全局安装与本地安装" class="headerlink" title="全局安装与本地安装"></a>全局安装与本地安装</h3><p>npm的包安装分为本地安装 (local) 和 全局安装 (global) 两种</p>
+</code></pre>
+<h3>全局安装与本地安装</h3>
+<p>npm的包安装分为本地安装 (local) 和 全局安装 (global) 两种</p>
 <pre><code>npm install express //本地安装
 npm install express -g //全局安装
-</code></pre><p><strong>两者的区别</strong></p>
+</code></pre>
+<p><strong>两者的区别</strong></p>
 <p>本地安装:</p>
 <ol>
 <li>将安装包放在 ./node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。</li>
@@ -223,7 +231,8 @@ npm install express -g //全局安装
 </ol>
 <p>可以用以下命令来查看所有全局安装的模块:</p>
 <pre><code>npm ls -g
-</code></pre><p>###Package.json 属性说明</p>
+</code></pre>
+<p>###Package.json 属性说明</p>
 <ol>
 <li>name - 包名。</li>
 <li>version - 包的版本号。</li>
@@ -233,77 +242,90 @@ npm install express -g //全局安装
 <li>contributors - 包的其他贡献者姓名。</li>
 <li>dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
 <li>repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
-<li>main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫 express，然后用户安装它，然后require(“express”)。</li>
+<li>main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫 express，然后用户安装它，然后require(&quot;express&quot;)。</li>
 <li>keywords - 关键字</li>
 </ol>
-<p>###卸载模块<br>可以使用以下命令来卸载Nodejs</p>
+<p>###卸载模块
+可以使用以下命令来卸载Nodejs</p>
 <pre><code>npm uninstall express //卸载该express模块
 npm ls // 查看是否成功卸载
-</code></pre><p>###更新模块<br>可以使用以下命令来更新模块</p>
+</code></pre>
+<p>###更新模块
+可以使用以下命令来更新模块</p>
 <pre><code>npm update express
-</code></pre><p>###搜索模块<br>使用以下命令来搜索模块</p>
+</code></pre>
+<p>###搜索模块
+使用以下命令来搜索模块</p>
 <pre><code>npm search express
-</code></pre><p>###创建模块<br>生成package.json</p>
+</code></pre>
+<p>###创建模块
+生成package.json</p>
 <p>注册一个npm账户</p>
 <pre><code>npm adduser
 Username :
 Password:
 Email:
-</code></pre><p>发布模块</p>
+</code></pre>
+<p>发布模块</p>
 <pre><code>npm publish
-</code></pre><p>###版本号<br>使用NPM下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码,<br>语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。</p>
+</code></pre>
+<p>###版本号
+使用NPM下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码,
+语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。</p>
 <ol>
 <li>如果只是修复bug，需要更新Z位。</li>
 <li>如果是新增了功能，但是向下兼容，需要更新Y位。</li>
 <li>如果有大变动，向下不兼容，需要更新X位。</li>
 </ol>
-<p>版本号有了这个保证后，在申明第三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。例如”argv”: “0.0.x”表示依赖于0.0.x系列的最新版argv。</p>
-<h3 id="NPM常用命令"><a href="#NPM常用命令" class="headerlink" title="NPM常用命令"></a>NPM常用命令</h3><ol>
+<p>版本号有了这个保证后，在申明第三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。例如&quot;argv&quot;: &quot;0.0.x&quot;表示依赖于0.0.x系列的最新版argv。</p>
+<h3>NPM常用命令</h3>
+<ol>
 <li>NPM提供了很多命令，例如install和publish，使用npm help可查看所有命令。</li>
-<li>使用npm help <command>可查看某条命令的详细帮助，例如npm help install。</li>
+<li>使用npm help &lt;command&gt;可查看某条命令的详细帮助，例如npm help install。</li>
 <li>在package.json所在目录下使用npm install . -g可先在本地安装当前命令行程序，可用于发布前的本地测试。</li>
-<li>使用npm update <package>可以把当前目录下node_modules子目录里边的对应模块更新至最新版本。</package></li>
-<li>使用npm update <package> -g可以把全局安装的对应命令行程序更新至最新版。<br>使用npm cache clear可以清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。</package></li>
-<li>使用npm unpublish <package>@<version>可以撤销发布自己发布过的某个版本代码。</version></package></li>
+<li>使用npm update &lt;package&gt;可以把当前目录下node_modules子目录里边的对应模块更新至最新版本。</li>
+<li>使用npm update &lt;package&gt; -g可以把全局安装的对应命令行程序更新至最新版。
+使用npm cache clear可以清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。</li>
+<li>使用npm unpublish &lt;package&gt;@&lt;version&gt;可以撤销发布自己发布过的某个版本代码。</li>
 </ol>
 
-
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/10/26/npm学习/"
-                    data-title="NPM 学习"
-                    data-url="https://haojen.github.io/2015/10/26/npm学习/"
-                    data-images=""
-                    data-content="NPM是随NodeJS一起安装的包管理工具, 能解决NodeJS代码部署上的很多问题, 以下是... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/10/26/npm学习/"
+                     data-title="NPM 学习"
+                     data-url="https://haojen.github.io/2015/10/26/npm学习/"
+                     data-images=""
+                     data-content="NPM是随NodeJS一起安装的包管理工具, 能解决NodeJS代码部署上的很多问题, 以下是... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/10/26/javascript_string_类型/" data-toggle="tooltip" data-placement="top" title="javascript 字符串的属性和方法">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/10/26/javascript_string_类型/" data-toggle="tooltip" data-placement="top"
+                           title="javascript 字符串的属性和方法">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/10/26/nodejs学习/" data-toggle="tooltip" data-placement="top" title="Node.js 学习">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/10/26/nodejs学习/" data-toggle="tooltip" data-placement="top"
+                           title="Node.js 学习">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -311,9 +333,9 @@ Email:
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/10/26/npm学习/"
-                        data-title="NPM 学习"
-                        data-url="https://haojen.github.io/2015/10/26/npm学习/" >
+                         data-thread-key="2015/10/26/npm学习/"
+                         data-title="NPM 学习"
+                         data-url="https://haojen.github.io/2015/10/26/npm学习/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -323,9 +345,9 @@ Email:
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局安装与本地安装"><span class="toc-text">全局安装与本地安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM常用命令"><span class="toc-text">NPM常用命令</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">全局安装与本地安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">NPM常用命令</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -342,14 +364,16 @@ Email:
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
+                        <a class="tag" href="/tags/#Node.js"
+                           title="Node.js">Node.js</a>
                         
-                          <a class="tag" href="/tags/#npm" title="npm">npm</a>
+                        <a class="tag" href="/tags/#npm"
+                           title="npm">npm</a>
                         
                     </div>
                 </section>
@@ -357,24 +381,24 @@ Email:
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -389,19 +413,18 @@ Email:
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -413,7 +436,6 @@ Email:
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -486,7 +508,6 @@ Email:
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

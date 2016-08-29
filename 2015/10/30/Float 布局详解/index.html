@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,38 +139,42 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>Float 布局详解</h1>
                     
-                        <h2 class="subheading">简单的了解float的历史，其本来的作用，及其特性</h2>
+                    <h2 class="subheading">简单的了解float的历史，其本来的作用，及其特性</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-10-30
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        <a class="tag" href="/tags/#CSS"
+                           title="CSS">CSS</a>
                         
-                        <a class="tag" href="/tags/#layout" title="layout">layout</a>
+                        <a class="tag" href="/tags/#layout"
+                           title="layout">layout</a>
                         
                     </div>
                 </div>
@@ -188,75 +192,86 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="Float-的的设计初衷"><a href="#Float-的的设计初衷" class="headerlink" title="Float 的的设计初衷"></a>Float 的的设计初衷</h2><p>Float 的设计初衷仅仅是为了实现文字环绕效果,所以了解了 Float的设计初衷,我们就能明白 Float的特有的行为表现了</p>
-<h2 id="包裹和破坏"><a href="#包裹和破坏" class="headerlink" title="包裹和破坏"></a>包裹和破坏</h2><p>增强浮动的感性认知</p>
-<h3 id="包裹"><a href="#包裹" class="headerlink" title="包裹"></a>包裹</h3><p> 包裹的特性的是</p>
+                <h2>Float 的的设计初衷</h2>
+<p>Float 的设计初衷仅仅是为了实现文字环绕效果,所以了解了 Float的设计初衷,我们就能明白 Float的特有的行为表现了</p>
+<h2>包裹和破坏</h2>
+<p>增强浮动的感性认知</p>
+<h3>包裹</h3>
+<p>包裹的特性的是</p>
 <ol>
 <li>坚挺</li>
 <li>收缩</li>
-<li><p>隔绝</p>
+<li>隔绝</li>
+</ol>
 <p>这种特性称之为 BFC, 具有这种包裹性的元素有</p>
-</li>
-<li><p>display:inline-block / table-cell</p>
-</li>
+<ol>
+<li>display:inline-block / table-cell</li>
 <li>position: absolute/fixed/sticky</li>
 <li>overflow:hidden/scroll</li>
 </ol>
-<h3 id="破坏"><a href="#破坏" class="headerlink" title="破坏"></a>破坏</h3><p>如果浮动元素是某一个元素的父元素,那么子元素就会溢出父元素,而父元素将会塌陷</p>
-<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>清除浮动是一种简称, 较为确切的说是<strong>清除浮动带来的影响</strong></p>
-<h3 id="第一种办法-clear"><a href="#第一种办法-clear" class="headerlink" title="第一种办法 clear"></a>第一种办法 clear</h3><p>clear 通常应用形式</p>
+<h3>破坏</h3>
+<p>如果浮动元素是某一个元素的父元素,那么子元素就会溢出父元素,而父元素将会塌陷</p>
+<h2>清除浮动</h2>
+<p>清除浮动是一种简称, 较为确切的说是<strong>清除浮动带来的影响</strong></p>
+<h3>第一种办法 clear</h3>
+<p>clear 通常应用形式</p>
 <ol>
 <li>HTML block 水平元素底部</li>
-<li>CSS after 伪元素底部生成 :但是用该方法会在 IE6/7中出现兼容问题<h3 id="第二种办法-BFC-haslayout"><a href="#第二种办法-BFC-haslayout" class="headerlink" title="第二种办法 BFC/haslayout"></a>第二种办法 BFC/haslayout</h3></li>
+<li>CSS after 伪元素底部生成 :但是用该方法会在 IE6/7中出现兼容问题</li>
 </ol>
-<h3 id="两种办法的优缺点"><a href="#两种办法的优缺点" class="headerlink" title="两种办法的优缺点:"></a>两种办法的优缺点:</h3><p>clear: 会发生 margin 重叠现象<br>BFC: 清除浮动,则会把这个元素包起来,从而不会发生 margin 重叠的想象.</p>
-<h2 id="Float布局的应用场景和优缺点"><a href="#Float布局的应用场景和优缺点" class="headerlink" title="Float布局的应用场景和优缺点"></a>Float布局的应用场景和优缺点</h2><p>float 本身就是用来实现文字环绕图片效果的,不适合应用在布局上<br>缺点:</p>
+<h3>第二种办法 BFC/haslayout</h3>
+<h3>两种办法的优缺点:</h3>
+<p>clear: 会发生 margin 重叠现象
+BFC: 清除浮动,则会把这个元素包起来,从而不会发生 margin 重叠的想象.</p>
+<h2>Float布局的应用场景和优缺点</h2>
+<p>float 本身就是用来实现文字环绕图片效果的,不适合应用在布局上
+缺点:</p>
 <ol>
 <li>容错性差, 耦合高,其中某一浮动元素出现问题,其他也会受到影响</li>
 <li>兼容性差, 在 IE 某些版本浏览器上会出现问题</li>
 <li>必须有固定的布局</li>
 </ol>
 
-
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/10/30/Float 布局详解/"
-                    data-title="Float 布局详解"
-                    data-url="https://haojen.github.io/2015/10/30/Float 布局详解/"
-                    data-images=""
-                    data-content="Float 的的设计初衷Float 的设计初衷仅仅是为了实现文字环绕效果,所以了解了 Floa... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/10/30/Float 布局详解/"
+                     data-title="Float 布局详解"
+                     data-url="https://haojen.github.io/2015/10/30/Float 布局详解/"
+                     data-images=""
+                     data-content="Float 的的设计初衷
+Float 的设计初衷仅仅是为了实现文字环绕效果,所以了解了 Flo... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/10/30/meta_标签/" data-toggle="tooltip" data-placement="top" title="Meta 标签">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/10/30/meta_标签/" data-toggle="tooltip" data-placement="top"
+                           title="Meta 标签">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/10/26/javascript_string_类型/" data-toggle="tooltip" data-placement="top" title="javascript 字符串的属性和方法">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/10/26/javascript_string_类型/" data-toggle="tooltip" data-placement="top"
+                           title="javascript 字符串的属性和方法">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -264,9 +279,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/10/30/Float 布局详解/"
-                        data-title="Float 布局详解"
-                        data-url="https://haojen.github.io/2015/10/30/Float 布局详解/" >
+                         data-thread-key="2015/10/30/Float 布局详解/"
+                         data-title="Float 布局详解"
+                         data-url="https://haojen.github.io/2015/10/30/Float 布局详解/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -276,9 +291,9 @@
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Float-的的设计初衷"><span class="toc-text">Float 的的设计初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包裹和破坏"><span class="toc-text">包裹和破坏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包裹"><span class="toc-text">包裹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#破坏"><span class="toc-text">破坏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动"><span class="toc-text">清除浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种办法-clear"><span class="toc-text">第一种办法 clear</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种办法-BFC-haslayout"><span class="toc-text">第二种办法 BFC/haslayout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两种办法的优缺点"><span class="toc-text">两种办法的优缺点:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Float布局的应用场景和优缺点"><span class="toc-text">Float布局的应用场景和优缺点</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Float 的的设计初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">包裹和破坏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">包裹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">破坏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">清除浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">第一种办法 clear</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">第二种办法 BFC/haslayout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">两种办法的优缺点:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Float布局的应用场景和优缺点</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -295,14 +310,16 @@
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        <a class="tag" href="/tags/#CSS"
+                           title="CSS">CSS</a>
                         
-                          <a class="tag" href="/tags/#layout" title="layout">layout</a>
+                        <a class="tag" href="/tags/#layout"
+                           title="layout">layout</a>
                         
                     </div>
                 </section>
@@ -310,24 +327,24 @@
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -342,19 +359,18 @@
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -366,7 +382,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -439,7 +454,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

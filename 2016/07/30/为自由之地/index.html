@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,36 +139,39 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/the-wall-pk.png">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/the-wall-pk.png">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/the-wall-pk.png?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>Break The Wall</h1>
                     
-                        <h2 class="subheading">承诺不是让一件让人感到兴奋的事，承诺实则为一种负担。正因如此，才更需要兑现承诺和谨言慎行</h2>
+                    <h2 class="subheading">承诺不是让一件让人感到兴奋的事，承诺实则为一种负担。正因如此，才更需要兑现承诺和谨言慎行</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2016-07-30
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#GFW" title="GFW">GFW</a>
+                        <a class="tag" href="/tags/#GFW"
+                           title="GFW">GFW</a>
                         
                     </div>
                 </div>
@@ -186,90 +189,119 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <blockquote>
 <p>在我曾写简历的时候，朋友说翻墙是一件上不了台面的事儿，到现在有些时候，尤其是挤在 402 公交车上时都在想台面到底算是个什么东西，比如说相亲的时候媒婆总旁敲侧击的提醒你，交通工具不能说是自行车，学历更不能提初中，不然上不了台面，我就很好奇如果两个人在一起，是要关灯睡在一个屋子里的，所以我还是觉得有些问题开诚布公的讲还是比较好，比如我的银行存款仍然是个位数。</p>
 </blockquote>
 <p>言归正传, 翻墙是一件由浅入深的技术活，期间或许考验阁下的耐性和对墙外世界的渴望程度，在这里我就假设诸位对翻墙有了一个概念性的认识，所以我就不对什么是翻墙，做深入的解释了。我懒</p>
 <p>进入正式教程前，先来对要用到的几种翻墙方式做一个简单的介绍，授人鱼不如授人以渔，知其原理才能随心所欲的运用，而不流于形式。</p>
 <blockquote>
-<p>封面取自 Pink Floyd 的专辑 The Wall </p>
+<p>封面取自 Pink Floyd 的专辑 The Wall</p>
 </blockquote>
-<h2 id="用到的方法"><a href="#用到的方法" class="headerlink" title="用到的方法"></a>用到的方法</h2><h3 id="hosts-方式"><a href="#hosts-方式" class="headerlink" title="hosts 方式"></a>hosts 方式</h3><p>hosts文件的方法原理上是跳过DNS投毒，直接将域名解析跳转到正确的 hosts 指定的 ip 地址上。<br>使用 hosts 的好处是，防火墙如果不太频繁的查封ip端，几乎可以说是一劳永逸，一次改动，持久无缝享受使用谷歌，缺点是看不了 yoututbe ，也受限于 hosts 文件是否对要访问的网站有支持。但如果只是上个谷歌，看个推特，脸书的。还是推荐这种，目前个人主力的翻墙方式之一。</p>
-<h3 id="app-方式"><a href="#app-方式" class="headerlink" title="app 方式"></a>app 方式</h3><p>鉴于这种方式鱼龙混杂，层出不穷的翻墙应用，这里只介绍我常用的，也是推荐的几种翻墙应用：</p>
+<h2>用到的方法</h2>
+<h3>hosts 方式</h3>
+<p>hosts文件的方法原理上是跳过DNS投毒，直接将域名解析跳转到正确的 hosts 指定的 ip 地址上。
+使用 hosts 的好处是，防火墙如果不太频繁的查封ip端，几乎可以说是一劳永逸，一次改动，持久无缝享受使用谷歌，缺点是看不了 yoututbe ，也受限于 hosts 文件是否对要访问的网站有支持。但如果只是上个谷歌，看个推特，脸书的。还是推荐这种，目前个人主力的翻墙方式之一。</p>
+<h3>app 方式</h3>
+<p>鉴于这种方式鱼龙混杂，层出不穷的翻墙应用，这里只介绍我常用的，也是推荐的几种翻墙应用：</p>
 <ol>
 <li>Lantern</li>
 <li>ShadowSocks</li>
 </ol>
-<p>由于曾经昔日大名鼎鼎的 fqrouter 因为某些不可抗的原因作者停止了开发，遂这里略去对 fqrouter 的介绍，感兴趣的可以了解一下。下面着重接介绍上述两款翻墙软件。<br>需要注意的是两者都是基于浏览器的翻墙软件，而非正宗 VPN ，游戏玩家用时请注意。</p>
-<h4 id="Lantern"><a href="#Lantern" class="headerlink" title="Lantern"></a>Lantern</h4><p>一款开源的，目前已成熟的一种翻墙软件，由Google提供资金支持的一个项目，目前的客户端有 <strong>Android</strong>、<strong>macOS</strong>、<strong>Linux</strong>、<strong>Windows</strong> 各大平台。<br>目前已商业化，有免费版和收费版。免费版基本够用，收费版有提供更快的速度和更强的穿透力。用户可以根据自己的情况选择。</p>
-<h4 id="ShadowSocks"><a href="#ShadowSocks" class="headerlink" title="ShadowSocks"></a>ShadowSocks</h4><blockquote>
-<p>Shadowsocks（中文名稱：影梭）是使用Python等语言开发的、基于Apache许可证开源的代理软件。Shadowsocks使用socks5代理，用于保护网络流量。在中国大陆被广泛用于突破防火长城（GFW），以瀏覽被封鎖的內容。<br>Shadowsocks分为服务器端和客户端。在使用之前，需要先将服务器端部署在支持Python的服务器上面，然后通过客户端连接并建立本地代理。<br>2015年8月22日，Shadowsocks原作者Clowwindy因受到中國政府的壓力，停止维护此項目。[2][3]但开发已有人接管，仍有更新陆续推送。ShadowsocksR可作为Shadowsocks的替代软件。<br>– 摘自 Wiki</p>
+<p>由于曾经昔日大名鼎鼎的 fqrouter 因为某些不可抗的原因作者停止了开发，遂这里略去对 fqrouter 的介绍，感兴趣的可以了解一下。下面着重接介绍上述两款翻墙软件。
+需要注意的是两者都是基于浏览器的翻墙软件，而非正宗 VPN ，游戏玩家用时请注意。</p>
+<h4>Lantern</h4>
+<p>一款开源的，目前已成熟的一种翻墙软件，由Google提供资金支持的一个项目，目前的客户端有 <strong>Android</strong>、<strong>macOS</strong>、<strong>Linux</strong>、<strong>Windows</strong> 各大平台。
+目前已商业化，有免费版和收费版。免费版基本够用，收费版有提供更快的速度和更强的穿透力。用户可以根据自己的情况选择。</p>
+<h4>ShadowSocks</h4>
+<blockquote>
+<p>Shadowsocks（中文名稱：影梭）是使用Python等语言开发的、基于Apache许可证开源的代理软件。Shadowsocks使用socks5代理，用于保护网络流量。在中国大陆被广泛用于突破防火长城（GFW），以瀏覽被封鎖的內容。
+Shadowsocks分为服务器端和客户端。在使用之前，需要先将服务器端部署在支持Python的服务器上面，然后通过客户端连接并建立本地代理。
+2015年8月22日，Shadowsocks原作者Clowwindy因受到中國政府的壓力，停止维护此項目。[2][3]但开发已有人接管，仍有更新陆续推送。ShadowsocksR可作为Shadowsocks的替代软件。
+-- 摘自 Wiki</p>
 </blockquote>
-<p>上面是介绍，下面来说说基本的使用方式，ShadowScok 一般简称为 SS （下文为了偷懒，书写方便，直接称为 SS ），SS 为一种客户端，需要自行设置自己的 SS 帐号。就好象 QQ 和 QQ号，但是 SS 号一般需要花钱购买，但也可以在 google plus 社区上找到很多可用的免费注册网站，花几分钟注册一个就能用很长一段时间，非常划算方便。且穿透力和效果要优于 hosts 和 lantern 免费版。<br>支持的平台：<strong>macOS</strong>、<strong>Windows</strong>、<strong>Android</strong>、<strong>iOS</strong>、<strong>Linux</strong></p>
-<h3 id="DNS-方式"><a href="#DNS-方式" class="headerlink" title="DNS 方式"></a>DNS 方式</h3><p>一种几乎绝迹的翻墙方式，效果比上述几种都要好，但是支持DNS翻墙的几乎绝迹和价格高昂，国内一般少之又少。所以只做了解之用。</p>
-<h2 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h2><h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><h4 id="方式一：修改-hosts"><a href="#方式一：修改-hosts" class="headerlink" title="方式一：修改 hosts"></a>方式一：修改 hosts</h4><p>将下载到的 hosts 文件拷贝到 <code>/etc/hosts</code>路径，可以在 Finder 中 <code>SHIFT + COMMAND + G</code> ，跳到该路径，替换已有的 hosts 文件</p>
-<h4 id="方式二：-使用翻墙App"><a href="#方式二：-使用翻墙App" class="headerlink" title="方式二： 使用翻墙App"></a>方式二： 使用翻墙App</h4><blockquote>
+<p>上面是介绍，下面来说说基本的使用方式，ShadowScok 一般简称为 SS （下文为了偷懒，书写方便，直接称为 SS ），SS 为一种客户端，需要自行设置自己的 SS 帐号。就好象 QQ 和 QQ号，但是 SS 号一般需要花钱购买，但也可以在 google plus 社区上找到很多可用的免费注册网站，花几分钟注册一个就能用很长一段时间，非常划算方便。且穿透力和效果要优于 hosts 和 lantern 免费版。
+支持的平台：<strong>macOS</strong>、<strong>Windows</strong>、<strong>Android</strong>、<strong>iOS</strong>、<strong>Linux</strong></p>
+<h3>DNS 方式</h3>
+<p>一种几乎绝迹的翻墙方式，效果比上述几种都要好，但是支持DNS翻墙的几乎绝迹和价格高昂，国内一般少之又少。所以只做了解之用。</p>
+<h2>PC端</h2>
+<h3>macOS</h3>
+<h4>方式一：修改 hosts</h4>
+<p>将下载到的 hosts 文件拷贝到 <code>/etc/hosts</code>路径，可以在 Finder 中 <code>SHIFT + COMMAND + G</code> ，跳到该路径，替换已有的 hosts 文件</p>
+<h4>方式二： 使用翻墙App</h4>
+<blockquote>
 <p>SS</p>
 </blockquote>
-<p>macOS 可以使用 SS ，可以到 <a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">SS官网</a> 下载对应的平台。<br>下载后安装，然后输入自己的 SS 帐号就可以了</p>
+<p>macOS 可以使用 SS ，可以到 &lt;a href =&quot;https://shadowsocks.org/en/download/clients.html&quot;&gt;SS官网&lt;/a&gt; 下载对应的平台。
+下载后安装，然后输入自己的 SS 帐号就可以了</p>
 <blockquote>
 <p>Lantern</p>
 </blockquote>
-<p><a href="https://github.com/getlantern/forum/issues/833" target="_blank" rel="external">安装对应平台的 Lantern </a>，下载后，直接拖动安装，打开后浏览器会弹出一个网页，告知你已翻墙成功。</p>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="方式一：修改-hosts-1"><a href="#方式一：修改-hosts-1" class="headerlink" title="方式一：修改 hosts"></a>方式一：修改 hosts</h4><p>windows 的 hosts 修改与 macOS 无不同，只是路径地址有些改变而已，打开系统盘，进到以下目录 <code>Windows/System32/drivers/etc</code> 将下载的 hosts 文件直接替换就可以了。</p>
-<h4 id="方式二：-使用翻墙App-1"><a href="#方式二：-使用翻墙App-1" class="headerlink" title="方式二： 使用翻墙App"></a>方式二： 使用翻墙App</h4><p>Windows 可以到 <a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">SS官网</a> 下载对应的平台。<br>下载后安装，然后输入自己的 SS 帐号就可以了</p>
+<p>&lt;a href=&quot;https://github.com/getlantern/forum/issues/833&quot;&gt;安装对应平台的 Lantern &lt;/a&gt;，下载后，直接拖动安装，打开后浏览器会弹出一个网页，告知你已翻墙成功。</p>
+<h3>Windows</h3>
+<h4>方式一：修改 hosts</h4>
+<p>windows 的 hosts 修改与 macOS 无不同，只是路径地址有些改变而已，打开系统盘，进到以下目录 <code>Windows/System32/drivers/etc</code> 将下载的 hosts 文件直接替换就可以了。</p>
+<h4>方式二： 使用翻墙App</h4>
+<p>Windows 可以到 &lt;a href =&quot;https://shadowsocks.org/en/download/clients.html&quot;&gt;SS官网&lt;/a&gt; 下载对应的平台。
+下载后安装，然后输入自己的 SS 帐号就可以了</p>
 <blockquote>
 <p>Lantern</p>
 </blockquote>
-<p><a href="https://github.com/getlantern/forum/issues/833" target="_blank" rel="external">安装对应平台的 Lantern </a>，下载后，直接拖动安装，打开后浏览器会弹出一个网页，告知你已翻墙成功。</p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>鉴于ubuntu用户自行解决问题的能力要高于前两平台的用户， 遂提供一个现成的英文教程 ：<a href="https://github.com/getlantern/lantern/wiki/Installation:-Linux""" target="_blank" rel="external">Linux 安装 Lantern </a></p>
-<h2 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h2><p>移动端的 VPN 真的数不胜数，但我用过和推荐的仍然是那么几样，因为久经考验，GFW 升级迭代了那么多次，留得下来的还是他们几个。它们就像老朋友一样，熟悉又值得信赖。</p>
-<h3 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h3><h4 id="方式二：-使用翻墙App-2"><a href="#方式二：-使用翻墙App-2" class="headerlink" title="方式二： 使用翻墙App"></a>方式二： 使用翻墙App</h4><p>很遗憾的是在 iOS 平台，没有 lantern 如此好用的翻墙软件，不过也不必太过于感到遗憾，SS还是给是会给你带来些许温暖。</p>
-<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="方式一：修改-hosts-2"><a href="#方式一：修改-hosts-2" class="headerlink" title="方式一：修改 hosts"></a>方式一：修改 hosts</h4><p>android 修改 hosts 需要 Root 权限，开启权限之后，找一个 Root 资源管理器应用，跳转到系统根路径，然后进入到 <code>System/etc</code> 替换现有的 hosts 文件，就可以了。</p>
-<h4 id="方式二：-使用翻墙App-3"><a href="#方式二：-使用翻墙App-3" class="headerlink" title="方式二： 使用翻墙App"></a>方式二： 使用翻墙App</h4><p>lantern 和 ss 都支持， 安装也很简单。只是由于百度等国产搜索引擎对翻墙类的软件都有类似屏蔽的现象，如果在搜索的过程中没有找到，而又无法上谷歌的情况下，推荐使用 bing or yahoo 进行搜索。 然后下载到安装包后直接正常安装就可以了。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>我们总是对所做之事做出一番评判。或者时间久了，会自问这么做的意义。比如说翻墙这件事儿上，其实不用翻墙，我们依然也可以通过其它的搜搜引擎跳转到 google search 的 API ， 但我们还是义无反顾的选择翻墙。我觉得这事儿的好似家里没有联网而产生一种与外界隔绝的状态吧。翻墙也是这样，我们不甘愿坐井观天，永远活在一个狭小而看似永恒不变，两点一线的生活方式里。我们潜意识深处还是渴望精彩，探溯那些不属于我们生活现状、打破常规的东西。借用王小波的那句话： 「 我活在世上，无非想要明白些道理，遇见些有趣的事。倘能如我所愿，我的一生就算成功。 」</p>
-
+<p>&lt;a href=&quot;https://github.com/getlantern/forum/issues/833&quot;&gt;安装对应平台的 Lantern &lt;/a&gt;，下载后，直接拖动安装，打开后浏览器会弹出一个网页，告知你已翻墙成功。</p>
+<h3>Linux</h3>
+<p>鉴于ubuntu用户自行解决问题的能力要高于前两平台的用户， 遂提供一个现成的英文教程 ：&lt;a href=https://github.com/getlantern/lantern/wiki/Installation:-Linux&quot;&quot;&gt;Linux 安装 Lantern &lt;/a&gt;</p>
+<h2>移动端</h2>
+<p>移动端的 VPN 真的数不胜数，但我用过和推荐的仍然是那么几样，因为久经考验，GFW 升级迭代了那么多次，留得下来的还是他们几个。它们就像老朋友一样，熟悉又值得信赖。</p>
+<h3>iPhone</h3>
+<h4>方式二： 使用翻墙App</h4>
+<p>很遗憾的是在 iOS 平台，没有 lantern 如此好用的翻墙软件，不过也不必太过于感到遗憾，SS还是给是会给你带来些许温暖。</p>
+<h3>Android</h3>
+<h4>方式一：修改 hosts</h4>
+<p>android 修改 hosts 需要 Root 权限，开启权限之后，找一个 Root 资源管理器应用，跳转到系统根路径，然后进入到 <code>System/etc</code> 替换现有的 hosts 文件，就可以了。</p>
+<h4>方式二： 使用翻墙App</h4>
+<p>lantern 和 ss 都支持， 安装也很简单。只是由于百度等国产搜索引擎对翻墙类的软件都有类似屏蔽的现象，如果在搜索的过程中没有找到，而又无法上谷歌的情况下，推荐使用 bing or yahoo 进行搜索。 然后下载到安装包后直接正常安装就可以了。</p>
+<h2>结语</h2>
+<p>我们总是对所做之事做出一番评判。或者时间久了，会自问这么做的意义。比如说翻墙这件事儿上，其实不用翻墙，我们依然也可以通过其它的搜搜引擎跳转到 google search 的 API ， 但我们还是义无反顾的选择翻墙。我觉得这事儿的好似家里没有联网而产生一种与外界隔绝的状态吧。翻墙也是这样，我们不甘愿坐井观天，永远活在一个狭小而看似永恒不变，两点一线的生活方式里。我们潜意识深处还是渴望精彩，探溯那些不属于我们生活现状、打破常规的东西。借用王小波的那句话： 「 我活在世上，无非想要明白些道理，遇见些有趣的事。倘能如我所愿，我的一生就算成功。 」</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2016/07/30/为自由之地/"
-                    data-title="Break The Wall"
-                    data-url="https://haojen.github.io/2016/07/30/为自由之地/"
-                    data-images="https://haojen.github.io/2016/07/30/为自由之地/the-wall-pk.png"
-                    data-content="
-在我曾写简历的时候，朋友说翻墙是一件上不了台面的事儿，到现在有些时候，尤其是挤在 402 公... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2016/07/30/为自由之地/"
+                     data-title="Break The Wall"
+                     data-url="https://haojen.github.io/2016/07/30/为自由之地/"
+                     data-images="https://haojen.github.io/2016/07/30/为自由之地/the-wall-pk.png"
+                     data-content="
+在我曾写简历的时候，朋友说翻墙是一件上不了台面的事儿，到现在有些时候，尤其是挤在 402 公... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/08/06/Anisina-中文使用教程/" data-toggle="tooltip" data-placement="top" title="Anisina 中文使用教程">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2016/08/06/Anisina-中文使用教程/" data-toggle="tooltip" data-placement="top"
+                           title="Anisina 中文使用教程">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2016/07/21/友人问与我答/" data-toggle="tooltip" data-placement="top" title="有关学编程的探讨">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2016/07/21/友人问与我答/" data-toggle="tooltip" data-placement="top"
+                           title="有关学编程的探讨">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -277,9 +309,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/30/为自由之地/"
-                        data-title="Break The Wall"
-                        data-url="https://haojen.github.io/2016/07/30/为自由之地/" >
+                         data-thread-key="2016/07/30/为自由之地/"
+                         data-title="Break The Wall"
+                         data-url="https://haojen.github.io/2016/07/30/为自由之地/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -289,9 +321,9 @@
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用到的方法"><span class="toc-text">用到的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hosts-方式"><span class="toc-text">hosts 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-方式"><span class="toc-text">app 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lantern"><span class="toc-text">Lantern</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ShadowSocks"><span class="toc-text">ShadowSocks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-方式"><span class="toc-text">DNS 方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PC端"><span class="toc-text">PC端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#macOS"><span class="toc-text">macOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一：修改-hosts"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二：-使用翻墙App"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一：修改-hosts-1"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二：-使用翻墙App-1"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动端"><span class="toc-text">移动端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone"><span class="toc-text">iPhone</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二：-使用翻墙App-2"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一：修改-hosts-2"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二：-使用翻墙App-3"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">用到的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">hosts 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">app 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">Lantern</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">ShadowSocks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">DNS 方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">PC端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">macOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">移动端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">iPhone</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式一：修改 hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">方式二： 使用翻墙App</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">结语</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -308,12 +340,13 @@
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#GFW" title="GFW">GFW</a>
+                        <a class="tag" href="/tags/#GFW"
+                           title="GFW">GFW</a>
                         
                     </div>
                 </section>
@@ -321,24 +354,24 @@
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -353,19 +386,18 @@
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -377,7 +409,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -450,7 +481,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

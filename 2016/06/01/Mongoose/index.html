@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,36 +139,39 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/post-mongoose.jpg">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/post-mongoose.jpg">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/post-mongoose.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>[译]Mongoose</h1>
                     
-                        <h2 class="subheading">Mongoose原是指生活在非州卡拉哈里沙漠的哺乳动物，在这里Mongoose是指一种数据对象工具。</h2>
+                    <h2 class="subheading">Mongoose原是指生活在非州卡拉哈里沙漠的哺乳动物，在这里Mongoose是指一种数据对象工具。</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2016-06-01
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Database" title="Database">Database</a>
+                        <a class="tag" href="/tags/#Database"
+                           title="Database">Database</a>
                         
                     </div>
                 </div>
@@ -186,141 +189,164 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <blockquote>
 <p>自翻译mongoose官方 Getting Started 文档，转载请著名出处。</p>
 </blockquote>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>带你用最快的速度简单的了解mongoose的用法。</p>
+<h2>快速开始</h2>
+<p>带你用最快的速度简单的了解mongoose的用法。</p>
 <p>使用之前请确定已安装mongoDB和nodejs。</p>
 <p>然后，安装mongoose：</p>
 <pre><code>npm install mongoose
-</code></pre><p>引入</p>
-<pre><code>var mongoose = require(&apos;mongoose&apos;)
-mongoose.connect(&apos;mongodb://localhost/test&apos;) //用mongoose连接数据库
-</code></pre><p>错误捕获和连接成功：</p>
+</code></pre>
+<p>引入</p>
+<pre><code>var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/test') //用mongoose连接数据库
+</code></pre>
+<p>错误捕获和连接成功：</p>
 <pre><code>var db = mongoose.connection;
 //捕获错误
-db.on(&apos;error&apos;,console.error.bind(console,&apos;connection wrong&apos;));
+db.on('error',console.error.bind(console,'connection wrong'));
 //连接第一次建立时触发的回调函数
-db.once(&apos;open&apos;,function(){
-    console.log(&apos;success&apos;)
+db.once('open',function(){
+	console.log('success')
 })
-</code></pre><h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>在mongoose里，一切都派生自<code>Schema</code>。下面是一个schema创建的实例</p>
+</code></pre>
+<h3>Schema</h3>
+<p>在mongoose里，一切都派生自<code>Schema</code>。下面是一个schema创建的实例</p>
 <pre><code>var kittySchema = mongoose.Schema({
-    name: String //data type is String
+	name: String //data type is String
 })
-</code></pre><p>目前为止，我们在这个schema里创建了一个<code>String</code>类型的<code>name</code>属性。下面我们将把这个schema装载进一个<code>Model</code>里</p>
-<pre><code>var Kitten = mongoose.model(&apos;Kitten&apos;,kittySchema)
-</code></pre><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>一个model就是一个构造类，每个类的实例都具有里面其在Schema里定义的属性和行为</p>
+</code></pre>
+<p>目前为止，我们在这个schema里创建了一个<code>String</code>类型的<code>name</code>属性。下面我们将把这个schema装载进一个<code>Model</code>里</p>
+<pre><code>var Kitten = mongoose.model('Kitten',kittySchema)
+</code></pre>
+<h3>Model</h3>
+<p>一个model就是一个构造类，每个类的实例都具有里面其在Schema里定义的属性和行为</p>
 <pre><code>//小猫实例
-var silence = new Kitten({name:&apos;Silence&apos;})
-console.log(silence.name) //&apos;Silence&apos;
-</code></pre><p>在 kittySchema 添加一个方法，作用到所有类中</p>
+var silence = new Kitten({name:'Silence'})
+console.log(silence.name) //'Silence'
+</code></pre>
+<p>在 kittySchema 添加一个方法，作用到所有类中</p>
 <pre><code>kittySchema.methods.speak = function(){
-    var greeting = this.name
-    ? &quot;meow nams is&quot; + this.name
-    :&quot;I don&apos;t have a name&quot;;
-    console.log(geeting)
+	var greeting = this.name
+	? &quot;meow nams is&quot; + this.name
+	:&quot;I don't have a name&quot;;
+	console.log(geeting)
 }
 
-var Kitten = mongoose.model(&apos;Kitten&apos;,kittySchema)
-</code></pre><p>在这里，我们将这个方法添加到schema的<code>methods</code>属性中，然后使用该schema的<code>Model</code>都会继承这个方法</p>
-<pre><code>var fluffy = new Kitten({name:&apos;fluffy&apos;})
+var Kitten = mongoose.model('Kitten',kittySchema)
+</code></pre>
+<p>在这里，我们将这个方法添加到schema的<code>methods</code>属性中，然后使用该schema的<code>Model</code>都会继承这个方法</p>
+<pre><code>var fluffy = new Kitten({name:'fluffy'})
 fluffy.speak() // meow name is fluffy
-</code></pre><h3 id="保存数据"><a href="#保存数据" class="headerlink" title="保存数据"></a>保存数据</h3><p>但目前我们仍没有保存任何数据到<code>MongoDB</code>数据库，现在我们可以在实例上调用<code>save</code>方法，保存数据。</p>
+</code></pre>
+<h3>保存数据</h3>
+<p>但目前我们仍没有保存任何数据到<code>MongoDB</code>数据库，现在我们可以在实例上调用<code>save</code>方法，保存数据。</p>
 <pre><code>回调函数中的第一个参数，用来接收错误。
 fluffy.save(function(err,fluffy){
-    if(err) return console.log(err)
-    fluffy.speak()
+	if(err) return console.log(err)
+	fluffy.speak()
 })
-</code></pre><p>我们也可以获取存储的model实例</p>
+</code></pre>
+<p>我们也可以获取存储的model实例</p>
 <pre><code>Kitten.find(function(err,kittens){
-    if(err) return console.log(err)
-    console.log(kittens)
+	if(err) return console.log(err)
+	console.log(kittens)
 })
-</code></pre><p>如果我们想按照设定的条件查找，比如说根据猫咪的name属性查找</p>
+</code></pre>
+<p>如果我们想按照设定的条件查找，比如说根据猫咪的name属性查找</p>
 <pre><code>Kitten.find({name:flyffy},callback);
-</code></pre><p>这个方法会返回一个kittens类里匹配该名字的数据。</p>
-<h2 id="Schema-1"><a href="#Schema-1" class="headerlink" title="Schema"></a>Schema</h2><h3 id="写一个你自己的Schema"><a href="#写一个你自己的Schema" class="headerlink" title="写一个你自己的Schema"></a>写一个你自己的Schema</h3><p>在mongoose里面，几乎是一切基于一个 schema 开始的。</p>
+</code></pre>
+<p>这个方法会返回一个kittens类里匹配该名字的数据。</p>
+<h2>Schema</h2>
+<h3>写一个你自己的Schema</h3>
+<p>在mongoose里面，几乎是一切基于一个 schema 开始的。</p>
 <pre><code>//一个博客评论schema
-var mongoose = require(&apos;mongoose&apos;)
+var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var blogSchema = new Schema({
-    title: String,
-    author: String,
-    body: String,
-    comments: [{body: String, data: Date}],
-    data:{type: Date, default: Date.now},
-    hidden: Boolean,
-    meta: {
-        votes: Number,
-        favs: Number
-    }
+	title: String,
+	author: String,
+	body: String,
+	comments: [{body: String, data: Date}],
+	data:{type: Date, default: Date.now},
+	hidden: Boolean,
+	meta: {
+		votes: Number,
+		favs: Number
+	}
 })
-</code></pre><h3 id="创建一个model"><a href="#创建一个model" class="headerlink" title="创建一个model"></a>创建一个model</h3><pre><code>//使用我们刚才创建的schema
-var Blog = mongoose.model(&apos;Blog&apos;,blogSchema)
-</code></pre><h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p>文档（documents），内置有很多它自己的实例方法，我们也可以定义自己的方法。</p>
+</code></pre>
+<h3>创建一个model</h3>
+<pre><code>//使用我们刚才创建的schema
+var Blog = mongoose.model('Blog',blogSchema)
+</code></pre>
+<h3>实例方法</h3>
+<p>文档（documents），内置有很多它自己的实例方法，我们也可以定义自己的方法。</p>
 <pre><code>var animalSchema = new Schema({ name: String, type: String})
 
 //编写自己的方法，基于schema上
 animalSchema.methods.findSimilarTypes = function(cb){
-    return this.model(&apos;Animal&apos;).find({type:this.type},cb)
+	return this.model('Animal').find({type:this.type},cb)
 }
-</code></pre><p>现在所有的 animalSchema 实例都有这个方法了</p>
-<h3 id="Statics"><a href="#Statics" class="headerlink" title="Statics"></a>Statics</h3><p>添加一个静态方法到model里。</p>
+</code></pre>
+<p>现在所有的 animalSchema 实例都有这个方法了</p>
+<h3>Statics</h3>
+<p>添加一个静态方法到model里。</p>
 <pre><code>//继续使用上面的animalSchema
 animalSchema.statics.findByName = function (name,cb){
-    return this.find({name: new RegExp(name,&apos;i&apos;)}, cb)
+	return this.find({name: new RegExp(name,'i')}, cb)
 }
 
-var Animal = mongoose.model(&apos;Animal&apos;,animalSchema);
-Animal.findByName(&apos;fido&apos;,function(err,animals){
-    console.log(animals);
+var Animal = mongoose.model('Animal',animalSchema);
+Animal.findByName('fido',function(err,animals){
+	console.log(animals);
 })
 </code></pre>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2016/06/01/Mongoose/"
-                    data-title="[译]Mongoose"
-                    data-url="https://haojen.github.io/2016/06/01/Mongoose/"
-                    data-images="https://haojen.github.io/2016/06/01/Mongoose/post-mongoose.jpg"
-                    data-content="
+                     style="text-align: right"
+                     data-thread-key="2016/06/01/Mongoose/"
+                     data-title="[译]Mongoose"
+                     data-url="https://haojen.github.io/2016/06/01/Mongoose/"
+                     data-images="https://haojen.github.io/2016/06/01/Mongoose/post-mongoose.jpg"
+                     data-content="
 自翻译mongoose官方 Getting Started 文档，转载请著名出处。
 
-快速开... | Haojen&#39;s blog " >
+快速开... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/06/07/恐龙与史前生命/" data-toggle="tooltip" data-placement="top" title="恐龙与史前生命">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2016/06/07/恐龙与史前生命/" data-toggle="tooltip" data-placement="top"
+                           title="恐龙与史前生命">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2016/05/29/Express-完整学习/" data-toggle="tooltip" data-placement="top" title="Express 完整学习">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2016/05/29/Express-完整学习/" data-toggle="tooltip" data-placement="top"
+                           title="Express 完整学习">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -328,9 +354,9 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/06/01/Mongoose/"
-                        data-title="[译]Mongoose"
-                        data-url="https://haojen.github.io/2016/06/01/Mongoose/" >
+                         data-thread-key="2016/06/01/Mongoose/"
+                         data-title="[译]Mongoose"
+                         data-url="https://haojen.github.io/2016/06/01/Mongoose/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -340,9 +366,9 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#快速开始"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Schema"><span class="toc-text">Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model"><span class="toc-text">Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存数据"><span class="toc-text">保存数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Schema-1"><span class="toc-text">Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个你自己的Schema"><span class="toc-text">写一个你自己的Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个model"><span class="toc-text">创建一个model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法"><span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Statics"><span class="toc-text">Statics</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">保存数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">写一个你自己的Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">创建一个model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Statics</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -359,12 +385,13 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Database" title="Database">Database</a>
+                        <a class="tag" href="/tags/#Database"
+                           title="Database">Database</a>
                         
                     </div>
                 </section>
@@ -372,24 +399,24 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -404,19 +431,18 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -428,7 +454,6 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -501,7 +526,6 @@ Animal.findByName(&apos;fido&apos;,function(err,animals){
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,19 +139,21 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -160,13 +162,14 @@
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-11-10
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </div>
@@ -184,55 +187,63 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="setTimeOut"><a href="#setTimeOut" class="headerlink" title="setTimeOut"></a>setTimeOut</h2><pre><code>var timer = setTimeOut(function(){},1000 )//第一个参数是需要执行的程序，第二个是执行前的等待时间
-</code></pre><p>设定一个程序触发后，执行前的等待时间</p>
-<h2 id="clearTimeOut"><a href="#clearTimeOut" class="headerlink" title="clearTimeOut"></a>clearTimeOut</h2><pre><code>clearTimeOut(timer)
-</code></pre><p>清除 setTimeOut 触发的程序</p>
-<h2 id="setTimeInterval"><a href="#setTimeInterval" class="headerlink" title="setTimeInterval"></a>setTimeInterval</h2><pre><code>var timer2 = setTimeOut(function(){},1000 )//第一个参数是需要循环执行的程序，第二个参数是循环周期的时间，1000为一秒
-</code></pre><p>设定一个程序隔一定时间触发</p>
-<h2 id="clearTimeInterval"><a href="#clearTimeInterval" class="headerlink" title="clearTimeInterval"></a>clearTimeInterval</h2><pre><code>clearTimeInterval(timer2)
-</code></pre><p>清除 setTimeInterval 触发的程序</p>
-
+                <h2>setTimeOut</h2>
+<pre><code>var timer = setTimeOut(function(){},1000 )//第一个参数是需要执行的程序，第二个是执行前的等待时间
+</code></pre>
+<p>设定一个程序触发后，执行前的等待时间</p>
+<h2>clearTimeOut</h2>
+<pre><code>clearTimeOut(timer)
+</code></pre>
+<p>清除 setTimeOut 触发的程序</p>
+<h2>setTimeInterval</h2>
+<pre><code>var timer2 = setTimeOut(function(){},1000 )//第一个参数是需要循环执行的程序，第二个参数是循环周期的时间，1000为一秒
+</code></pre>
+<p>设定一个程序隔一定时间触发</p>
+<h2>clearTimeInterval</h2>
+<pre><code>clearTimeInterval(timer2)
+</code></pre>
+<p>清除 setTimeInterval 触发的程序</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/11/10/定时器学习/"
-                    data-title="定时器"
-                    data-url="https://haojen.github.io/2015/11/10/定时器学习/"
-                    data-images=""
-                    data-content="setTimeOutvar timer = setTimeOut(function(){},1... | Haojen&#39;s blog " >
+                     style="text-align: right"
+                     data-thread-key="2015/11/10/定时器学习/"
+                     data-title="定时器"
+                     data-url="https://haojen.github.io/2015/11/10/定时器学习/"
+                     data-images=""
+                     data-content="setTimeOut
+var timer = setTimeOut(function(){},... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/11/11/js_命名规范/" data-toggle="tooltip" data-placement="top" title="Javascript 不同的数据类型命名规范">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/11/11/js_命名规范/" data-toggle="tooltip" data-placement="top"
+                           title="Javascript 不同的数据类型命名规范">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/10/31/Javascript高级程序设计-深入系统化/" data-toggle="tooltip" data-placement="top" title="JavaScript 高级程序设计之深入系统化">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/10/31/Javascript高级程序设计-深入系统化/" data-toggle="tooltip" data-placement="top"
+                           title="JavaScript 高级程序设计之深入系统化">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -240,9 +251,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/11/10/定时器学习/"
-                        data-title="定时器"
-                        data-url="https://haojen.github.io/2015/11/10/定时器学习/" >
+                         data-thread-key="2015/11/10/定时器学习/"
+                         data-title="定时器"
+                         data-url="https://haojen.github.io/2015/11/10/定时器学习/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -252,9 +263,9 @@
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#setTimeOut"><span class="toc-text">setTimeOut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clearTimeOut"><span class="toc-text">clearTimeOut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setTimeInterval"><span class="toc-text">setTimeInterval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clearTimeInterval"><span class="toc-text">clearTimeInterval</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">setTimeOut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">clearTimeOut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">setTimeInterval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">clearTimeInterval</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -271,12 +282,13 @@
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </section>
@@ -284,24 +296,24 @@
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -316,19 +328,18 @@
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -340,7 +351,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -413,7 +423,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>

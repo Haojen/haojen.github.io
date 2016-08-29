@@ -39,7 +39,7 @@
         <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script></script>
+    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
@@ -89,13 +89,13 @@
                     
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/my-works/">My works</a>
                         </li>
                         
                     
                         
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -139,19 +139,21 @@
     
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
-    
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -160,13 +162,14 @@
                     
                     <span class="meta">
                          作者 Haojen Ma
-                         <span>
+                        <span>
                           日期 2015-11-25
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </div>
@@ -184,20 +187,24 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
-                <h2 id="前-amp-前–"><a href="#前-amp-前–" class="headerlink" title="前++ &amp; 前–"></a>前++ &amp; 前–</h2><p>在计算表达式之前将给定的值进行自增或自减操作</p>
+                <h2>前++ &amp; 前--</h2>
+<p>在计算表达式之前将给定的值进行自增或自减操作</p>
 <pre><code>var a =2
 var b =++a //b输出 3
-</code></pre><h2 id="后-amp-后"><a href="#后-amp-后" class="headerlink" title="后++ &amp; 后- -"></a>后++ &amp; 后- -</h2><p>在计算表达式<strong>之后</strong>将给定的值进行自增或自减操作</p>
+</code></pre>
+<h2>后++ &amp; 后- -</h2>
+<p>在计算表达式<strong>之后</strong>将给定的值进行自增或自减操作</p>
 <pre><code>var a=2
 var  b=a-- //此时 b等于 a
 var c =b //c =1
-</code></pre><h2 id="typeof-运算符"><a href="#typeof-运算符" class="headerlink" title="typeof 运算符"></a>typeof 运算符</h2><p>用于检测变量是不是基本数据类型，但当数据类型为引用类型的时候，用处就不大了</p>
+</code></pre>
+<h2>typeof 运算符</h2>
+<p>用于检测变量是不是基本数据类型，但当数据类型为引用类型的时候，用处就不大了</p>
 <pre><code>var a =1
 typeof a //输出 number
-var b =&apos;b&apos;
+var b ='b'
 typeof b //输出 string
 var c =true
 typeof c //输出 Boolean
@@ -207,47 +214,50 @@ var e=null
 typeof e //object
 var f ={}
 typeof e //object
-</code></pre><h2 id="instancof-运算符"><a href="#instancof-运算符" class="headerlink" title="instancof 运算符"></a>instancof 运算符</h2><p>用于确定对象的类型</p>
-
+</code></pre>
+<h2>instancof 运算符</h2>
+<p>用于确定对象的类型</p>
 
                 <hr>
-
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="2015/11/25/一元运算符/"
-                    data-title="一元运算符"
-                    data-url="https://haojen.github.io/2015/11/25/一元运算符/"
-                    data-images=""
-                    data-content="前++ &amp; 前–在计算表达式之前将给定的值进行自增或自减操作
+                     style="text-align: right"
+                     data-thread-key="2015/11/25/一元运算符/"
+                     data-title="一元运算符"
+                     data-url="https://haojen.github.io/2015/11/25/一元运算符/"
+                     data-images=""
+                     data-content="前++ &amp; 前--
+在计算表达式之前将给定的值进行自增或自减操作
 var a =2
-var... | Haojen&#39;s blog " >
+v... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
                     </div>
-                <hr>
+                    <hr>
                 </div>
                 <!-- 多说 Share end-->
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2015/12/05/聆听音乐_by_耶鲁大学/" data-toggle="tooltip" data-placement="top" title="聆听音乐">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/ 2015/12/05/聆听音乐_by_耶鲁大学/" data-toggle="tooltip" data-placement="top"
+                           title="聆听音乐">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2015/11/11/js_命名规范/" data-toggle="tooltip" data-placement="top" title="Javascript 不同的数据类型命名规范">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/ 2015/11/11/js_命名规范/" data-toggle="tooltip" data-placement="top"
+                           title="Javascript 不同的数据类型命名规范">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -255,9 +265,9 @@ var... | Haojen&#39;s blog " >
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2015/11/25/一元运算符/"
-                        data-title="一元运算符"
-                        data-url="https://haojen.github.io/2015/11/25/一元运算符/" >
+                         data-thread-key="2015/11/25/一元运算符/"
+                         data-title="一元运算符"
+                         data-url="https://haojen.github.io/2015/11/25/一元运算符/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -267,9 +277,9 @@ var... | Haojen&#39;s blog " >
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前-amp-前–"><span class="toc-text">前++ & 前–</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后-amp-后"><span class="toc-text">后++ & 后- -</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof-运算符"><span class="toc-text">typeof 运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instancof-运算符"><span class="toc-text">instancof 运算符</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">前++ & 前--</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">后++ & 后- -</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">typeof 运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">instancof 运算符</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -286,12 +296,13 @@ var... | Haojen&#39;s blog " >
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </section>
@@ -299,24 +310,24 @@ var... | Haojen&#39;s blog " >
 
                 <!-- Friends Blog -->
                 
-                <hr>
-                <h5 class="text-center">FRIENDS</h5>
-                <ul class="list-inline text-center">
-
-                    
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
                         <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
-                    
+                        
                         <li><a href="http://huangxuan.me">Hux Blog</a></li>
-                    
+                        
                         <li><a href="#">Foo</a></li>
-                    
+                        
                         <li><a href="#">Bar</a></li>
-                    
+                        
                         <li><a href="#">Example Friends</a></li>
-                    
+                        
                         <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -331,19 +342,18 @@ var... | Haojen&#39;s blog " >
     var _user = 'ehazon-github';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {short_name: _user};
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-
-
 
 
 
@@ -355,7 +365,6 @@ var... | Haojen&#39;s blog " >
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">Go to Top</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -428,7 +437,6 @@ var... | Haojen&#39;s blog " >
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
-
 
 <!-- async load function -->
 <script>
