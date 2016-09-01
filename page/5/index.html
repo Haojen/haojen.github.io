@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="马浩珍在 Github 上的个人博客">
-    <meta name="keyword"  content="haojen,马浩珍,前端,全栈,hexo,Anisina,blog,github">
+    <meta name="keyword" content="haojen,马浩珍,前端,全栈,hexo,Anisina,blog,github">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#60090">
-    <link rel="shortcut icon" href="/img/coffee.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/blackvariant/button-ui-requests-15/256/Amazon-Kindle-icon.png">
     <link rel="alternate" type="application/atom+xml" title="Haojen" href="/atom.xml">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-          Haojen&#39;s blog
+        Haojen&#39;s blog
         
     </title>
 
@@ -31,20 +31,11 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="/js/emoji.js"></script>
 </head>
 
 <style>
 
-    header.intro-header{
+    header.intro-header {
         background-image: url('//oco8bvfr8.qnssl.com/lion-blur-bg.jpg')
     }
 </style>
@@ -110,7 +101,7 @@
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
     // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
+//    var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
     var $navbar = document.querySelector('#huxblog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
@@ -135,120 +126,138 @@
     }
 </script>
 
-    <!-- Main Content -->
-    
+<!-- Main Content -->
 
-    <style>
 
-        .custom-haojen-container .post-preview:nth-of-type(1),
-        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
-            text-align: center;
-            background-repeat: no-repeat;
-            border-radius: 3px;
-            background-size: cover;
-            padding:0;
-            height: 300px;
-            display: table;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.16);
+<style>
+
+    .custom-haojen-container .post-preview:nth-of-type(1),
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        text-align: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        background-size: cover;
+        padding: 0;
+        height: 300px;
+        display: table;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.16);
+    }
+
+    /*去掉诗歌的背景图片*/
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        background-image: none !important;
+        background-color: rgba(255, 248, 220, 0.5);
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) h2,
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
+    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
+        letter-spacing: 1px;
+        color: #fff;
+        margin-top: 0;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
+        font-size: .9em;
+        font-weight: 300;
+        margin-top: 0;
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
+        letter-spacing: 6px;
+        font-size: 18px;
+        font-family: unset;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .75)
+    }
+
+    /*不显示摘要*/
+    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
+        display: none
+    }
+
+    /*只第一个显示背景图片*/
+    .custom-haojen-container .post-preview:not(:nth-child(1)) {
+        background-image: none !important;
+    }
+
+    /*第一个分界线去掉*/
+    .custom-haojen-container hr:nth-of-type(1) {
+        display: none;
+    }
+
+    /*主题*/
+    .custom-haojen-container .post-preview:nth-of-type(1) > a {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /*诗词标题*/
+    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+        font-size: 35px;
+        font-family: STKaiti;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
+        color: #0e2231;
+    }
+
+    @media (max-width: 768px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 240px;
         }
-        /*去掉诗歌的背景图片*/
-        .custom-haojen-container .post-preview-poetry:nth-of-type(1){
-            background-image: none!important;
-            background-color: rgba(255, 248, 220, 0.5);
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 28px !important;
+            margin-top: 0;
         }
 
-        .custom-haojen-container .post-preview:nth-child(1) h2,
-        .custom-haojen-container .post-preview:nth-child(1) .post-meta,
         .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-            letter-spacing: 1px;
-            color: #fff;
-            /*font-family: unset;*/
-            /*font-weight: 500;*/
-            margin-top: 0;
-            padding-left: 60px;
-            padding-right: 60px;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-meta{
-            font-size: .9em;
-            font-weight: 300;
-            margin-top: 0;
-        }
-        .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle{
-            letter-spacing: 6px;
             font-size: 18px;
-            font-family: unset;
             font-weight: 400;
-            color: rgba(0,0,0,.75)
-        }
-        /*不显示摘要*/
-        .custom-haojen-container .post-preview:nth-child(1) .post-content-preview{display: none}
-        /*只第一个显示背景图片*/
-        .custom-haojen-container .post-preview:not(:nth-child(1)){
-            background-image: none!important;
-        }
-        /*第一个分界线去掉*/
-        .custom-haojen-container hr:nth-of-type(1){
-            display: none;
-        }
-        /*主题*/
-        .custom-haojen-container .post-preview:nth-of-type(1)>a{
-            display: table-cell;
-            vertical-align: middle;
-        }
-        /*诗词标题*/
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
-            font-size: 35px;
-            font-family:  STKaiti;
-            color: rgba(0,0,0,.8);
-        }
-        .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta{
-            color: #0e2231;
-        }
-        @media (max-width: 768px)  {
-            .custom-haojen-container .post-preview:nth-child(1) {
-                height: 240px;
-            }
-            .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
-                font-size: 28px!important;
-                margin-top: 0;
-            }
-            .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
-                font-size: 18px;
-                font-weight:400;
-                padding-left: 0;padding-right: 0;
-            }
-            .custom-haojen-container .post-preview:nth-of-type(1) > a{padding: 20px}
+            padding-left: 0;
+            padding-right: 0;
         }
 
-        /*手机屏幕*/
-        @media (max-width: 400px){
-            .custom-haojen-container .post-preview:nth-child(1){
-                height: 195px;
-            }
-            .custom-haojen-container .post-preview-poetry:nth-child(1) h2{
-                font-size: 20px!important;
-            }
-            .custom-haojen-container .post-preview:nth-child(1) .post-subtitle{
-                font-size: 16px;
-            }
-            .custom-haojen-container .post-preview:nth-child(1) a{
-                padding: 30px 20px;
-            }
+        .custom-haojen-container .post-preview:nth-of-type(1) > a {
+            padding: 20px
         }
-    </style>
+    }
+
+    /*手机屏幕*/
+    @media (max-width: 400px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 195px;
+        }
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 20px !important;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+            font-size: 16px;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) a {
+            padding: 30px 20px;
+        }
+    }
+</style>
 
 <!-- Page Header -->
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
     <div class="row">
         <header class="intro-header">
             <div class="container">
                 <div class="site-heading text-center">
                     <div class="about-me">
                         <!--移动端头部显示-->
-                        <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90" />
+                        <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
                         <h5><a href="/about/">Haojen Ma</a></h5>
                         <p>求知若饥 虚心若愚</p>
                     </div>
@@ -256,7 +265,7 @@
             </div>
         </header>
     </div>
-    </div>
+</div>
 <!-- Main Content -->
 <div class="container custom-haojen-container">
     <!-- Post Container -->
@@ -265,9 +274,10 @@
             <!-- Main Content -->
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2015/10/24/Javascript权威指南-数组/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2015/10/24/Javascript权威指南-数组/">
         <h2 class="post-title">
             JavaScript 数组
         </h2>
@@ -295,9 +305,10 @@
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2015/10/20/CSS基础深入/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2015/10/20/CSS基础深入/">
         <h2 class="post-title">
             CSS 基础深入
         </h2>
@@ -330,9 +341,10 @@ background:green;
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/26/images/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/26/images/">
         <h2 class="post-title">
             Images
         </h2>
@@ -357,9 +369,10 @@ background:green;
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/25/no-title/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/25/no-title/">
         <h2 class="post-title">
             未命名
         </h2>
@@ -380,9 +393,10 @@ background:green;
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/25/excerpts/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/25/excerpts/">
         <h2 class="post-title">
             Excerpts
         </h2>
@@ -404,9 +418,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce...
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/25/videos/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/25/videos/">
         <h2 class="post-title">
             Videos
         </h2>
@@ -431,9 +446,10 @@ Vimeo
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/25/gallery-post/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/25/gallery-post/">
         <h2 class="post-title">
             Gallery Post
         </h2>
@@ -461,9 +477,10 @@ F...
 <hr>
 
 
-    
-        <div class="post-preview " style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2013/12/25/tag-plugins/">
+
+<div class="post-preview "
+     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
+    <a href="/ 2013/12/25/tag-plugins/">
         <h2 class="post-title">
             Tag Plugins
         </h2>
@@ -493,21 +510,21 @@ Praesent diam elit, interdum ut pulvinar placerat...
 
 <ul class="pager">
     
-        <li class="previous">
-            <a href="/page/4/">&larr; Newer Posts</a>
-        </li>
+    <li class="previous">
+        <a href="/ page/4/">&larr; Newer Posts</a>
+    </li>
     
     
-        <li class="next">
-            <a href="/page/6/">Older Posts &rarr;</a>
-        </li>
+    <li class="next">
+        <a href="/ page/6/">Older Posts &rarr;</a>
+    </li>
     
 </ul>
 
 
         </div>
-    <!-- Sidebar Container -->
-            <div class="
+        <!-- Sidebar Container -->
+        <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
                 col-sm-12
@@ -515,174 +532,178 @@ Praesent diam elit, interdum ut pulvinar placerat...
                 sidebar-container
             ">
 
-                <!-- About Me -->
-                <section class="visible-md visible-lg" style="padding: 0 18px">
-                    <div class="short-about">
-                        <!--侧边栏头像-->
+            <!-- About Me -->
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <!--侧边栏头像-->
+                    
+                    <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
+                    
+                    <h5><a href="/about/">Haojen Ma</a></h5>
+                    
+                    <p>求知若饥 虚心若愚</p>
+                    
+                    <hr>
+                    <!-- SNS Link 社交 -->
+                    <ul class="list-inline">
                         
-                            <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90" />
                         
-                        <h5><a href="/about/">Haojen Ma</a></h5>
-                        
-                            <p>求知若饥 虚心若愚</p>
-                        
-                        <hr>
-                        <!-- SNS Link 社交 -->
-                        <ul class="list-inline">
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://twitter.com/ehazon">
+                        <li>
+                            <a target="_blank" href="https://twitter.com/ehazon">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a target="_blank" href="https://www.zhihu.com/people/megahertz">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa  fa-stack-1x fa-inverse">知</i>
                                         </span>
-                                    </a>
-                                </li>
-                            
+                            </a>
+                        </li>
+                        
 
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/haojen">
+                        
+                        <li>
+                            <a target="_blank" href="http://weibo.com/haojen">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </a>
-                                </li>
-                            
+                            </a>
+                        </li>
+                        
 
-                            
+                        
 
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/haojen">
+                        
+                        <li>
+                            <a target="_blank" href="https://github.com/haojen">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </a>
-                                </li>
-                            
+                            </a>
+                        </li>
+                        
 
+                        
+                    </ul>
+                </div>
+            </section>
 
-                            
-                        </ul>
-                    </div>
-                </section>
+            <!-- Featured Tags  标签 -->
+            
+            <section>
+                <div class="tags">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="/tags/#CSS" title="CSS"
+                       rel="4">CSS</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="/tags/#JS" title="JS"
+                       rel="6">JS</a>
+                    
+                    
+                    
+                    
+                    
+                    <a href="/tags/#jQuery" title="jQuery"
+                       rel="2">jQuery</a>
+                    
+                    
+                    
+                    
+                    
+                    <a href="/tags/#HTML" title="HTML"
+                       rel="2">HTML</a>
+                    
+                    
+                    
+                    <a href="/tags/#Node.js" title="Node.js"
+                       rel="2">Node.js</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="/tags/#诗词" title="诗词"
+                       rel="2">诗词</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </section>
+            
 
-                <!-- Featured Tags  标签 -->
+            
+            <hr>
+            <h5 style="text-align: center;">Friends</h5>
+            <ul class="list-inline" style="text-align: center;">
                 
-                <section>
-                    <div class="tags">
-                        
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/#CSS" title="CSS" rel="4">CSS</a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/#JS" title="JS" rel="6">JS</a>
-                        
-                        
-                        
-                        <a href="/tags/#jQuery" title="jQuery" rel="2">jQuery</a>
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/#HTML" title="HTML" rel="2">HTML</a>
-                        
-                        
-                        
-                        <a href="/tags/#Node.js" title="Node.js" rel="2">Node.js</a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/#诗词" title="诗词" rel="2">诗词</a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                </section>
+                <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
                 
+                <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                
+                <li><a href="#" target="_blank">Foo</a></li>
+                
+                <li><a href="#" target="_blank">Bar</a></li>
+                
+                <li><a href="#" target="_blank">Example Friends</a></li>
+                
+                <li><a href="#" target="_blank">It helps SEO</a></li>
+                
+            </ul>
+            
 
-                
-                <hr>
-                <h5 style="text-align: center;">Friends</h5>
-                <ul class="list-inline" style="text-align: center;">
-                    
-                    <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
-                    
-                    <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-                    
-                    <li><a href="#" target="_blank">Foo</a></li>
-                    
-                    <li><a href="#" target="_blank">Bar</a></li>
-                    
-                    <li><a href="#" target="_blank">Example Friends</a></li>
-                    
-                    <li><a href="#" target="_blank">It helps SEO</a></li>
-                    
-                </ul>
-                
-
-            </div>
+        </div>
     </div>
 </div>
 
-
-    <!-- Footer -->
-    <!-- Footer -->
+<!-- Footer -->
+<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
@@ -797,6 +818,19 @@ Praesent diam elit, interdum ut pulvinar placerat...
 <!-- Google Analytics -->
 
 
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-78633618-1';
+    var _gaDomain = 'null';
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
 
 <!-- Baidu Tongji -->
 
@@ -813,8 +847,8 @@ Praesent diam elit, interdum ut pulvinar placerat...
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-    <!--wechat title img-->
-    <img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90">
+<!--wechat title img-->
+<img class="wechat-title-img" src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90">
 </body>
 
 </html>
