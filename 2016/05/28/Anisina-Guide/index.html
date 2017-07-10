@@ -75,23 +75,28 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-
+					
                     
                         
                     
                         
+							
                         <li>
                             <a href="/my-works/">My works</a>
                         </li>
-                        
+							
+						
                     
                         
+							
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
+							
+						
                     
-
+					
+					
                 </ul>
             </div>
         </div>
@@ -345,29 +350,6 @@ and also you can help me fix bugs and add new feature 😃</li>
 
                 <hr>
                 
-                <!-- 多说 Share start -->
-                <div class="ds-share"
-                     style="text-align: right"
-                     data-thread-key="2016/05/28/Anisina-Guide/"
-                     data-title="Anisina Guide"
-                     data-url="https://haojen.github.io/2016/05/28/Anisina-Guide/"
-                     data-images="https://haojen.github.io/2016/05/28/Anisina-Guide/anisina-pink-bg.jpg"
-                     data-content="Anisina
-A simple responsive , support qiniu ima... | Haojen&#39;s blog ">
-                    <div class="ds-share-inline">
-                        <ul class="ds-share-icons-16">
-                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                        </ul>
-                        <div class="ds-share-icons-more">
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <!-- 多说 Share end-->
-                
 
                 <ul class="pager">
                     
@@ -385,19 +367,31 @@ A simple responsive , support qiniu ima... | Haojen&#39;s blog ">
                 </ul>
 
                 
-                <!-- 多说评论框 start -->
-                <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/05/28/Anisina-Guide/"
-                         data-title="Anisina Guide"
-                         data-url="https://haojen.github.io/2016/05/28/Anisina-Guide/">
-                    </div>
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yODU3MC81MTQx">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
                 </div>
-                <!-- 多说评论框 end -->
+                <!-- City版安装代码已完成 -->
                 
-
-                
-
             </div>
 
             <div class="hidden-xs col-sm-3 toc-col">
@@ -459,24 +453,6 @@ A simple responsive , support qiniu ima... | Haojen&#39;s blog ">
 </article>
 
 
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User by Hux
-    var _user = 'ehazon-github';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user};
-    (function () {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';
-        ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
 
 
 
@@ -540,7 +516,7 @@ A simple responsive , support qiniu ima... | Haojen&#39;s blog ">
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Haojen 2016
+                    Copyright &copy; Haojen 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>

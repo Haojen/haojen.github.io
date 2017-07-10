@@ -178,7 +178,17 @@ article .post-container h6 {
 }
 
 article blockquote footer{
-    padding: 5px 20px 0;
+    padding: 5px 0px 0;
+	font-size: 100%;
+}
+
+article blockquote footer:before{
+	content: "";
+}
+
+article blockquote cite:before{
+	content: '\2014 \00A0';
+	padding: 0px 0.3em;
 }
 
 .post-container h5 + p {
@@ -873,6 +883,14 @@ img::-moz-selection {
     .one-tag-list .post-preview .post-meta {
         font-size: 18px;
     }
+	
+	.one-archive-list .post-preview {
+		margin-left: 40px;
+	}
+	
+	.archive-month {
+		margin-left: 20px;
+	}
 }
 
 /* Tags support End*/
